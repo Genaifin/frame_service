@@ -1,0 +1,1532 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "entities": {
+            "type": "array",
+            "items": {
+                "portfolio": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "Investor": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "string",
+                                        "description": "Name of the investor indicated in the document"
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "Account": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "string",
+                                        "description": "This is the fund name and investor name combined in a piped format. For instance, if fund name is 'ABC Investments' and investor is 'Scott', then account is 'ABC Investments|Scott'."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "InvestorRefID": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "string",
+                                        "description": "A unique reference ID for the investor. Only extract this if it is explicitly mentioned in the document as being a reference ID."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "AccountRefID": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "string",
+                                        "description": "A unique reference ID for the account. Only extract this if it is explicitly mentioned in the document as being a reference ID."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "Fund_ID": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "string",
+                                        "description": "A Fund ID is a code (numeric or alphanumeric) used by financial institutions, fund managers, or platforms to uniquely identify a particular mutual fund, hedge fund, pension fund, or other pooled investment vehicle. The Fund ID becomes especially important when a fund has multiple series or share classes. In such cases, the Fund ID helps differentiate between the series."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "Series_ID": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "string",
+                                        "description": "The Series ID refers to a unique identifier for a specific series or class of units within a mutual fund or pooled investment vehicle. The Series ID distinguishes between different series or unit classes within the same fund."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "Series_Description": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "string",
+                                        "description": "Series Description provides a human-readable label or name that describes the specific series (or class) of units within a fund. It complements the Series ID by offering a more descriptive and understandable explanation of what the series represents."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "Security": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "string",
+                                        "description": "The fund name mentioned in the document. This typically can be in the header of the document. Fund names are generally longer and typically include LLC, LLP or something similar in."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "PeriodBeginningDT": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "string",
+                                        "description": "Starting date of the reporting period in YYYY-MM-DD format."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "PeriodEndingDT": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "string",
+                                        "description": "Ending date of the reporting period in YYYY-MM-DD format."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "Currency": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "string",
+                                        "enum": [
+                                            "AED",
+                                            "AFN",
+                                            "ALL",
+                                            "AMD",
+                                            "ANG",
+                                            "AOA",
+                                            "ARS",
+                                            "AUD",
+                                            "AWG",
+                                            "AZN",
+                                            "BAM",
+                                            "BBD",
+                                            "BDT",
+                                            "BGN",
+                                            "BHD",
+                                            "BIF",
+                                            "BMD",
+                                            "BND",
+                                            "BOB",
+                                            "BRL",
+                                            "BSD",
+                                            "BTN",
+                                            "BWP",
+                                            "BYN",
+                                            "BZD",
+                                            "CAD",
+                                            "CDF",
+                                            "CHF",
+                                            "CLP",
+                                            "CNY",
+                                            "COP",
+                                            "CRC",
+                                            "CUP",
+                                            "CVE",
+                                            "CZK",
+                                            "DJF",
+                                            "DKK",
+                                            "DOP",
+                                            "DZD",
+                                            "EGP",
+                                            "ERN",
+                                            "ETB",
+                                            "EUR",
+                                            "FJD",
+                                            "FKP",
+                                            "FOK",
+                                            "GBP",
+                                            "GEL",
+                                            "GGP",
+                                            "GHS",
+                                            "GIP",
+                                            "GMD",
+                                            "GNF",
+                                            "GTQ",
+                                            "GYD",
+                                            "HKD",
+                                            "HNL",
+                                            "HRK",
+                                            "HTG",
+                                            "HUF",
+                                            "IDR",
+                                            "ILS",
+                                            "IMP",
+                                            "INR",
+                                            "IQD",
+                                            "IRR",
+                                            "ISK",
+                                            "JMD",
+                                            "JOD",
+                                            "JPY",
+                                            "KES",
+                                            "KGS",
+                                            "KHR",
+                                            "KID",
+                                            "KMF",
+                                            "KRW",
+                                            "KWD",
+                                            "KYD",
+                                            "KZT",
+                                            "LAK",
+                                            "LBP",
+                                            "LKR",
+                                            "LRD",
+                                            "LSL",
+                                            "LYD",
+                                            "MAD",
+                                            "MDL",
+                                            "MGA",
+                                            "MKD",
+                                            "MMK",
+                                            "MNT",
+                                            "MOP",
+                                            "MRU",
+                                            "MUR",
+                                            "MVR",
+                                            "MWK",
+                                            "MXN",
+                                            "MYR",
+                                            "MZN",
+                                            "NAD",
+                                            "NGN",
+                                            "NIO",
+                                            "NOK",
+                                            "NPR",
+                                            "NZD",
+                                            "OMR",
+                                            "PAB",
+                                            "PEN",
+                                            "PGK",
+                                            "PHP",
+                                            "PKR",
+                                            "PLN",
+                                            "PYG",
+                                            "QAR",
+                                            "RON",
+                                            "RSD",
+                                            "RUB",
+                                            "RWF",
+                                            "SAR",
+                                            "SBD",
+                                            "SCR",
+                                            "SDG",
+                                            "SEK",
+                                            "SGD",
+                                            "SHP",
+                                            "SLE",
+                                            "SLL",
+                                            "SOS",
+                                            "SRD",
+                                            "SSP",
+                                            "STN",
+                                            "SYP",
+                                            "SZL",
+                                            "THB",
+                                            "TJS",
+                                            "TMT",
+                                            "TND",
+                                            "TOP",
+                                            "TRY",
+                                            "TTD",
+                                            "TVD",
+                                            "TWD",
+                                            "TZS",
+                                            "UAH",
+                                            "UGX",
+                                            "USD",
+                                            "UYU",
+                                            "UZS",
+                                            "VES",
+                                            "VND",
+                                            "VUV",
+                                            "WST",
+                                            "XAF",
+                                            "XCD",
+                                            "XDR",
+                                            "XOF",
+                                            "XPF",
+                                            "YER",
+                                            "ZAR",
+                                            "ZMW",
+                                            "ZWL"
+                                        ],
+                                        "description": "Currency code for the transactions (e.g., USD, EUR)."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "NetOpeningCapital": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Opening capital for the period after all adjustments."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "Contributions": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Total capital contributions made during the period."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "ContributionOutsideCommitment": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Contributions made outside of the initially committed capital."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "Withdrawals": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Total amount withdrawn by the investor during the period."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "RecallableDistribution": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "A recallable distribution is a fund distribution that can be called back within a set time period. Recallable distributions are a flexibility option that can be added to a limited partnership agreement (LPA). They can be used to distribute funds immediately when there is uncertainty about the fund's future cash needs."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "ReturnOfCapital": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Amount of capital returned to the investor during the period."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "NetCapitalActivity": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Net activity of capital including contributions, withdrawals, and returns."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "TransfersIn": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Total capital transferred into the account during the period."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "TransfersOut": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Total capital transferred out of the account during the period."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "NetTransfers": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Net transfers, calculated as Transfers In minus Transfers Out."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "IncomeDistribution": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Total income distributed to the investor during the period."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "RealizedGainLoss": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Only use this field if the statement provides a separate line for realized gains/(losses) DISTINCT from unrealized gains/(losses). If the statement lumps realized and unrealized gains into one line, do NOT map that combined figure here; instead, use NetGainLoss."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "UnrealizedGainLoss": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Only use this field if the statement provides a separate line for unrealized gains/(losses) DISTINCT from realized gains/(losses). If the statement lumps realized and unrealized gains into one line, do NOT map that combined figure here; instead, use NetGainLoss."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "NetGainLoss": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "If the statement lumps realized and unrealized gains/(losses) together on a single line (often called 'Net realized and unrealized gain/(loss)'), map that amount here. Do NOT map net income or net investment income to this field. This field is specifically for the COMBINED realized + unrealized gain/(loss)."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "InvestmentIncome": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Map the statement's 'Net income/(loss)' here ONLY if it is the TOTAL bottom-line figure that includes all sources of income, gains, and losses. If you see a line explicitly labeled 'Net income/(loss)' that reflects the grand total, store it here."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "OtherIncomeLoss": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Map any additional or separate income/(loss) lines (e.g., 'Net investment income/(loss)' or 'Operating income/(loss)' or 'Other income/(loss)') that do NOT represent the combined realized/unrealized gain or the final total net income. If there is a specific line for 'Net investment income/(loss),' store that here."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "ManagementFee": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Total management fees charged during the period."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "OtherExpenses": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Other expenses incurred during the period."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "CarriedInterest": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Interest carried over from previous periods or due to future periods."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "OtherAdjustments": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Adjustments made to the account for various reasons."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "NetClosingCapital": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Net closing capital of the account."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "Quantity": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Quantity of securities involved in the transactions during the period."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "Price": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Price per unit of security at the time of the transaction."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "MTDPerformance": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "maximum": 100,
+                                        "minimum": 0,
+                                        "description": "Performance of the investments for the month-to-date. This is a percentage value."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "QTDPerformance": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "maximum": 100,
+                                        "minimum": 0,
+                                        "description": "Performance of the investments for the quarter-to-date. This is a percentage value."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "YTDPerformance": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "maximum": 100,
+                                        "minimum": 0,
+                                        "description": "Performance of the investments for the year-to-date. This is a percentage value."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "IRR": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "maximum": 100,
+                                        "minimum": 0,
+                                        "description": "Internal Rate of Return for the investments during the period. This is a percentage value."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "Commitment": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Total committed capital by the investor."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "ContributionsToDate": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Total contributions made by the investor up to the current date. If total contributions is not mentioned, calculate this as the difference between total Commitment and UnfundedCommitment. This property must be extracted from Life to date or Inception to date column and not from any other period."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "UnfundedCommitment": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Amount of committed capital not yet funded by the investor."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "UnfundedCommitmentAdj": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Adjustments made to the unfunded commitments."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "DistributionsSubjectToRecall": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Total distributions that are subject to recall."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "TotalDistributions": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Total distributions made during the period of the statement. Do not take extract full distributions by the fund. Rather the distributions to the investor. Do not extract the values under inception to date (ITD). Do not extract the values under life to date (LTD). Do not extract the values under year to date (YTD)."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "CommitmentOnlyStatement": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "The amount corresponds to the total financial obligations or liabilities that have been agreed upon but not yet realized through actual transactions or payments"
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "Investor",
+                            "Account",
+                            "InvestorRefID",
+                            "AccountRefID",
+                            "FundID",
+                            "SeriesID",
+                            "SeriesDescription",
+                            "Security",
+                            "PeriodBeginningDT",
+                            "PeriodEndingDT",
+                            "Currency",
+                            "NetOpeningCapital",
+                            "Contributions",
+                            "ContributionOutsideCommitment",
+                            "Withdrawals",
+                            "RecallableDistribution",
+                            "ReturnOfCapital",
+                            "NetCapitalActivity",
+                            "TransfersIn",
+                            "TransfersOut",
+                            "NetTransfers",
+                            "IncomeDistribution",
+                            "RealizedGainLoss",
+                            "UnrealizedGainLoss",
+                            "NetGainLoss",
+                            "InvestmentIncome",
+                            "OtherIncomeLoss",
+                            "ManagementFee",
+                            "OtherExpenses",
+                            "CarriedInterest",
+                            "OtherAdjustments",
+                            "NetClosingCapital",
+                            "Quantity",
+                            "Price",
+                            "MTDPerformance",
+                            "QTDPerformance",
+                            "YTDPerformance",
+                            "IRR",
+                            "Commitment",
+                            "ContributionsToDate",
+                            "UnfundedCommitment",
+                            "UnfundedCommitmentAdj",
+                            "DistributionsSubjectToRecall",
+                            "TotalDistributions",
+                            "CommitmentOnlyStatement"
+                        ],
+                        "additionalProperties": false
+                    },
+                    "description": "Portfolio statement for a single investor and account."
+                }
+            },
+            "required": [
+                "portfolio"
+            ]
+        }
+    },
+    "required": [
+        "entities"
+    ],
+    "additionalProperties": false,
+    "definitions": {
+        "ConfidenceScore": {
+            "type": "string",
+            "enum": [
+                "HIGH",
+                "MID",
+                "LOW"
+            ],
+            "description": "Confidence score for the extracted value: 'HIGH' if the field name is mentioned as it is in the document, 'MID' if the key matches a semantically similar word, 'LOW' if the field is not matching exactly but AI system inferred this value. Feel free to show some fields with low confidence"
+        },
+        "VerbatimText": {
+            "type": "string",
+            "description": "The exact verbatim text extracted from the document for the corresponding field. Avoid any braces or brackets from the outputs. For currency, you might want to pick up symbols from the document."
+        },
+        "BoundingBox": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "Bounding box of the extracted value in the format [x1, y1, x2, y2]"
+        },
+        "PageNumber": {
+            "type": "number",
+            "description": "Page number of the extracted value"
+        }
+    }
+}

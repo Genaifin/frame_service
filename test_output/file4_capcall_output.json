@@ -1,0 +1,554 @@
+{
+    "doc_id": "9fd2e396-6f1e-48a3-9143-4e00133dc0cf",
+    "task_id": "9297fc1d-0e6a-4723-a74d-eaaaf2af11e9",
+    "ext_doc_id": null,
+    "original_filename": "file4_capcall.pdf",
+    "pipeline_status": "Completed_With_Error",
+    "error_message": "Bounding box extraction failed: Tesseract is not available for OCR processing",
+    "is_scanned": false,
+    "raw_text": "Capital Call & Distribution Summary\n2.01 Fund Name\nSection A:  Fund Level  / Cash Flow Information (Fund Local Currency)\n2.02 Issue Date (MM-DD-YYYY):\n2.03 Due Date (MM-DD-YYYY):\n2.04 Fund Local Currency:\n2.05 GP Commitment\n2.06 Fund Size, Including all AIVs (Fund Local Currency):\nFund Aggregate Calls / Distributions (Incl. GP's Share)\nContributions\n(Distributions)\n2.07 Cumulative Fund Amount (Prior To Current Notice):\n$151,049,202\n($38,080,262)\n2.08 Fund Amount (Current Notice)\n$31,311,835\n-\n                                             \nCumulative Fund Amount (Including Current Notice):\n$182,361,037\n($38,080,262)\nSection B:  LP Information (Fund Local Currency)\n2.09 LP / ID Number:\n2.10 LP Commitment:\nLP % of Fund (LP Commitment / Fund Size)\n2.11 LP % of Cap. Account (% of NAV)\n2.12 LP Unfunded Commitment (Prior to current notice)\n2.13 LP Cumulative Contributions (Prior to current notice)\n2.14 LP Cumulative Distributions (Prior to current notice)\nLP Balances / Totals (Fund Local Currency)\nTotal Unfunded Balance (Prior to Current Notice)\nImpact on Unfunded Balance (Current Notice)\nUnfunded Balance (Including Current Notice)\nAggregate Calls / Distributions\nContributions\nDistributions\n2.20 Cumulative LP Amount (Prior To Current Notice):\n$272,100\n($65,997)\nas a % of Fund Amount\n0.18%\n0.17%\n2.21 LP Amount (Current Notice):\n$57,865\n-\n                                             \nas a % of Fund Amount\n0.18%\n0.00%\n2.22 Cumulative LP Amount (Including Current Notice):\n$329,965\n($65,997)\nas a % of Fund Amount\n0.18%\n0.17%\n2.23 LP Total Net Amount Called / (Distributed) -\n Current Notice\n$288,500,000\nEthos Capital Investments LP\n6/26/2025\n7/10/2025\nUSD\n$37,250,000\n$227,900\nThe Robert A. Smith GRAT UAD 10/27/1994 FBO Madeleine \nSmith\n$500,000\n0.17%\n0.15%\n$227,900\n$272,100\n$65,997\n2.19 Unfunded Commitment\n($57,865)\n$170,035\n$57,865\nCONFIDENTIAL\nSection C:  Worksheet - LP Amounts (Fund Local Currency) - Please include any transactions that net to zero\n Value Impact on \nUnfunded \nCommitment \n(Net Contributed) \n Net Amount \nCalled / \n(Distributed) - \nCurrent Notice \nCapital Call for Deemed GP Contribution\n2,965.00\nDecreases\n($2,965)\n$2,965\nCapital Call for Management Fees\n4,907.00\nDecreases\n($4,907)\n$4,907\nCapital Call for Partnership Expenses\n1,217.00\nDecreases\n($1,217)\n$1,217\nCapital Call for Investments\n48,776.00\nDecreases\n($48,776)\n$48,776\nSection D: Side Calculations (Fund Local Currency)\n2.24 Management Fee Calculation (per Section 8.1 of LPA)\nTime Period:\nApril 1, 2025 through September 30, 2025\nCalculation Basis, per LPA:\nGross Calculation:\n$5,000\nWaiver Amount\n-\n                                \nFee Offset\n($93)\nCall: Mgmt. Fee (The Robert A. Smith GRAT UAD 10/27/1994 \nFBO Madeleine Smith):\n$4,907\n2.25 Cumulative Management Fees\n$29,294\n2.15 Holding Name / Transaction Description\n2.16 Transaction Type\n2.18 Impact on \nUnfunded Commitment\nCall: Deemed GP Contribution\nCall: Management Fee (inside commitment)\nCall: Partnership Expenses\nCall: Investments\n2.17 LP Amount\n 2.0% per annum of aggregate LP Commitment \nCONFIDENTIAL\n",
+    "cleaned_text": "CapitaI CaII & Distribution Summary 2.01 Fund Name Section A: Fund LeveI / Cash FIow Information (Fund LocaI Currency) 2.02 Issue Date (MM-DD-YYYY): 2.03 Due Date (MM-DD-YYYY): 2.04 Fund LocaI Currency: 2.05 GP Commitment 2.06 Fund Size, IncIuding aII AIVs (Fund LocaI Currency): Fund Aggregate CaIIs / Distributions (IncI. GP's Share) Contributions (Distributions) 2.07 CumuIative Fund Amount (Prior To Current Notice): USD 151049,202 ( USD 38080,262) 2.08 Fund Amount (Current Notice) USD 31311,835 - CumuIative Fund Amount (IncIuding Current Notice): USD 182361,037 ( USD 38080,262) Section B: LP Information (Fund LocaI Currency) 2.09 LP / ID Number: 2.10 LP Commitment: LP % of Fund (LP Commitment / Fund Size) 2.11 LP % of Cap. Account (% of NAV) 2.12 LP Unfunded Commitment (Prior to current notice) 2.13 LP CumuIative Contributions (Prior to current notice) 2.14 LP CumuIative Distributions (Prior to current notice) LP BaIances / TotaIs (Fund LocaI Currency) TotaI Unfunded BaIance (Prior to Current Notice) Impact on Unfunded BaIance (Current Notice) Unfunded BaIance (IncIuding Current Notice) Aggregate CaIIs / Distributions Contributions Distributions 2.20 CumuIative LP Amount (Prior To Current Notice): USD 272100 ( USD 65997) as a % of Fund Amount 0.18 percent 0.17 percent 2.21 LP Amount (Current Notice): USD 57865 - as a % of Fund Amount 0.18 percent 0.00 percent 2.22 CumuIative LP Amount (IncIuding Current Notice): USD 329965 ( USD 65997) as a % of Fund Amount 0.18 percent 0.17 percent 2.23 LP TotaI Net Amount CaIIed / (Distributed) - Current Notice USD 288500,000 Ethos CapitaI Investments LP 6/26/2025 7/10/2025 USD USD 37250,000 USD 227900 The Robert A. Smith GRAT UAD 10/27/1994 FB0 MadeIeine Smith USD 500000 0.17 percent 0.15 percent USD 227900 USD 272100 USD 65997 2.19 Unfunded Commitment ( USD 57865) USD 170035 USD 57865 C0NFIDENTIAL Section C: Worksheet - LP Amounts (Fund LocaI Currency) - PIease incIude any transactions that net to zero VaIue Impact on Unfunded Commitment (Net Contributed) Net Amount CaIIed / (Distributed) - Current Notice CapitaI CaII for Deemed GP Contribution 2965.00 Decreases ( USD 2965) USD 2965 CapitaI CaII for Management Fees 4907.00 Decreases ( USD 4907) USD 4907 CapitaI CaII for Partnership Expenses 1217.00 Decreases ( USD 1217) USD 1217 CapitaI CaII for Investments 48776.00 Decreases ( USD 48776) USD 48776 Section D: Side CaIcuIations (Fund LocaI Currency) 2.24 Management Fee CaIcuIation (per Section 8.1 of LPA) Time Period: ApriI 1, 2025 through September 30, 2025 CaIcuIation Basis, per LPA: Gross CaIcuIation: USD 5000 Waiver Amount - Fee 0ffset ( USD 93) CaII: Mgmt. Fee (The Robert A. Smith GRAT UAD 10/27/1994 FB0 MadeIeine Smith): USD 4907 2.25 CumuIative Management Fees USD 29294 2.15 HoIding Name / Transaction Description 2.16 Transaction Type 2.18 Impact on Unfunded Commitment CaII: Deemed GP Contribution CaII: Management Fee (inside commitment) CaII: Partnership Expenses CaII: Investments 2.17 LP Amount 2.0 percent per annum of aggregate LP Commitment C0NFIDENTIAL",
+    "classification_modality": "hybrid_classification",
+    "document_type": "CapCall",
+    "classification_confidence": 0.8075,
+    "extracted_data": {
+        "entities": [
+            {
+                "portfolio": [
+                    {
+                        "Investor": {
+                            "Value": "The Robert A. Smith GRAT UAD 10/27/1994 FB0 MadeIeine Smith",
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "The Robert A. Smith GRAT UAD 10/27/1994 FB0 MadeIeine Smith",
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Account": {
+                            "Value": "Ethos CapitaI Investments LP|The Robert A. Smith GRAT UAD 10/27/1994 FB0 MadeIeine Smith",
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "Ethos CapitaI Investments LP|The Robert A. Smith GRAT UAD 10/27/1994 FB0 MadeIeine Smith",
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "InvestorRefID": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "AccountRefID": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Fund_ID": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Series_ID": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Series_Description": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Security": {
+                            "Value": "Ethos CapitaI Investments LP",
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "Ethos CapitaI Investments LP",
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "TransactionDate": {
+                            "Value": "2025-07-10",
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "7/10/2025",
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Currency": {
+                            "Value": "USD",
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "USD",
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Distribution": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "DeemedCapitalCall": {
+                            "Value": 2965.0,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "USD 2965",
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "IncomeDistribution": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "IncomeReinvested": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "RecallableSell": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "ReturnOfCapital": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "DistributionOutsideCommitment": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "CapitalCall": {
+                            "Value": 57865.0,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "USD 57865",
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "CapitalCallOutsideCommitment": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "NetCashFlowQC": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "TransferIn": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "TransferOut": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Quantity": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Price": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "CommittedCapital": {
+                            "Value": 500000.0,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "USD 500000",
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "RemainingCommittedCapital": {
+                            "Value": 170035.0,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "USD 170035",
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "ContributionsToDate": {
+                            "Value": 272100.0,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "USD 272100",
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "DistributionsToDate": {
+                            "Value": 65997.0,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "USD 65997",
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "ReturnOfCapitalToDate": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "DeemedGPContribution": {
+                            "Value": 2965.0,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "USD 2965",
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Investments": {
+                            "Value": 48776.0,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "USD 48776",
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "ManagementFeeInsideCommitment": {
+                            "Value": 4907.0,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "USD 4907",
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "ManagementFeeOutsideCommitment": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "PartnershipExpenses": {
+                            "Value": 1217.0,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "USD 1217",
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "PartnershipExpensesAccountingAdminIT": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "PartnershipExpensesAuditTax": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "PartnershipExpensesBankFees": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "PartnershipExpensesCustodyFees": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "PartnershipExpensesDueDiligence": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "PartnershipExpensesLegal": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "PartnershipExpensesOrganizationCosts": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "PartnershipExpensesTravelEntertainment": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "PartnershipExpensesOther": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "PlacementAgentFees": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "SubsequentCloseInterest": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "WorkingCapital": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "validation_errors": [],
+    "events_log": [
+        {
+            "timestamp": "2025-11-10 17:12:11,758",
+            "level": "INFO",
+            "stage": "Ingestion",
+            "message": "Successfully ingested 'file4_capcall.pdf'. Document ID: 9fd2e396-6f1e-48a3-9143-4e00133dc0cf",
+            "details": null
+        },
+        {
+            "timestamp": "2025-11-10 17:12:11,774",
+            "level": "INFO",
+            "stage": "OCR",
+            "message": "Successfully processed through OCR Box: file4_capcall.pdf",
+            "details": null
+        },
+        {
+            "timestamp": "2025-11-10 17:12:11,776",
+            "level": "INFO",
+            "stage": "Preprocessing",
+            "message": "Successfully processed through Enhanced Preprocessing Box: file4_capcall.pdf",
+            "details": {
+                "quality_score": 1.0
+            }
+        },
+        {
+            "timestamp": "2025-11-10 17:12:14,979",
+            "level": "INFO",
+            "stage": "Classification",
+            "message": "Classified 'file4_capcall.pdf' as: CapCall (confidence: 0.81)",
+            "details": {
+                "document_type": "CapCall",
+                "confidence": 0.8075,
+                "confidence_level": "MEDIUM"
+            }
+        },
+        {
+            "timestamp": "2025-11-10 17:12:34,325",
+            "level": "INFO",
+            "stage": "Extraction",
+            "message": "Extraction completed for 'file4_capcall.pdf'",
+            "details": {
+                "extraction_quality": 1.0,
+                "extraction_confidence": null,
+                "processing_time": 19.34563398361206,
+                "extracted_data_present": false
+            }
+        },
+        {
+            "timestamp": "2025-11-10 17:12:34,326",
+            "level": "WARNING",
+            "stage": "BoundingBox",
+            "message": "Bounding box extraction failed: Bounding box extraction failed: Tesseract is not available for OCR processing",
+            "details": null
+        },
+        {
+            "timestamp": "2025-11-10 17:12:34,327",
+            "level": "INFO",
+            "stage": "Validation & Enrichment",
+            "message": "Validation & Enrichment completed for 'file4_capcall.pdf': no enrichment",
+            "details": null
+        },
+        {
+            "timestamp": "2025-11-10 17:12:34,327",
+            "level": "INFO",
+            "stage": "Output",
+            "message": "Successfully wrote output for 'file4_capcall.pdf' to test_output/file4_capcall_output.json",
+            "details": null
+        }
+    ],
+    "metadata": {
+        "preprocessing_quality": {
+            "quality_score": 1.0,
+            "warnings": [],
+            "metrics": {
+                "original_length": 3068,
+                "cleaned_length": 3056,
+                "length_reduction_ratio": 0.003911342894393742,
+                "word_count_original": 425,
+                "word_count_cleaned": 476,
+                "line_count_original": 135,
+                "line_count_cleaned": 1
+            }
+        },
+        "preserved_structure": {
+            "tables": [],
+            "lists": [
+                "-\n                                             \nCumulative Fund Amount (Including Current Notice):\n",
+                "-\n                                             \nas a % of Fund Amount\n",
+                "-\n                                \nFee Offset\n"
+            ],
+            "headers": [],
+            "dates": [
+                "6/26/2025",
+                "7/10/2025",
+                "10/27/1994",
+                "10/27/1994",
+                "April 1, 2025",
+                "September 30, 2025"
+            ],
+            "amounts": [
+                "$151,049,202",
+                "$38,080,262",
+                "$31,311,835",
+                "$182,361,037",
+                "$38,080,262",
+                "$272,100",
+                "$65,997",
+                "$57,865",
+                "$329,965",
+                "$65,997",
+                "$288,500,000",
+                "$37,250,000",
+                "$227,900",
+                "$500,000",
+                "$227,900",
+                "$272,100",
+                "$65,997",
+                "$57,865",
+                "$170,035",
+                "$57,865",
+                "$2,965",
+                "$2,965",
+                "$4,907",
+                "$4,907",
+                "$1,217",
+                "$1,217",
+                "$48,776",
+                "$48,776",
+                "$5,000",
+                "$93",
+                "$4,907",
+                "$29,294"
+            ],
+            "addresses": []
+        },
+        "cleaning_timestamp": "2025-11-10 17:12:11,776",
+        "text_quality_score": 0.0,
+        "classification_mode": "hybrid_classification",
+        "text_length": 3056,
+        "num_pages": 1,
+        "confidence_level": "MEDIUM",
+        "llm_provider": "openai",
+        "retry_count": 0,
+        "processing_time": 3.2028510570526123,
+        "file_hash": "19e320d33ec451502fc617f16cbd5c44",
+        "classification_metrics": {
+            "processing_time": 3.2028462886810303,
+            "api_calls": 1,
+            "retry_count": 0,
+            "provider_attempts": {
+                "openai": 1
+            },
+            "error_count": 0,
+            "cache_hits": 0,
+            "efficiency_score": 0.0
+        },
+        "extraction_mode": "structured_extraction",
+        "schema_loaded": true,
+        "is_scanned": false,
+        "schema_validation_passed": true,
+        "validation_errors": [],
+        "extraction_quality_score": 1.0,
+        "extraction_quality_level": "EXCELLENT",
+        "total_processing_time": 19.34563398361206,
+        "extraction_metrics": {
+            "total_processing_time": 19.345623016357422,
+            "extraction_time": 19.344510078430176,
+            "schema_validation_time": 5.9604644775390625e-06,
+            "post_processing_time": 0,
+            "api_calls": 1,
+            "retry_count": 0,
+            "validation_attempts": 1,
+            "error_count": 0,
+            "cache_hits": 0,
+            "token_usage": {
+                "input": 11448,
+                "output": 2288
+            },
+            "efficiency_score": 0.0,
+            "tokens_per_second": 710.0313056327965,
+            "model_used": "gpt-4o",
+            "prompt_tokens": 11448,
+            "completion_tokens": 2288,
+            "total_tokens": 13736,
+            "chunk_info": "single_pass"
+        },
+        "bounding_box_error": "Tesseract is not available for OCR processing",
+        "bounding_box_processing_time": 0.0007100105285644531,
+        "validation_passed": true,
+        "validation_errors_count": 0,
+        "validation_warnings_count": 0,
+        "validation_severity_counts": {
+            "CRITICAL": 0,
+            "HIGH": 0,
+            "MEDIUM": 0,
+            "LOW": 0,
+            "INFO": 0
+        },
+        "completeness_score": 1.0,
+        "accuracy_score": 1.0,
+        "consistency_score": 1.0,
+        "overall_quality_score": 1.0,
+        "validation_processing_time": 7.081031799316406e-05,
+        "enrichment_enabled": false,
+        "enrichment_skipped_reason": "No page data available or enrichment disabled",
+        "total_validation_enrichment_time": 0.0005829334259033203
+    }
+}

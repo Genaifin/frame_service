@@ -1,0 +1,480 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "BrokerageStatement",
+    "description": "A comprehensive JSON schema designed to facilitate the extraction and structuring of data from brokerage account statements. This schema encompasses detailed account information, financial metrics, and granular transaction logs to support accurate information retrieval and analysis.",
+    "type": "object",
+    "properties": {
+        "PeriodBeginningDT": {
+            "type": "string",
+            "description": "The start date of the reporting period, formatted as YYYY-MM-DD, indicating the beginning of the financial data covered in this statement."
+        },
+        "PeriodEndingDT": {
+            "type": "string",
+            "description": "The end date of the reporting period, formatted as YYYY-MM-DD, marking the conclusion of the financial data covered in this statement."
+        },
+        "Security": {
+            "type": "string",
+            "description": "The official name of the fund referenced in the document, typically located in the header. Fund names are usually extensive and may include designations like LLC, LLP, or similar identifiers."
+        },
+        "Account": {
+            "type": "string",
+            "description": "A concatenated string combining the fund name and the investor's name, separated by a pipe '|'. For example, 'ABC Investments|Scott' represents a combined account identifier."
+        },
+        "Currency": {
+            "type": "string",
+            "description": "The primary currency denomination used for all financial amounts in the statement, such as 'USD' for US Dollars, 'EUR' for Euros, or 'GBP' for British Pounds."
+        },
+        "Investor": {
+            "type": "string",
+            "description": "The complete legal name of the individual investor or the registered entity that holds ownership of the brokerage account."
+        },
+        "AccountNumber": {
+            "type": "string",
+            "description": "A unique alphanumeric identifier assigned to the brokerage account, serving as the primary reference for account-related activities and transactions."
+        },
+        "InvestmentCounsellor": {
+            "type": "string",
+            "description": "The full name of the designated financial advisor or investment counsellor responsible for managing and providing guidance for this brokerage account."
+        },
+        "FinancialAdvisor": {
+            "type": "string",
+            "description": "The full name of the designated financial advisor or investment counsellor responsible for managing and providing guidance for this brokerage account."
+        },
+        "PrivateClientAssociate": {
+            "type": "string",
+            "description": "Names of any additional client service representatives or associates who assist in managing this brokerage account."
+        },
+        "BranchAddress": {
+            "type": "string",
+            "description": "The full mailing address of the specific branch office of the brokerage firm responsible for managing this account."
+        },
+        "PreviousPeriodBalance": {
+            "type": "number",
+            "description": "The total account balance recorded at the end of the preceding reporting period, serving as the opening balance for the current period."
+        },
+        "OpeningBalance": {
+            "type": "number",
+            "description": "The total cash balance available in the account at the start of the current reporting period."
+        },
+        "ClosingBalance": {
+            "type": "number",
+            "description": "The total cash balance present in the account at the end of the current reporting period."
+        },
+        "TotalValue": {
+            "type": "number",
+            "description": "The aggregate market value of all assets held within the account, encompassing both cash holdings and securities."
+        },
+        "MarketValuePerAssetClass": {
+            "type": "array",
+            "description": "An array detailing the total market value associated with each distinct asset class within the account.",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "AssetClass": {
+                        "type": "string",
+                        "description": "The specific category of the asset, such as 'Cash', 'CommonShares', 'MutualFunds', or 'ForeignSecurities'."
+                    },
+                    "MarketValue": {
+                        "type": "number",
+                        "description": "The total market value attributed to this particular asset class within the account."
+                    }
+                },
+                "required": [
+                    "AssetClass",
+                    "MarketValue"
+                ]
+            }
+        },
+        "AssetDetails": {
+            "type": "array",
+            "description": "An array providing detailed information on each individual security or asset held within the account, including their respective values.",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Description": {
+                        "type": "string",
+                        "description": "The full name or detailed description of the individual security or asset. Ensure that all descriptive information is captured accurately without omissions."
+                    },
+                    "Type": {
+                        "type": "string",
+                        "description": "The classification of the security, such as 'CommonShares', 'Equity', 'Fixed Income', 'Mutual Fund', 'ETF', 'Bond', 'Stock', 'Option', 'Warrant', 'Right', 'Trust', or 'Other'."
+                    },
+                    "Quantity": {
+                        "type": "number",
+                        "description": "The total number of shares or units currently held for this specific asset."
+                    },
+                    "MarketValue": {
+                        "type": "number",
+                        "description": "The present market value of the holding in this asset, reflecting current trading prices or valuations."
+                    },
+                    "BookCost": {
+                        "type": "number",
+                        "description": "The original purchase price or the adjusted cost basis of this asset holding, indicating the investor's cost per unit."
+                    }
+                },
+                "required": [
+                    "Description",
+                    "Quantity",
+                    "MarketValue",
+                    "BookCost"
+                ]
+            }
+        },
+        "IncomeSummary": {
+            "type": "object",
+            "description": "A detailed summary categorizing the various income streams generated by the account's investments during the reporting period.",
+            "properties": {
+                "Dividends": {
+                    "type": "number",
+                    "description": "The aggregate amount of dividend payments received from stock or equity holdings within the account during the reporting period."
+                },
+                "Interest": {
+                    "type": "number",
+                    "description": "The total interest earned from fixed-income securities, bonds, or cash balances held in the account during the reporting period."
+                },
+                "TotalIncome": {
+                    "type": "number",
+                    "description": "The cumulative sum of all income earned during the reporting period, including dividends, interest, and any other income sources."
+                }
+            },
+            "required": [
+                "Dividends",
+                "Interest",
+                "TotalIncome"
+            ]
+        },
+        "TaxWithholding": {
+            "type": "object",
+            "description": "Detailed information regarding any taxes withheld from the investment income, typically applicable to non-resident account holders.",
+            "properties": {
+                "Dividends": {
+                    "type": "number",
+                    "description": "The amount of tax that has been withheld from dividend payments received by the account."
+                },
+                "Interest": {
+                    "type": "number",
+                    "description": "The amount of tax that has been withheld from interest income earned by the account."
+                }
+            },
+            "required": [
+                "Dividends",
+                "Interest"
+            ]
+        },
+        "FeesAndExpenses": {
+            "type": "array",
+            "description": "A comprehensive list of all fees and expenses charged to the account during the reporting period.",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Date": {
+                        "type": "string",
+                        "description": "The specific date on which the fee or expense was applied to the account."
+                    },
+                    "Description": {
+                        "type": "string",
+                        "description": "A concise explanation of the nature and purpose of the fee or expense charged."
+                    },
+                    "Amount": {
+                        "type": "number",
+                        "description": "The monetary value of the fee or expense charged to the account."
+                    }
+                },
+                "required": [
+                    "Date",
+                    "Description",
+                    "Amount"
+                ]
+            }
+        },
+        "AccountActivity": {
+            "type": "array",
+            "description": "A chronological record of all transactions and activities that have taken place in the account during the reporting period.",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "AssetCategory": {
+                        "type": "string",
+                        "description": "The specific category of the asset involved in the transaction, such as 'Equity', 'Fixed Income', 'Cash', or 'Other'."
+                    },
+                    "AccountType": {
+                        "type": "string",
+                        "description": "The classification type of the account, including options like 'Brokerage', 'RRSP' (Registered Retirement Savings Plan), 'TFSA' (Tax-Free Savings Account), or 'RESP' (Registered Education Savings Plan)."
+                    },
+                    "FutureSettlingTrade": {
+                        "type": "boolean",
+                        "description": "A flag indicating whether the transaction is a future settlement trade."
+                    },
+                    "Date": {
+                        "type": "string",
+                        "description": "The date on which the transaction or account activity occurred, formatted as YYYY-MM-DD."
+                    },
+                    "Activity": {
+                        "type": "string",
+                        "description": "The specific type of transaction or activity, such as 'DIVIDEND', 'SOLD', 'BOUGHT', 'DEPOSIT', or 'WITHDRAWAL'."
+                    },
+                    "Description": {
+                        "type": "string",
+                        "description": "A detailed narrative describing the nature of the security involved or providing context for the transaction."
+                    },
+                    "Quantity": {
+                        "type": "number",
+                        "description": "The number of shares or units involved in the transaction, where applicable."
+                    },
+                    "PriceRate": {
+                        "type": "number",
+                        "description": "The price per share or unit for the transaction, or the interest rate applied if relevant."
+                    },
+                    "Debit": {
+                        "type": [
+                            "number",
+                            "null"
+                        ],
+                        "description": "The amount debited from the account as part of this transaction, if applicable."
+                    },
+                    "Credit": {
+                        "type": [
+                            "number",
+                            "null"
+                        ],
+                        "description": "The amount credited to the account as part of this transaction, if applicable."
+                    }
+                },
+                "required": [
+                    "Date",
+                    "Activity",
+                    "Description",
+                    "Quantity",
+                    "PriceRate",
+                    "Debit",
+                    "Credit"
+                ]
+            }
+        },
+        "Footnotes": {
+            "type": "array",
+            "description": "A collection of additional explanatory notes, legal disclaimers, or other important information related to the brokerage statement.",
+            "items": {
+                "type": "string",
+                "description": "Individual footnote or disclaimer text entries providing supplementary information."
+            }
+        },
+        "CustodianInfo": {
+            "type": "object",
+            "description": "Information about the financial institution acting as the custodian, responsible for holding the securities on behalf of the investor.",
+            "properties": {
+                "Name": {
+                    "type": "string",
+                    "description": "The official legal name of the custodian financial institution."
+                },
+                "AccountNumber": {
+                    "type": "string",
+                    "description": "The unique account number assigned by the custodian, which may differ from the primary brokerage account number."
+                }
+            },
+            "required": [
+                "Name",
+                "AccountNumber"
+            ]
+        },
+        "AccountHolders": {
+            "type": "array",
+            "description": "A list enumerating all individuals or entities that possess ownership rights or stakes in this brokerage account.",
+            "items": {
+                "type": "string",
+                "description": "The full legal name of each account holder associated with the brokerage account."
+            }
+        },
+        "ConfidenceScore": {
+            "type": "object",
+            "properties": {
+                "PeriodBeginningDT": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "PeriodEndingDT": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "Security": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "Account": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "Currency": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "Investor": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "AccountNumber": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "InvestmentCounsellor": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "PrivateClientAssociate": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "BranchAddress": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "PreviousPeriodBalance": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "OpeningBalance": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "ClosingBalance": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "TotalValue": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "MarketValuePerAssetClass": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "AssetDetails": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "IncomeSummary": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "TaxWithholding": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "FeesAndExpenses": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "AccountActivity": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "Footnotes": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "CustodianInfo": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "AccountHolders": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                }
+            }
+        },
+        "VerbatimText": {
+            "type": "object",
+            "properties": {
+                "PeriodBeginningDT": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "PeriodEndingDT": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "Security": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "Account": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "Currency": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "Investor": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "AccountNumber": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "InvestmentCounsellor": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "PrivateClientAssociate": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "BranchAddress": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "PreviousPeriodBalance": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "OpeningBalance": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "ClosingBalance": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "TotalValue": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "MarketValuePerAssetClass": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "AssetDetails": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "IncomeSummary": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "TaxWithholding": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "FeesAndExpenses": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "AccountActivity": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "Footnotes": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "CustodianInfo": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "AccountHolders": {
+                    "$ref": "#/definitions/VerbatimText"
+                }
+            }
+        }
+    },
+    "required": [
+        "DocumentName",
+        "Security",
+        "Account",
+        "PeriodBeginningDT",
+        "PeriodEndingDT",
+        "Currency",
+        "Investor",
+        "AccountNumber",
+        "InvestmentCounsellor",
+        "PrivateClientAssociate",
+        "BranchAddress",
+        "PreviousPeriodBalance",
+        "OpeningBalance",
+        "ClosingBalance",
+        "TotalValue",
+        "MarketValuePerAssetClass",
+        "AssetDetails",
+        "IncomeSummary",
+        "TaxWithholding",
+        "FeesAndExpenses",
+        "AccountActivity",
+        "Footnotes",
+        "CustodianInfo",
+        "AccountHolders",
+        "ConfidenceScore",
+        "VerbatimText"
+    ],
+    "definitions": {
+        "ConfidenceScore": {
+            "type": "string",
+            "enum": [
+                "HIGH",
+                "MID",
+                "LOW"
+            ],
+            "description": "Confidence score for the extracted value: 'HIGH' if the field name is mentioned exactly as it appears in the document, 'MID' if the key matches a semantically similar term, and 'LOW' if the field is inferred by the AI system without an exact match. It's acceptable to have some fields with a low confidence score."
+        },
+        "VerbatimText": {
+            "type": "string",
+            "description": "The exact text extracted from the document corresponding to the specific field. Ensure that no braces or brackets are included in the output. For currency fields, include any symbols present in the document."
+        }
+    }
+}

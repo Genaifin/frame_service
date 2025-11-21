@@ -1,0 +1,46 @@
+{
+  "title": "PORTFOLIO COMPANY DETAILS",
+  "isEditable": true,
+  "onEditClick": {
+    "type": "navigation",
+    "to": "/frame/portfolio-companies/edit",
+    "parameters": [
+      {
+        "key": "portfolio_company_id",
+        "value": 1
+      }
+    ]
+  },
+  "sections": [
+    {
+      "fields": [
+        {
+          "label": "Portfolio Company ID",
+          "value": 1
+        },
+        {
+          "label": "Portfolio Company Name",
+          "value": "Avitex BioPharma Inc"
+        },
+        {
+          "label": "Sector",
+          "value": "Pharma"
+        },
+        {
+          "label": "Geography",
+          "value": "USA"
+        },
+        {
+          "label": "Investment Date",
+          "value": "02/08/2025"
+        },
+        {
+          "label": "Status",
+          "value": "Invested",
+          "type": "status-badge"
+        }
+      ]
+    }
+  ]
+}
+

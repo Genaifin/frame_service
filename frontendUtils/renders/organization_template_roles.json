@@ -1,0 +1,61 @@
+{
+    "rowClickEnabled": true,
+    "rowClickAction": {
+      "type": "storeValues",
+      "store": {
+        "key": "commonRightDrawer",
+        "value": {
+          "page": "detailedInfo",
+          "getAPIURL": "/api/roles/details",
+          "parameters": [
+            {
+              "name": "role_id",
+              "value": "",
+              "dynamicValue": {
+                "enabled": true,
+                "id": "roleID"
+              }
+            }
+          ],
+          "isOpen": true
+        }
+      }
+    },
+    "colsToShow": ["roleID", "role", "totalUsers", "products", "status"],
+    "columnConfig": {
+      "roleID": {
+        "name": "Role ID",
+        "filter": "true",
+        "suppressHeaderMenuButton": false
+      },
+      "role": {
+        "name": "Role",
+        "filter": "true",
+        "suppressHeaderMenuButton": false
+      },
+      "totalUsers": {
+        "name": "Total Users",
+        "filter": "true",
+        "suppressHeaderMenuButton": false
+      },
+      "products": {
+        "name": "Products",
+        "filter": "true",
+        "suppressHeaderMenuButton": false
+      },
+      "status": {
+        "name": "Status",
+        "filter": "true",
+        "customCellRenderer": "statusAggregator",
+        "suppressHeaderMenuButton": false
+      }
+    },
+    "rowData": [],
+    "pagination": {
+      "current_page": 1,
+      "page_size": 10,
+      "total_pages": 1
+    }
+  }
+  
+  

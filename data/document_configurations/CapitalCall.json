@@ -1,0 +1,164 @@
+{
+  "response": [
+    {
+      "schema_id": 1,
+      "document_type_id": 1,
+      "document_type": "Capital Call",
+      "is_active": true,
+      "created_at": "2025-02-12T10:42:04.954746",
+      "updated_at": "2025-02-12T10:42:04.954746",
+      "description": "A capital call (also known as a draw down or a capital commitment) is a legal right of an investment firm or an insurance firm to demand a portion of the money promised to it by an investor. A capital call fund would be the money that had been committed to the fund.",
+      "sla": "T + 0 Days",
+      "schema_blob": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "Account": {
+            "type": "string",
+            "description": "This is the fund name and investor name combined in a piped format. For instance, if fund name is 'ABC Investments' and investor is 'Scott', then account is 'ABC Investments|Scott'."
+          },
+          "AccountRefID": {
+            "type": "string",
+            "description": "Unique reference identifier linking to the specific account in the account master table"
+          },
+          "CapitalCall": {
+            "type": "number",
+            "description": "Standard capital call amount requested from the investor within their remaining committed capital"
+          },
+          "CapitalCallOutsideCommitment": {
+            "type": "number",
+            "description": "Capital call amount that exceeds the investor's original commitment (typically requires special consent)"
+          },
+          "CommittedCapital": {
+            "type": "number",
+            "description": "Total capital amount the investor has legally committed to invest in the fund over its life"
+          },
+          "ContributionsToDate": {
+            "type": "number",
+            "description": "Total cumulative capital contributions made by the investor from inception to date"
+          },
+          "Currency": {
+            "type": "string",
+            "description": "ISO 4217 three-letter currency code for the transaction (e.g., USD, EUR, GBP)"
+          },
+          "DeemedCapitalCall": {
+            "type": "number",
+            "description": "Capital call that is automatically invested rather than paid in cash, often used for reinvested income or automatic contributions"
+          },
+          "Distribution": {
+            "type": "number",
+            "description": "Total distribution amount for the current transaction, including all distribution types"
+          },
+          "DistributionOutsideCommitment": {
+            "type": "number",
+            "description": "Distributions related to investments made outside the original commitment structure"
+          },
+          "DistributionsToDate": {
+            "type": "number",
+            "description": "Total cumulative distributions paid to the investor from inception, including both return of capital and income/gains"
+          },
+          "IncomeDistribution": {
+            "type": "number",
+            "description": "Income or profit distribution paid out to the investor (dividends, interest, capital gains)"
+          },
+          "IncomeReinvested": {
+            "type": "number",
+            "description": "Income or gains that are automatically reinvested into additional fund units rather than distributed as cash"
+          },
+          "Investor": {
+            "type": "string",
+            "description": "Human-readable name or description of the investor (individual, entity, or institution name)"
+          },
+          "InvestorRefID": {
+            "type": "string",
+            "description": "Unique reference identifier linking to the specific investor in the investor master table"
+          },
+          "NetCashFlowQC": {
+            "type": "number",
+            "description": "Net cash flow for the quarter/period; positive for capital calls, negative for distributions"
+          },
+          "Price": {
+            "type": "number",
+            "description": "Unit price or net asset value (NAV) per share/unit at the time of transaction"
+          },
+          "Quantity": {
+            "type": "number",
+            "description": "Number of shares, units, or partnership interests involved in the transaction"
+          },
+          "RecallableSell": {
+            "type": "number",
+            "description": "Amount from a sale/redemption that can be recalled by the fund manager if needed for future obligations"
+          },
+          "RemainingCommittedCapital": {
+            "type": "number",
+            "description": "Unfunded commitment amount still available to be called; calculated as CommittedCapital minus ContributionsToDate"
+          },
+          "ReturnOfCapital": {
+            "type": "number",
+            "description": "Current period distribution representing return of the investor's original invested capital (principal)"
+          },
+          "ReturnOfCapitalToDate": {
+            "type": "number",
+            "description": "Cumulative amount of original invested capital returned to the investor from inception to date, excluding profit distributions"
+          },
+          "Security": {
+            "type": "string",
+            "description": "Identifier or name of the fund, investment vehicle, or security involved in the transaction"
+          },
+          "TransactionDate": {
+            "type": "string",
+            "description": "The effective date when the transaction occurred or is scheduled to occur"
+          },
+          "TransferIn": {
+            "type": "number",
+            "description": "Capital amount transferred into the account (e.g., from another investor or account)"
+          },
+          "TransferOut": {
+            "type": "number",
+            "description": "Capital amount transferred out of the account (e.g., to another investor or account)"
+          },
+          "VerbatimText": {
+            "type": "object"
+          },
+          "ConfidenceScore": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "Account",
+          "CapitalCall",
+          "Currency",
+          "Investor",
+          "Security",
+          "TransactionDate",
+          "VerbatimText",
+          "ConfidenceScore"
+        ],
+        "additionalProperties": false,
+        "definitions": {
+          "ConfidenceScore": {
+            "type": "string",
+            "enum": [
+              "HIGH",
+              "MID",
+              "LOW"
+            ],
+            "description": "Confidence score for the extracted value: 'HIGH' if the field name is mentioned as it is in the document, 'MID' if the key matches a semantically similar word, 'LOW' if the field is not matching exactly but AI system inferred this value. Feel free to show some fields with low confidence"
+          },
+          "VerbatimText": {
+            "type": "string",
+            "description": "The exact verbatim text extracted from the document for the corresponding field. Avoid any braces or brackets from the outputs. For currency, you might want to pick up symbols from the document."
+          }
+        }
+      },
+      "meta_schema_blob": null,
+      "meta_data": null
+    }
+  ],
+  "pagination": {
+    "total_count": 1,
+    "total_pages": 1,
+    "current_page": 1,
+    "page_size": 10
+  }
+}

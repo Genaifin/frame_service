@@ -1,0 +1,663 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "ILPA Statement Data",
+    "type": "object",
+    "properties": {
+        "LpAllocationOfTotalFund": {
+            "type": "number",
+            "description": "Balances that represent a single LP's interest in the Total Fund; Estimations are acceptable for any single LP amount that's denoted with a '****'."
+        },
+        "TotalFundIncludingGpAllocation": {
+            "type": "number",
+            "description": "Balances that represent the cumulative interest of a single fund, including all of its side/parallel vehicles (current and liquidated)."
+        },
+        "GpAllocationOfTotalFund": {
+            "type": "number",
+            "description": "Balances that represent the interest of the legal entity, including any Related Parties, that manages the fund."
+        },
+        "BeginningNavNetOfIncentiveAllocation": {
+            "type": "number",
+            "description": "The valuation of the Fund at the beginning of the period for a given investor, or group of investors; this balance is reflective of any incentive allocation that was attributable to the GP at the beginning of the period."
+        },
+        "NonCashContributionsAndDistributions": {
+            "type": "number",
+            "description": "Includes any in-kind transactions (e.g., stock distributions) and/or 'netted' transactions (i.e., call and distribution called on the same date that fully offset each other)."
+        },
+        "ManagementFeeRebate": {
+            "type": "number",
+            "description": "Refund of any prior management fees to the Fund's investors."
+        },
+        "PartnershipExpenses": {
+            "type": "object",
+            "description": "Various expenses charged to the Fund for different services and activities.",
+            "properties": {
+                "AccountingAdministrationIt": {
+                    "type": "number",
+                    "description": "Expenses charged to the Fund for fund administration, including accounting, valuation services, filing fees, and IT activities; excludes expenses for audit and tax preparation."
+                },
+                "AuditTaxPreparatory": {
+                    "type": "number",
+                    "description": "Expenses charged to the Fund for the audit of the Fund's financial records and for the preparation of any tax documents related to the Fund; excludes costs related to organizing the Fund, investment due diligence, and fund administration expenses."
+                },
+                "BankFees": {
+                    "type": "number",
+                    "description": "Expenses charged to the Fund for banking/finance services; excludes fund administration expenses and interest; includes fees related to credit facilities and other short-term financing at the fund level."
+                },
+                "CustodyFees": {
+                    "type": "number",
+                    "description": "Expenses charged to the Fund for the registration of securities and other custody-related activities; excludes fund administration expenses."
+                },
+                "DueDiligence": {
+                    "type": "number",
+                    "description": "Expenses charged to the Fund to confirm all material assumptions regarding potential investment opportunities; includes costs linked to due diligence of specific investment opportunities, both consummated and unconsummated deals; excludes management fees and costs of identifying and sourcing potential investment opportunities."
+                },
+                "Legal": {
+                    "type": "number",
+                    "description": "Expenses charged to the Fund for legal services on behalf of the Fund; includes legal analysis to interpret or amend the Fund's LPA; excludes legal costs associated with organizing/administering the fund or investment due diligence."
+                },
+                "OrganizationCosts": {
+                    "type": "number",
+                    "description": "Expenses charged to the Fund for the establishment of the Fund, including any legal/audit costs; excludes fund administration expenses or Placement Fees."
+                },
+                "OtherTravelEntertainment": {
+                    "type": "number",
+                    "description": "Expenses charged to the Fund related to travel & entertainment on behalf of the Fund; may include travel related to LPAC meetings or unreimbursed portfolio company meetings; excludes travel costs associated with due diligence."
+                },
+                "Other": {
+                    "type": "number",
+                    "description": "Expenses charged to the Fund, not described elsewhere; may include annual meeting expenses, insurance, partnership level taxes, and deal origination/monitoring expenses; explanations for any YTD amounts included in this field must be footnoted."
+                }
+            }
+        },
+        "TotalOffsetsToFeesExpensesAppliedDuringPeriod": {
+            "type": "number",
+            "description": "Total amount that recognized fund management fees/expenses were reduced by during the period, to the benefit of the Fund's investors, resulting from fees/expenses received by the GP/Manager/Related Party."
+        },
+        "AdvisoryFeeOffset": {
+            "type": "number",
+            "description": "Offset for any fees/costs paid to the GP/Manager/Related Party relating to consultancy services provided to portfolio companies."
+        },
+        "BrokenDealFeeOffset": {
+            "type": "number",
+            "description": "Offset for any termination fees/costs received from counterparties of the Fund's unconsummated deals."
+        },
+        "TransactionDealFeeOffset": {
+            "type": "number",
+            "description": "Offset for any fees/costs paid to the GP/Manager/Related Party regarding the purchase and sale of investments (excluding Broken Deal Fees)."
+        },
+        "DirectorsFeeOffset": {
+            "type": "number",
+            "description": "Offset for any fees paid to the GP/Manager/Related Party for their role on a portfolio company's board of directors; includes any non-cash compensation."
+        },
+        "MonitoringFeeOffset": {
+            "type": "number",
+            "description": "Offset for any fees, including accelerated monitoring fees, paid to the GP/Manager/Related Party as part of an agreement between the portfolio company and the GP/Manager/Related Party."
+        },
+        "CapitalMarketsFeeOffset": {
+            "type": "number",
+            "description": "Offset for any fees/costs paid to the GP/Manager/Related Party for their role in securing financing for a company; excludes any Transaction & Deal Fees."
+        },
+        "OrganizationCostOffset": {
+            "type": "number",
+            "description": "Offset for any costs related to the establishment of the Fund; typically, LP offsets are provided for amounts in excess of a predetermined value; exclude any offsets for Placement Fees."
+        },
+        "PlacementFeeOffset": {
+            "type": "number",
+            "description": "Offset for fees/costs paid to the GP/Manager/Related Parties, or paid to outside parties, for fundraising services."
+        },
+        "OtherOffsets": {
+            "type": "number",
+            "description": "Offset for any remaining fees/costs paid to the GP/Manager/Related Party, subject to LP offset, not listed elsewhere."
+        },
+        "UnappliedOffsetBalanceBeginning": {
+            "type": "number",
+            "description": "Prior period ending balance for any fees/expenses, subject to offset against fund management fees/expenses, that have been recognized but not yet credited to the benefit of the Fund's investors."
+        },
+        "TotalOffsetsToFeesExpensesRecognizedDuringPeriod": {
+            "type": "number",
+            "description": "Periodic fees/expenses, subject to offset against fund management fees/expenses, that were credited to the benefit of the Fund's investors."
+        },
+        "UnappliedOffsetBalanceEnding": {
+            "type": "number",
+            "description": "Current period ending balance for any fees/expenses, subject to offset against fund management fees/expenses, that have been recognized but not yet credited to the benefit of the Fund's investors."
+        },
+        "TotalManagementFeesPartnershipExpensesNetOfOffsetsRebatesGrossOfFeeWaiver": {
+            "type": "number",
+            "description": "Periodic gross management fees and fund expenses, less any Fee Waiver and Total Offsets to Fees & Expenses applied during the period."
+        },
+        "FeeWaiver": {
+            "type": "number",
+            "description": "Any waiver of management fees in lieu of assuming the GP's commitment obligations to the Fund."
+        },
+        "PlacementFees": {
+            "type": "number",
+            "description": "Fees/costs paid to the GP/Manager/Related Party, or to outside parties, for fundraising services."
+        },
+        "RealizedGainLoss": {
+            "type": "number",
+            "description": "Changes in the Fund's valuation attributable to full or partial sales of investments; gain/loss is presented on a net-of-incentive-allocation basis."
+        },
+        "ChangeInUnrealizedGainLoss": {
+            "type": "number",
+            "description": "Changes in the Fund's valuation attributable to investments still held by the Fund; gain/loss is presented on a net-of-incentive-allocation basis."
+        },
+        "EndingNavNetOfIncentiveAllocation": {
+            "type": "number",
+            "description": "The valuation of the Fund at the end of the period for a given investor, or group of investors; this balance is reflective of any incentive allocation attributable to the GP at the end of the period."
+        },
+        "AccruedIncentiveAllocationStartingBalance": {
+            "type": "number",
+            "description": "Prior period ending balance for GP's/Manager's/Related Parties' expected share of any unrealized profits that would be paid upon realization of all remaining investments."
+        },
+        "IncentiveAllocationPaidDuringPeriod": {
+            "type": "number",
+            "description": "GP's/Managers'/Related Parties' share of any realized profits from an investment, less any returned Clawback."
+        },
+        "AccruedIncentiveAllocationPeriodicChange": {
+            "type": "number",
+            "description": "Periodic change in GP's/Managers'/Related Parties' expected share of any unrealized profits."
+        },
+        "AccruedIncentiveAllocationEndingBalance": {
+            "type": "number",
+            "description": "Current period ending balance for GP's/Manager's/Related Parties' expected share of any unrealized profits."
+        },
+        "IncentiveAllocationEarnedPeriodEndBalance": {
+            "type": "number",
+            "description": "Estimated period-end balance for GP's/Managers'/Related Parties' share of any realized profits from investments, less any Returned Clawback."
+        },
+        "IncentiveAllocationAmountHeldInEscrowPeriodEndBalance": {
+            "type": "number",
+            "description": "Period-end balance for the portion of the GP's/Managers'/Related Parties' share of any realized profits that has been collected but is currently held in a third-party account."
+        },
+        "ReturnedClawback": {
+            "type": "number",
+            "description": "Excess Incentive Allocation paid to the GP/Manager/Related Parties, including amounts held in escrow, which has been returned to the Fund."
+        },
+        "CapitalizedTransactionFeesExpensesPaidToNonRelatedParties": {
+            "type": "number",
+            "description": "Any fees & expenses rolled into the cost basis of the Fund's investments that are paid by the Fund's investors to non-Related Parties."
+        },
+        "DistributionsRelatingToFeesExpenses": {
+            "type": "number",
+            "description": "Estimated portion of distributions that are attributed to the return of any fees/expenses paid."
+        },
+        "FundOfFundsGrossFeesExpensesIncentiveAllocationPaidToUnderlyingFunds": {
+            "type": "number",
+            "description": "Additional layer of fees/expenses/Incentive Allocation charged by the underlying funds held by the Fund-of-Funds."
+        },
+        "WithRespectToTheFundsLps": {
+            "type": "number",
+            "description": "Fees, expenses, and incentive allocation paid/accrued by the Fund's LPs to the GP/Management/Related Parties."
+        },
+        "WithRespectToTheFundsPortfolioCompaniesInvestments": {
+            "type": "number",
+            "description": "Fees, expenses, and reimbursements paid/accrued by the Fund's portfolio holdings to the GP/Manager/Related Parties."
+        },
+        "CumulativeLpsAllocationOfTotalFund": {
+            "type": "number",
+            "description": "Balances that represent the cumulative interest of a single fund, less the GP's Allocation of Total Fund."
+        },
+        "PartnershipExpensesPaidToGpRelatedPartiesNetOfOffsets": {
+            "type": "number",
+            "description": "Share of total partnership expenses paid to the GP/Manager/Related Parties for services provided to the Fund."
+        },
+        "CapitalizedTransactionFeesExpensesPaidToGpRelatedParties": {
+            "type": "number",
+            "description": "Any fees & expenses rolled into the cost basis of the Fund's investments that are paid by the Fund to the GP/Manager/Related Parties."
+        },
+        "AdvisoryFees": {
+            "type": "number",
+            "description": "Fees/costs paid/accrued to the GP/Manager/Related Parties relating to consultancy services provided to portfolio companies."
+        },
+        "BrokenDealFees": {
+            "type": "number",
+            "description": "Termination fees/costs received from counterparties of the Fund's unconsummated deals."
+        },
+        "TransactionDealFees": {
+            "type": "number",
+            "description": "Fees/costs paid/accrued to the GP/Manager/Related Party regarding the purchase and sale of investments."
+        },
+        "DirectorsFees": {
+            "type": "number",
+            "description": "Fees/costs paid/accrued to the GP/Manager/Related Party for their role on a portfolio company's board of directors; includes any non-cash compensation."
+        },
+        "MonitoringFees": {
+            "type": "number",
+            "description": "Fees/costs paid/accrued to the GP/Manager/Related Party as part of an agreement between the portfolio company and the GP/Manager/Related Party."
+        },
+        "CapitalMarketsFees": {
+            "type": "number",
+            "description": "Fees/costs paid/accrued to the GP/Manager/Related Party for their role in securing financing for a portfolio company."
+        },
+        "OtherFees": {
+            "type": "number",
+            "description": "Any remaining fees/costs paid/accrued to the GP/Manager/Related Party not listed elsewhere."
+        },
+        "TotalReimbursementsForTravelAdministrativeExpenses": {
+            "type": "number",
+            "description": "Repayment of any travel or other administrative expenses from the Fund's portfolio investment to the GP/Manager/Related Party."
+        },
+        "ConfidenceScore": {
+            "type": "object",
+            "description": "Confidence levels indicating the reliability of the extracted values for each field.",
+            "properties": {
+                "LpAllocationOfTotalFund": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "TotalFundIncludingGpAllocation": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "GpAllocationOfTotalFund": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "BeginningNavNetOfIncentiveAllocation": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "NonCashContributionsAndDistributions": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "ManagementFeeRebate": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "PartnershipExpensesAuditTaxPreparatory": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "PartnershipExpensesBankFees": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "PartnershipExpensesCustodyFees": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "PartnershipExpensesDueDiligence": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "PartnershipExpensesLegal": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "PartnershipExpensesOrganizationCosts": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "PartnershipExpensesOtherTravelEntertainment": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "PartnershipExpensesOther": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "TotalOffsetsToFeesExpensesAppliedDuringPeriod": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "AdvisoryFeeOffset": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "BrokenDealFeeOffset": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "TransactionDealFeeOffset": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "DirectorsFeeOffset": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "MonitoringFeeOffset": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "CapitalMarketsFeeOffset": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "OrganizationCostOffset": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "PlacementFeeOffset": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "OtherOffsets": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "UnappliedOffsetBalanceBeginning": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "TotalOffsetsToFeesExpensesRecognizedDuringPeriod": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "UnappliedOffsetBalanceEnding": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "TotalManagementFeesPartnershipExpensesNetOfOffsetsRebatesGrossOfFeeWaiver": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "FeeWaiver": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "PlacementFees": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "RealizedGainLoss": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "ChangeInUnrealizedGainLoss": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "EndingNavNetOfIncentiveAllocation": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "AccruedIncentiveAllocationStartingBalance": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "IncentiveAllocationPaidDuringPeriod": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "AccruedIncentiveAllocationPeriodicChange": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "AccruedIncentiveAllocationEndingBalance": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "IncentiveAllocationEarnedPeriodEndBalance": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "IncentiveAllocationAmountHeldInEscrowPeriodEndBalance": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "ReturnedClawback": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "CapitalizedTransactionFeesExpensesPaidToNonRelatedParties": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "DistributionsRelatingToFeesExpenses": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "FundOfFundsGrossFeesExpensesIncentiveAllocationPaidToUnderlyingFunds": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "WithRespectToTheFundsLps": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "WithRespectToTheFundsPortfolioCompaniesInvestments": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "CumulativeLpsAllocationOfTotalFund": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "PartnershipExpensesPaidToGpRelatedPartiesNetOfOffsets": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "CapitalizedTransactionFeesExpensesPaidToGpRelatedParties": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "AdvisoryFees": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "BrokenDealFees": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "TransactionDealFees": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "DirectorsFees": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "MonitoringFees": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "CapitalMarketsFees": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "OtherFees": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "TotalReimbursementsForTravelAdministrativeExpenses": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                }
+            }
+        },
+        "VerbatimText": {
+            "type": "object",
+            "description": "Verbatim text extracted from the document for each field.",
+            "properties": {
+                "LpAllocationOfTotalFund": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "TotalFundIncludingGpAllocation": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "GpAllocationOfTotalFund": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "BeginningNavNetOfIncentiveAllocation": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "NonCashContributionsAndDistributions": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "ManagementFeeRebate": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "PartnershipExpensesAuditTaxPreparatory": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "PartnershipExpensesBankFees": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "PartnershipExpensesCustodyFees": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "PartnershipExpensesDueDiligence": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "PartnershipExpensesLegal": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "PartnershipExpensesOrganizationCosts": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "PartnershipExpensesOtherTravelEntertainment": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "PartnershipExpensesOther": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "TotalOffsetsToFeesExpensesAppliedDuringPeriod": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "AdvisoryFeeOffset": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "BrokenDealFeeOffset": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "TransactionDealFeeOffset": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "DirectorsFeeOffset": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "MonitoringFeeOffset": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "CapitalMarketsFeeOffset": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "OrganizationCostOffset": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "PlacementFeeOffset": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "OtherOffsets": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "UnappliedOffsetBalanceBeginning": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "TotalOffsetsToFeesExpensesRecognizedDuringPeriod": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "UnappliedOffsetBalanceEnding": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "TotalManagementFeesPartnershipExpensesNetOfOffsetsRebatesGrossOfFeeWaiver": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "FeeWaiver": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "PlacementFees": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "RealizedGainLoss": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "ChangeInUnrealizedGainLoss": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "EndingNavNetOfIncentiveAllocation": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "AccruedIncentiveAllocationStartingBalance": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "IncentiveAllocationPaidDuringPeriod": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "AccruedIncentiveAllocationPeriodicChange": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "AccruedIncentiveAllocationEndingBalance": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "IncentiveAllocationEarnedPeriodEndBalance": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "IncentiveAllocationAmountHeldInEscrowPeriodEndBalance": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "ReturnedClawback": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "CapitalizedTransactionFeesExpensesPaidToNonRelatedParties": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "DistributionsRelatingToFeesExpenses": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "FundOfFundsGrossFeesExpensesIncentiveAllocationPaidToUnderlyingFunds": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "WithRespectToTheFundsLps": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "WithRespectToTheFundsPortfolioCompaniesInvestments": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "CumulativeLpsAllocationOfTotalFund": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "PartnershipExpensesPaidToGpRelatedPartiesNetOfOffsets": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "CapitalizedTransactionFeesExpensesPaidToGpRelatedParties": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "AdvisoryFees": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "BrokenDealFees": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "TransactionDealFees": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "DirectorsFees": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "MonitoringFees": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "CapitalMarketsFees": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "OtherFees": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "TotalReimbursementsForTravelAdministrativeExpenses": {
+                    "$ref": "#/definitions/VerbatimText"
+                }
+            }
+        }
+    },
+    "required": [
+        "LpAllocationOfTotalFund",
+        "TotalFundIncludingGpAllocation",
+        "GpAllocationOfTotalFund",
+        "BeginningNavNetOfIncentiveAllocation",
+        "NonCashContributionsAndDistributions",
+        "ManagementFeeRebate",
+        "PartnershipExpensesAuditTaxPreparatory",
+        "PartnershipExpensesBankFees",
+        "PartnershipExpensesCustodyFees",
+        "PartnershipExpensesDueDiligence",
+        "PartnershipExpensesLegal",
+        "PartnershipExpensesOrganizationCosts",
+        "PartnershipExpensesOtherTravelEntertainment",
+        "PartnershipExpensesOther",
+        "TotalOffsetsToFeesExpensesAppliedDuringPeriod",
+        "AdvisoryFeeOffset",
+        "BrokenDealFeeOffset",
+        "TransactionDealFeeOffset",
+        "DirectorsFeeOffset",
+        "MonitoringFeeOffset",
+        "CapitalMarketsFeeOffset",
+        "OrganizationCostOffset",
+        "PlacementFeeOffset",
+        "OtherOffsets",
+        "UnappliedOffsetBalanceBeginning",
+        "TotalOffsetsToFeesExpensesRecognizedDuringPeriod",
+        "UnappliedOffsetBalanceEnding",
+        "TotalManagementFeesPartnershipExpensesNetOfOffsetsRebatesGrossOfFeeWaiver",
+        "FeeWaiver",
+        "PlacementFees",
+        "RealizedGainLoss",
+        "ChangeInUnrealizedGainLoss",
+        "EndingNavNetOfIncentiveAllocation",
+        "AccruedIncentiveAllocationStartingBalance",
+        "IncentiveAllocationPaidDuringPeriod",
+        "AccruedIncentiveAllocationPeriodicChange",
+        "AccruedIncentiveAllocationEndingBalance",
+        "IncentiveAllocationEarnedPeriodEndBalance",
+        "IncentiveAllocationAmountHeldInEscrowPeriodEndBalance",
+        "ReturnedClawback",
+        "CapitalizedTransactionFeesExpensesPaidToNonRelatedParties",
+        "DistributionsRelatingToFeesExpenses",
+        "FundOfFundsGrossFeesExpensesIncentiveAllocationPaidToUnderlyingFunds",
+        "WithRespectToTheFundsLps",
+        "WithRespectToTheFundsPortfolioCompaniesInvestments",
+        "CumulativeLpsAllocationOfTotalFund",
+        "PartnershipExpensesPaidToGpRelatedPartiesNetOfOffsets",
+        "CapitalizedTransactionFeesExpensesPaidToGpRelatedParties",
+        "AdvisoryFees",
+        "BrokenDealFees",
+        "TransactionDealFees",
+        "DirectorsFees",
+        "MonitoringFees",
+        "CapitalMarketsFees",
+        "OtherFees",
+        "TotalReimbursementsForTravelAdministrativeExpenses",
+        "ConfidenceScore"
+    ],
+    "definitions": {
+        "ConfidenceScore": {
+            "type": "string",
+            "enum": [
+                "HIGH",
+                "MID",
+                "LOW"
+            ],
+            "description": "A classification indicating the confidence level of the extracted value: 'HIGH' if the field name appears exactly as in the document, 'MID' if the key is semantically similar to the document's content, and 'LOW' if the value was inferred by the AI system without an exact match."
+        },
+        "VerbatimText": {
+            "type": "string",
+            "description": "The exact text excerpt extracted from the document for the corresponding field, without any additional formatting such as braces or brackets. For currency fields, include the relevant currency symbols present in the document."
+        }
+    }
+}

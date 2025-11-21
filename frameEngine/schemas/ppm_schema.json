@@ -1,0 +1,462 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "Issuer": {
+            "type": "string",
+            "description": "Detailed information about the issuer of the securities, including the issuer's legal name, business operations, history, and any relevant affiliations or subsidiaries."
+        },
+        "Account": {
+            "type": "string",
+            "description": "This field combines the fund name and investor name in a piped format. For example, if the fund name is 'ABC Investments' and the investor is 'Scott', then the account value should be 'ABC Investments|Scott'. If this property is not available, the value should be null."
+        },
+        "FundName": {
+            "type": "string",
+            "description": "The name of the fund, which should be a concise and descriptive title that accurately reflects the fund's investment strategy, objectives, and any unique features. Make sure to capture the full details without truncation."
+        },
+        "ReportDate": {
+            "type": "string",
+            "description": "The date when the report was generated, which is typically the current date when the report is created."
+        },
+        "MemoranrumNumber": {
+            "type": "string",
+            "description": "The memorandum number of the fund, which should be a concise and descriptive title that accurately reflects the fund's investment strategy, objectives, and any unique features. Make sure to capture the full details without truncation."
+        },
+        "InvestingObjective": {
+            "type": "string",
+            "description": "A comprehensive description of the investing objective of the fund, outlining the primary goals, strategies, and target outcomes that the fund aims to achieve through its investment activities. Make sure to capture the full details without truncation."
+        },
+        "OfferingStructure": {
+            "type": "string",
+            "description": "Detailed information about the structure of the offering, including the types of securities being offered, the terms and conditions of the offering, and any relevant legal or regulatory frameworks governing the offering. Make sure to capture the full details without truncation."
+        },
+        "ShareClasses": {
+            "type": "array",
+            "description": "Comprehensive details of the different classes of shares or securities offered by the issuer, including characteristics, rights, distinctions between the classes, and currency denominations. Make sure to capture the full details without truncation.",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "ClassName": {
+                        "type": "string",
+                        "description": "The name or identifier of the share class, including any designations such as 'A1 Shares', 'C2 USD Shares', etc."
+                    },
+                    "Currency": {
+                        "type": "string",
+                        "description": "The currency denomination of the share class, such as 'USD', 'EUR', 'JPY', etc."
+                    },
+                    "Attributes": {
+                        "type": "string",
+                        "description": "Detailed attributes or features of the share class, including rights, privileges, restrictions, convertibility, dividends, voting rights, and any other pertinent characteristics that define the share class."
+                    }
+                }
+            }
+        },
+        "Price": {
+            "type": "string",
+            "description": "The price per unit of the security, expressed in the base currency. This includes the initial offering price and may also cover any subsequent pricing mechanisms or adjustments. Make sure to capture the full details without truncation."
+        },
+        "MinimumSubscriptionAmount": {
+            "type": "string",
+            "description": "The minimum financial amount required from an investor to subscribe to the security, ensuring that only investors meeting this threshold can participate in the offering. Make sure to capture the full details without truncation."
+        },
+        "InvestorQualificationStandards": {
+            "type": "string",
+            "description": "Detailed standards or criteria that investors must meet to qualify for investment in the fund. This may include requirements related to net worth, income, accreditation status, investment experience, or other qualifications as specified by the fund. Make sure to capture the full details without truncation."
+        },
+        "ManagementFees": {
+            "type": "string",
+            "description": "Comprehensive information about the fees charged for managing the investment. This includes the fee structure, calculation method, payment frequency, and any conditions that might affect the fees. Ensure that all relevant details are included without truncation. Make sure to capture the full details without truncation."
+        },
+        "PerformanceFee": {
+            "type": "string",
+            "description": "Detailed information about the performance-based fees charged to investors, including the basis for calculation, performance benchmarks, fee percentages, high-water marks, and any other relevant terms. Ensure that the full scope of performance fee details is captured without truncation. Make sure to capture the full details without truncation."
+        },
+        "Redemption": {
+            "type": "array",
+            "description": "Comprehensive conditions or terms related to the redemption of securities for each share class, including redemption periods, notice requirements, redemption fees, limitations, and any other relevant stipulations that govern how and when investors can redeem their investments. Make sure to capture the full details without truncation.",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "ShareClass": {
+                        "type": "string",
+                        "description": "The specific share class to which the redemption terms apply."
+                    },
+                    "RedemptionTerms": {
+                        "type": "string",
+                        "description": "Detailed redemption terms for the share class, including any limitations, applicable percentages, and conditions."
+                    }
+                }
+            }
+        },
+        "PlacementAgentCommissions": {
+            "type": "string",
+            "description": "The amount or percentage of commissions paid to placement agents for their role in facilitating the offering. This includes the structure of the commissions, payment schedules, and any performance-based incentives. Ensure that the information is accurately extracted from the document and reflects the correct figures."
+        },
+        "RiskFactors": {
+            "type": "array",
+            "description": "A detailed list of the risk factors associated with the investment, extracted from the dedicated Risk Factors section of the document, outlining potential challenges, uncertainties, and adverse conditions that could impact the performance or value of the investment. Make sure to capture the full details without truncation.",
+            "items": {
+                "type": "string",
+                "description": "Specific details of each risk factor related to the investment. Ensure that each risk factor is thoroughly described without omission or truncation, providing clear insight into the potential risks involved."
+            }
+        },
+        "EstimatedUseOfProceeds": {
+            "type": "array",
+            "description": "An estimation outlining how the proceeds from the investment will be utilized, including any expenses disclosures. This includes allocation to various projects, operational expenses, capital expenditures, debt repayment, or other strategic uses as intended by the fund. Make sure to capture the full details without truncation.",
+            "items": {
+                "type": "string",
+                "description": "Detailed description of each estimated use of proceeds or expense disclosure, providing clarity on the intended allocation and purpose of the funds received through the investment."
+            }
+        },
+        "InvestmentOpportunity": {
+            "type": "string",
+            "description": "A comprehensive description of the investment opportunity, highlighting the unique aspects, potential returns, market positioning, competitive advantages, and strategic value that make the investment attractive to potential investors. Make sure to capture the full details without truncation."
+        },
+        "BusinessDescription": {
+            "type": "string",
+            "description": "An in-depth description of the business, including its operations, market presence, business model, revenue streams, strategic goals, and any other relevant information that provides a clear understanding of the business entity. Make sure to capture the full details without truncation."
+        },
+        "ManagementSection": {
+            "type": "array",
+            "description": "Detailed information about the management team overseeing the fund, including their roles, qualifications, experience, and contributions to the fund's strategy and performance.",
+            "items": {
+                "type": "object",
+                "description": "Comprehensive details about each member of the management team. Make sure to capture the full details without truncation.",
+                "properties": {
+                    "Name": {
+                        "type": "string",
+                        "description": "The full name of the management team member, including any relevant titles or designations."
+                    },
+                    "Biography": {
+                        "type": "string",
+                        "description": "A detailed biography of the management team member, outlining their professional background, expertise, achievements, and role within the fund."
+                    },
+                    "BackgroundInformation": {
+                        "type": "string",
+                        "description": "Additional background information about the management team member, including education, previous positions, industry experience, and any other pertinent details that establish their qualifications and suitability for managing the fund."
+                    }
+                }
+            }
+        },
+        "PlacementAgents": {
+            "type": "array",
+            "description": "Comprehensive details about the placement agents involved in the offering, including their roles, responsibilities, agreements, and any compensation or incentives they receive. Make sure to capture the full details without truncation.",
+            "items": {
+                "type": "string",
+                "description": "Specific information about each placement agent, ensuring clarity on their involvement and contribution to the placement process."
+            }
+        },
+        "BusinessDay": {
+            "type": "string",
+            "description": "The designated business day(s) for the fund, which may include operational days, settlement days, or any other relevant business calendar information that dictates the fund's transactional activities. Make sure to capture the full details without truncation."
+        },
+        "DealingDeadlines": {
+            "type": "string",
+            "description": "Specific deadlines related to fund dealings, such as subscription cut-off dates, redemption deadlines, reporting deadlines, and any other critical timelines that investors must adhere to. Make sure to capture the full details without truncation."
+        },
+        "Currency": {
+            "type": "string",
+            "description": "The currency in which the fund operates and conducts its transactions. This includes the base currency for investments, reporting, and any currency hedging strategies employed by the fund. Make sure to capture the full details without truncation."
+        },
+        "SubscriptionSettlementDate": {
+            "type": "string",
+            "description": "The date by which subscriptions to the fund must be settled. This includes processing timelines, settlement procedures, and any grace periods associated with subscription payments. Make sure to capture the full details without truncation."
+        },
+        "RedemptionSettlementDate": {
+            "type": "string",
+            "description": "The date by which redemptions from the fund must be settled. This encompasses processing periods, settlement mechanisms, and any conditions that affect the redemption timeline. Make sure to capture the full details without truncation."
+        },
+        "Expenses": {
+            "type": "string",
+            "description": "A detailed breakdown of the expenses incurred by the fund, including management fees, administrative costs, operational expenses, investment team expenses, and any other costs that impact the fund's net returns to investors. Ensure that the summary is derived from the relevant sections of the document, such as the 'Expenses' and 'Investment Team Expenses' sections."
+        },
+        "InvestorLevelGate": {
+            "type": "string",
+            "description": "Comprehensive information about any criteria or thresholds that investors must meet to gain access to specific levels or tiers within the fund, including redemption limits, withdrawal gates, minimum investment amounts, accreditation status, or other qualifying factors. Ensure that the summary is derived from the relevant sections of the document, such as the section on page 12."
+        },
+        "InvestmentPolicy": {
+            "type": "string",
+            "description": "An in-depth description of the formal investment policies governing the fund's activities, detailing investment strategies, asset allocation guidelines, risk management protocols, and any restrictions or mandates that shape investment decisions. Ensure that the summary is comprehensive and includes all relevant details without truncation."
+        },
+        "LimitedPartner": {
+            "type": "string",
+            "description": "Information about the limited partners of the fund, including their roles, rights, contributions, and any specific agreements or terms that define their relationship with the fund. Make sure to capture the full details without truncation."
+        },
+        "GeneralPartner": {
+            "type": "string",
+            "description": "Details about the general partner(s) of the fund, outlining their management responsibilities, decision-making authority, fiduciary duties, and any other relevant aspects of their partnership role. Make sure to capture the full details without truncation."
+        },
+        "InvestmentManager": {
+            "type": "string",
+            "description": "Information about the investment manager(s) overseeing the fund's investment activities, including their qualifications, strategies, performance history, and the scope of their management responsibilities. Make sure to capture the full details without truncation."
+        },
+        "PlacementAgent": {
+            "type": "string",
+            "description": "Details about the placement agent(s) involved in the offering, including their role in marketing and distributing the fund's securities, compensation structures, and any agreements governing their engagement. Make sure to capture the full details without truncation."
+        },
+        "Administrator": {
+            "type": "string",
+            "description": "Information about the administrator responsible for the fund's operational functions, including fund accounting, record-keeping, investor communications, and compliance with regulatory requirements. Make sure to capture the full details without truncation."
+        },
+        "Auditor": {
+            "type": "string",
+            "description": "Details about the auditing firm or auditor tasked with reviewing the fund's financial statements, ensuring accuracy, compliance with accounting standards, and providing an independent assessment of the fund's financial health. Make sure to capture the full details without truncation."
+        },
+        "InvestmentApprovals": {
+            "type": "string",
+            "description": "Information regarding the processes and authorities required for investment approvals within the fund, including decision-making hierarchies, approval thresholds, and any committees or bodies involved in sanctioning investments. Make sure to capture the full details without truncation."
+        },
+        "FundStructure": {
+            "type": "string",
+            "description": "A comprehensive overview of the fund's structural setup, including its legal form, organizational hierarchy, ownership distribution, and any special structures like limited partnerships, trusts, or corporate entities. Make sure to capture the full details without truncation."
+        },
+        "EligibleInvestors": {
+            "type": "string",
+            "description": "Criteria defining which investors are eligible to participate in the fund, including accreditation status, investment capacity, geographic restrictions, and any other specific eligibility requirements. Make sure to capture the full details without truncation."
+        },
+        "NetAssetValue": {
+            "type": "string",
+            "description": "The Net Asset Value (NAV) of the fund, representing the per-unit value of the fund's assets minus liabilities. This includes details on how NAV is calculated, frequency of valuation, and factors that may influence NAV fluctuations. Make sure to capture the full details without truncation."
+        },
+        "DrawnDowns": {
+            "type": "string",
+            "description": "Information about the drawn-down capital from investors, including schedules, amounts, purposes, and any conditions or restrictions related to the capital deployment. Make sure to capture the full details without truncation."
+        },
+        "PerformanceAllocation": {
+            "type": "string",
+            "description": "Details on how performance-related earnings are allocated within the fund, including profit-sharing mechanisms, hurdle rates, carried interest structures, and any performance benchmarks that trigger allocations. Make sure to capture the full details without truncation."
+        },
+        "Distribution": {
+            "type": "string",
+            "description": "Comprehensive information about the cash distributions of earnings made by the fund to investors, including distribution schedules, calculation methods, types of distributions (e.g., dividends, interest), and any reinvestment options. Make sure to capture the full details without truncation."
+        },
+        "KeyPerson": {
+            "type": "string",
+            "description": "Identification of key individuals within the fund whose expertise, decision-making, and ongoing involvement are critical to the fund's success. This includes their roles, qualifications, and any agreements pertaining to their engagement. Ensure that only individuals explicitly identified as key persons in the document are included."
+        },
+        "SecurityDescription": {
+            "type": "string",
+            "description": "A detailed description of the securities offered by the fund, including types, terms, rights, features, and any specific conditions or attributes that define the securities. Make sure to capture the full details without truncation."
+        },
+        "MinimalAdditionalInvestmentAmount": {
+            "type": "string",
+            "description": "The smallest incremental amount that investors can contribute to the fund beyond their initial investment, outlining the flexibility and thresholds for additional capital commitments. Make sure to capture the full details without truncation."
+        },
+        "PrimeBrokers": {
+            "type": "string",
+            "description": "Details about the prime brokers associated with the fund, including their roles in facilitating transactions, providing leverage, custody services, and any specific agreements governing their services. Make sure to capture the full details without truncation."
+        },
+        "SubCustodian": {
+            "type": "string",
+            "description": "Information about the sub-custodian responsible for safeguarding the fund's assets, including their responsibilities, service agreements, and any specific functions they perform in asset custody and management. Make sure to capture the full details without truncation."
+        },
+        "Taxation": {
+            "type": "string",
+            "description": "Comprehensive details about the tax implications for investors in the fund, including tax treatment of distributions, capital gains, carried interest, and any strategies the fund employs to optimize tax efficiency. Make sure to capture the full details without truncation."
+        },
+        "ConfidenceScore": {
+            "type": "object",
+            "description": "Confidence scores indicating the certainty of each extracted field's value.",
+            "properties": {
+                "Issuer": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "Account": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "InvestingObjective": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "OfferingStructure": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "ShareClasses": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "Price": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "MinimumSubscriptionAmount": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "InvestorQualificationStandards": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "ManagementFees": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "PerformanceFee": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "Redemption": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "PlacementAgentCommissions": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "RiskFactors": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "EstimatedUseOfProceeds": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "InvestmentOpportunity": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "BusinessDescription": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "ManagementSection": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "PlacementAgents": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "BusinessDay": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "DealingDeadlines": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "Currency": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "SubscriptionSettlementDate": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "RedemptionSettlementDate": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "Expenses": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "InvestorLevelGate": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "InvestmentPolicy": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "LimitedPartner": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "GeneralPartner": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "InvestmentManager": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "PlacementAgent": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "Administrator": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "Auditor": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "InvestmentApprovals": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "FundStructure": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "EligibleInvestors": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "NetAssetValue": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "DrawnDowns": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "PerformanceAllocation": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "Distribution": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "KeyPerson": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "SecurityDescription": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "MinimalAdditionalInvestmentAmount": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "PrimeBrokers": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "SubCustodian": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "Taxation": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                }
+            },
+            "required": []
+        }
+    },
+    "required": [
+        "Issuer",
+        "Account",
+        "InvestingObjective",
+        "OfferingStructure",
+        "ShareClasses",
+        "Price",
+        "MinimumSubscriptionAmount",
+        "InvestorQualificationStandards",
+        "ManagementFees",
+        "PerformanceFee",
+        "Redemption",
+        "PlacementAgentCommissions",
+        "RiskFactors",
+        "EstimatedUseOfProceeds",
+        "InvestmentOpportunity",
+        "BusinessDescription",
+        "ManagementSection",
+        "PlacementAgents",
+        "BusinessDay",
+        "DealingDeadlines",
+        "Currency",
+        "SubscriptionSettlementDate",
+        "RedemptionSettlementDate",
+        "Expenses",
+        "InvestorLevelGate",
+        "InvestmentPolicy",
+        "LimitedPartner",
+        "GeneralPartner",
+        "InvestmentManager",
+        "PlacementAgent",
+        "Administrator",
+        "Auditor",
+        "InvestmentApprovals",
+        "FundStructure",
+        "EligibleInvestors",
+        "NetAssetValue",
+        "DrawnDowns",
+        "PerformanceAllocation",
+        "Distribution",
+        "KeyPerson",
+        "SecurityDescription",
+        "MinimalAdditionalInvestmentAmount",
+        "PrimeBrokers",
+        "SubCustodian",
+        "Taxation"
+    ],
+    "definitions": {
+        "ConfidenceScore": {
+            "type": "string",
+            "enum": [
+                "HIGH",
+                "MID",
+                "LOW"
+            ],
+            "description": "Confidence score for the extracted value: 'HIGH' if the field name is explicitly mentioned in the document, 'MID' if the key matches a semantically similar term, and 'LOW' if the field is inferred by the AI system without an exact match. Feel free to show some fields with low confidence to indicate uncertainty."
+        },
+        "VerbatimText": {
+            "type": "string",
+            "description": "The exact verbatim text extracted from the document for the corresponding field. Ensure that no braces or brackets are included in the output. For currency fields, include symbols as they appear in the document to maintain accuracy."
+        }
+    }
+}

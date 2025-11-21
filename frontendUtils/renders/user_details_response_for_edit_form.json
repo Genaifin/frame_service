@@ -1,0 +1,110 @@
+{
+    "sections": [
+      {
+        "id": "user-forms",
+        "type": "repeatable-section",
+        "title": "User",
+        "template": {
+          "fields": [
+            {
+              "id": "first_name",
+              "label": "First Name",
+              "placeholder": "Ex. John",
+              "defaultValue": "John",
+              "type": "text",
+              "width": "50%",
+              "required": true
+            },
+            {
+              "id": "last_name",
+              "label": "Last Name",
+              "placeholder": "Ex. Doe",
+              "defaultValue": "Doe",
+              "type": "text",
+              "width": "50%",
+              "required": true
+            },
+            {
+              "id": "email",
+              "label": "Email ID",
+              "placeholder": "Ex. johndoe@mail.com",
+              "defaultValue": "johndoe@mail.com",
+              "type": "text",
+              "width": "50%",
+              "required": true
+            },
+            {
+              "id": "job_title",
+              "label": "Job Title",
+              "placeholder": "Ex. Sales Head",
+              "defaultValue": "Sales Head",
+              "type": "text",
+              "width": "50%",
+              "required": true
+            },
+            {
+              "id": "role_name",
+              "label": "Role",
+              "type": "select",
+              "placeholder": "Select Role",
+              "defaultValue": "Analyst",
+              "options": ["Analyst", "Admin", "Dev"],
+              "width": "50%",
+              "required": true
+            },
+            {
+              "id": "password",
+              "label": "Password",
+              "placeholder": "password",
+              "defaultValue": "",
+              "type": "text",
+              "width": "50%",
+              "required": true,
+              "hasTooltip": {
+                    "isShow": false,
+                    "content": "Minimum 8 characters \n At least one uppercase and one lowercase letter \n At least one number \n At least one special character"
+                    }
+            },
+            {
+              "id": "account_remark",
+              "label": "Account Remarks (optional)",
+              "placeholder": "Add comments, request ticket details, etc",
+              "defaultValue": "AnFor ticket 2A3FW",
+              "type": "text-area",
+              "rows": 4,
+              "width": "100%",
+              "required": false
+            }
+          ]
+        },
+        "isEditing": true,
+        "width": "100%"
+      }
+    ],
+    "buttonText": "Update User",
+    "onConfirmation": {
+      "title": "Edit User",
+      "description": "Are you sure you want to update John Doe?",
+      "buttonText": "Update",
+      "clickAction": {
+        "type": "putData",
+        "putAPIURL": "api/users",
+        "actionAfterAPICall": {
+          "type": "navigation",
+          "to": "/frame",
+          "parameters": [
+            {
+              "key": "page",
+              "value": "Organization"
+            },
+            {
+              "key": "tab",
+              "value": "users"
+            }
+          ]
+        }
+      }
+    }
+  }
+  
+  

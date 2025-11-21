@@ -1,0 +1,259 @@
+{
+  "info": {
+    "name": "Document GraphQL API",
+    "description": "GraphQL API endpoints for Document management",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{jwt_token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "if (jsonData.token) {",
+                  "    pm.environment.set('jwt_token', jsonData.token);",
+                  "    pm.environment.set('username', jsonData.user.username);",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"your_username\",\n  \"password\": \"your_password\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/login",
+              "host": ["{{base_url}}"],
+              "path": ["login"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Documents - Queries",
+      "item": [
+        {
+          "name": "Get All Documents",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query GetAllDocuments {\n  documents(limit: 10, offset: 0) {\n    success\n    message\n    total\n    documents {\n      id\n      name\n      type\n      path\n      size\n      status\n      fundId\n      uploadDate\n      replay\n      createdBy\n      metadata\n      isActive\n      createdAt\n      updatedAt\n    }\n  }\n}",
+                "variables": ""
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          }
+        },
+        {
+          "name": "Get Document by ID",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query GetDocument($documentId: Int!) {\n  document(documentId: $documentId) {\n    success\n    message\n    document {\n      id\n      name\n      type\n      path\n      size\n      status\n      fundId\n      uploadDate\n      replay\n      createdBy\n      metadata\n      isActive\n      createdAt\n      updatedAt\n    }\n  }\n}",
+                "variables": "{\n  \"documentId\": 1\n}"
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          }
+        },
+        {
+          "name": "Get Documents by Fund",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query GetDocumentsByFund($fundId: Int!, $limit: Int, $offset: Int) {\n  documentsByFund(fundId: $fundId, limit: $limit, offset: $offset) {\n    success\n    message\n    total\n    documents {\n      id\n      name\n      type\n      status\n      uploadDate\n      createdBy\n    }\n  }\n}",
+                "variables": "{\n  \"fundId\": 1,\n  \"limit\": 10,\n  \"offset\": 0\n}"
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          }
+        },
+        {
+          "name": "Filter Documents",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query FilterDocuments($filter: DocumentFilterInput!, $limit: Int) {\n  documents(filter: $filter, limit: $limit) {\n    success\n    message\n    total\n    documents {\n      id\n      name\n      type\n      status\n      createdBy\n      uploadDate\n    }\n  }\n}",
+                "variables": "{\n  \"filter\": {\n    \"type\": \"CapitalCall\",\n    \"status\": \"completed\",\n    \"isActive\": true\n  },\n  \"limit\": 20\n}"
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          }
+        },
+        {
+          "name": "Search Documents by Name",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "query SearchDocuments($filter: DocumentFilterInput!) {\n  documents(filter: $filter) {\n    success\n    message\n    total\n    documents {\n      id\n      name\n      type\n      status\n    }\n  }\n}",
+                "variables": "{\n  \"filter\": {\n    \"name\": \"capital\"\n  }\n}"
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Documents - Mutations",
+      "item": [
+        {
+          "name": "Create Document",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "mutation CreateDocument($input: DocumentCreateInput!) {\n  createDocument(input: $input) {\n    success\n    message\n    document {\n      id\n      name\n      type\n      path\n      size\n      status\n      fundId\n      uploadDate\n      replay\n      createdBy\n      metadata\n      createdAt\n    }\n  }\n}",
+                "variables": "{\n  \"input\": {\n    \"name\": \"capital_call_2024.pdf\",\n    \"type\": \"CapitalCall\",\n    \"path\": \"/documents/capital_call_2024.pdf\",\n    \"size\": 524288,\n    \"status\": \"pending\",\n    \"fundId\": 1,\n    \"replay\": false,\n    \"metadata\": {\n      \"extractedBy\": \"frame_engine\",\n      \"confidence\": 0.95\n    }\n  }\n}"
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          }
+        },
+        {
+          "name": "Update Document",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "mutation UpdateDocument($documentId: Int!, $input: DocumentUpdateInput!) {\n  updateDocument(documentId: $documentId, input: $input) {\n    success\n    message\n    document {\n      id\n      name\n      status\n      metadata\n      updatedAt\n    }\n  }\n}",
+                "variables": "{\n  \"documentId\": 1,\n  \"input\": {\n    \"status\": \"completed\",\n    \"metadata\": {\n      \"processed\": true,\n      \"extractionComplete\": true\n    }\n  }\n}"
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          }
+        },
+        {
+          "name": "Mark for Replay",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "mutation MarkForReplay($documentId: Int!) {\n  updateDocument(\n    documentId: $documentId\n    input: {\n      replay: true\n      status: \"pending\"\n    }\n  ) {\n    success\n    message\n    document {\n      id\n      name\n      status\n      replay\n    }\n  }\n}",
+                "variables": "{\n  \"documentId\": 1\n}"
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          }
+        },
+        {
+          "name": "Delete Document",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "graphql",
+              "graphql": {
+                "query": "mutation DeleteDocument($documentId: Int!) {\n  deleteDocument(documentId: $documentId) {\n    success\n    message\n  }\n}",
+                "variables": "{\n  \"documentId\": 1\n}"
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000",
+      "type": "string"
+    },
+    {
+      "key": "jwt_token",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "username",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}
+

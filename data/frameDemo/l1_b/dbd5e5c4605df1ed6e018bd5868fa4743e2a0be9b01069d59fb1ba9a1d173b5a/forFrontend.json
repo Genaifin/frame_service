@@ -1,0 +1,108 @@
+{
+    "extracted_fields": [
+        {
+            "fields": {
+                "Account": "SR ONE CAPITAL FUND II-A, LP | RV Investment Partners, LLC",
+                "InvestorRefID": null,
+                "AccountRefID": null,
+                "Security": "SR ONE CAPITAL FUND II-A, LP",
+                "TransactionDate": "2024-09-19",
+                "Currency": "USD",
+                "Distribution": "28.35",
+                "DeemedCapitalCall": null,
+                "IncomeDistribution": null,
+                "IncomeReinvested": null,
+                "RecallableSell": null,
+                "ReturnOfCapital": null,
+                "DistributionOutsideCommitment": null,
+                "CapitalCall": "132348.93",
+                "CapitalCallOutsideCommitment": null,
+                "NetCashFlowQC": null,
+                "TransferIn": null,
+                "TransferOut": null,
+                "Quantity": null,
+                "Price": null,
+                "CommittedCapital": "3000000",
+                "RemainingCommittedCapital": "1353632.08",
+                "ContributionsToDate": "1719697.84",
+                "DistributionsToDate": "73329.92",
+                "ReturnOfCapitalToDate": null,
+                "FundInceptionDate": "2021-08-02"
+            },
+            "meta_data": {
+                "doc_id": 100198,
+                "schema_id": 14,
+                "created_at": "2025-02-11T10:10:08.727283",
+                "updated_at": "2025-02-11T10:10:08.727283",
+                "additional_columns": {
+                    "FundInceptionDate": "2021-08-02"
+                },
+                "document_name": "3ba9cbbb-5203-46f9-9952-36793e5097f2.pdf",
+                "extraction": "HARVEST_ONLY",
+                "total": 42,
+                "found": 28,
+                "missing": 14,
+                "BoundingBox": {
+                    "Security": "0.43047619047619046,0.6988095238095238,0.04476190476190476,0.0054761904761904765,0.48,0.6988095238095238,0.05619047619047619,0.0054761904761904765,0.540952380952381,0.6988095238095238,0.02126984126984127,0.006904761904761905,0.5653968253968253,0.6988095238095238,0.01904761904761905,0.006904761904761905,0.5885714285714285,0.6988095238095238,0.023809523809523808,0.0064285714285714285,0.6168253968253968,0.6988095238095238,0.010158730158730159,0.0054761904761904765",
+                    "Account": "0.07047619047619047,0.24571428571428572,0.015555555555555555,0.007380952380952381",
+                    "TransactionDate": "0.6517460317460317,0.4545238095238095,0.039047619047619046,0.0064285714285714285",
+                    "Currency": "0.07047619047619047,0.24571428571428572,0.015555555555555555,0.007380952380952381",
+                    "Distribution": "0.6549206349206349,0.794047619047619,0.035555555555555556,0.006666666666666667,0.707936507936508,0.794047619047619,0.03396825396825397,0.006666666666666667,0.6952380952380952,0.7942857142857143,0.008571428571428572,0.005238095238095238",
+                    "CapitalCall": "0.22952380952380952,0.794047619047619,0.02412698412698413,0.0054761904761904765,0.25746031746031744,0.794047619047619,0.007619047619047619,0.0064285714285714285,0.2698412698412698,0.794047619047619,0.02507936507936508,0.0054761904761904765",
+                    "CommittedCapital": "0.39174603174603173,0.19166666666666668,0.02507936507936508,0.006190476190476191,0.42158730158730157,0.19166666666666668,0.03492063492063492,0.007619047619047619,0.4606349206349206,0.19166666666666668,0.05015873015873016,0.006190476190476191,0.5155555555555555,0.19166666666666668,0.02666666666666667,0.006190476190476191",
+                    "RemainingCommittedCapital": "0.07015873015873016,0.15595238095238095,0.039047619047619046,0.006190476190476191,0.11333333333333333,0.15595238095238095,0.06444444444444444,0.007142857142857143,0.18253968253968253,0.15595238095238095,0.08952380952380952,0.007619047619047619,0.27714285714285714,0.15595238095238095,0.044444444444444446,0.007619047619047619",
+                    "ContributionsToDate": "0.22317460317460316,0.6245238095238095,0.008571428571428572,0.007380952380952381,0.23587301587301587,0.6245238095238095,0.02761904761904762,0.0064285714285714285,0.18476190476190477,0.6247619047619047,0.0346031746031746,0.007857142857142858",
+                    "DistributionsToDate": "0.1853968253968254,0.7654761904761904,0.045396825396825394,0.007857142857142858,0.23396825396825396,0.7654761904761904,0.02,0.006190476190476191,0.2580952380952381,0.7654761904761904,0.013650793650793651,0.006190476190476191,0.2749206349206349,0.7654761904761904,0.022857142857142857,0.007857142857142858,0.3019047619047619,0.7654761904761904,0.029841269841269842,0.0064285714285714285",
+                    "FundInceptionDate": "0.22317460317460316,0.6245238095238095,0.008571428571428572,0.007380952380952381,0.23587301587301587,0.6245238095238095,0.02761904761904762,0.0064285714285714285,0.18476190476190477,0.6247619047619047,0.0346031746031746,0.007857142857142858"
+                },
+                "id": 4,
+                "PageNumber": {
+                    "Security": 1,
+                    "Account": 1,
+                    "TransactionDate": 1,
+                    "Currency": 1,
+                    "Distribution": 1,
+                    "CapitalCall": 1,
+                    "CommittedCapital": 1,
+                    "RemainingCommittedCapital": 1,
+                    "ContributionsToDate": 1,
+                    "DistributionsToDate": 1,
+                    "FundInceptionDate": 1
+                }
+            },
+            "Covenants": []
+        }
+    ],
+    "doc_details": [
+        {
+            "fields": {
+                "id": 135,
+                "created_at": "2025-02-11T10:10:08.722178",
+                "updated_at": "2025-02-11T10:10:08.722178",
+                "document_type": "CapitalCall",
+                "fund_name": "SR ONE CAPITAL FUND II-A, LP",
+                "firm_name": "RV Investment Partners, LLC",
+                "investor_name": "RV Investment Partners, LLC",
+                "account_sid": null,
+                "account_no": "SR ONE CAPITAL FUND II-A, LP | RV Investment Partners, LLC",
+                "status": "EXTRACTED_IN_REVIEW",
+                "num_pages": 1,
+                "doc_source": "S3",
+                "document_name": "_CAPITAL CALLS_SR ONE CAPITAL FUND LP_Capital Call #19_RV Investment Partners, LLC_RV Investment Partners, LLC_SR One Capital Fund II-A, LP.JSON",
+                "report_date": "2024-09-19T00:00:00.000000",
+                "recieved_date": "2025-02-11T10:07:43.672380",
+                "extraction": "EXTRACTED_IN_REVIEW",
+                "in_review": true,
+                "duplicate_ids_to_update": null,
+                "true_duplicate_ids": null,
+                "ext_comments": null,
+                "ext_doc_id": null,
+                "ext_document_type": null
+            },
+            "meta_data": {
+                "doc_id": 100198
+            }
+        }
+    ],
+    "audit_logs": []
+} 

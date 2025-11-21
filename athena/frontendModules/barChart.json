@@ -1,0 +1,86 @@
+{
+  "response": {
+    "question": "Give me a bar chart for legal fee in last 6 months",
+    "text": "Here's the Legal Fees Trend",
+    "username": "admin",
+    "modules": [
+      {
+        "moduleType": "chart",
+        "data": {
+          "icon": "Move3D",
+          "title": "Legal Fees Trend",
+          "date": "Jan 2024 - Jun 2024",
+          "chartConfig": {
+            "data": [
+              {
+                "month": "Jan 2024",
+                "value": 11615.65
+              },
+              {
+                "month": "Feb 2024",
+                "value": 1493.65
+              },
+              {
+                "month": "Mar 2024",
+                "value": 2491.82
+              },
+              {
+                "month": "Apr 2024",
+                "value": 2865.59
+              },
+              {
+                "month": "May 2024",
+                "value": 2380.0
+              },
+              {
+                "month": "Jun 2024",
+                "value": 3094.04
+              }
+            ],
+            "series": [
+              {
+                "type": "bar",
+                "xKey": "month",
+                "yKey": "value",
+                "yName": "Legal Fees",
+                "label": {
+                  "enabled": false,
+                  "formatter": "({ value }) => value.toFixed(1) + 'k'"
+                }
+              }
+            ],
+            "legend": {
+              "enabled": false
+            },
+            "axes": [
+              {
+                "type": "category",
+                "position": "bottom",
+                "label": {
+                  "formatter": "",
+                  "rotation": 0
+                }
+              },
+              {
+                "type": "number",
+                "position": "left",
+                "label": {
+                  "formatter": "k"
+                }
+              }
+            ]
+          },
+          "name": "SimpleBarChart"
+        }
+      }
+    ],
+    "metadata": {
+      "total": 23940.75,
+      "average": 3990.13,
+      "max": 11615.65,
+      "min": 1493.65,
+      "period": "Jan 2024 - Jun 2024",
+      "data_points": 6
+    }
+  }
+}

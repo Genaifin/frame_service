@@ -1,0 +1,15 @@
+{
+  "source": "openai",
+  "response_type": "classification",
+  "original_filename": "file3_distribution.xlsx",
+  "timestamp": 1762775003.886194,
+  "raw_response": "Distribution",
+  "raw_text": "Distribution",
+  "response_metadata": {
+    "has_markdown_wrapper": false,
+    "detected_format": "text",
+    "is_valid_json": false,
+    "original_length": 12,
+    "cleaned_length": 12
+  }
+}

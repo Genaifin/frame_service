@@ -1,0 +1,489 @@
+{
+    "doc_id": "2f6c01d8-4bf1-4b99-95ba-9efe9108feca",
+    "task_id": "343fc996-2a1f-4dc5-baa2-1bf362c0acc0",
+    "ext_doc_id": null,
+    "original_filename": "file3_distribution.xlsx",
+    "pipeline_status": "Completed_With_Error",
+    "error_message": "Bounding box extraction failed: Tesseract is not available for OCR processing",
+    "is_scanned": false,
+    "raw_text": "Capital Call &\nDistribution\nSupplemental\nILPA Notice1\n2.1 Fund Name\nSummit Partners Growth\nEquity Fund X-B, L.P.\nSection A: Fund\nLevel / Cash\nFlow\nInformation\n2.2 Issue Date\n(MM/DD/\nYYYY):\n45826\n2.3 Due Date\n(MM/DD/\nYYYY):\n45828\n2.4 Fund Local\nCurrency:\nUSD\n2.5 General\nPartner\nCommitment\n(Includes\nPurchase and\nCarry\nCommitments):\n160124122\n2.6 Fund Size,\nIncluding all\nAIVs:\n1961520489\nFund Aggregate\nCalls /\nDistributions\n(Incl. General\nPartner's Share)\nContributions\n(Distributions)\n2.7 Cumulative\nFund Amount\n(Prior To\nCurrent\nNotice)2,3,4,:\n1813641903\n-524158838\n2.8 Fund\nAmount\n(Current Notice)\n0\n-172548125\nCumulative\nFund Amount\n(Including\nCurrent\nNotice)3,4:\n1813641903\n-696706963\nSection B:\nLimited Partner\nInformation (All\nValues Shown as\nPositive\nAmounts)\n2.9 Limited\nPartner:\nFlorida Atlantic\nUniversity Foundation,\nInc.\n2.10 Limited\nPartner\nCommitment:\n5000000\nLimited Partner\n% of Fund\n(Limited Partner\nCommitment /\nFund Size)\n2.5490429633743174E-3\nLimited Partner\n% of Limited\nPartner\nCommitments\n(% used to calc.\nLimited\nPartner's share\nof call)\n2.775624560810497E-3\n2.11 Limited\nPartner\nUnfunded\nCommitment2\n(Prior to current\nnotice)\n1406962\n2.12 Limited\nPartner\nCumulative\nContributions2,3\n(Prior to current\nnotice)\n4900652\n2.13 Limited\nPartner\nCumulative\nDistributions2,3\n(Prior to current\nnotice)\n1307614\nLimited Partner\nBalances /\nTotals (Formula\nDriven)\n2.18 Unfunded\nCommitment\nUnfunded\nCommitment\nBalance (Prior\nto Current\nNotice)\n1406962\nImpact on\nUnfunded\nCommitment\nBalance\n(Current Notice)\n278137\nUnfunded\nCommitment\nBalance\n(Including\nCurrent Notice)\n1685099\nAggregate Calls\n/ Distributions\nContributions\n(Distributions)\n2.19 Cumulative\nLimited Partner\nAmount (Prior\nTo Current\nNotice):\n4900652\n-1307614\nas a % of Fund\nAmount\n2.7021056317091501E-3 2.4946903594898462E-3\n2.20 Limited\nPartner Amount\n(Current\nNotice):\n0\n-278137\nas a % of Fund\nAmount\n0\n1.6119386982617169E-3\n2.21 Cumulative\nLimited Partner\nAmount\n(Including\nCurrent Notice):\n4900652\n-1585751\nas a % of Fund\nAmount\n2.7021056317091501E-3 2.2760659562978992E-3\n2.22 Limited\nPartner Total\nNet Amount\nCalled /\n(Distributed) -\nCurrent Notice\n-278137\n1All amounts\nare in Fund\nLocal Currency\nunless noted\notherwise and\nmay include\nfractional dollar\namounts. The\nsummation of\nindividual\namounts listed\non this notice\nmay vary by 1\ndue to rounding\nof fractional\ndollar amounts.\n2If value does\nnot match\nending balance\nfrom prior\nnotice, see the\napplicable\nfootnote below\nfor details on\nthe applicable\nvariance. Please\nnote that\nindividual\namounts may\nvary from prior\nnotice and\ninternally due to\nrounding. 3Due\nto variations in\nthe definitions\nused by\ndifferent funds,\nthese balances\nmay not\nnecessarily tie to\ncumulative\ncontributions/\ndistributions\nreported in\nquarterly fund\nfinancials; Do\nnot use these\nbalances to\ncalculate\nperformance\nmultiples (e.g.\nDPI).\n4Cumulative\nFund Amount of\nDistributions\nmay differ from\nthat reported on\nthe balance\nsheet of the\nquarterly fund\nfinancials due to\nspecial general\npartner\ndistributions.\nFor more\ninformation on\nspecial general\npartner\ndistributions,\nplease refer to\nthe\n\"Compensation\nfor the General\nPartner\"\nfootnote within\nthe quarterly\nfund financials.\nSection C:\nWorksheet - LP\nAmounts -\n(Includes any\ntransactions that\nnet to zero)\n2.14 Holding\nName /\nTransaction\nDescription\n2.15 Transaction Type\n(Choose from Dropdown)\n2.16\nAmo\n(Ente\nValu\nPosit\nAmo\nGeneral Partner\nDistribution -\nCarry\nDist: Carry\n6755\nGeneral Partner\nDistribution -\nRecouped\nDist: Carry\n5830\nVaxCare Corp.\nDist: Realized Gain -\nCash\n2786\nVaxCare Corp.\nDist: Return of Capital -\nCash\n7291\nTransaction Type\nCall/\nDist.\nDefinition\nCall: Investments\nCall\nCall for investments in new or\nexisting underlying holdings\n1\nCall: Management\nFees\nCall\nCall for periodic Mgmt. Fees/GP\nDistributions, net of any waivers or\noffsets (provide mgmt. fee\ncalculation in the \"Side Calculation\"\nsection)\n1\nCall: Partnership\nExpenses\nCall\nCall for Partnership / Fund\nExpenses, as defined in LPA\n1\nCall: Org. Costs\nCall\nCall for Organizational Costs, as\ndefined in LPA\n1\nCall: Legal Fees\nCall\nCall for Legal Fees, as defined in\nLPA\n1\nCall: Other Exp.\n(Provide explanation\nin far-left column)\nCall\nCall for miscellaneous expenses not\nlisted above (provide a description\nof these expenses in the far left\ncolumn of the worksheet)\n1\nCall: Subsequent\nClose Interest\nCall\nInterest due from LPs that\ncommitted to subsequent closing of\nfund\n1\nCall: Return of\nExcess Capital\nCalled\nCall\nReturn of unused proceeds called\nfor investments (typically increases\nunfunded commitment)\n-1\nCall: Waiver\nContributions\nCall\nCall from LPs, on behalf of GP's\nshare of a capital call (typically\nserves as an offset to future\nmanagement fees)\n1\nCall: Placement Fees Call\n1\nDist: Return of\nCapital - Cash\nDist.\nReturn of invested capital from the\nfull or partial sale of an underlying\nholding\n-1\nDist: Realized Gain -\nCash\nDist.\nRealized gain from the full or\npartial sale of an underlying\nholding\n-1\nDist: Realized Loss -\nCash\nDist.\nRealized loss from the full or partial\nsale of an underlying holding\n1\nDist: Return of\nCapital - Stock\nDist.\nCost basis of a stock distribution\n-1\nDist: Realized Gain -\nStock\nDist.\nRealized gain from a stock\ndistribution\n-1\nDist: Realized Loss -\nStock\nDist.\nRealized loss from a stock\ndistribution\n1\nDist: Income/\nDividends\nDist.\nIncome or dividends earned from\nunderlying holdings\n-1\nDist: Carry\nDist.\nGP's share of distribution proceeds,\nas defined by the waterfall\ncalculation in the LPA (offset to\ndistribution)\n1\nDist: Clawback\nDist.\nReturn of excess carry distributed\nto GP, as defined by the waterfall\ncalculation in the LPA (offset to\nCarry)\n-1\nDist: Subsequent\nClose Interest\nDist.\nInterest received from LPs that\ncommitted to subsequent closing of\nfund\n-1\nDist: Other (Provide\nexplanation in far-\nleft column)\nDist.\nMiscellaneous distributions not\notherwise defined above (provide a\ndescription of these expenses in the\nfar left column of the worksheet)\n-1\n",
+    "cleaned_text": "CapitaI CaII & Distribution SuppIementaI ILPA Notice1 2.1 Fund Name Summit Partners Growth Equity Fund X-B, L.P. Section A: Fund LeveI / Cash FIow Information 2.2 Issue Date (MM/DD/ YYYY): 45826 2.3 Due Date (MM/DD/ YYYY): 45828 2.4 Fund LocaI Currency: USD 2.5 GeneraI Partner Commitment (IncIudes Purchase and Carry Commitments): 160124122 2.6 Fund Size, IncIuding aII AIVs: 1961520489 Fund Aggregate CaIIs / Distributions (IncI. GeneraI Partner's Share) Contributions (Distributions) 2.7 CumuIative Fund Amount (Prior To Current Notice)2,3,4,: 1813641903 -524158838 2.8 Fund Amount (Current Notice) 0 -172548125 CumuIative Fund Amount (IncIuding Current Notice)3,4: 1813641903 -696706963 Section B: Limited Partner Information (AII VaIues Shown as Positive Amounts) 2.9 Limited Partner: FIorida AtIantic University Foundation, Inc. 2.10 Limited Partner Commitment: 5000000 Limited Partner % of Fund (Limited Partner Commitment / Fund Size) 2.5490429633743174E-3 Limited Partner % of Limited Partner Commitments (% used to caIc. Limited Partner's share of caII) 2.775624560810497E-3 2.11 Limited Partner Unfunded Commitment2 (Prior to current notice) 1406962 2.12 Limited Partner CumuIative Contributions2,3 (Prior to current notice) 4900652 2.13 Limited Partner CumuIative Distributions2,3 (Prior to current notice) 1307614 Limited Partner BaIances / TotaIs (FormuIa Driven) 2.18 Unfunded Commitment Unfunded Commitment BaIance (Priorto Current Notice) 1406962 Impact on Unfunded Commitment BaIance (Current Notice) 278137 Unfunded Commitment BaIance (IncIuding Current Notice) 1685099 Aggregate CaIIs / Distributions Contributions (Distributions) 2.19 CumuIative Limited Partner Amount (Prior To Current Notice): 4900652 -1307614 as a % of Fund Amount 2.7021056317091501E-3 2.4946903594898462E-3 2.20 Limited Partner Amount (Current Notice): 0 -278137 as a % of Fund Amount 0 1.6119386982617169E-3 2.21 CumuIative Limited Partner Amount (IncIuding Current Notice): 4900652 -1585751 as a % of Fund Amount 2.7021056317091501E-3 2.2760659562978992E-3 2.22 Limited Partner TotaI Net Amount CaIIed / (Distributed) - Current Notice -278137 1AII amounts are in Fund LocaI CurrencyunIess noted otherwise and may incIudefractionaI doIIaramounts. Thesummation of individuaI amounts Iistedon this notice may vary by 1 due to rounding of fractionaI doIIar amounts. 2If vaIue does not match ending baIancefrom prior notice, see the appIicabIefootnote beIowfor detaiIs on the appIicabIevariance. PIeasenote that individuaI amounts may vary from prior notice and internaIIy due to rounding. 3Dueto variations in the definitions used by different funds, these baIancesmay not necessariIy tie to cumuIativecontributions/ distributions reported in quarterIy fund financiaIs; Donot use these baIances to caIcuIateperformance muItipIes (e.g. DPI). 4CumuIative Fund Amount of Distributionsmay differ from that reported on the baIancesheet of the quarterIy fund financiaIs due to speciaI generaI partner distributions. For more information on speciaI generaI partner distributions, pIease refer to the \"Compensationfor the GeneraI Partner\" footnote within the quarterIyfund financiaIs. Section C: Worksheet - LP Amounts - (IncIudes any transactions that net to zero) 2.14 HoIding Name / Transaction Description 2.15 Transaction Type (Choose from Dropdown) 2.16 Amo (Ente VaIu Posit Amo GeneraI Partner Distribution - Carry Dist: Carry 6755 GeneraI Partner Distribution - Recouped Dist: Carry 5830 VaxCare Corp. Dist: ReaIized Gain - Cash 2786 VaxCare Corp. Dist: Return of CapitaI - Cash 7291 Transaction Type CaII/ Dist. Definition CaII: Investments CaII CaII for investments in new or existing underIying hoIdings 1 CaII: Management Fees CaII CaII for periodic Mgmt. Fees/GP Distributions, net of any waivers or offsets (provide mgmt. fee caIcuIation in the \"Side CaIcuIation\" section) 1 CaII: Partnership Expenses CaII CaII for Partnership / Fund Expenses, as defined in LPA 1 CaII: 0rg. Costs CaII CaII for 0rganizationaI Costs, as defined in LPA 1 CaII: LegaI Fees CaII CaII for LegaI Fees, as defined in LPA 1 CaII: 0ther Exp. (Provide expIanationin far-Ieft coIumn) CaII CaII for misceIIaneous expenses not Iisted above (provide a description of these expenses in the far IeftcoIumn of the worksheet) 1 CaII: Subsequent CIose Interest CaII Interest due from LPs that committed to subsequent cIosing of fund 1 CaII: Return of Excess CapitaI CaIIed CaII Return of unused proceeds caIIedfor investments (typicaIIy increases unfunded commitment) -1 CaII: Waiver Contributions CaII CaII from LPs, on behaIf of GP's share of a capitaI caII (typicaIIyserves as an offset to future management fees) 1 CaII: PIacement Fees CaII 1 Dist: Return of CapitaI - Cash Dist. Return of invested capitaI from the fuII or partiaI saIe of an underIyinghoIding -1 Dist: ReaIized Gain - Cash Dist. ReaIized gain from the fuII or partiaI saIe of an underIyinghoIding -1 Dist: ReaIized Loss - Cash Dist. ReaIized Ioss from the fuII or partiaI saIe of an underIying hoIding 1 Dist: Return of CapitaI - Stock Dist. Cost basis of a stock distribution -1 Dist: ReaIized Gain - Stock Dist. ReaIized gain from a stock distribution -1 Dist: ReaIized Loss - Stock Dist. ReaIized Ioss from a stock distribution 1 Dist: Income/ Dividends Dist. Income or dividends earned from underIying hoIdings -1 Dist: Carry Dist. GP's share of distribution proceeds, as defined by the waterfaII caIcuIation in the LPA (offset to distribution) 1 Dist: CIawback Dist. Return of excess carry distributed to GP, as defined by the waterfaII caIcuIation in the LPA (offset to Carry) -1 Dist: Subsequent CIose Interest Dist. Interest received from LPs that committed to subsequent cIosing of fund -1 Dist: 0ther (ProvideexpIanation in far- Ieft coIumn) Dist. MisceIIaneous distributions not otherwise defined above (provide a description of these expenses in the far Ieft coIumn of the worksheet) -1",
+    "classification_modality": "hybrid_classification",
+    "document_type": "Distribution",
+    "classification_confidence": 0.85,
+    "extracted_data": {
+        "entities": [
+            {
+                "portfolio": [
+                    {
+                        "Investor": {
+                            "Value": "Florida Atlantic University Foundation, Inc.",
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "FIorida AtIantic University Foundation, Inc.",
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Account": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "InvestorRefID": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "AccountRefID": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Fund_ID": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Series_ID": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Series_Description": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Security": {
+                            "Value": "Summit Partners Growth Equity Fund X-B, L.P.",
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "Summit Partners Growth Equity Fund X-B, L.P.",
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "TransactionDate": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Currency": {
+                            "Value": "USD",
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "USD",
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Distribution": {
+                            "Value": -278137,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "-278137",
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "DeemeedCapitalCall": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "IncomeDistribution": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "IncomeReinvested": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "RecallableSell": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "ReturnOfCapital": {
+                            "Value": 7291,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "7291",
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "DistributionOutsideCommitment": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "CapitalCall": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "CapitalCallOutsideCommitment": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "NetCashFlowQC": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "TransferOut": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Quantity": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Price": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "RemainingCommittedCapital": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "DistributionsToDate": {
+                            "Value": 1307614,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "1307614",
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "ReturnOfCapitalToDate": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "CommittedCapital": {
+                            "Value": 5000000,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "5000000",
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "ContributionsToDate": {
+                            "Value": 4900652,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "4900652",
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Carry": {
+                            "Value": 12585,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "6755, 5830",
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Clawback": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "RealizedGainCash": {
+                            "Value": 2786,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "2786",
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "RealizedGainStock": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "RealizedLossCash": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "RealizedLossStock": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "ReturnOfCapitalManagementFees": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "ReturnOfCapitalPartnershipExpenses": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "ReturnOfCapitalStock": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "TemporaryReturnOfCapitalManagementFees": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "SubsequentCloseInterest": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Other": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "ILPAIncomeDistribution": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "ILPAReturnOfCapitalCash": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "ILPAReturnOfExcessCapitalCalled": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "validation_errors": [],
+    "events_log": [
+        {
+            "timestamp": "2025-11-10 17:13:23,078",
+            "level": "INFO",
+            "stage": "Ingestion",
+            "message": "Successfully ingested 'file3_distribution.xlsx'. Document ID: 2f6c01d8-4bf1-4b99-95ba-9efe9108feca",
+            "details": null
+        },
+        {
+            "timestamp": "2025-11-10 17:13:23,087",
+            "level": "INFO",
+            "stage": "OCR",
+            "message": "Successfully processed through OCR Box: file3_distribution.xlsx",
+            "details": null
+        },
+        {
+            "timestamp": "2025-11-10 17:13:23,092",
+            "level": "INFO",
+            "stage": "Preprocessing",
+            "message": "Successfully processed through Enhanced Preprocessing Box: file3_distribution.xlsx",
+            "details": {
+                "quality_score": 1.0
+            }
+        },
+        {
+            "timestamp": "2025-11-10 17:13:23,887",
+            "level": "INFO",
+            "stage": "Classification",
+            "message": "Classified 'file3_distribution.xlsx' as: Distribution (confidence: 0.85)",
+            "details": {
+                "document_type": "Distribution",
+                "confidence": 0.85,
+                "confidence_level": "MEDIUM"
+            }
+        },
+        {
+            "timestamp": "2025-11-10 17:13:41,073",
+            "level": "INFO",
+            "stage": "Extraction",
+            "message": "Extraction completed for 'file3_distribution.xlsx'",
+            "details": {
+                "extraction_quality": 1.0,
+                "extraction_confidence": null,
+                "processing_time": 17.18527102470398,
+                "extracted_data_present": false
+            }
+        },
+        {
+            "timestamp": "2025-11-10 17:13:41,074",
+            "level": "WARNING",
+            "stage": "BoundingBox",
+            "message": "Bounding box extraction failed: Bounding box extraction failed: Tesseract is not available for OCR processing",
+            "details": null
+        },
+        {
+            "timestamp": "2025-11-10 17:13:41,074",
+            "level": "INFO",
+            "stage": "Validation & Enrichment",
+            "message": "Validation & Enrichment completed for 'file3_distribution.xlsx': no enrichment",
+            "details": null
+        },
+        {
+            "timestamp": "2025-11-10 17:13:41,074",
+            "level": "INFO",
+            "stage": "Output",
+            "message": "Successfully wrote output for 'file3_distribution.xlsx' to test_output/file3_distribution_output.json",
+            "details": null
+        }
+    ],
+    "metadata": {
+        "preprocessing_quality": {
+            "quality_score": 1.0,
+            "warnings": [],
+            "metrics": {
+                "original_length": 5961,
+                "cleaned_length": 5933,
+                "length_reduction_ratio": 0.004697198456634793,
+                "word_count_original": 890,
+                "word_count_cleaned": 863,
+                "line_count_original": 431,
+                "line_count_cleaned": 1
+            }
+        },
+        "preserved_structure": {
+            "tables": [],
+            "lists": [],
+            "headers": [],
+            "dates": [],
+            "amounts": [],
+            "addresses": []
+        },
+        "cleaning_timestamp": "2025-11-10 17:13:23,091",
+        "text_quality_score": 0.0,
+        "classification_mode": "hybrid_classification",
+        "text_length": 5933,
+        "num_pages": 1,
+        "confidence_level": "MEDIUM",
+        "llm_provider": "openai",
+        "retry_count": 0,
+        "processing_time": 0.79563307762146,
+        "file_hash": "0f21ee3ff7805521ce7a85169caa8994",
+        "classification_metrics": {
+            "processing_time": 0.7956228256225586,
+            "api_calls": 1,
+            "retry_count": 0,
+            "provider_attempts": {
+                "openai": 1
+            },
+            "error_count": 0,
+            "cache_hits": 0,
+            "efficiency_score": 0.0
+        },
+        "extraction_mode": "text_based_extraction",
+        "schema_loaded": true,
+        "is_scanned": false,
+        "schema_validation_passed": true,
+        "validation_errors": [],
+        "extraction_quality_score": 1.0,
+        "extraction_quality_level": "EXCELLENT",
+        "total_processing_time": 17.18527102470398,
+        "extraction_metrics": {
+            "total_processing_time": 17.185264110565186,
+            "extraction_time": 17.18376326560974,
+            "schema_validation_time": 3.0994415283203125e-06,
+            "post_processing_time": 0,
+            "api_calls": 1,
+            "retry_count": 0,
+            "validation_attempts": 1,
+            "error_count": 0,
+            "cache_hits": 0,
+            "token_usage": {
+                "input": 12417,
+                "output": 2018
+            },
+            "efficiency_score": 0.0,
+            "tokens_per_second": 839.9637564959389,
+            "model_used": "gpt-4o",
+            "prompt_tokens": 12417,
+            "completion_tokens": 2018,
+            "total_tokens": 14435,
+            "chunk_info": "single_pass"
+        },
+        "bounding_box_error": "Tesseract is not available for OCR processing",
+        "bounding_box_processing_time": 0.0004191398620605469,
+        "validation_passed": true,
+        "validation_errors_count": 0,
+        "validation_warnings_count": 0,
+        "validation_severity_counts": {
+            "CRITICAL": 0,
+            "HIGH": 0,
+            "MEDIUM": 0,
+            "LOW": 0,
+            "INFO": 0
+        },
+        "completeness_score": 1.0,
+        "accuracy_score": 1.0,
+        "consistency_score": 1.0,
+        "overall_quality_score": 1.0,
+        "validation_processing_time": 7.200241088867188e-05,
+        "enrichment_enabled": false,
+        "enrichment_skipped_reason": "No page data available or enrichment disabled",
+        "total_validation_enrichment_time": 0.0007860660552978516
+    }
+}

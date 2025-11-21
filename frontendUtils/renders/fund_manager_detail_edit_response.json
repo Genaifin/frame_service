@@ -1,0 +1,96 @@
+{
+  "sections": [
+    {
+      "id": "fund-manager-details",
+      "title": "FUND MANAGER DETAILS",
+      "idToShow": "FDMG0006",
+      "fields": [
+        {
+          "id": "fund_manager_name",
+          "label": "Fund Manager Name",
+          "placeholder": "Ex. Acme Corp",
+          "defaultValue": "Future Wealth Partners",
+          "type": "text",
+          "width": "50%",
+          "required": true
+        }
+      ],
+      "width": "100%"
+    },
+    {
+      "id": "contact-details",
+      "title": "CONTACT DETAILS",
+      "fields": [
+        {
+          "id": "title",
+          "label": "Title",
+          "placeholder": "Ex. Mr.",
+          "defaultValue": "Mr.",
+          "type": "select",
+          "options": ["Mr.", "Ms.", "Mrs."],
+          "width": "12%",
+          "required": true
+        },
+        {
+          "id": "first_name",
+          "label": "First Name",
+          "placeholder": "Ex. John",
+          "defaultValue": "John",
+          "type": "text",
+          "width": "38%",
+          "required": true
+        },
+        {
+          "id": "last_name",
+          "label": "Last Name",
+          "placeholder": "Ex. Doe",
+          "defaultValue": "Doe",
+          "type": "text",
+          "width": "50%",
+          "required": true
+        },
+        {
+          "id": "email",
+          "label": "Email ID",
+          "placeholder": "Ex. johndoe@mail.com",
+          "defaultValue": "johndoe@mail.com",
+          "type": "text",
+          "width": "50%",
+          "required": true
+        },
+        {
+          "id": "contact_number",
+          "label": "Contact Number",
+          "placeholder": "Ex. +1 (123) 456-7890",
+          "defaultValue": "+1 (123) 456-7890",
+          "type": "telephone",
+          "width": "50%",
+          "required": true
+        }
+      ],
+      "width": "100%"
+    }
+  ],
+  "buttonText": "Update",
+  "onConfirmation": {
+    "title": "Edit Fund Manager",
+    "description": "Are you sure you want to update Future Wealth Partners?",
+    "buttonText": "Update",
+    "clickAction": {
+      "type": "putData",
+      "putAPIURL": "funds/managers/",
+      "actionAfterAPICall": {
+        "type": "navigation",
+        "to": "/frame",
+        "parameters": [
+          {
+            "key": "page",
+            "value": "FundManagerMaster"
+          }
+        ]
+      }
+    }
+  }
+}
+  
+   

@@ -1,0 +1,15 @@
+{
+  "typeName": "application/pdf",
+  "fileHash": "707700eeb40be9ad30cc7f397a4def42be5fc467de0d1825172cc2d79b63a15e",
+  "fileOriginalName": "221NCH_2024-12.pdf",
+  "fileOriginalPath": "data/frameDemo/l0/221NCH_2024-12.pdf",
+  "typeSpecificParams": {
+    "numPages": 1,
+    "EXIF": {
+      "/CreationDate": "2025-01-13T21:40:50.000",
+      "/Creator": "OmniPage CSDK 20",
+      "/ModDate": "2025-01-13T21:40:50.000",
+      "/Producer": "Nuance OmniPage Server"
+    }
+  }
+}

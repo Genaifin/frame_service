@@ -1,0 +1,565 @@
+{
+    "extracted_fields": [
+        {
+            "fields": {
+                "Fund name ": "Storm Ventures Fund VII LP 2024 FS Final",
+                "Period /Date ": "2024-12-31",
+                "current_assets": {
+                    "Cash": "626613",
+                    "Receivables": null,
+                    "OtherShortTermInvestments": null
+                },
+                "NonCurrentAssets": {
+                    "LongTermInvestments": "54239805",
+                    "PrivateEquityHoldings": "54239805",
+                    "RealEstate": null,
+                    "OtherIlliquidAssets": null
+                },
+                "FairValueOfInvestments": {
+                    "FairValue": "54239805"
+                },
+                "CurrentLiabilities": {
+                    "ShortTermDebts": null,
+                    "AccruedExpenses": "208730",
+                    "OtherObligationsDueWithinOneYear": null
+                },
+                "NonCurrentLiabilities": {
+                    "LongTermDebt": null,
+                    "DeferredTaxLiabilities": null,
+                    "OtherLongTermObligations": null
+                },
+                "Equity": {
+                    "CapitalContributions": "65000000",
+                    "RetainedEarningsOrProfitLoss": "-10649922",
+                    "FundsNetAssets": "54350078"
+                },
+                "Revenue": {
+                    "InvestmentIncome": {
+                        "Dividends": null,
+                        "Interest": null,
+                        "CapitalGains": null
+                    },
+                    "ManagementFees": null,
+                    "PerformanceFees": null
+                },
+                "Expenses": {
+                    "ManagementAndAdministrativeFees": {
+                        "ManagementFees": null,
+                        "AdministrativeFees": null,
+                        "LegalFees": null,
+                        "OtherManagementExpenses": null
+                    },
+                    "FundOperatingCosts": {
+                        "CustodyFees": null,
+                        "AuditFees": null,
+                        "AccountingFees": null,
+                        "ReportingCosts": null,
+                        "OtherOperatingCosts": null
+                    },
+                    "InvestmentRelatedExpenses": {
+                        "TransactionCosts": null,
+                        "OtherInvestmentExpenses": null
+                    }
+                },
+                "NetIncomeOrLoss": {
+                    "OperatingIncome": null,
+                    "NetIncome": "-10649922"
+                },
+                "Cash Flow from Operating Activities (CFO)": [
+                    {
+                        "CashGeneratedFromOperations": null,
+                        "CashReceipts": null,
+                        "CashPayments": null,
+                        "InterestPaymentsAndReceipts": null,
+                        "TaxPayments": null,
+                        "AdjustmentsForNonCashItems": null
+                    }
+                ],
+                "Cash Flow from Investing Activities (CFI)": {
+                    "CashOutflows": null,
+                    "CashInflows": null
+                },
+                "Cash Flow from Financing Activities (CFF)": {
+                    "CashInflows": null,
+                    "CashOutflows": null
+                },
+                "net_change_in_cash_and_cash_equivalents": null,
+                "Statement of Changes in Net Assets/Equity": [
+                    {
+                        "opening_balance_of_net_assets_equity": null,
+                        "net_income_or_loss": "-10649922",
+                        "distributions_or_withdrawals": null,
+                        "capital_contributions_or_equity_issuance": "65000000",
+                        "changes_due_to_revaluation": null,
+                        "accounting_policy_changes": null,
+                        "other_comprehensive_income": null,
+                        "equity_at_end_of_period": "54350078"
+                    }
+                ],
+                "Schedule of Investments(SOI)": [
+                    {
+                        "AssetType": "Preferred Stock",
+                        "InvestmentName": "AirMDR, Inc.",
+                        "IndustryOrSector": "Information Technology",
+                        "QuantityOrUnitsHeld": 399978,
+                        "CostOrAcquisitionValue": 749999,
+                        "FairValueOrMarketValue": 749999,
+                        "PercentageOfTotalNetAssetsOrPortfolio": null,
+                        "InvestmentType": "Equity",
+                        "DateOfAcquisition": null,
+                        "InvestmentIncomeOrYield": null,
+                        "UnrealizedGainsOrLosses": 0,
+                        "InvestmentStatus": "Active",
+                        "GeographicLocation": "United States",
+                        "SpecialNotesOrRisks": null
+                    },
+                    {
+                        "AssetType": "Preferred Stock",
+                        "InvestmentName": "Atomicwork, Inc.",
+                        "IndustryOrSector": "Information Technology",
+                        "QuantityOrUnitsHeld": 132345,
+                        "CostOrAcquisitionValue": 449999,
+                        "FairValueOrMarketValue": 449999,
+                        "PercentageOfTotalNetAssetsOrPortfolio": null,
+                        "InvestmentType": "Equity",
+                        "DateOfAcquisition": null,
+                        "InvestmentIncomeOrYield": null,
+                        "UnrealizedGainsOrLosses": 0,
+                        "InvestmentStatus": "Active",
+                        "GeographicLocation": "United States",
+                        "SpecialNotesOrRisks": null
+                    },
+                    {
+                        "AssetType": "SAFE",
+                        "InvestmentName": "Atomicwork, Inc.",
+                        "IndustryOrSector": "Information Technology",
+                        "QuantityOrUnitsHeld": null,
+                        "CostOrAcquisitionValue": 250000,
+                        "FairValueOrMarketValue": 250000,
+                        "PercentageOfTotalNetAssetsOrPortfolio": null,
+                        "InvestmentType": "Convertible Instrument",
+                        "DateOfAcquisition": null,
+                        "InvestmentIncomeOrYield": null,
+                        "UnrealizedGainsOrLosses": 0,
+                        "InvestmentStatus": "Active",
+                        "GeographicLocation": "United States",
+                        "SpecialNotesOrRisks": null
+                    },
+                    {
+                        "AssetType": "Preferred Stock",
+                        "InvestmentName": "Compa Technologies, Inc.",
+                        "IndustryOrSector": "Information Technology",
+                        "QuantityOrUnitsHeld": 2383293,
+                        "CostOrAcquisitionValue": 4749996,
+                        "FairValueOrMarketValue": 8114876,
+                        "PercentageOfTotalNetAssetsOrPortfolio": null,
+                        "InvestmentType": "Equity",
+                        "DateOfAcquisition": null,
+                        "InvestmentIncomeOrYield": null,
+                        "UnrealizedGainsOrLosses": 3364880,
+                        "InvestmentStatus": "Active",
+                        "GeographicLocation": "United States",
+                        "SpecialNotesOrRisks": null
+                    },
+                    {
+                        "AssetType": "Common Stock",
+                        "InvestmentName": "Netskope (acq Dasera, Inc.)",
+                        "IndustryOrSector": "Information Technology",
+                        "QuantityOrUnitsHeld": 178397,
+                        "CostOrAcquisitionValue": 4000000,
+                        "FairValueOrMarketValue": 1992694,
+                        "PercentageOfTotalNetAssetsOrPortfolio": null,
+                        "InvestmentType": "Equity",
+                        "DateOfAcquisition": null,
+                        "InvestmentIncomeOrYield": null,
+                        "UnrealizedGainsOrLosses": -2007306,
+                        "InvestmentStatus": "Active",
+                        "GeographicLocation": "United States",
+                        "SpecialNotesOrRisks": null
+                    },
+                    {
+                        "AssetType": "Preferred Stock",
+                        "InvestmentName": "Eighty-Six Inc.",
+                        "IndustryOrSector": "Information Technology",
+                        "QuantityOrUnitsHeld": 6748397,
+                        "CostOrAcquisitionValue": 6000000,
+                        "FairValueOrMarketValue": 6000000,
+                        "PercentageOfTotalNetAssetsOrPortfolio": null,
+                        "InvestmentType": "Equity",
+                        "DateOfAcquisition": null,
+                        "InvestmentIncomeOrYield": null,
+                        "UnrealizedGainsOrLosses": 0,
+                        "InvestmentStatus": "Active",
+                        "GeographicLocation": "United States",
+                        "SpecialNotesOrRisks": null
+                    },
+                    {
+                        "AssetType": "SAFE",
+                        "InvestmentName": "Floma, Inc.",
+                        "IndustryOrSector": "Information Technology",
+                        "QuantityOrUnitsHeld": null,
+                        "CostOrAcquisitionValue": 250000,
+                        "FairValueOrMarketValue": 250000,
+                        "PercentageOfTotalNetAssetsOrPortfolio": null,
+                        "InvestmentType": "Convertible Instrument",
+                        "DateOfAcquisition": null,
+                        "InvestmentIncomeOrYield": null,
+                        "UnrealizedGainsOrLosses": 0,
+                        "InvestmentStatus": "Active",
+                        "GeographicLocation": "United States",
+                        "SpecialNotesOrRisks": null
+                    },
+                    {
+                        "AssetType": "Preferred Stock",
+                        "InvestmentName": "Flywheel Dynamix, Inc.",
+                        "IndustryOrSector": "Information Technology",
+                        "QuantityOrUnitsHeld": 34780189,
+                        "CostOrAcquisitionValue": 5000000,
+                        "FairValueOrMarketValue": 5000000,
+                        "PercentageOfTotalNetAssetsOrPortfolio": null,
+                        "InvestmentType": "Equity",
+                        "DateOfAcquisition": null,
+                        "InvestmentIncomeOrYield": null,
+                        "UnrealizedGainsOrLosses": 0,
+                        "InvestmentStatus": "Active",
+                        "GeographicLocation": "United States",
+                        "SpecialNotesOrRisks": null
+                    },
+                    {
+                        "AssetType": "Preferred Stock",
+                        "InvestmentName": "Harmonic Security, Inc.",
+                        "IndustryOrSector": "Information Technology",
+                        "QuantityOrUnitsHeld": 563503,
+                        "CostOrAcquisitionValue": 1227212,
+                        "FairValueOrMarketValue": 1912773,
+                        "PercentageOfTotalNetAssetsOrPortfolio": null,
+                        "InvestmentType": "Equity",
+                        "DateOfAcquisition": null,
+                        "InvestmentIncomeOrYield": null,
+                        "UnrealizedGainsOrLosses": 685561,
+                        "InvestmentStatus": "Active",
+                        "GeographicLocation": "United States",
+                        "SpecialNotesOrRisks": null
+                    },
+                    {
+                        "AssetType": "Preferred Stock",
+                        "InvestmentName": "Heeler Security, Inc.",
+                        "IndustryOrSector": "Information Technology",
+                        "QuantityOrUnitsHeld": 1390557,
+                        "CostOrAcquisitionValue": 2200000,
+                        "FairValueOrMarketValue": 2200000,
+                        "PercentageOfTotalNetAssetsOrPortfolio": null,
+                        "InvestmentType": "Equity",
+                        "DateOfAcquisition": null,
+                        "InvestmentIncomeOrYield": null,
+                        "UnrealizedGainsOrLosses": 0,
+                        "InvestmentStatus": "Active",
+                        "GeographicLocation": "United States",
+                        "SpecialNotesOrRisks": null
+                    },
+                    {
+                        "AssetType": "Preferred Stock",
+                        "InvestmentName": "HST Solar Farms Inc.",
+                        "IndustryOrSector": "Information Technology",
+                        "QuantityOrUnitsHeld": 55366791,
+                        "CostOrAcquisitionValue": 2999773,
+                        "FairValueOrMarketValue": 2999773,
+                        "PercentageOfTotalNetAssetsOrPortfolio": null,
+                        "InvestmentType": "Equity",
+                        "DateOfAcquisition": null,
+                        "InvestmentIncomeOrYield": null,
+                        "UnrealizedGainsOrLosses": 0,
+                        "InvestmentStatus": "Active",
+                        "GeographicLocation": "United States",
+                        "SpecialNotesOrRisks": null
+                    },
+                    {
+                        "AssetType": "Preferred Stock",
+                        "InvestmentName": "Invoke AI, Inc.",
+                        "IndustryOrSector": "Information Technology",
+                        "QuantityOrUnitsHeld": 2218647,
+                        "CostOrAcquisitionValue": 1999999,
+                        "FairValueOrMarketValue": 1999999,
+                        "PercentageOfTotalNetAssetsOrPortfolio": null,
+                        "InvestmentType": "Equity",
+                        "DateOfAcquisition": null,
+                        "InvestmentIncomeOrYield": null,
+                        "UnrealizedGainsOrLosses": 0,
+                        "InvestmentStatus": "Active",
+                        "GeographicLocation": "United States",
+                        "SpecialNotesOrRisks": null
+                    },
+                    {
+                        "AssetType": "Preferred Stock",
+                        "InvestmentName": "Opaque Systems, Inc.",
+                        "IndustryOrSector": "Information Technology",
+                        "QuantityOrUnitsHeld": 730622,
+                        "CostOrAcquisitionValue": 3000000,
+                        "FairValueOrMarketValue": 3000000,
+                        "PercentageOfTotalNetAssetsOrPortfolio": null,
+                        "InvestmentType": "Equity",
+                        "DateOfAcquisition": null,
+                        "InvestmentIncomeOrYield": null,
+                        "UnrealizedGainsOrLosses": 0,
+                        "InvestmentStatus": "Active",
+                        "GeographicLocation": "United States",
+                        "SpecialNotesOrRisks": null
+                    },
+                    {
+                        "AssetType": "Preferred Stock",
+                        "InvestmentName": "OpsLab, Inc.",
+                        "IndustryOrSector": "Information Technology",
+                        "QuantityOrUnitsHeld": 1493763,
+                        "CostOrAcquisitionValue": 1999999,
+                        "FairValueOrMarketValue": 1999999,
+                        "PercentageOfTotalNetAssetsOrPortfolio": null,
+                        "InvestmentType": "Equity",
+                        "DateOfAcquisition": null,
+                        "InvestmentIncomeOrYield": null,
+                        "UnrealizedGainsOrLosses": 0,
+                        "InvestmentStatus": "Active",
+                        "GeographicLocation": "United States",
+                        "SpecialNotesOrRisks": null
+                    },
+                    {
+                        "AssetType": "Preferred Stock",
+                        "InvestmentName": "Pinkfish AI Corp.",
+                        "IndustryOrSector": "Information Technology",
+                        "QuantityOrUnitsHeld": 1228070,
+                        "CostOrAcquisitionValue": 2100000,
+                        "FairValueOrMarketValue": 2100000,
+                        "PercentageOfTotalNetAssetsOrPortfolio": null,
+                        "InvestmentType": "Equity",
+                        "DateOfAcquisition": null,
+                        "InvestmentIncomeOrYield": null,
+                        "UnrealizedGainsOrLosses": 0,
+                        "InvestmentStatus": "Active",
+                        "GeographicLocation": "United States",
+                        "SpecialNotesOrRisks": null
+                    },
+                    {
+                        "AssetType": "SAFE",
+                        "InvestmentName": "Thera Labs, Inc.",
+                        "IndustryOrSector": "Information Technology",
+                        "QuantityOrUnitsHeld": null,
+                        "CostOrAcquisitionValue": 250000,
+                        "FairValueOrMarketValue": 250000,
+                        "PercentageOfTotalNetAssetsOrPortfolio": null,
+                        "InvestmentType": "Convertible Instrument",
+                        "DateOfAcquisition": null,
+                        "InvestmentIncomeOrYield": null,
+                        "UnrealizedGainsOrLosses": 0,
+                        "InvestmentStatus": "Active",
+                        "GeographicLocation": "United States",
+                        "SpecialNotesOrRisks": null
+                    },
+                    {
+                        "AssetType": "Preferred Stock",
+                        "InvestmentName": "Tote Technologies, Inc.",
+                        "IndustryOrSector": "Information Technology",
+                        "QuantityOrUnitsHeld": 25188916,
+                        "CostOrAcquisitionValue": 5000000,
+                        "FairValueOrMarketValue": 5000000,
+                        "PercentageOfTotalNetAssetsOrPortfolio": null,
+                        "InvestmentType": "Equity",
+                        "DateOfAcquisition": null,
+                        "InvestmentIncomeOrYield": null,
+                        "UnrealizedGainsOrLosses": 0,
+                        "InvestmentStatus": "Active",
+                        "GeographicLocation": "United States",
+                        "SpecialNotesOrRisks": null
+                    },
+                    {
+                        "AssetType": "Preferred Stock",
+                        "InvestmentName": "Retorio GmbH",
+                        "IndustryOrSector": "Information Technology",
+                        "QuantityOrUnitsHeld": 4128,
+                        "CostOrAcquisitionValue": 2169792,
+                        "FairValueOrMarketValue": 2169792,
+                        "PercentageOfTotalNetAssetsOrPortfolio": 4.0,
+                        "InvestmentType": "Equity",
+                        "DateOfAcquisition": null,
+                        "InvestmentIncomeOrYield": null,
+                        "UnrealizedGainsOrLosses": 0,
+                        "InvestmentStatus": "Active",
+                        "GeographicLocation": "Germany",
+                        "SpecialNotesOrRisks": null
+                    },
+                    {
+                        "AssetType": "Preferred Stock",
+                        "InvestmentName": "Seraphic Algorithms Ltd.",
+                        "IndustryOrSector": "Information Technology",
+                        "QuantityOrUnitsHeld": 896842,
+                        "CostOrAcquisitionValue": 1628110,
+                        "FairValueOrMarketValue": 1878112,
+                        "PercentageOfTotalNetAssetsOrPortfolio": 3.4,
+                        "InvestmentType": "Equity",
+                        "DateOfAcquisition": null,
+                        "InvestmentIncomeOrYield": null,
+                        "UnrealizedGainsOrLosses": 250002,
+                        "InvestmentStatus": "Active",
+                        "GeographicLocation": "Israel",
+                        "SpecialNotesOrRisks": null
+                    },
+                    {
+                        "AssetType": "Preferred Stock",
+                        "InvestmentName": "AB180, Inc.",
+                        "IndustryOrSector": "Information Technology",
+                        "QuantityOrUnitsHeld": 51834,
+                        "CostOrAcquisitionValue": 3048799,
+                        "FairValueOrMarketValue": 3048799,
+                        "PercentageOfTotalNetAssetsOrPortfolio": null,
+                        "InvestmentType": "Equity",
+                        "DateOfAcquisition": null,
+                        "InvestmentIncomeOrYield": null,
+                        "UnrealizedGainsOrLosses": 0,
+                        "InvestmentStatus": "Active",
+                        "GeographicLocation": "South Korea",
+                        "SpecialNotesOrRisks": null
+                    },
+                    {
+                        "AssetType": "Preferred Stock",
+                        "InvestmentName": "Specter, Inc.",
+                        "IndustryOrSector": "Information Technology",
+                        "QuantityOrUnitsHeld": 22797,
+                        "CostOrAcquisitionValue": 2946577,
+                        "FairValueOrMarketValue": 2872990,
+                        "PercentageOfTotalNetAssetsOrPortfolio": null,
+                        "InvestmentType": "Equity",
+                        "DateOfAcquisition": null,
+                        "InvestmentIncomeOrYield": null,
+                        "UnrealizedGainsOrLosses": -73587,
+                        "InvestmentStatus": "Active",
+                        "GeographicLocation": "South Korea",
+                        "SpecialNotesOrRisks": null
+                    }
+                ],
+                "Accounting policies": [
+                    {
+                        "RevenueRecognition": "Revenue is recognized using the accrual basis of accounting, including interest income, dividends, and realized/unrealized gains and losses from investments.",
+                        "DepreciationAndAmortizationMethods": null,
+                        "ValuationOfInvestments": "Investments are valued at fair value based on Level 3 inputs under ASC 820. Valuation techniques include recent transaction prices, discounted cash flow models, third-party valuations, and other observable/non-observable inputs.",
+                        "ForeignCurrencyTranslation": "Assets and liabilities denominated in foreign currencies are translated into U.S. dollars at the exchange rates in effect at the reporting date. Transactions during the period are translated at exchange rates in effect at the transaction date. Realized and unrealized gains or losses are included in the Statement of Operations.",
+                        "ConsolidationPolicies": "The Fund does not consolidate any investments. It accounts for investments on a fair value basis, and each investment is treated as a separate financial interest."
+                    }
+                ],
+                "Commitments and contingencies": [
+                    {
+                        "LeaseObligations": null,
+                        "LegalDisputes": null,
+                        "GuaranteesOrWarranties": null,
+                        "CommitmentsRelatedToInvestments": "As of December 31, 2024, the Fund had unfunded investment commitments totaling $9,000,000. These represent additional capital the Fund has contractually agreed to provide to portfolio companies or investment vehicles."
+                    }
+                ],
+                "RelatedPartyTransactions": "The Fund pays management fees to the General Partner as specified in the Limited Partnership Agreement. These fees are calculated as a percentage of capital commitments and are paid quarterly in advance. The General Partner may also receive carried interest based on the Fund’s performance. Additionally, certain portfolio companies may have executives or board members affiliated with the General Partner.",
+                "SubsequentEvents": "As of the issuance date of the financial statements, the Fund had not identified any subsequent events requiring adjustment or disclosure in the financial statements.",
+                "RiskManagementAndFinancialInstruments": "The Fund is exposed to various financial risks including market risk, credit risk, interest rate risk, and liquidity risk. Investments are valued using fair value methodologies under ASC 820. All investments are classified as Level 3 within the fair value hierarchy, indicating the use of significant unobservable inputs. There are no derivative instruments or hedging strategies in use.",
+                "PensionAndPostEmploymentBenefits": null,
+                "IncomeTaxes": "The Fund is treated as a partnership for U.S. federal income tax purposes and therefore does not incur income taxes at the fund level. Taxable income or loss is passed through to the partners. The Fund evaluates uncertain tax positions and concluded that there are no material unrecognized tax benefits as of December 31, 2024.",
+                "EarningsPerShare": null,
+                "FairValueMeasurements": {
+                    "Hierarchy": "All investments are classified as Level 3 under the fair value hierarchy.",
+                    "ValuationMethods": "Valuations are based on recent transaction prices, third-party valuations, discounted cash flows, and other inputs deemed appropriate by management.",
+                    "SignificantInputs": "Unobservable inputs including company performance, market conditions, and exit scenarios."
+                },
+                "Audit report": [
+                    {
+                        "TitleOfTheReport": "Independent Auditor’s Report",
+                        "Addressee": "To the Partners of Storm Ventures Fund VII, L.P.",
+                        "IntroductionParagraph": "We have audited the accompanying financial statements of Storm Ventures Fund VII, L.P., which comprise the statement of assets and liabilities, including the schedule of investments, as of December 31, 2024, and the related statements of operations, changes in partners’ capital, and cash flows for the year then ended, and the related notes to the financial statements.",
+                        "ManagementsResponsibilityForTheFinancialStatements": "Management is responsible for the preparation and fair presentation of these financial statements in accordance with accounting principles generally accepted in the United States of America; this includes the design, implementation, and maintenance of internal control relevant to the preparation and fair presentation of financial statements that are free from material misstatement, whether due to fraud or error.",
+                        "AuditorsResponsibility": "Our responsibility is to express an opinion on these financial statements based on our audit. We conducted our audit in accordance with auditing standards generally accepted in the United States of America. Those standards require that we plan and perform the audit to obtain reasonable assurance about whether the financial statements are free from material misstatement.",
+                        "OpinionParagraph": "In our opinion, the financial statements referred to above present fairly, in all material respects, the financial position of Storm Ventures Fund VII, L.P. as of December 31, 2024, and the results of its operations, changes in partners’ capital, and its cash flows for the year then ended in accordance with accounting principles generally accepted in the United States of America.",
+                        "BasisForOpinion": "We conducted our audit in accordance with auditing standards generally accepted in the United States of America. We are required to be independent of the Fund and to meet our other ethical responsibilities in accordance with the relevant ethical requirements relating to our audit.",
+                        "KeyAuditMatters": null,
+                        "OtherInformation": null,
+                        "AuditorsSignature": "Deloitte & Touche LLP",
+                        "DateOfTheAuditorsReport": "March 28, 2025"
+                    }
+                ]
+            },
+            "meta_data": {
+                "doc_id": 100198,
+                "schema_id": 14,
+                "created_at": "2025-02-11T10:10:08.727283",
+                "updated_at": "2025-02-11T10:10:08.727283",
+                "additional_columns": {
+                    "FundInceptionDate": "2021-08-02"
+                },
+                "document_name": "3ba9cbbb-5203-46f9-9952-36793e5097f2.pdf",
+                "extraction": "HARVEST_ONLY",
+                "total": 42,
+                "found": 28,
+                "missing": 14,
+                "BoundingBox": {
+                    "Security": "0.43047619047619046,0.6988095238095238,0.04476190476190476,0.0054761904761904765,0.48,0.6988095238095238,0.05619047619047619,0.0054761904761904765,0.540952380952381,0.6988095238095238,0.02126984126984127,0.006904761904761905,0.5653968253968253,0.6988095238095238,0.01904761904761905,0.006904761904761905,0.5885714285714285,0.6988095238095238,0.023809523809523808,0.0064285714285714285,0.6168253968253968,0.6988095238095238,0.010158730158730159,0.0054761904761904765",
+                    "Volatility": "0.6517460317460317,0.4545238095238095,0.039047619047619046,0.0064285714285714285",
+                    "Disclaimers": "0.06253968253968253,0.6988095238095238,0.01619047619047619,0.0054761904761904765,0.10095238095238095,0.6988095238095238,0.04,0.006904761904761905,0.1438095238095238,0.6988095238095238,0.01650793650793651,0.0054761904761904765,0.1946031746031746,0.6988095238095238,0.03746031746031746,0.0054761904761904765,0.25492063492063494,0.6988095238095238,0.02095238095238095,0.0054761904761904765,0.28,0.6988095238095238,0.044126984126984126,0.006666666666666667,0.3288888888888889,0.6988095238095238,0.050793650793650794,0.0054761904761904765,0.3838095238095238,0.6988095238095238,0.04253968253968254,0.006904761904761905,0.43047619047619046,0.6988095238095238,0.04476190476190476,0.0054761904761904765,0.48,0.6988095238095238,0.05619047619047619,0.0054761904761904765,0.540952380952381,0.6988095238095238,0.02126984126984127,0.006904761904761905,0.5653968253968253,0.6988095238095238,0.01904761904761905,0.006904761904761905,0.5885714285714285,0.6988095238095238,0.023809523809523808,0.0064285714285714285,0.6168253968253968,0.6988095238095238,0.010158730158730159,0.0054761904761904765,0.6307936507936508,0.6988095238095238,0.017142857142857144,0.006666666666666667,0.6523809523809524,0.6988095238095238,0.035873015873015876,0.006904761904761905,0.6923809523809524,0.6988095238095238,0.015873015873015872,0.0054761904761904765,0.7126984126984127,0.6988095238095238,0.05047619047619047,0.0054761904761904765,0.7679365079365079,0.6988095238095238,0.04349206349206349,0.0054761904761904765,0.8158730158730159,0.6988095238095238,0.027301587301587302,0.0054761904761904765,0.8476190476190476,0.6988095238095238,0.006666666666666667,0.0054761904761904765,0.8584126984126984,0.6988095238095238,0.03777777777777778,0.006904761904761905,0.9,0.6988095238095238,0.012380952380952381,0.0054761904761904765,0.9161904761904762,0.6988095238095238,0.05873015873015873,0.0054761904761904765,0.16412698412698412,0.6992857142857143,0.02666666666666667,0.0064285714285714285,0.08285714285714285,0.7,0.013968253968253968,0.004285714285714286,0.23523809523809525,0.7002380952380952,0.015238095238095238,0.0054761904761904765,0.10920634920634921,0.7073809523809523,0.02,0.006904761904761905,0.1349206349206349,0.7073809523809523,0.015873015873015872,0.0054761904761904765,0.15714285714285714,0.7073809523809523,0.006349206349206349,0.0054761904761904765,0.16857142857142857,0.7073809523809523,0.03238095238095238,0.006904761904761905,0.21936507936507937,0.7073809523809523,0.032063492063492065,0.006904761904761905,0.25682539682539685,0.7073809523809523,0.0326984126984127,0.0054761904761904765,0.2946031746031746,0.7073809523809523,0.029206349206349208,0.0054761904761904765,0.2057142857142857,0.7078571428571429,0.008253968253968255,0.005,0.06349206349206349,0.7088095238095238,0.040952380952380955,0.0054761904761904765",
+                    "RiskFactors": "0.2993650793650794,0.8028571428571428,0.02507936507936508,0.0054761904761904765,0.3488888888888889,0.8028571428571428,0.010158730158730159,0.0054761904761904765,0.42793650793650795,0.8028571428571428,0.018412698412698412,0.0054761904761904765,0.4492063492063492,0.8028571428571428,0.014285714285714285,0.0054761904761904765,0.4685714285714286,0.8028571428571428,0.029206349206349208,0.0054761904761904765,0.5022222222222222,0.8028571428571428,0.049523809523809526,0.0054761904761904765,0.5555555555555556,0.8028571428571428,0.03968253968253968,0.006666666666666667,0.5993650793650793,0.8028571428571428,0.013650793650793651,0.0054761904761904765,0.6177777777777778,0.8028571428571428,0.010158730158730159,0.0054761904761904765,0.665079365079365,0.8028571428571428,0.017777777777777778,0.0054761904761904765,0.6866666666666666,0.8028571428571428,0.014285714285714285,0.0054761904761904765,0.7053968253968254,0.8028571428571428,0.02126984126984127,0.0054761904761904765,0.7307936507936508,0.8028571428571428,0.013968253968253968,0.0054761904761904765,0.7673015873015873,0.8028571428571428,0.021904761904761906,0.0054761904761904765,0.7936507936507936,0.8028571428571428,0.029841269841269842,0.0054761904761904765,0.6326984126984126,0.8030952380952381,0.016825396825396827,0.005238095238095238,0.7495238095238095,0.8030952380952381,0.013650793650793651,0.005238095238095238,0.32857142857142857,0.804047619047619,0.015238095238095238,0.004285714285714286,0.3634920634920635,0.804047619047619,0.010158730158730159,0.004285714285714286,0.37777777777777777,0.804047619047619,0.04634920634920635,0.004285714285714286,0.653015873015873,0.804047619047619,0.008888888888888889,0.004285714285714286",
+                    "SharpeRatio": "0.6552380952380953,0.4776190476190476,0.02349206349206349,0.0064285714285714285",
+                    "BaseCurrency": "0.07047619047619047,0.24571428571428572,0.015555555555555555,0.007380952380952381",
+                    "ExpenseRatio": "0.6549206349206349,0.794047619047619,0.035555555555555556,0.006666666666666667,0.707936507936508,0.794047619047619,0.03396825396825397,0.006666666666666667,0.6952380952380952,0.7942857142857143,0.008571428571428572,0.005238095238095238",
+                    "ShareClasses": "0.22952380952380952,0.794047619047619,0.02412698412698413,0.0054761904761904765,0.25746031746031744,0.794047619047619,0.007619047619047619,0.0064285714285714285,0.2698412698412698,0.794047619047619,0.02507936507936508,0.0054761904761904765,0.3,0.794047619047619,0.006349206349206349,0.0054761904761904765,0.3288888888888889,0.794047619047619,0.008571428571428572,0.0054761904761904765,0.3415873015873016,0.794047619047619,0.02158730158730159,0.0054761904761904765,0.4311111111111111,0.794047619047619,0.01650793650793651,0.0064285714285714285,0.4526984126984127,0.794047619047619,0.01904761904761905,0.0054761904761904765,0.47619047619047616,0.794047619047619,0.04,0.0054761904761904765,0.5196825396825396,0.794047619047619,0.06285714285714286,0.006666666666666667,0.5876190476190476,0.794047619047619,0.015873015873015872,0.0054761904761904765,0.6549206349206349,0.794047619047619,0.035555555555555556,0.006666666666666667,0.707936507936508,0.794047619047619,0.03396825396825397,0.006666666666666667,0.3111111111111111,0.7942857142857143,0.013968253968253968,0.005238095238095238,0.36793650793650795,0.7942857142857143,0.059682539682539684,0.006666666666666667,0.6952380952380952,0.7942857142857143,0.008571428571428572,0.005238095238095238,0.6079365079365079,0.7952380952380952,0.04253968253968254,0.0054761904761904765",
+                    "BenchmarkName": "0.39174603174603173,0.19166666666666668,0.02507936507936508,0.006190476190476191,0.42158730158730157,0.19166666666666668,0.03492063492063492,0.007619047619047619,0.4606349206349206,0.19166666666666668,0.05015873015873016,0.006190476190476191,0.5155555555555555,0.19166666666666668,0.02666666666666667,0.006190476190476191",
+                    "PortfolioManager": "0.07015873015873016,0.15595238095238095,0.039047619047619046,0.006190476190476191,0.11333333333333333,0.15595238095238095,0.06444444444444444,0.007142857142857143,0.18253968253968253,0.15595238095238095,0.08952380952380952,0.007619047619047619,0.27714285714285714,0.15595238095238095,0.044444444444444446,0.007619047619047619",
+                    "FundInceptionDate": "0.22317460317460316,0.6245238095238095,0.008571428571428572,0.007380952380952381,0.23587301587301587,0.6245238095238095,0.02761904761904762,0.0064285714285714285,0.18476190476190477,0.6247619047619047,0.0346031746031746,0.007857142857142858",
+                    "InvestmentStrategy": "0.22666666666666666,0.43357142857142855,0.019682539682539683,0.007142857142857143,0.25047619047619046,0.43357142857142855,0.04349206349206349,0.008571428571428572,0.2984126984126984,0.43357142857142855,0.05619047619047619,0.008809523809523809,0.07015873015873016,0.4480952380952381,0.040317460317460314,0.008571428571428572,0.11460317460317461,0.4480952380952381,0.059682539682539684,0.006904761904761905,0.1784126984126984,0.4480952380952381,0.06857142857142857,0.008571428571428572,0.25142857142857145,0.4480952380952381,0.007936507936507936,0.006904761904761905,0.26285714285714284,0.4480952380952381,0.0761904761904762,0.006904761904761905,0.06984126984126984,0.4623809523809524,0.019682539682539683,0.006904761904761905,0.09365079365079365,0.4623809523809524,0.07238095238095238,0.008571428571428572,0.1711111111111111,0.4623809523809524,0.05523809523809524,0.008809523809523809,0.22984126984126985,0.4623809523809524,0.05015873015873016,0.007142857142857143,0.2834920634920635,0.4623809523809524,0.06888888888888889,0.007142857142857143,0.20539682539682538,0.4764285714285714,0.03841269841269841,0.008809523809523809,0.07015873015873016,0.4766666666666667,0.046031746031746035,0.006904761904761905,0.12063492063492064,0.4766666666666667,0.019682539682539683,0.006904761904761905,0.14444444444444443,0.4766666666666667,0.04317460317460318,0.008571428571428572,0.24793650793650793,0.4766666666666667,0.0653968253968254,0.006904761904761905,0.3171428571428571,0.4766666666666667,0.02158730158730159,0.006904761904761905,0.19047619047619047,0.47714285714285715,0.010476190476190476,0.0064285714285714285,0.09111111111111111,0.4911904761904762,0.06634920634920635,0.006904761904761905,0.1622222222222222,0.4911904761904762,0.011746031746031746,0.008571428571428572,0.1765079365079365,0.4911904761904762,0.017142857142857144,0.006904761904761905,0.1984126984126984,0.4911904761904762,0.06952380952380953,0.008571428571428572,0.06984126984126984,0.4928571428571429,0.017142857142857144,0.005238095238095238",
+                    "RedemptionPolicies": "0.1853968253968254,0.7654761904761904,0.045396825396825394,0.007857142857142858,0.23396825396825396,0.7654761904761904,0.02,0.006190476190476191,0.2580952380952381,0.7654761904761904,0.013650793650793651,0.006190476190476191,0.2749206349206349,0.7654761904761904,0.022857142857142857,0.007857142857142858,0.3019047619047619,0.7654761904761904,0.029841269841269842,0.0064285714285714285",
+                    "InvestmentObjective": "0.2088888888888889,0.31833333333333336,0.010158730158730159,0.007142857142857143,0.06952380952380953,0.31857142857142856,0.019365079365079366,0.006904761904761905,0.09333333333333334,0.31857142857142856,0.059682539682539684,0.006904761904761905,0.1568253968253968,0.31857142857142856,0.047619047619047616,0.008333333333333333,0.22158730158730158,0.31857142857142856,0.017142857142857144,0.006904761904761905,0.2438095238095238,0.31857142857142856,0.025396825396825397,0.006904761904761905,0.27396825396825397,0.31857142857142856,0.007936507936507936,0.006904761904761905,0.29904761904761906,0.31857142857142856,0.03301587301587302,0.006904761904761905,0.2850793650793651,0.319047619047619,0.010158730158730159,0.0064285714285714285,0.06952380952380953,0.3326190476190476,0.044444444444444446,0.008571428571428572,0.1180952380952381,0.3326190476190476,0.04984126984126984,0.008571428571428572,0.17206349206349206,0.3326190476190476,0.035238095238095235,0.008571428571428572,0.21142857142857144,0.3326190476190476,0.06984126984126984,0.008571428571428572,0.286031746031746,0.3326190476190476,0.008253968253968255,0.006904761904761905,0.2980952380952381,0.3326190476190476,0.03873015873015873,0.008571428571428572,0.11174603174603175,0.34714285714285714,0.057777777777777775,0.008095238095238095,0.1746031746031746,0.34714285714285714,0.011428571428571429,0.008571428571428572,0.07015873015873016,0.3473809523809524,0.0380952380952381,0.006904761904761905,0.18984126984126984,0.3473809523809524,0.04793650793650794,0.008571428571428572,0.2415873015873016,0.3473809523809524,0.046031746031746035,0.008333333333333333,0.3180952380952381,0.3473809523809524,0.02253968253968254,0.008571428571428572,0.29079365079365077,0.3488095238095238,0.012698412698412698,0.0054761904761904765,0.3076190476190476,0.3488095238095238,0.005714285714285714,0.0054761904761904765,0.07015873015873016,0.3616666666666667,0.02761904761904762,0.006904761904761905,0.1019047619047619,0.3616666666666667,0.008253968253968255,0.006666666666666667,0.12380952380952381,0.3616666666666667,0.03238095238095238,0.006904761904761905,0.16,0.3616666666666667,0.0419047619047619,0.006904761904761905,0.20539682539682538,0.3616666666666667,0.010158730158730159,0.006904761904761905,0.21936507936507937,0.3616666666666667,0.0653968253968254,0.006904761904761905,0.2892063492063492,0.3616666666666667,0.04888888888888889,0.006904761904761905,0.3431746031746032,0.3616666666666667,0.011428571428571429,0.008571428571428572,0.11428571428571428,0.36333333333333334,0.005714285714285714,0.005238095238095238,0.09111111111111111,0.3759523809523809,0.04349206349206349,0.008571428571428572,0.2123809523809524,0.3759523809523809,0.026349206349206348,0.008571428571428572,0.0692063492063492,0.3761904761904762,0.017142857142857144,0.006904761904761905,0.25587301587301586,0.3761904761904762,0.05873015873015873,0.008333333333333333,0.2419047619047619,0.37642857142857145,0.010158730158730159,0.006666666666666667,0.13873015873015873,0.37714285714285717,0.05396825396825397,0.007619047619047619,0.19587301587301587,0.37761904761904763,0.012380952380952381,0.0054761904761904765,0.06952380952380953,0.3902380952380952,0.05555555555555555,0.008809523809523809,0.12857142857142856,0.3904761904761905,0.025714285714285714,0.008571428571428572,0.1580952380952381,0.3904761904761905,0.06984126984126984,0.008571428571428572",
+                    "PerformanceVsBenchmark": "0.3926984126984127,0.14047619047619048,0.018095238095238095,0.006190476190476191,0.41523809523809524,0.14047619047619048,0.023809523809523808,0.006190476190476191,0.48253968253968255,0.14047619047619048,0.031746031746031744,0.006190476190476191,0.5187301587301587,0.14047619047619048,0.007301587301587302,0.006190476190476191,0.5304761904761904,0.14047619047619048,0.020634920634920634,0.007857142857142858,0.5555555555555556,0.14047619047619048,0.04984126984126984,0.007619047619047619,0.6222222222222222,0.14047619047619048,0.01619047619047619,0.006190476190476191,0.6428571428571429,0.14047619047619048,0.06476190476190476,0.007380952380952381,0.7117460317460318,0.14047619047619048,0.027936507936507936,0.006190476190476191,0.7701587301587302,0.14047619047619048,0.010476190476190476,0.007857142857142858,0.7841269841269841,0.14047619047619048,0.031746031746031744,0.006190476190476191,0.6092063492063492,0.14095238095238094,0.009841269841269842,0.005714285714285714,0.4434920634920635,0.1419047619047619,0.019365079365079366,0.004761904761904762,0.46730158730158733,0.1419047619047619,0.011428571428571429,0.006190476190476191,0.7447619047619047,0.1419047619047619,0.02095238095238095,0.004761904761904762"
+                },
+                "id": 4,
+                "PageNumber": {
+                    "Security": 2,
+                    "FundInceptionDate": 1,
+                    "PortfolioManager": 2,
+                    "InvestmentObjective": 1,
+                    "ExpenseRatio": 2,
+                    "BaseCurrency": 2,
+                    "ShareClasses": 2,
+                    "RedemptionPolicies": 1,
+                    "SharpeRatio": 1,
+                    "Volatility": 1,
+                    "BenchmarkName": 1,
+                    "PerformanceVsBenchmark": 2,
+                    "Disclaimers": 2,
+                    "RiskFactors": 2,
+                    "InvestmentStrategy": 1
+                }
+            },
+            "Covenants": []
+        }
+    ],
+    "doc_details": [
+        {
+            "fields": {
+                "id": 135,
+                "created_at": "2025-02-11T10:10:08.722178",
+                "updated_at": "2025-02-11T10:10:08.722178",
+                "document_type": "FundFactSheet",
+                "fund_name": "Basswood International Long Only Fund, LP",
+                "firm_name": null,
+                "investor_name": null,
+                "account_sid": null,
+                "account_no": "Basswood International Long Only Fund, LP|None",
+                "status": "EXTRACTED_IN_REVIEW",
+                "num_pages": 2,
+                "doc_source": "S3",
+                "document_name": "3ba9cbbb-5203-46f9-9952-36793e5097f2.pdf",
+                "report_date": "2025-02-11T10:07:43.672380",
+                "recieved_date": "2025-02-11T10:07:43.672380",
+                "extraction": "EXTRACTED_IN_REVIEW",
+                "in_review": true,
+                "duplicate_ids_to_update": null,
+                "true_duplicate_ids": null,
+                "ext_comments": null,
+                "ext_doc_id": null,
+                "ext_document_type": null
+            },
+            "meta_data": {
+                "doc_id": 100198
+            }
+        }
+    ],
+    "audit_logs": []
+}

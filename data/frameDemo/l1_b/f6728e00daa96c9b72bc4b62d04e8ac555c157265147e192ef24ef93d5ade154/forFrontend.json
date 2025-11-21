@@ -1,0 +1,486 @@
+{
+  "document_details": {
+    "document_name": "Osso 4.23.25.pdf",
+    "date": "2025-07-16",
+    "status": "EXTRACTED_IN_REVIEW",
+    "source": "Dashboard",
+    "processing_method": "Completely Automated",
+    "file_id": "09054cda-fb65-4abf-92ac-e48f5b59f88d",
+    "business_date": "2025-07-16",
+    "file_type": "CapCall",
+    "capture_system": "Aithon Frame",
+    "linking_system": "Automated",
+    "extractor": "Aithon Frame - AI"
+  },
+  "file_metadata_config": [
+    {
+      "key": "status",
+      "label": "Status",
+      "layout": "badge"
+    },
+    {
+      "key": "source",
+      "label": "Source"
+    },
+    {
+      "key": "processing_method",
+      "label": "Processing Method"
+    },
+    {
+      "key": "file_id",
+      "label": "File ID"
+    },
+    {
+      "key": "business_date",
+      "label": "Business Date"
+    },
+    {
+      "key": "file_type",
+      "label": "File Type"
+    },
+    {
+      "key": "capture_system",
+      "label": "Capture System"
+    },
+    {
+      "key": "linking_system",
+      "label": "Linking System"
+    },
+    {
+      "key": "extractor",
+      "label": "Extractor"
+    }
+  ],
+  "event_log_title": "Event Logs",
+  "event_logs": [
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 13:14:02,638",
+      "message": "Successfully ingested 'Osso 4.23.25.pdf'. Document ID: 09054cda-fb65-4abf-92ac-e48f5b59f88d"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 13:14:02,694",
+      "message": "Successfully processed through OCR Box: Osso 4.23.25.pdf"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 13:14:02,700",
+      "message": "Successfully processed through Enhanced Preprocessing Box: Osso 4.23.25.pdf"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 13:14:03,990",
+      "message": "Classified 'Osso 4.23.25.pdf' as: CapCall (confidence: 0.81)"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 13:14:44,980",
+      "message": "Extraction completed for 'Osso 4.23.25.pdf'"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 13:15:09,351",
+      "message": "Bounding box extraction completed for 'Osso 4.23.25.pdf': 8 entries found"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 13:15:09,366",
+      "message": "Validation & Enrichment completed for 'Osso 4.23.25.pdf': no enrichment"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 13:15:09,366",
+      "message": "Successfully wrote output for 'Osso 4.23.25.pdf' to output_documents/Osso 4.23.25_output.json"
+    }
+  ],
+  "account_details": {
+    "account_sid": "09054cda-fb65-4abf-92ac-e48f5b59f88d",
+    "fund_name": "Unknown Fund",
+    "entity": "Unknown Entity",
+    "created_on": "2025-07-16",
+    "frequency": 0,
+    "delay": 0,
+    "market_value": 0
+  },
+  "account_fields": [
+    {
+      "key": "account_sid",
+      "label": "Account SID"
+    },
+    {
+      "key": "frequency",
+      "label": "Frequency"
+    },
+    {
+      "key": "fund_name",
+      "label": "Fund Name"
+    },
+    {
+      "key": "delay",
+      "label": "Delay"
+    },
+    {
+      "key": "created_on",
+      "label": "Created on"
+    },
+    {
+      "key": "market_value",
+      "label": "Market Value"
+    }
+  ],
+  "file_fields": [
+    {
+      "key": "file_name",
+      "label": "File Name"
+    },
+    {
+      "key": "file_id",
+      "label": "File ID",
+      "isCopyable": true
+    },
+    {
+      "key": "market_value",
+      "label": "Market Value"
+    }
+  ],
+  "doc_id": "09054cda-fb65-4abf-92ac-e48f5b59f88d",
+  "task_id": "84858377-72ff-4c10-8502-8e1daf080cd6",
+  "original_filename": "Osso 4.23.25.pdf",
+  "file_hash": "f6728e00daa96c9b72bc4b62d04e8ac555c157265147e192ef24ef93d5ade154",
+  "pipeline_status": "Completed_Successfully",
+  "document_type": "CapCall",
+  "classification_confidence": 0.8075,
+  "extracted_data": {
+    "entities": [
+      {
+        "portfolio": [
+          {
+            "Investor": {
+              "Value": "GenerationaI Trust Partners, LLC",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "GenerationaI Trust Partners, LLC",
+              "BoundingBox": [
+                "0.118235,0.223182,0.0873529,0.00863636",
+                "0.210294,0.223636,0.0344118,0.00818182",
+                "0.25,0.223636,0.0597059,0.01",
+                "0.315294,0.223636,0.0211765,0.00818182"
+              ],
+              "PageNumber": 1
+            },
+            "Account": {
+              "Value": "0sso MuItifamiIy I LP|GenerationaI Trust Partners, LLC",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "0sso MuItifamiIy I LP|GenerationaI Trust Partners, LLC",
+              "BoundingBox": null,
+              "PageNumber": 1
+            },
+            "Security": {
+              "Value": "0sso MuItifamiIy I LP",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "0sso MuItifamiIy I LP",
+              "BoundingBox": [
+                "0.118235,0.246591,0.0317647,0.00840909",
+                "0.155294,0.246136,0.0779412,0.0109091",
+                "0.246176,0.246818,0.0141176,0.00795455"
+              ],
+              "PageNumber": 1
+            },
+            "TransactionDate": {
+              "Value": "2025-04-23",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "ApriI 23, 2025",
+              "BoundingBox": [
+                "0.249118,0.269091,0.03,0.0109091",
+                "0.284706,0.269545,0.0185294,0.01",
+                "0.309118,0.269545,0.0311765,0.00840909"
+              ],
+              "PageNumber": 1
+            },
+            "ReturnOfCapital": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "DistributionOutsideCommitment": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "CapitalCall": {
+              "Value": 822801,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD 822801",
+              "BoundingBox": [
+                "0.740588,0.658409,0.00676471,0.0109091",
+                "0.810588,0.660909,0.0526471,0.00977273"
+              ],
+              "PageNumber": 2
+            },
+            "NetCashFlowQC": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "VerbatimText": null,
+            "InvestorRefID": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "AccountRefID": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "FundID": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "SeriesID": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "SeriesDescription": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Currency": {
+              "Value": "USD",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD",
+              "BoundingBox": [
+                "0.599412,0.658409,0.00676471,0.0109091"
+              ],
+              "PageNumber": 2
+            },
+            "Distribution": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "DeemedCapitalCall": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "IncomeDistribution": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "IncomeReinvested": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "RecallableSell": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "CapitalCallOutsideCommitment": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "TransferIn": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "TransferOut": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Quantity": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Price": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "CommittedCapital": {
+              "Value": 20000000,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD 20000,000",
+              "BoundingBox": [
+                "0.790,0.754318,0.0735294,0.00977273"
+              ],
+              "PageNumber": 2
+            },
+            "RemainingCommittedCapital": {
+              "Value": 1618960,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD 1618,960",
+              "BoundingBox": [
+                "0.462647,0.822045,0.0232353,0.00863636"
+              ],
+              "PageNumber": 2
+            },
+            "ContributionsToDate": {
+              "Value": 21720254,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "21720,254",
+              "BoundingBox": [
+                "0.780588,0.776364,0.0823529,0.0109091"
+              ],
+              "PageNumber": 2
+            },
+            "DistributionsToDate": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "ReturnOfCapitalToDate": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "validation_errors": [],
+  "events_log": [
+    {
+      "timestamp": "2025-07-16 13:14:02,638",
+      "level": "INFO",
+      "stage": "Ingestion",
+      "message": "Successfully ingested 'Osso 4.23.25.pdf'. Document ID: 09054cda-fb65-4abf-92ac-e48f5b59f88d",
+      "details": null
+    },
+    {
+      "timestamp": "2025-07-16 13:14:02,694",
+      "level": "INFO",
+      "stage": "OCR",
+      "message": "Successfully processed through OCR Box: Osso 4.23.25.pdf",
+      "details": null
+    },
+    {
+      "timestamp": "2025-07-16 13:14:02,700",
+      "level": "INFO",
+      "stage": "Preprocessing",
+      "message": "Successfully processed through Enhanced Preprocessing Box: Osso 4.23.25.pdf",
+      "details": {
+        "quality_score": 1.0
+      }
+    },
+    {
+      "timestamp": "2025-07-16 13:14:03,990",
+      "level": "INFO",
+      "stage": "Classification",
+      "message": "Classified 'Osso 4.23.25.pdf' as: CapCall (confidence: 0.81)",
+      "details": {
+        "document_type": "CapCall",
+        "confidence": 0.8075,
+        "confidence_level": "MEDIUM"
+      }
+    },
+    {
+      "timestamp": "2025-07-16 13:14:44,980",
+      "level": "INFO",
+      "stage": "Extraction",
+      "message": "Extraction completed for 'Osso 4.23.25.pdf'",
+      "details": {
+        "extraction_quality": 1.0,
+        "extraction_confidence": null,
+        "processing_time": 40.990110874176025
+      }
+    },
+    {
+      "timestamp": "2025-07-16 13:15:09,351",
+      "level": "INFO",
+      "stage": "BoundingBox",
+      "message": "Bounding box extraction completed for 'Osso 4.23.25.pdf': 8 entries found",
+      "details": {
+        "entries_processed": 8,
+        "entries_found": 8,
+        "processing_time": 24.370219707489014
+      }
+    },
+    {
+      "timestamp": "2025-07-16 13:15:09,366",
+      "level": "INFO",
+      "stage": "Validation & Enrichment",
+      "message": "Validation & Enrichment completed for 'Osso 4.23.25.pdf': no enrichment",
+      "details": null
+    },
+    {
+      "timestamp": "2025-07-16 13:15:09,366",
+      "level": "INFO",
+      "stage": "Output",
+      "message": "Successfully wrote output for 'Osso 4.23.25.pdf' to output_documents/Osso 4.23.25_output.json",
+      "details": null
+    }
+  ],
+  "processing_summary": {
+    "total_processing_time": 40.990110874176025,
+    "extraction_quality": 1.0,
+    "classification_mode": "hybrid_classification",
+    "stages_completed": [
+      "Ingestion",
+      "OCR",
+      "Preprocessing",
+      "Classification",
+      "Extraction",
+      "BoundingBox",
+      "Validation & Enrichment",
+      "Output"
+    ],
+    "error_count": 0
+  },
+  "metadata": {
+    "file_hash": "f6728e00daa96c9b72bc4b62d04e8ac555c157265147e192ef24ef93d5ade154",
+    "processing_timestamp": "2025-07-16 13:15:09,366",
+    "backend_structure_version": "2.0"
+  }
+}

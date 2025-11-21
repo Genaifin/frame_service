@@ -1,0 +1,14 @@
+{
+  "typeName": "application/pdf",
+  "fileHash": "f6728e00daa96c9b72bc4b62d04e8ac555c157265147e192ef24ef93d5ade154",
+  "fileOriginalName": "Osso 4.23.25.pdf",
+  "fileOriginalPath": "data/frameDemo/l0/Osso 4.23.25.pdf",
+  "typeSpecificParams": {
+    "numPages": 2,
+    "EXIF": {
+      "/CreationDate": "2025-04-09T14:52:28.000",
+      "/Creator": "PDFium",
+      "/Producer": "PDFium"
+    }
+  }
+}

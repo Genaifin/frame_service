@@ -1,0 +1,2755 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+
+    "properties": {
+
+        "entities": {
+
+            "type": "array",
+
+            "items": {
+
+                "portfolio": {
+
+                    "type": "array",
+
+                    "items": {
+
+                        "type": "object",
+
+                        "properties": {
+
+                            "Investor": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "string",
+
+                                        "description": "Name of the investor."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "Account": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "string",
+
+                                        "description": "This is the fund name and investor name combined in a piped format. For instance, if fund name is 'ABC Investments' and investor is 'Scott', then account is 'ABC Investments|Scott'."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "InvestorRefID": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "string",
+
+                                        "description": "A unique reference ID for the investor."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "AccountRefID": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "string",
+
+                                        "description": "A unique reference ID for the account."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "Fund_ID": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "string",
+
+                                        "description": "A Fund ID is a code (numeric or alphanumeric) used by financial institutions, fund managers, or platforms to uniquely identify a particular mutual fund, hedge fund, pension fund, or other pooled investment vehicle. The Fund ID becomes especially important when a fund has multiple series or share classes. In such cases, the Fund ID helps differentiate between the series."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "Series_ID": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "string",
+
+                                        "description": "The Series ID refers to a unique identifier for a specific series or class of units within a mutual fund or pooled investment vehicle. The Series ID distinguishes between different series or unit classes within the same fund."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "Series_Description": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "string",
+
+                                        "description": "Series Description provides a human-readable label or name that describes the specific series (or class) of units within a fund. It complements the Series ID by offering a more descriptive and understandable explanation of what the series represents."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "Security": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "string",
+
+                                        "description": "The fund name mentioned in the document. This typically can be in the header of the document. Fund names are generally longer and typically include LLC, LLP or something similar in."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "TransactionDate": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "string",
+
+                                        "description": "The date of the transaction in YYYY-MM-DD format."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "Currency": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "string",
+
+                                        "description": "Currency code for the transaction (e.g., USD, EUR).",
+
+                                        "enum": [
+
+                                            "AED",
+
+                                            "AFN",
+
+                                            "ALL",
+
+                                            "AMD",
+
+                                            "ANG",
+
+                                            "AOA",
+
+                                            "ARS",
+
+                                            "AUD",
+
+                                            "AWG",
+
+                                            "AZN",
+
+                                            "BAM",
+
+                                            "BBD",
+
+                                            "BDT",
+
+                                            "BGN",
+
+                                            "BHD",
+
+                                            "BIF",
+
+                                            "BMD",
+
+                                            "BND",
+
+                                            "BOB",
+
+                                            "BRL",
+
+                                            "BSD",
+
+                                            "BTN",
+
+                                            "BWP",
+
+                                            "BYN",
+
+                                            "BZD",
+
+                                            "CAD",
+
+                                            "CDF",
+
+                                            "CHF",
+
+                                            "CLP",
+
+                                            "CNY",
+
+                                            "COP",
+
+                                            "CRC",
+
+                                            "CUP",
+
+                                            "CVE",
+
+                                            "CZK",
+
+                                            "DJF",
+
+                                            "DKK",
+
+                                            "DOP",
+
+                                            "DZD",
+
+                                            "EGP",
+
+                                            "ERN",
+
+                                            "ETB",
+
+                                            "EUR",
+
+                                            "FJD",
+
+                                            "FKP",
+
+                                            "FOK",
+
+                                            "GBP",
+
+                                            "GEL",
+
+                                            "GGP",
+
+                                            "GHS",
+
+                                            "GIP",
+
+                                            "GMD",
+
+                                            "GNF",
+
+                                            "GTQ",
+
+                                            "GYD",
+
+                                            "HKD",
+
+                                            "HNL",
+
+                                            "HRK",
+
+                                            "HTG",
+
+                                            "HUF",
+
+                                            "IDR",
+
+                                            "ILS",
+
+                                            "IMP",
+
+                                            "INR",
+
+                                            "IQD",
+
+                                            "IRR",
+
+                                            "ISK",
+
+                                            "JMD",
+
+                                            "JOD",
+
+                                            "JPY",
+
+                                            "KES",
+
+                                            "KGS",
+
+                                            "KHR",
+
+                                            "KID",
+
+                                            "KMF",
+
+                                            "KRW",
+
+                                            "KWD",
+
+                                            "KYD",
+
+                                            "KZT",
+
+                                            "LAK",
+
+                                            "LBP",
+
+                                            "LKR",
+
+                                            "LRD",
+
+                                            "LSL",
+
+                                            "LYD",
+
+                                            "MAD",
+
+                                            "MDL",
+
+                                            "MGA",
+
+                                            "MKD",
+
+                                            "MMK",
+
+                                            "MNT",
+
+                                            "MOP",
+
+                                            "MRU",
+
+                                            "MUR",
+
+                                            "MVR",
+
+                                            "MWK",
+
+                                            "MXN",
+
+                                            "MYR",
+
+                                            "MZN",
+
+                                            "NAD",
+
+                                            "NGN",
+
+                                            "NIO",
+
+                                            "NOK",
+
+                                            "NPR",
+
+                                            "NZD",
+
+                                            "OMR",
+
+                                            "PAB",
+
+                                            "PEN",
+
+                                            "PGK",
+
+                                            "PHP",
+
+                                            "PKR",
+
+                                            "PLN",
+
+                                            "PYG",
+
+                                            "QAR",
+
+                                            "RON",
+
+                                            "RSD",
+
+                                            "RUB",
+
+                                            "RWF",
+
+                                            "SAR",
+
+                                            "SBD",
+
+                                            "SCR",
+
+                                            "SDG",
+
+                                            "SEK",
+
+                                            "SGD",
+
+                                            "SHP",
+
+                                            "SLE",
+
+                                            "SLL",
+
+                                            "SOS",
+
+                                            "SRD",
+
+                                            "SSP",
+
+                                            "STN",
+
+                                            "SYP",
+
+                                            "SZL",
+
+                                            "THB",
+
+                                            "TJS",
+
+                                            "TMT",
+
+                                            "TND",
+
+                                            "TOP",
+
+                                            "TRY",
+
+                                            "TTD",
+
+                                            "TVD",
+
+                                            "TWD",
+
+                                            "TZS",
+
+                                            "UAH",
+
+                                            "UGX",
+
+                                            "USD",
+
+                                            "UYU",
+
+                                            "UZS",
+
+                                            "VES",
+
+                                            "VND",
+
+                                            "VUV",
+
+                                            "WST",
+
+                                            "XAF",
+
+                                            "XCD",
+
+                                            "XDR",
+
+                                            "XOF",
+
+                                            "XPF",
+
+                                            "YER",
+
+                                            "ZAR",
+
+                                            "ZMW",
+
+                                            "ZWL"
+
+                                        ]
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "Distribution": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "number",
+
+                                        "description": "Amount of funds distributed to the investor. Do not extract the full distributions by the fund. Rather the distributions to the investor"
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "DeemeedCapitalCall": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "number",
+
+                                        "description": "Amount that is deemed capital call."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "IncomeDistribution": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "number",
+
+                                        "description": "Amount of income distributed to the investor. This includes income or dividends earned from underlying holdings and distributed to the investor. For ILPA documents, look for transaction type 'Dist: Income/Dividends', 'Dist: Income', 'Income Distribution', or 'Dividend Distribution' in Section C. This represents earnings generated by portfolio companies (such as dividends from stocks or interest income) that are distributed to the LP rather than being reinvested. IMPORTANT: If there are MULTIPLE transactions of this type in the document (multiple holdings/investments with this transaction type), you MUST sum ALL of them together and return the total sum as a single value."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "IncomeReinvested": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "number",
+
+                                        "description": "Amount of income that is reinvested rather than distributed."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "RecallableSell": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "number",
+
+                                        "description": "Indicates whether the security can be recalled or if it has been sold."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "ReturnOfCapital": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "number",
+
+                                        "description": "Amount of the investor's capital that has been returned. This represents the return of invested capital from the full or partial sale of an underlying holding, typically distributed in cash. For ILPA documents, look for transaction type 'Dist: Return of Capital - Cash', 'Dist: Return of Capital', 'ROC - Cash', or 'Return of Capital' in Section C. This represents the original capital invested by the LP being returned following portfolio company exits, sales, or partial liquidations (cost basis only, not including gains or losses). IMPORTANT: If there are MULTIPLE transactions of this type in the document (multiple holdings/investments with this transaction type), you MUST sum ALL of them together and return the total sum as a single value."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "DistributionOutsideCommitment": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "number",
+
+                                        "description": "Amount of funds distributed outside of the initial committed capital. This represents the return of unused proceeds called for investments (typically increases unfunded commitment). For ILPA documents, look for transaction type 'Dist: Return of Excess Capital Called', 'Return of Excess Capital', or 'Recallable Distribution' in Section C. This represents capital that was previously called from the LP but was not ultimately deployed for investments, and is being returned to the LP. This typically increases the LP's unfunded commitment as the capital becomes available to be called again in the future. IMPORTANT: If there are MULTIPLE transactions of this type in the document (multiple holdings/investments with this transaction type), you MUST sum ALL of them together and return the total sum as a single value."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "CapitalCall": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "number",
+
+                                        "description": "Amount of capital called from the investor during this transaction."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "CapitalCallOutsideCommitment": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "number",
+
+                                        "description": "Amount of capital called that exceeds the initial commitment."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "NetCashFlowQC": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "number",
+
+                                        "description": "Net cash flow after quality control and adjustments."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "TransferOut": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "number",
+
+                                        "description": "Amount of capital or assets transferred out of the investor's account."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "Quantity": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "number",
+
+                                        "description": "Quantity of securities involved in the transaction."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "Price": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "number",
+
+                                        "description": "Price per unit of the security at the time of the transaction."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "RemainingCommittedCapital": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "number",
+
+                                        "description": "Remaining amount of capital that the investor has committed but not yet contributed."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "DistributionsToDate": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "number",
+
+                                        "description": "Total amount of distributions received by the investor up to the current date."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "ReturnOfCapitalToDate": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "number",
+
+                                        "description": "Total amount of capital returned to the investor up to the current date.xxxx"
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "CommittedCapital": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "number",
+
+                                        "description": "Total amount of capital that the investor has committed to the fund."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "ContributionsToDate": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "number",
+
+                                        "description": "Total amount of contributions made by the investor up to the current date."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "Carry": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "number",
+
+                                        "description": "GP's share of distribution proceeds, as defined by the waterfall calculation in the LPA. Look for transaction type 'Dist: Carry', 'Carry', or 'Carried Interest' in Section C of ILPA distribution documents or in transaction descriptions. This represents the performance fee paid to the GP, typically shown as an offset to distribution (reducing the LP's net distribution amount). IMPORTANT: If there are MULTIPLE transactions of this type in the document (multiple holdings/investments with this transaction type), you MUST sum ALL of them together and return the total sum as a single value."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "Clawback": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "number",
+
+                                        "description": "Return of excess carry distributed to GP, as defined by the waterfall calculation in the LPA. Look for transaction type 'Dist: Clawback', 'Clawback', or 'Carry Clawback' in Section C of ILPA distribution documents. This represents the return of previously distributed carried interest when the GP's cumulative distributions exceeded the allowed amount based on fund performance. Acts as an offset to previously paid carry. IMPORTANT: If there are MULTIPLE transactions of this type in the document (multiple holdings/investments with this transaction type), you MUST sum ALL of them together and return the total sum as a single value."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "RealizedGainCash": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "number",
+
+                                        "description": "Realized gain from the full or partial sale of an underlying holding, distributed in cash. Look for transaction type 'Dist: Realized Gain - Cash', 'Realized Gain (Cash)', or 'Sale Proceeds - Gain' in Section C of ILPA distribution documents. This represents the profit portion (above cost basis) from portfolio company exits or partial sales, distributed to the LP in cash form. IMPORTANT: If there are MULTIPLE transactions of this type in the document (multiple holdings/investments with this transaction type), you MUST sum ALL of them together and return the total sum as a single value."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "RealizedGainStock": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "number",
+
+                                        "description": "Realized gain from a stock distribution. Look for transaction type 'Dist: Realized Gain - Stock', 'Realized Gain (Stock)', or 'Stock Distribution - Gain' in Section C of ILPA distribution documents. This represents the gain portion when distributing stock or equity securities from a portfolio company exit (such as an IPO or stock-based acquisition), calculated as the fair market value above the original cost basis. IMPORTANT: If there are MULTIPLE transactions of this type in the document (multiple holdings/investments with this transaction type), you MUST sum ALL of them together and return the total sum as a single value."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "RealizedLossCash": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "number",
+
+                                        "description": "Realized loss from the full or partial sale of an underlying holding, distributed in cash. Look for transaction type 'Dist: Realized Loss - Cash', 'Realized Loss (Cash)', or 'Sale Proceeds - Loss' in Section C of ILPA distribution documents. This represents the loss portion (below cost basis) from portfolio company sales or write-offs. Typically shown as a negative value or in parentheses, reducing the distribution amount. IMPORTANT: If there are MULTIPLE transactions of this type in the document (multiple holdings/investments with this transaction type), you MUST sum ALL of them together and return the total sum as a single value."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "RealizedLossStock": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "number",
+
+                                        "description": "Realized loss from a stock distribution. Look for transaction type 'Dist: Realized Loss - Stock', 'Realized Loss (Stock)', or 'Stock Distribution - Loss' in Section C of ILPA distribution documents. This represents the loss when distributing depreciated stock or equity securities, calculated as the difference between the original cost basis and current fair market value (when FMV is lower). Typically shown as a negative value or in parentheses. IMPORTANT: If there are MULTIPLE transactions of this type in the document (multiple holdings/investments with this transaction type), you MUST sum ALL of them together and return the total sum as a single value."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "ReturnOfCapitalManagementFees": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "number",
+
+                                        "description": "Return of management fees previously paid. Look for transaction type 'Dist: Return of Capital - Management Fees', 'ROC - Management Fees', or 'Management Fee Refund' in Section C of ILPA distribution documents. This represents the return of previously charged management fees, typically occurring when excess fees were charged or when fee rebates/offsets are applied. Increases the LP's returned capital. IMPORTANT: If there are MULTIPLE transactions of this type in the document (multiple holdings/investments with this transaction type), you MUST sum ALL of them together and return the total sum as a single value."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "ReturnOfCapitalPartnershipExpenses": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "number",
+
+                                        "description": "Return of partnership expenses previously paid. Look for transaction type 'Dist: Return of Capital - Partnership Expenses', 'ROC - Partnership Expenses', or 'Partnership Expense Refund' in Section C of ILPA distribution documents. This represents the return of previously charged partnership expenses (such as legal, audit, or administrative costs), typically when excess expenses were charged or when expense reimbursements occur. Increases the LP's returned capital. IMPORTANT: If there are MULTIPLE transactions of this type in the document (multiple holdings/investments with this transaction type), you MUST sum ALL of them together and return the total sum as a single value."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "ReturnOfCapitalStock": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "number",
+
+                                        "description": "Cost basis of a stock distribution (return of invested capital in stock form). Look for transaction type 'Dist: Return of Capital - Stock', 'ROC - Stock', or 'Stock Distribution - Cost Basis' in Section C of ILPA distribution documents. This represents the original investment amount being returned via stock/equity distribution rather than cash, calculated at the cost basis value of the stock being distributed (not including any gain/loss component). IMPORTANT: If there are MULTIPLE transactions of this type in the document (multiple holdings/investments with this transaction type), you MUST sum ALL of them together and return the total sum as a single value."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "TemporaryReturnOfCapitalManagementFees": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "number",
+
+                                        "description": "Return of management fees that can be called again in the future (recallable return). Look for transaction type 'Dist: Temporary Return of Capital - Management Fees', 'Temporary ROC - Management Fees', or 'Recallable Management Fee Refund' in Section C of ILPA distribution documents. This represents management fees being returned to the LP on a temporary basis, with the GP retaining the right to call these amounts again in the future if needed for fund operations or investments. IMPORTANT: If there are MULTIPLE transactions of this type in the document (multiple holdings/investments with this transaction type), you MUST sum ALL of them together and return the total sum as a single value."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "SubsequentCloseInterest": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "number",
+
+                                        "description": "Interest received from LPs that committed to subsequent closing of fund. Look for transaction type 'Dist: Subsequent Close Interest', 'Subsequent Closing Interest', or 'Late Closer Interest' in Section C of ILPA distribution documents. This represents interest payments distributed to earlier-committed LPs from investors who joined the fund at a later closing date, compensating the earlier investors for the use of their capital before the late closers' capital was deployed. IMPORTANT: If there are MULTIPLE transactions of this type in the document (multiple holdings/investments with this transaction type), you MUST sum ALL of them together and return the total sum as a single value."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            },
+
+                            "Other": {
+
+                                "type": "object",
+
+                                "properties": {
+
+                                    "Value": {
+
+                                        "type": "number",
+
+                                        "description": "Miscellaneous distributions not otherwise defined above. Look for transaction type 'Dist: Other', 'Other Distribution', or any distribution type with a custom description in the far-left column of Section C in ILPA distribution documents. The transaction description field should provide explanation of what this distribution represents (such as 'Other: Tax Reclaim', 'Other: FX Gain', 'Other: Escrow Release', etc.). Use this field for any distribution components that don't fit the standard ILPA categories. IMPORTANT: If there are MULTIPLE transactions of this type in the document (multiple holdings/investments with this transaction type), you MUST sum ALL of them together and return the total sum as a single value."
+
+                                    },
+
+                                    "ConfidenceScore": {
+
+                                        "$ref": "#/definitions/ConfidenceScore"
+
+                                    },
+
+                                    "VerbatimText": {
+
+                                        "$ref": "#/definitions/VerbatimText"
+
+                                    },
+
+                                    "BoundingBox": {
+
+                                        "$ref": "#/definitions/BoundingBox"
+
+                                    },
+
+                                    "PageNumber": {
+
+                                        "$ref": "#/definitions/PageNumber"
+
+                                    }
+
+                                },
+
+                                "required": [
+
+                                    "Value",
+
+                                    "ConfidenceScore",
+
+                                    "VerbatimText",
+
+                                    "BoundingBox",
+
+                                    "PageNumber"
+
+                                ]
+
+                            }
+
+                        },
+
+                        "required": [
+
+                            "Investor",
+
+                            "Account",
+
+                            "InvestorRefID",
+
+                            "AccountRefID",
+
+                            "Fund_ID",
+
+                            "Series_ID",
+
+                            "Series_Description",
+
+                            "Security",
+
+                            "TransactionDate",
+
+                            "Currency",
+
+                            "Distribution",
+
+                            "DeemeedCapitalCall",
+
+                            "IncomeDistribution",
+
+                            "IncomeReinvested",
+
+                            "RecallableSell",
+
+                            "ReturnOfCapital",
+
+                            "DistributionOutsideCommitment",
+
+                            "CapitalCall",
+
+                            "CapitalCallOutsideCommitment",
+
+                            "NetCashFlowQC",
+
+                            "TransferOut",
+
+                            "Quantity",
+
+                            "Price",
+
+                            "RemainingCommittedCapital",
+
+                            "DistributionsToDate",
+
+                            "ReturnOfCapitalToDate",
+
+                            "CommittedCapital",
+
+                            "ContributionsToDate",
+
+                            "Carry",
+
+                            "Clawback",
+
+                            "RealizedGainCash",
+
+                            "RealizedGainStock",
+
+                            "RealizedLossCash",
+
+                            "RealizedLossStock",
+
+                            "ReturnOfCapitalManagementFees",
+
+                            "ReturnOfCapitalPartnershipExpenses",
+
+                            "ReturnOfCapitalStock",
+
+                            "TemporaryReturnOfCapitalManagementFees",
+
+                            "SubsequentCloseInterest",
+
+                            "Other"
+
+                        ],
+
+                        "additionalProperties": false
+
+                    },
+
+                    "description": "Array of portfolio entries, where each entry represents one investor row from the distribution table. IMPORTANT: Extract ALL investor rows from the document - each row in the distribution table should be a separate entry in this array. Each entry contains the Investor Code (InvestorRefID), Distribution amount, Net Distribution Amount, and other related fields for that specific investor."
+
+                }
+
+            },
+
+            "required": [
+
+                "portfolio"
+
+            ]
+
+        }
+
+    },
+
+    "required": [
+
+        "entities"
+
+    ],
+
+    "additionalProperties": false,
+
+    "definitions": {
+
+        "ConfidenceScore": {
+
+            "type": "string",
+
+            "enum": [
+
+                "HIGH",
+
+                "MID",
+
+                "LOW"
+
+            ],
+
+            "description": "Confidence score for the extracted value: 'HIGH' if the field name is mentioned as it is in the document, 'MID' if the key matches a semantically similar word, 'LOW' if the field is not matching exactly but AI system inferred this value. Feel free to show some fields with low confidence"
+
+        },
+
+        "VerbatimText": {
+
+            "type": "string",
+
+            "description": "The exact verbatim text extracted from the document for the corresponding field. Avoid any braces or brackets from the outputs. For currency, you might want to pick up symbols from the document."
+
+        },
+
+        "BoundingBox": {
+
+            "type": "array",
+
+            "items": {
+
+                "type": "string"
+
+            },
+
+            "description": "Bounding box of the extracted value in the format [x1, y1, x2, y2]"
+
+        },
+
+        "PageNumber": {
+
+            "type": "number",
+
+            "description": "Page number of the extracted value"
+
+        }
+
+    }
+
+}

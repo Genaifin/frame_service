@@ -1,0 +1,14 @@
+{
+  "typeName": "application/pdf",
+  "fileHash": "95657df15d80a46a82f29214b5396bcdc97a5c8e93d22d26e57fae60f2d0323c",
+  "fileOriginalName": "2024 Q2 Champion.pdf",
+  "fileOriginalPath": "data/frameDemo/l0/2024 Q2 Champion.pdf",
+  "typeSpecificParams": {
+    "numPages": 3,
+    "EXIF": {
+      "/Creator": "Crystal Reports",
+      "/MSDH34TAG": ".TEZUF76X5TAHATHESADREYAK-00-CLA190+*99190-10=plaistow,MD=20241127145347/-0500,TC=plaistow,ZZ=000I-91a3.",
+      "/Producer": "Powered By Crystal"
+    }
+  }
+}

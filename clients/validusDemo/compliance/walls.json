@@ -1,0 +1,27 @@
+{
+    "byFund":{
+        "NexBridge":{
+            "userGroups":[
+                "group::validusDemo_main",
+                "group::developer",
+                "group::admin",
+                "EY_nex"
+            ]
+        },
+        "ASOF":{
+            "userGroups":[
+                "group::validusDemo_main",
+                "group::developer",
+                "group::admin",
+                "EY_fund2"
+            ]
+        },
+        "Stonewell":{
+            "userGroups":[
+                "group::validusDemo_main",
+                "group::developer",
+                "group::admin"
+            ]
+        }
+    }
+}

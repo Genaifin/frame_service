@@ -1,0 +1,100 @@
+{
+    "title": "USER DETAILS",
+    "isEditable": true,
+    "onEditClick": {
+      "type": "navigation",
+      "to": "/frame",
+      "parameters": [
+        {
+          "key": "page",
+          "value": "EditUser"
+        },
+        {
+          "key": "user_id",
+          "value": "USER0001"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "fields": [
+          {
+            "label": "First Name",
+            "value": "John",
+            "sameLine": true
+          },
+          {
+            "label": "Last Name",
+            "value": "Doe",
+            "sameLine": true
+          },
+          {
+            "label": "User ID",
+            "value": "USER0001",
+            "sameLine": true
+          },
+          {
+            "label": "Email ID",
+            "value": "johndoe@mail.com",
+            "sameLine": true
+          },
+          {
+            "label": "Job Title",
+            "value": "Assistant Manager",
+            "sameLine": true
+          },
+          {
+            "label": "Role",
+            "value": "Analyst",
+            "sameLine": true
+          },
+          {
+            "label": "Remark",
+            "value": "For ticket 2A3FW",
+            "sameLine": true
+          },
+          {
+            "label": "Status",
+            "value": "Active",
+            "type": "status-badge",
+            "sameLine": true
+          },
+          {
+            "label": "Created Date",
+            "value": "02/08/2025",
+            "sameLine": true
+          }
+        ]
+      }
+    ],
+    "footer": {
+      "fields": [
+        {
+          "type": "button",
+          "buttonText": "Mark as Inactive?",
+          "buttonType": "text",
+          "buttonColor": "destructive",
+          "onConfirmation": {
+            "title": "Make User Inactive?",
+            "description": "Are you sure you want to mark John Doe as inactive?",
+            "buttonText": "Mark as Inactive",
+            "buttonColor": "destructive",
+            "clickAction": {
+              "type": "patchData",
+              "patchAPIURL": "/api/users/status",
+              "data": {
+                "user_id": "2", 
+                "active": false
+              },
+              "actionAfterAPICall": {
+                "type": "refreshModule",
+                "moduleName": "UsersTable"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+  
+  

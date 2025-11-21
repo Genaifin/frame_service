@@ -1,0 +1,321 @@
+{
+  "extracted_fields": [
+    {
+      "fields": {
+        "Investor": "BLUE RIVER PETCARE",
+        "Account": "LLC 401(K) PLAN",
+        "InvestorRefID": null,
+        "AccountRefID": null,
+        "Security": null,
+        "PeriodBeginningDT": null,
+        "PeriodEndingDT": "2024-12-31",
+        "Currency": "USD",
+        "NetOpeningCapital": null,
+        "Contributions": null,
+        "ContributionOutsideCommitment": null,
+        "Withdrawals": null,
+        "RecallableDistribution": null,
+        "ReturnOfCapital": null,
+        "NetCapitalActivity": null,
+        "TransfersIn": null,
+        "TransfersOut": null,
+        "NetTransfers": null,
+        "IncomeDistribution": null,
+        "RealizedGainLoss": null,
+        "UnrealizedGainLoss": null,
+        "NetGainLoss": null,
+        "InvestmentIncome": null,
+        "OtherIncomeLoss": null,
+        "ManagementFee": null,
+        "OtherExpenses": null,
+        "CarriedInterest": null,
+        "OtherAdjustments": null,
+        "NetClosingCapital": 71770288.01,
+        "Quantity": null,
+        "Price": null,
+        "MTDPerformance": null,
+        "QTDPerformance": null,
+        "YTDPerformance": null,
+        "IRR": null,
+        "Commitment": null,
+        "ContributionsToDate": null,
+        "UnfundedCommitment": null,
+        "UnfundedCommitmentAdj": null,
+        "DistributionsSubjectToRecall": null,
+        "TotalDistributions": null,
+        "CommitmentOnlyStatement": null,
+        "Holdings": [
+          {
+            "security_name": "ALLSPRING CORE PLUS BD FD ADMIN",
+            "ticker": "WIPDX",
+            "cusip": null,
+            "units_held": 374733.527,
+            "last_price": 11.05,
+            "market_value": 4140805.47,
+            "currency": "USD",
+            "accrued_interest": null
+          },
+          {
+            "security_name": "ALLSPRING SPECIAL MID CAP VAL FD A",
+            "ticker": "WFPAX",
+            "cusip": null,
+            "units_held": 79740.535,
+            "last_price": 46.0,
+            "market_value": 3668064.61,
+            "currency": "USD",
+            "accrued_interest": null
+          },
+          {
+            "security_name": "AMERICAN BEACON AHL MGD FUTS STRAT Y",
+            "ticker": "AHLYX",
+            "cusip": null,
+            "units_held": 346794.538,
+            "last_price": 10.0,
+            "market_value": 3467945.38,
+            "currency": "USD",
+            "accrued_interest": null
+          },
+          {
+            "security_name": "AMERICAN BEACON SIM HI YLD OPPTY R5",
+            "ticker": "SHOIX",
+            "cusip": null,
+            "units_held": 27617.949,
+            "last_price": 9.26,
+            "market_value": 255742.21,
+            "currency": "USD",
+            "accrued_interest": null
+          },
+          {
+            "security_name": "CLEARBRIDGE LARGE CAP GROWTH FD CL I",
+            "ticker": "SBLYX",
+            "cusip": null,
+            "units_held": 97766.72,
+            "last_price": 74.96,
+            "market_value": 7328593.33,
+            "currency": "USD",
+            "accrued_interest": null
+          },
+          {
+            "security_name": "CONGRESS MID CAP GWTH RETAIL",
+            "ticker": "CMIDX",
+            "cusip": null,
+            "units_held": 173990.128,
+            "last_price": 21.91,
+            "market_value": 3812123.7,
+            "currency": "USD",
+            "accrued_interest": null
+          },
+          {
+            "security_name": "GUGGENHEIM INVST GRADE BD FD INST",
+            "ticker": "GIUSX",
+            "cusip": null,
+            "units_held": 391470.179,
+            "last_price": 16.06,
+            "market_value": 6287011.07,
+            "currency": "USD",
+            "accrued_interest": null
+          },
+          {
+            "security_name": "HARTFORD DIV & GROWTH FD CL R6",
+            "ticker": "HDGVX",
+            "cusip": null,
+            "units_held": 167300.158,
+            "last_price": 34.48,
+            "market_value": 5768509.45,
+            "currency": "USD",
+            "accrued_interest": null
+          },
+          {
+            "security_name": "JANUS HENDERSON DEVELOPED WORLD BD I",
+            "ticker": "HFAIX",
+            "cusip": null,
+            "units_held": 285552.518,
+            "last_price": 7.72,
+            "market_value": 2204465.44,
+            "currency": "USD",
+            "accrued_interest": null
+          },
+          {
+            "security_name": "JANUS HENDERSON TRITON FD CL T",
+            "ticker": "JATTX",
+            "cusip": null,
+            "units_held": 146472.917,
+            "last_price": 26.13,
+            "market_value": 3827337.32,
+            "currency": "USD",
+            "accrued_interest": null
+          },
+          {
+            "security_name": "JHANCOCK INTL GROWTH CL R6",
+            "ticker": "JIGTX",
+            "cusip": null,
+            "units_held": 135867.012,
+            "last_price": 27.16,
+            "market_value": 3690148.05,
+            "currency": "USD",
+            "accrued_interest": null
+          },
+          {
+            "security_name": "PIMCO INCM FD INST CL",
+            "ticker": "PIMIX",
+            "cusip": null,
+            "units_held": 57304.187,
+            "last_price": 10.52,
+            "market_value": 602840.05,
+            "currency": "USD",
+            "accrued_interest": null
+          },
+          {
+            "security_name": "PIMCO STOCKSPLUS INTL FD USD HDGD I",
+            "ticker": "PISIX",
+            "cusip": null,
+            "units_held": 465261.907,
+            "last_price": 8.4,
+            "market_value": 3908200.02,
+            "currency": "USD",
+            "accrued_interest": null
+          },
+          {
+            "security_name": "PUTNAM RESEARCH Y",
+            "ticker": "PURYX",
+            "cusip": null,
+            "units_held": 92059.662,
+            "last_price": 53.52,
+            "market_value": 4927033.11,
+            "currency": "USD",
+            "accrued_interest": null
+          },
+          {
+            "security_name": "UNDISCOVERED MGRS BEHAVIORAL VAL R6",
+            "ticker": "UBVFX",
+            "cusip": null,
+            "units_held": 44154.549,
+            "last_price": 84.28,
+            "market_value": 3721345.39,
+            "currency": "USD",
+            "accrued_interest": null
+          },
+          {
+            "security_name": "VANGUARD TOTAL BOND MKT INDEX ADM",
+            "ticker": "VBTLX",
+            "cusip": null,
+            "units_held": 39473.89,
+            "last_price": 9.48,
+            "market_value": 374212.48,
+            "currency": "USD",
+            "accrued_interest": null
+          },
+          {
+            "security_name": "VANGUARD TOTAL INTL STOCK INDEX ADM",
+            "ticker": "VTIAX",
+            "cusip": null,
+            "units_held": 23436.874,
+            "last_price": 31.69,
+            "market_value": 742714.54,
+            "currency": "USD",
+            "accrued_interest": null
+          },
+          {
+            "security_name": "VANGUARD TOTAL STOCK MKT INDX FD ADM",
+            "ticker": "VTSAX",
+            "cusip": null,
+            "units_held": 38600.198,
+            "last_price": 141.03,
+            "market_value": 5443785.92,
+            "currency": "USD",
+            "accrued_interest": null
+          },
+          {
+            "security_name": "VIRTUS KAR INTL SMALL CAP I",
+            "ticker": "VIRTUS",
+            "cusip": null,
+            "units_held": 170626.57,
+            "last_price": 18.66,
+            "market_value": 3183891.8,
+            "currency": "USD",
+            "accrued_interest": null
+          },
+          {
+            "security_name": "--------------------------------- SCHWAB BANK SAVINGS",
+            "ticker": "RBS1CSBS",
+            "cusip": null,
+            "units_held": null,
+            "last_price": null,
+            "market_value": 318360.71,
+            "currency": "USD",
+            "accrued_interest": null
+          },
+          {
+            "security_name": "UN-INVESTED CASH",
+            "ticker": "UN",
+            "cusip": null,
+            "units_held": null,
+            "last_price": null,
+            "market_value": 51242.41,
+            "currency": "USD",
+            "accrued_interest": null
+          }
+        ],
+        "ConfidenceScore": {
+          "Investor": "HIGH",
+          "Account": "HIGH",
+          "PeriodEndingDT": "HIGH",
+          "Currency": "HIGH",
+          "NetClosingCapital": "HIGH"
+        }
+      },
+      "meta_data": {
+        "doc_id": null,
+        "schema_id": null,
+        "created_at": null,
+        "updated_at": null,
+        "additional_columns": {},
+        "document_name": null,
+        "extraction": "HARVEST_ONLY",
+        "total": null,
+        "found": null,
+        "missing": null,
+        "BoundingBox": {},
+        "id": null,
+        "PageNumber": {}
+      },
+      "Covenants": []
+    }
+  ],
+  "doc_details": [{"fields":{
+    "typeName": "application/pdf",
+    "fileHash": "08c40b4532aa083c07347c47a52910b7e2612954ce90f3101bf63a304320954f",
+    "fileOriginalName": "075-013480.pdf",
+    "fileOriginalPath": "data/frameDemo/l0/075-013480.pdf",
+    "status":"Processed",
+    "fileName":"075-013480.pdf",
+    "extract":"ALL",
+    "File Type":"Statement",
+    "source":"Manual Upload",
+    "typeSpecificParams": {
+      "numPages": 3,
+      "EXIF": {
+        "/CreationDate": "2025-01-16T09:57:25.000",
+        "/Creator": "PDFium",
+        "/ModDate": "2025-03-27T17:36:32.000Z",
+        "/MSDH34TAG": ".TEZUF76X5TAHATHESADREYAK-00-CLA190+*99190-10=plaistow,MD=20250401162137/-0400,TC=plaistow,ZZ=000I-0550.",
+        "/Producer": "PDFium"
+      }
+    }
+  },
+  "meta_data":{
+    "doc_id": 100198
+  }
+}
+],
+"audit_logs": [],
+"account_details":{
+  "account_id":100198,
+  "account_name":"BLUE RIVER PETCARE",
+  "account_type":"LLC 401(K) PLAN",
+  "account_status":"Active",
+  "account_balance":1000000,
+  "account_created_at":"2021-01-01",
+  "account_updated_at":"2021-01-01"
+}
+}

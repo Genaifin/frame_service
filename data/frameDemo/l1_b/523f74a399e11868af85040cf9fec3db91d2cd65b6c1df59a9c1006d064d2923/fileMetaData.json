@@ -1,0 +1,15 @@
+{
+  "typeName": "application/pdf",
+  "fileHash": "523f74a399e11868af85040cf9fec3db91d2cd65b6c1df59a9c1006d064d2923",
+  "fileOriginalName": "sampleFundStatement2.pdf",
+  "fileOriginalPath": "data\\frameDemo\\l0\\sampleFundStatement2.pdf",
+  "typeSpecificParams": {
+    "numPages": 1,
+    "EXIF": {
+      "/Producer": "Foxit Quick PDF Library 13.11 (www.debenu.com)",
+      "/Creator": "Foxit Quick PDF Library 13.11 (www.debenu.com)",
+      "/CreationDate": "2024-10-11T13:16:39.000Z",
+      "/ModDate": "2024-10-11T13:16:39.000Z"
+    }
+  }
+}

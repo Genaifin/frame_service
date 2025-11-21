@@ -1,0 +1,19 @@
+{
+  "typeName": "application/pdf",
+  "fileHash": "db23c9400d5b4b028c3e3939eda4b3a54945bd454acaafd8b620e7743f3b0006",
+  "fileOriginalName": "089-030331 - 2641764 - Dec2024.pdf",
+  "fileOriginalPath": "data/frameDemo/l0/089-030331 - 2641764 - Dec2024.pdf",
+  "typeSpecificParams": {
+    "numPages": 83,
+    "EXIF": {
+      "/Author": "User: Windows NT/95/98 User",
+      "/CreationDate": "2025-01-14T07:19:59.000",
+      "/Creator": "IBM Afp2Pdf Version: 217o",
+      "/Keywords": "None",
+      "/MSDH34TAG": ".TEZUF76X5TAHATHESADREYAK-00-CLA190+*99190-10=plaistow,MD=20250401162154/-0400,TC=plaistow,ZZ=000I-26dd.",
+      "/Producer": "[ClibPDF Library 2.02-r1-2] 217o Windows 9x/NT",
+      "/Subject": "No Subject",
+      "/Title": "No Title"
+    }
+  }
+}

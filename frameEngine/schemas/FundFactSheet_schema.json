@@ -1,0 +1,611 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Fund Fact Sheet Schema",
+    "type": "object",
+    "description": "Schema for extracting and organizing detailed information from fund fact sheets.",
+    "properties": {
+        "Security": {
+            "type": "string",
+            "description": "The official name of the investment fund as it appears in the fund fact sheet."
+        },
+        "Account": {
+            "type": "string",
+            "description": "A concatenated string combining the fund name and the investor's name, separated by a pipe character (|). For example, 'ABC Investments|Scott' where 'ABC Investments' is the fund name and 'Scott' is the investor name."
+        },
+        "PeriodBeginningDT": {
+            "type": "string",
+            "description": "The start date of the reporting period in the format YYYY-MM-DD, indicating when the performance measurement begins."
+        },
+        "PeriodEndingDT": {
+            "type": "string",
+            "description": "The end date of the reporting period in the format YYYY-MM-DD, indicating when the performance measurement concludes."
+        },
+        "FundInceptionDate": {
+            "type": "string",
+            "format": "date",
+            "description": "The date on which the fund was officially launched, marking the beginning of its operation."
+        },
+        "PortfolioManager": {
+            "type": "string",
+            "description": "The full name of the individual or team responsible for managing the fund's portfolio."
+        },
+        "AssetsUnderManagement": {
+            "type": "string",
+            "description": "The total value of assets that the fund manages on behalf of its investors."
+        },
+        "InvestmentObjective": {
+            "type": "string",
+            "description": "A clear statement outlining the primary financial goals and strategies that the fund aims to achieve."
+        },
+        "ExpenseRatio": {
+            "type": "number",
+            "description": "The percentage representing the fund's annual operating expenses relative to its total assets, excluding the management fee."
+        },
+        "BaseCurrency": {
+            "type": "string",
+            "description": "The primary currency in which the fund operates. If not explicitly stated, infer it based on the currency symbols used in the financial amounts within the document."
+        },
+        "ShareClasses": {
+            "type": "array",
+            "description": "An array detailing the various share classes offered by the fund, each with its specific fee structure.",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "MaxUpfrontFee": {
+                        "type": "number",
+                        "description": "The maximum initial fee charged when purchasing shares of this class."
+                    },
+                    "ServiceFee": {
+                        "type": "number",
+                        "description": "The ongoing fee charged for services rendered for this share class."
+                    },
+                    "AnnualExpense": {
+                        "type": "number",
+                        "description": "The total annual expenses deducted from the fund's assets for this share class."
+                    }
+                },
+                "required": [
+                    "MaxUpfrontFee",
+                    "ServiceFee",
+                    "AnnualExpense"
+                ],
+                "additionalProperties": false
+            }
+        },
+        "FundStructure": {
+            "type": "string",
+            "description": "The legal framework of the fund, such as a master-feeder structure, detailing how the fund is organized legally and operationally."
+        },
+        "RedemptionPolicies": {
+            "type": "string",
+            "description": "Comprehensive details regarding the fund's policies on redeeming shares, including redemption periods, required notice periods, and any penalties for early withdrawal."
+        },
+        "SharpeRatio": {
+            "type": "number",
+            "description": "A measure of the fund's risk-adjusted return, indicating how much excess return is generated per unit of risk."
+        },
+        "Beta": {
+            "type": "number",
+            "description": "The fund's beta value, representing its volatility relative to a benchmark index."
+        },
+        "Correlation": {
+            "type": "number",
+            "description": "The statistical relationship between the fund's returns and those of a specified benchmark."
+        },
+        "Volatility": {
+            "type": "number",
+            "description": "A measure of the fund's price fluctuations over a certain period, indicating its risk level."
+        },
+        "AnnualReturns": {
+            "type": "array",
+            "description": "A history of the fund's annual returns over previous years.",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "FundName": {
+                        "type": "string",
+                        "description": "The official name of the fund corresponding to the reported return."
+                    },
+                    "Year": {
+                        "type": "string",
+                        "pattern": "^[0-9]{4}$",
+                        "description": "The four-digit year for which the return is reported."
+                    },
+                    "Return": {
+                        "type": "number",
+                        "description": "The percentage return of the fund for the specified year."
+                    }
+                },
+                "required": [
+                    "FundName",
+                    "Year",
+                    "Return"
+                ],
+                "additionalProperties": false
+            }
+        },
+        "CumulativeReturns": {
+            "type": "number",
+            "description": "The total returns accumulated by the fund from its inception to the current reporting date."
+        },
+        "GrossPerformance": {
+            "type": "number",
+            "description": "The fund's performance before deducting any fees or expenses."
+        },
+        "NetPerformance": {
+            "type": "number",
+            "description": "The fund's performance after all fees and expenses have been deducted."
+        },
+        "PercentageNetMonthlyPerformance": {
+            "type": "object",
+            "description": "A detailed breakdown of the fund's net performance on a monthly basis across different years.",
+            "patternProperties": {
+                "^[0-9]{4}$": {
+                    "type": "object",
+                    "description": "Net performance data for a specific year.",
+                    "patternProperties": {
+                        "^(January|February|March|April|May|June|July|August|September|October|November|December)$": {
+                            "type": "number",
+                            "description": "The net performance percentage for the specified month within the given year."
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": false
+        },
+        "BenchmarkName": {
+            "type": "string",
+            "description": "The name of the benchmark index against which the fund's performance is compared."
+        },
+        "PerformanceVsBenchmark": {
+            "type": "string",
+            "description": "A comparison of the fund's performance relative to the specified benchmark, highlighting whether the fund outperformed or underperformed the benchmark."
+        },
+        "NumberOfIssuers": {
+            "type": "number",
+            "description": "The total count of individual issuers or companies included in the fund's portfolio."
+        },
+        "NumberOfHoldings": {
+            "type": "number",
+            "description": "The total number of distinct holdings or securities that the fund invests in."
+        },
+        "PercentageGeographicDistribution": {
+            "type": "object",
+            "description": "The distribution of the fund's investments across different geographic regions.",
+            "patternProperties": {
+                "^[A-Za-z ]+$": {
+                    "type": "number",
+                    "description": "The percentage of the fund's assets invested in a specific geographic region, such as 'North America' or 'Europe'."
+                }
+            },
+            "additionalProperties": false
+        },
+        "PercentageSectorAllocation": {
+            "type": "object",
+            "description": "The allocation of the fund's investments across various industry sectors.",
+            "patternProperties": {
+                "^[A-Za-z ]+$": {
+                    "type": "number",
+                    "description": "The percentage of the fund's assets allocated to a specific sector, such as 'Technology' or 'Healthcare'."
+                }
+            },
+            "additionalProperties": false
+        },
+        "PercentageTopLongPositions": {
+            "type": "object",
+            "description": "The top long positions held by the fund, indicating significant holdings in specific securities.",
+            "patternProperties": {
+                "^[A-Za-z0-9_ ]+$": {
+                    "type": "number",
+                    "description": "The percentage of the fund's assets invested in a particular long position, identified by its name or ticker symbol."
+                }
+            },
+            "additionalProperties": false
+        },
+        "PercentageTopShortPositions": {
+            "type": "object",
+            "description": "The top short positions held by the fund, indicating significant short sales in specific securities.",
+            "patternProperties": {
+                "^[A-Za-z0-9_ ]+$": {
+                    "type": "number",
+                    "description": "The percentage of the fund's assets allocated to a particular short position, identified by its name or ticker symbol."
+                }
+            },
+            "additionalProperties": false
+        },
+        "PercentageCreditQualityDistribution": {
+            "type": "object",
+            "description": "The distribution of the fund's holdings based on credit quality ratings.",
+            "patternProperties": {
+                "^[A-Za-z+-]+$": {
+                    "type": "number",
+                    "description": "The percentage of the fund's holdings that fall under a specific credit rating category, such as 'AAA', 'BBB+', etc."
+                }
+            },
+            "additionalProperties": false
+        },
+        "PercentageMaturityDistribution": {
+            "type": "object",
+            "description": "The distribution of the fund's fixed-income holdings based on their maturity periods.",
+            "patternProperties": {
+                "^[0-9]+[ ]*years?$": {
+                    "type": "number",
+                    "description": "The percentage of the fund's fixed-income holdings that mature within a specified time frame, such as '5 years'."
+                }
+            },
+            "additionalProperties": false
+        },
+        "CommittedCapital": {
+            "type": "number",
+            "description": "The total amount of capital that investors have committed to invest in the fund."
+        },
+        "DealCount": {
+            "type": "number",
+            "description": "The total number of investment deals or transactions executed by the fund."
+        },
+        "IRR": {
+            "type": "number",
+            "description": "The Internal Rate of Return (IRR) of the fund, representing the annualized effective compounded return rate."
+        },
+        "AssetsByLegalEntity": {
+            "type": "object",
+            "description": "A breakdown of the fund's assets categorized by the legal entities that hold them.",
+            "patternProperties": {
+                "^[A-Za-z ]+$": {
+                    "type": "string",
+                    "description": "The percentage of the fund's assets held by a specific legal entity, such as 'Entity A'."
+                }
+            },
+            "additionalProperties": false
+        },
+        "Disclaimers": {
+            "type": "string",
+            "description": "Legal disclaimers and important notices regarding the fund, including risk warnings and regulatory information."
+        },
+        "RiskFactors": {
+            "type": "string",
+            "description": "A detailed description of the key risks associated with investing in the fund, outlining potential factors that could adversely affect performance."
+        },
+        "InvestmentStrategy": {
+            "type": "string",
+            "description": "An overview of the fund's investment strategy, including its approach to selecting investments and achieving its financial objectives."
+        },
+        "MarketChallenges": {
+            "type": "array",
+            "description": "A list of current market challenges impacting the fund, providing insights into external factors that may affect its performance.",
+            "items": {
+                "type": "string",
+                "description": "A specific market challenge, such as economic downturns or regulatory changes, that the fund is addressing or affected by."
+            },
+            "additionalItems": false
+        },
+        "Signed": {
+            "type": "string",
+            "description": "The name of the individual or entity that has signed the fund fact sheet. This will be initial under 'Signature'."
+        },
+        "FreeHandText": {
+            "type": "string",
+            "description": "Indicates whether the fund fact sheet has been reviewed. Generally this would be written as 'Reviewed'."
+        },
+        "VerbatimText": {
+            "type": "object",
+            "description": "Exact textual excerpts extracted from the fund fact sheet corresponding to each field.",
+            "properties": {
+                "Security": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "FundInceptionDate": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "PortfolioManager": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "AssetsUnderManagement": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "InvestmentObjective": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "ExpenseRatio": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "BaseCurrency": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "ShareClasses": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "FundStructure": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "RedemptionPolicies": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "SharpeRatio": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "Beta": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "Correlation": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "Volatility": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "AnnualReturns": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "CumulativeReturns": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "GrossPerformance": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "NetPerformance": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "PercentageNetMonthlyPerformance": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "BenchmarkName": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "PerformanceVsBenchmark": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "NumberOfIssuers": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "NumberOfHoldings": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "GeographicDistribution": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "SectorAllocation": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "TopLongPositions": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "TopShortPositions": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "CreditQualityDistribution": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "MaturityDistribution": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "CommittedCapital": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "DealCount": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "IRR": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "AssetsByLegalEntity": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "Disclaimers": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "RiskFactors": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "InvestmentStrategy": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "MarketChallenges": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "Account": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "PeriodBeginningDT": {
+                    "$ref": "#/definitions/VerbatimText"
+                },
+                "PeriodEndingDT": {
+                    "$ref": "#/definitions/VerbatimText"
+                }
+            },
+            "additionalProperties": false
+        },
+        "ConfidenceScore": {
+            "type": "object",
+            "description": "Confidence levels indicating the reliability of the extracted values for each field.",
+            "properties": {
+                "Security": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "FundInceptionDate": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "PortfolioManager": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "AssetsUnderManagement": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "InvestmentObjective": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "ExpenseRatio": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "BaseCurrency": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "ShareClasses": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "FundStructure": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "RedemptionPolicies": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "SharpeRatio": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "Beta": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "Correlation": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "Volatility": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "AnnualReturns": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "CumulativeReturns": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "GrossPerformance": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "NetPerformance": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "PercentageNetMonthlyPerformance": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "BenchmarkName": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "PerformanceVsBenchmark": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "NumberOfIssuers": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "NumberOfHoldings": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "GeographicDistribution": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "SectorAllocation": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "TopLongPositions": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "TopShortPositions": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "CreditQualityDistribution": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "MaturityDistribution": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "CommittedCapital": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "DealCount": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "IRR": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "AssetsByLegalEntity": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "Disclaimers": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "RiskFactors": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "InvestmentStrategy": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "MarketChallenges": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "Account": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "PeriodBeginningDT": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "PeriodEndingDT": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "Signed": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "FreeHandText": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "required": [
+        "Security",
+        "Account",
+        "PeriodBeginningDT",
+        "PeriodEndingDT",
+        "FundInceptionDate",
+        "PortfolioManager",
+        "AssetsUnderManagement",
+        "InvestmentObjective",
+        "ExpenseRatio",
+        "BaseCurrency",
+        "ShareClasses",
+        "FundStructure",
+        "RedemptionPolicies",
+        "SharpeRatio",
+        "Beta",
+        "Correlation",
+        "Volatility",
+        "AnnualReturns",
+        "CumulativeReturns",
+        "PercentageNetMonthlyPerformance",
+        "BenchmarkName",
+        "PerformanceVsBenchmark",
+        "NumberOfIssuers",
+        "NumberOfHoldings",
+        "GeographicDistribution",
+        "PercentageSectorAllocation",
+        "PercentageTopLongPositions",
+        "PercentageTopShortPositions",
+        "PercentageCreditQualityDistribution",
+        "PercentageMaturityDistribution",
+        "CommittedCapital",
+        "DealCount",
+        "IRR",
+        "AssetsByLegalEntity",
+        "Disclaimers",
+        "RiskFactors",
+        "InvestmentStrategy",
+        "MarketChallenges",
+        "VerbatimText",
+        "ConfidenceScore",
+        "Signed",
+        "FreeHandText"
+    ],
+    "definitions": {
+        "ConfidenceScore": {
+            "type": "string",
+            "enum": [
+                "HIGH",
+                "MID",
+                "LOW"
+            ],
+            "description": "A classification indicating the confidence level of the extracted value: 'HIGH' if the field name appears exactly as in the document, 'MID' if the key is semantically similar to the document's content, and 'LOW' if the value was inferred by the AI system without an exact match."
+        },
+        "VerbatimText": {
+            "type": "string",
+            "description": "The exact text excerpt extracted from the document for the corresponding field, without any additional formatting such as braces or brackets. For currency fields, include the relevant currency symbols present in the document."
+        }
+    }
+}

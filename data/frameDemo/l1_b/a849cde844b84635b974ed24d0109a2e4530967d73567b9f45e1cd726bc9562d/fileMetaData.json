@@ -1,0 +1,14 @@
+{
+  "typeName": "application/pdf",
+  "fileHash": "a849cde844b84635b974ed24d0109a2e4530967d73567b9f45e1cd726bc9562d",
+  "fileOriginalName": "sampleFundStatement3.pdf",
+  "fileOriginalPath": "data\\frameDemo\\l0\\sampleFundStatement3.pdf",
+  "typeSpecificParams": {
+    "numPages": 2,
+    "EXIF": {
+      "/CreationDate": "2024-06-28T12:25:20.000Z",
+      "/Producer": "Qoppa PDF SDK jPDFProcess v2021R1.06",
+      "/ModDate": "2024-06-28T12:25:20.000Z"
+    }
+  }
+}

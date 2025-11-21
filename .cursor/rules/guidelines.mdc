@@ -1,0 +1,58 @@
+---
+alwaysApply: true
+---
+# Development Guidelines
+
+## Code Style Standards
+
+### Naming Conventions
+- **Variable Names**: camelCase (e.g., `fundName`, `chartData`, `queryParams`)
+- **Function Names**: camelCase (e.g., `getPnlByAssetClass`, `getSingleFundTrends`)
+- **Private/Helper Functions**: camelCase with underscore prefix (e.g., `_sanitizeChartValue`, `_formatDateForChart`)
+- **File Names**: camelCase (e.g., `pnlTrendsRenderer.py`, `singleFundPages.py`)
+- **Class Names**: UPPER_SNAKE_CASE (e.g., `PAGE_CONFIG`, `SIMPLE_MODULE`, `SUB_PAGE`)
+- **API Parameters**: snake_case for query parameters (e.g., `_type`, `_subType`, `_funcName`)
+
+### Code Organization
+- Keep functions concise, simple, and to the point
+- Reuse code wherever possible
+- Use helper functions for repeated logic
+- Group related functionality together
+
+### Date Formatting
+- **Chart data keys**: lowercase, no spaces (e.g., `feb2024`, `mar2024`)
+- **Display names**: proper case with spaces (e.g., `"Feb 2024"`, `"Mar 2024"`)
+- Use helper functions `_formatDateForChart()` and `_formatDateForDisplay()` for consistency
+
+### Data Sanitization
+- Always sanitize numeric values using `_sanitizeChartValue()` function
+- Handle NaN, null, and infinite values gracefully
+- Return 0.0 for invalid numeric data
+
+### Asset Class Mapping
+- Use `_mapAssetClassToReadableName()` function to convert technical codes to readable names
+- Standard groupings: **Equities**, **Fixed Income**, **Derivatives**, **Cash & Cash Equivalents**, **Other**
+- Always aggregate PNL values when grouping multiple technical codes into the same category
+
+## File Structure Organization
+
+### Frontend Renders
+- Renderers go in `frontendUtils/renders/validus/`
+- Page configurations in `frontendUtils/renders/config/`
+- Utility functions in `frontendUtils/renders/utils/`
+
+## Best Practices
+
+### Performance
+- Cache calculator instances where appropriate
+- Use efficient data structures for chart data transformation
+
+### Maintainability
+- Use descriptive function names that indicate purpose
+- Separate data processing from response formatting
+- Keep business logic separate from presentation logic
+- Document complex calculations with brief comments
+
+### Testing Considerations
+- Ensure all numeric outputs are JSON-serializable
+- Handle edge cases (no data, single data point, etc.)

@@ -1,0 +1,409 @@
+{
+  "document_details": {
+    "document_name": "accolade_cc.pdf",
+    "date": "2025-07-16",
+    "status": "EXTRACTED_IN_REVIEW",
+    "source": "Dashboard",
+    "processing_method": "Completely Automated",
+    "file_id": "fbad8caf-c21c-403d-b5a4-bcde51b2e210",
+    "business_date": "2025-07-16",
+    "file_type": "CapCall",
+    "capture_system": "Aithon Frame",
+    "linking_system": "Automated",
+    "extractor": "Aithon Frame - AI"
+  },
+  "file_metadata_config": [
+    {
+      "key": "status",
+      "label": "Status",
+      "layout": "badge"
+    },
+    {
+      "key": "source",
+      "label": "Source"
+    },
+    {
+      "key": "processing_method",
+      "label": "Processing Method"
+    },
+    {
+      "key": "file_id",
+      "label": "File ID"
+    },
+    {
+      "key": "business_date",
+      "label": "Business Date"
+    },
+    {
+      "key": "file_type",
+      "label": "File Type"
+    },
+    {
+      "key": "capture_system",
+      "label": "Capture System"
+    },
+    {
+      "key": "linking_system",
+      "label": "Linking System"
+    },
+    {
+      "key": "extractor",
+      "label": "Extractor"
+    }
+  ],
+  "event_log_title": "Event Logs",
+  "event_logs": [
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 18:03:37,476",
+      "message": "Successfully ingested 'accolade_cc.pdf'. Document ID: fbad8caf-c21c-403d-b5a4-bcde51b2e210"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 18:03:40,061",
+      "message": "Successfully processed through OCR Box: accolade_cc.pdf"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 18:03:40,066",
+      "message": "Successfully processed through Enhanced Preprocessing Box: accolade_cc.pdf"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 18:03:41,364",
+      "message": "Classified 'accolade_cc.pdf' as: CapCall (confidence: 0.81)"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 18:03:54,414",
+      "message": "Extraction completed for 'accolade_cc.pdf'"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 18:04:29,935",
+      "message": "Bounding box extraction completed for 'accolade_cc.pdf': 7 entries found"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 18:04:29,944",
+      "message": "Validation & Enrichment completed for 'accolade_cc.pdf': no enrichment"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 18:04:29,945",
+      "message": "Successfully wrote output for 'accolade_cc.pdf' to output_documents/accolade_cc_output.json"
+    }
+  ],
+  "account_details": {
+    "account_sid": "fbad8caf-c21c-403d-b5a4-bcde51b2e210",
+    "fund_name": "... Fund",
+    "entity": "... Entity",
+    "created_on": "2025-07-16",
+    "frequency": 0,
+    "delay": 0,
+    "market_value": 0
+  },
+  "account_fields": [
+    {
+      "key": "account_sid",
+      "label": "Account SID"
+    },
+    {
+      "key": "frequency",
+      "label": "Frequency"
+    },
+    {
+      "key": "fund_name",
+      "label": "Fund Name"
+    },
+    {
+      "key": "delay",
+      "label": "Delay"
+    },
+    {
+      "key": "created_on",
+      "label": "Created on"
+    },
+    {
+      "key": "market_value",
+      "label": "Market Value"
+    }
+  ],
+  "file_fields": [
+    {
+      "key": "file_name",
+      "label": "File Name"
+    },
+    {
+      "key": "file_id",
+      "label": "File ID",
+      "isCopyable": true
+    },
+    {
+      "key": "market_value",
+      "label": "Market Value"
+    }
+  ],
+  "doc_id": "fbad8caf-c21c-403d-b5a4-bcde51b2e210",
+  "task_id": "1cb09b67-7982-4d0f-a811-42248594d031",
+  "original_filename": "accolade_cc.pdf",
+  "file_hash": "81b26836f9135f3946e782e60f701d49b41f5fe298179b9b81da2f95fb59701b",
+  "pipeline_status": "Completed_Successfully",
+  "document_type": "CapCall",
+  "classification_confidence": 0.8075,
+  "extracted_data": {
+    "entities": [
+      {
+        "portfolio": [
+          {
+            "Investor": {
+              "Value": "National Council of Young Men's Christian Associations of the United States of America",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "Entity Name: National Council of Young Men's Christian Associations of the United States of America",
+              "BoundingBox": {
+                "page_number": 1,
+                "bounding_box": [
+                  224,
+                  897,
+                  1436,
+                  36
+                ],
+                "confidence": 0.8620689655172413,
+                "matched_text": "Entity Name: National Council of Young Men's Christian Associations of the United States",
+                "matching_strategy": "sequence_match"
+              },
+              "PageNumber": 1
+            },
+            "Account": {
+              "Value": "Accolade Partners Growth II, LP.|National Council of Young Men's Christian Associations of the United States of America",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "Accolade Partners Growth II, LP.|National Council of Young Men's Christian Associations of the United States of America",
+              "BoundingBox": {
+                "page_number": 1,
+                "bounding_box": [
+                  990,
+                  244,
+                  502,
+                  76
+                ],
+                "confidence": 1.0,
+                "matched_text": "Accolade",
+                "matching_strategy": "semantic_match"
+              },
+              "PageNumber": 1
+            },
+            "InvestorRefID": {
+              "Value": "6205",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "Accolade ID (AID): 6205",
+              "BoundingBox": {
+                "page_number": 1,
+                "bounding_box": [
+                  529,
+                  1005,
+                  80,
+                  28
+                ],
+                "confidence": 1.0,
+                "matched_text": "6205",
+                "matching_strategy": "exact_match"
+              },
+              "PageNumber": 1
+            },
+            "AccountRefID": null,
+            "Fund_ID": null,
+            "Series_ID": null,
+            "Series_Description": null,
+            "Security": {
+              "Value": "Accolade Partners Growth II, LP.",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "Accolade Partners Growth II, LP.",
+              "BoundingBox": {
+                "page_number": 1,
+                "bounding_box": [
+                  224,
+                  596,
+                  558,
+                  32
+                ],
+                "confidence": 0.96875,
+                "matched_text": "Accolade Partners Growth Il, LP.",
+                "matching_strategy": "sequence_match"
+              },
+              "PageNumber": 1
+            },
+            "TransactionDate": {
+              "Value": "2025-05-22",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "due May 22, 2025",
+              "BoundingBox": {
+                "page_number": 1,
+                "bounding_box": [
+                  365,
+                  480,
+                  76,
+                  24
+                ],
+                "confidence": 1.0,
+                "matched_text": "2025",
+                "matching_strategy": "semantic_match"
+              },
+              "PageNumber": 1
+            },
+            "Currency": {
+              "Value": "USD",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD",
+              "BoundingBox": {
+                "page_number": 1,
+                "bounding_box": [
+                  898,
+                  2023,
+                  30,
+                  44
+                ],
+                "confidence": 1.0,
+                "matched_text": "us",
+                "matching_strategy": "semantic_match"
+              },
+              "PageNumber": 1
+            },
+            "Distribution": null,
+            "DeemedCapitalCall": null,
+            "IncomeDistribution": null,
+            "IncomeReinvested": null,
+            "RecallableSell": null,
+            "ReturnOfCapital": null,
+            "DistributionOutsideCommitment": null,
+            "CapitalCall": {
+              "Value": 105000,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "Capital Call: USD 105000",
+              "BoundingBox": [
+                "0.0879412,0.320455,0.0441176,0.0109091",
+                "0.135294,0.320455,0.0282353,0.00840909",
+                "0.170588,0.319318,0.0323529,0.0129545",
+                "0.205294,0.319318,0.0226471,0.0129545"
+              ],
+              "PageNumber": 1
+            },
+            "CapitalCallOutsideCommitment": null,
+            "NetCashFlowQC": null,
+            "TransferIn": null,
+            "TransferOut": null,
+            "Quantity": null,
+            "Price": null,
+            "CommittedCapital": {
+              "Value": 51500000,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "Commitment: 51500,000",
+              "BoundingBox": [
+                "0.0879412,0.288864,0.0882353,0.00977273",
+                "0.180882,0.288864,0.0708824,0.00977273"
+              ],
+              "PageNumber": 1
+            },
+            "RemainingCommittedCapital": null,
+            "ContributionsToDate": null,
+            "DistributionsToDate": null,
+            "ReturnOfCapitalToDate": null
+          }
+        ]
+      }
+    ]
+  },
+  "validation_errors": [],
+  "events_log": [
+    {
+      "timestamp": "2025-07-16 18:03:37,476",
+      "level": "INFO",
+      "stage": "Ingestion",
+      "message": "Successfully ingested 'accolade_cc.pdf'. Document ID: fbad8caf-c21c-403d-b5a4-bcde51b2e210",
+      "details": null
+    },
+    {
+      "timestamp": "2025-07-16 18:03:40,061",
+      "level": "INFO",
+      "stage": "OCR",
+      "message": "Successfully processed through OCR Box: accolade_cc.pdf",
+      "details": null
+    },
+    {
+      "timestamp": "2025-07-16 18:03:40,066",
+      "level": "INFO",
+      "stage": "Preprocessing",
+      "message": "Successfully processed through Enhanced Preprocessing Box: accolade_cc.pdf",
+      "details": {
+        "quality_score": 1.0
+      }
+    },
+    {
+      "timestamp": "2025-07-16 18:03:41,364",
+      "level": "INFO",
+      "stage": "Classification",
+      "message": "Classified 'accolade_cc.pdf' as: CapCall (confidence: 0.81)",
+      "details": {
+        "document_type": "CapCall",
+        "confidence": 0.8075,
+        "confidence_level": "MEDIUM"
+      }
+    },
+    {
+      "timestamp": "2025-07-16 18:03:54,414",
+      "level": "INFO",
+      "stage": "Extraction",
+      "message": "Extraction completed for 'accolade_cc.pdf'",
+      "details": {
+        "extraction_quality": 1.0,
+        "extraction_confidence": null,
+        "processing_time": 13.049880027770996
+      }
+    },
+    {
+      "timestamp": "2025-07-16 18:04:29,935",
+      "level": "INFO",
+      "stage": "BoundingBox",
+      "message": "Bounding box extraction completed for 'accolade_cc.pdf': 7 entries found",
+      "details": {
+        "entries_processed": 7,
+        "entries_found": 7,
+        "processing_time": 35.51728320121765
+      }
+    },
+    {
+      "timestamp": "2025-07-16 18:04:29,944",
+      "level": "INFO",
+      "stage": "Validation & Enrichment",
+      "message": "Validation & Enrichment completed for 'accolade_cc.pdf': no enrichment",
+      "details": null
+    },
+    {
+      "timestamp": "2025-07-16 18:04:29,945",
+      "level": "INFO",
+      "stage": "Output",
+      "message": "Successfully wrote output for 'accolade_cc.pdf' to output_documents/accolade_cc_output.json",
+      "details": null
+    }
+  ],
+  "processing_summary": {
+    "total_processing_time": 13.049880027770996,
+    "extraction_quality": 1.0,
+    "classification_mode": "hybrid_classification",
+    "stages_completed": [
+      "Ingestion",
+      "OCR",
+      "Preprocessing",
+      "Classification",
+      "Extraction",
+      "BoundingBox",
+      "Validation & Enrichment",
+      "Output"
+    ],
+    "error_count": 0
+  },
+  "metadata": {
+    "file_hash": "81b26836f9135f3946e782e60f701d49b41f5fe298179b9b81da2f95fb59701b",
+    "processing_timestamp": "2025-07-16 18:04:29,945",
+    "backend_structure_version": "2.0"
+  }
+}

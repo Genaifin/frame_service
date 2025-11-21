@@ -1,0 +1,78 @@
+{
+  "rowClickEnabled": true,
+  "rowClickAction": {
+    "type": "storeValues",
+    "store": {
+      "key": "commonRightDrawer",
+      "value": {
+        "page": "detailedInfo",
+        "getAPIURL": "api/users",
+        "parameters": [
+          {
+            "name": "user_id",
+            "value": "",
+            "dynamicValue": {
+              "enabled": true,
+              "id": "userID"
+            }
+          }
+        ],
+        "isOpen": true
+      }
+    }
+  },
+  "colsToShow": [
+    "userID",
+    "name",
+    "jobTitle",
+    "emailID",
+    "role",
+    "createdDate",
+    "status"
+  ],
+  "columnConfig": {
+    "userID": {
+      "name": "User ID",
+      "filter": "true",
+      "suppressHeaderMenuButton": false
+    },
+    "name": {
+      "name": "Name",
+      "filter": "true",
+      "suppressHeaderMenuButton": false
+    },
+    "jobTitle": {
+      "name": "Job Title",
+      "filter": "true",
+      "suppressHeaderMenuButton": false
+    },
+    "emailID": {
+      "name": "Email ID",
+      "filter": "true",
+      "suppressHeaderMenuButton": false
+    },
+    "role": {
+      "name": "Role",
+      "filter": "true",
+      "suppressHeaderMenuButton": false
+    },
+    "createdDate": {
+      "name": "Created Date",
+      "filter": "true",
+      "suppressHeaderMenuButton": false
+    },
+    "status": {
+      "name": "Status",
+      "filter": "true",
+      "customCellRenderer": "statusAggregator",
+      "suppressHeaderMenuButton": false
+    }
+  },
+  "rowData": [],
+  "pagination": {
+    "current_page": 1,
+    "page_size": 10,
+    "total_pages": 1
+  }
+}
+

@@ -1,0 +1,18 @@
+{
+  "typeName": "application/pdf",
+  "fileHash": "00fba7ae77248242c8137b74a522bb977acda3371d99f2e264b3ac61990574f8",
+  "fileOriginalName": "Dover VIII Cayman 2024 12 31 Capital Accounts Statement Notice.pdf",
+  "fileOriginalPath": "data/frameDemo/l0/Dover VIII Cayman 2024 12 31 Capital Accounts Statement Notice.pdf",
+  "typeSpecificParams": {
+    "numPages": 1,
+    "EXIF": {
+      "/Author": "",
+      "/CreationDate": "2025-04-24T19:38:54.000Z",
+      "/Creator": "Aspose Ltd.",
+      "/ModDate": "2025-04-28T14:17:30.000Z",
+      "/Producer": "Aspose.Pdf for .NET 11.7.0; modified using iText\u00ae Core 8.0.5 (AGPL version) \u00a92000-2024 Apryse Group NV",
+      "/Subject": "",
+      "/Title": ""
+    }
+  }
+}

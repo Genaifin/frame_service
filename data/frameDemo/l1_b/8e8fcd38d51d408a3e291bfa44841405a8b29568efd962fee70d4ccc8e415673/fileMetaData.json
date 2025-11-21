@@ -1,0 +1,15 @@
+{
+  "typeName": "application/pdf",
+  "fileHash": "8e8fcd38d51d408a3e291bfa44841405a8b29568efd962fee70d4ccc8e415673",
+  "fileOriginalName": "20-75-067-4488779_2024-12.pdf",
+  "fileOriginalPath": "data/frameDemo/l0/20-75-067-4488779_2024-12.pdf",
+  "typeSpecificParams": {
+    "numPages": 35,
+    "EXIF": {
+      "/CreationDate": "2025-01-08T15:19:06.000Z",
+      "/Creator": "PDFsharp 1.50.5147 (www.pdfsharp.com)",
+      "/MSDH34TAG": ".TEZUF76X5TAHATHESADREYAK-00-CLA190+*99190-10=plaistow,MD=20250401162137/-0400,TC=plaistow,ZZ=000I-0550.",
+      "/Producer": "PDFsharp 1.50.5147 (www.pdfsharp.com)"
+    }
+  }
+}

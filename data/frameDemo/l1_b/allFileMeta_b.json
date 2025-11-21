@@ -1,0 +1,242 @@
+{
+    "sampleFundStatement1.pdf": {
+      "fileHash": "a9d3e3e6072a226e1becf2628e8f09c6e5999889b13645d5d343343146a5eaee",
+      "fileType": "Statement",
+      "status": "Processed",
+      "fileName": "Varde_Fund_Statement.pdf"
+    },
+    "sampleDocument1.pdf": {
+      "fileHash": "81017c476452d044e695bdd66e261d578c7348c70c06e0150f6313b33742cd50",
+      "fileType": "Distribution",
+      "status": "Processed",
+      "fileName": "Keshav_Distribution.pdf"
+    },
+    "sampleFundStatement2.pdf": {
+      "fileHash": "523f74a399e11868af85040cf9fec3db91d2cd65b6c1df59a9c1006d064d2923",
+      "fileType": "Capital Call",
+      "status": "Processed",
+      "fileName": "Hollyport.pdf"
+    },
+    "sampleFundStatement3.pdf": {
+      "fileHash": "a849cde844b84635b974ed24d0109a2e4530967d73567b9f45e1cd726bc9562d",
+      "fileType": "Capital Call",
+      "status": "Processed",
+      "fileName": "revernce_capital_partners.pdf"
+    },
+    "sampleFundStatement4.pdf": {
+      "fileHash": "9dd9c5a5437fcea1f6b309f8d3f46021ff84b978145509a84c65d306f821f56b",
+      "fileType": "Distribution",
+      "status": "Processed",
+      "fileName": "Keshav_Distribution_gs.pdf"
+    },
+    "sampleFinancialStatement1.pdf": {
+      "fileHash": "fdbf2fc4bba06f44286e1b50edef99e5d4836a0ddb6d93afb05a4aa08f46f0b6",
+      "fileType": "Statement",
+      "status": "Processed",
+      "fileName": "AQR.pdf"
+    },
+    "sampleDocument2.pdf": {
+      "fileHash": "f6bed8b51a8fc12ddae3f5b332de4f691ba2db64031f2850a818c13350f0ade4",
+      "fileType": "Capital Call",
+      "status": "Processed",
+      "fileName": "Unigestion.pdf"
+    },
+    "sampleCapitalStatement1.pdf": {
+      "fileHash": "687ae32975de1b6ce7dd35ffc9c3fa3790f84b11ac3dbbe15540d558ce7a0a98",
+      "fileType": "Statement",
+      "status": "Processed",
+      "fileName": "kkr.pdf"
+    },
+    "sampleDocument3.pdf": {
+      "fileHash": "ec2aefde29d9d4522c2d96e35cd7fdb5f606fffe2f304968be8518eba703c523",
+      "fileType": "Statement",
+      "status": "Processed",
+      "fileName": "ilpa.pdf"
+    },
+    "sampleDocument4.pdf": {
+      "fileHash": "78b19a1edf5379db4a6329515349920abc66612b536dd7ff354bd5d2f92c4baf",
+      "fileType": "Document",
+      "status": "Processed",
+      "fileName": "sampleDocument4.pdf"
+    },
+    "sampleFinancialStatement2.pdf": {
+      "fileHash": "4734ae970fd11820ed6f3981160cc61950d549f1c778fc4bf4ae8d21f859be8a",
+      "fileType": "Statement",
+      "status": "Processed",
+      "fileName": "storm_ventures.pdf"
+    },
+    "075-013480.pdf": {
+      "fileHash": "08c40b4532aa083c07347c47a52910b7e2612954ce90f3101bf63a304320954f",
+      "fileType": "Distribution",
+      "status": "Processed",
+      "fileName": "075-013480.pdf"
+    },
+    "test_upload.txt": {
+      "fileHash": "fdf4223e854999eac70623bfae4fa2925cf745a27db0f3de0dd5110da86539d3",
+      "fileType": "Statement",
+      "status": "Processed",
+      "fileName": "test_upload.txt"
+    },
+    "111.pdf": {
+      "fileHash": "98e7f6157a61edc65abada1b37ce26b384a5d4b8c9417534473dddc887da290b",
+      "fileType": "Statement",
+      "status": "Processed",
+      "fileName": "111.pdf"
+    },
+    "1111.pdf": {
+      "fileHash": "543b1b6ec996873429ddda3cfdf65ae9145cbd563a1d7e7fec6a36366b359ab3",
+      "fileType": "Statement",
+      "status": "Processed",
+      "fileName": "1111.pdf"
+    },
+    "2024 Q2 Champion.pdf": {
+      "fileHash": "95657df15d80a46a82f29214b5396bcdc97a5c8e93d22d26e57fae60f2d0323c",
+      "fileType": "Statement",
+      "status": "Processed",
+      "fileName": "2024 Q2 Champion.pdf"
+    },
+    "077-010300.pdf": {
+      "fileHash": "1630cfa01bcc886083e80d9003353e76540781e56746e52cb286c53359f787f5",
+      "fileType": "PDF Document",
+      "status": "Processed",
+      "fileName": "077-010300.pdf"
+    },
+    "rc.pdf": {
+      "fileHash": "db3419f248689ce47e1ab7483caa7301d925d2a52e5fbba896fb6394b8103558",
+      "fileType": "Document",
+      "status": "Processed",
+      "fileName": "rc.pdf"
+    },
+    "test_file2.txt": {
+      "fileHash": "fee3d9ead4c9a88e471ec5cabc7aeca5f870a66e5e032e9d1aefe00b4854192a",
+      "fileType": "Text Document",
+      "status": "Processed",
+      "fileName": "test_file2.txt"
+    },
+    "test1.txt": {
+      "fileHash": "ad7a409054a68314812ba3ad0e523a66593ab3404c81700d6f5c3601f0da830e",
+      "fileType": "Text Document",
+      "status": "Processed",
+      "fileName": "test1.txt"
+    },
+    "test2.txt": {
+      "fileHash": "20b39ca6ca85b53be73920532fd6f9cc164317646995839e2e54a6871dc13bf7",
+      "fileType": "Text Document",
+      "status": "Processed",
+      "fileName": "test2.txt"
+    },
+    "test3.txt": {
+      "fileHash": "efdbe264574c7440b80a2c4aaf15c18787a125b6223d05300841f32f46361e7f",
+      "fileType": "Text Document",
+      "status": "Processed",
+      "fileName": "test3.txt"
+    },
+    "qtest1.txt": {
+      "fileHash": "166755daf06b02a176a64663a8c2d565b94622c1b6e8f88590f0503119a81e4c",
+      "fileType": "Text Document",
+      "status": "Processed",
+      "fileName": "qtest1.txt"
+    },
+    "qtest2.txt": {
+      "fileHash": "972c795feadc30ecefec8eb1ac940058d13aa4d199eea9a07b69d0279b792282",
+      "fileType": "Text Document",
+      "status": "Processed",
+      "fileName": "qtest2.txt"
+    },
+    "5-501115_2024-12 272-024221.pdf": {
+      "fileHash": "6f82e3118382fbc580ee4566c18f8c31ad0d21afb4f66ff14553411945efb1ca",
+      "fileType": "PDF Document",
+      "status": "Processed",
+      "fileName": "5-501115_2024-12 272-024221.pdf"
+    },
+    "333-141679.pdf": {
+      "fileHash": "7afb234e5b43414fd9ef4cac7d32bf84942dc62124f3b11e60bbdcd4421a727e",
+      "fileType": "PDF Document",
+      "status": "Processed",
+      "fileName": "333-141679.pdf"
+    },
+    "demo.txt": {
+      "fileHash": "c56918fdb30e649db624c0ae307a7c58523312125b3744949adbaef5cc727570",
+      "fileType": "Text Document",
+      "status": "Processed",
+      "fileName": "demo.txt"
+    },
+    "demo2.txt": {
+      "fileHash": "2f35e5ed0b37d7cd0bf12cf07118665ccf1bc09ee54a55efb1e733c8e0181011",
+      "fileType": "Text Document",
+      "status": "Processed",
+      "fileName": "demo2.txt"
+    },
+    "test_queue_demo.txt": {
+      "fileHash": "d95b3e334c44af8ceb793f13af63b776e77f5fb839a02624885d6fb319ba1c47",
+      "fileType": "Text Document",
+      "status": "Processed",
+      "fileName": "test_queue_demo.txt"
+    },
+    "test_processor.txt": {
+      "fileHash": "1410ef7bb3c6e5a9702af5378ea42f2f0c7c72d7371a398c55d73f8611c1de4c",
+      "fileType": "Text Document",
+      "status": "Processed",
+      "fileName": "test_processor.txt"
+    },
+    "queue_test.txt": {
+      "fileHash": "5341c7b2ae09f0f123adffa03bda2503e8732548c39ab0ecc58404fc87950ba0",
+      "fileType": "Text Document",
+      "status": "Processed",
+      "fileName": "queue_test.txt"
+    },
+    "20-75-067-4488779_2024-12.pdf": {
+      "fileHash": "8e8fcd38d51d408a3e291bfa44841405a8b29568efd962fee70d4ccc8e415673",
+      "fileType": "PDF Document",
+      "status": "Processed",
+      "fileName": "20-75-067-4488779_2024-12.pdf"
+    },
+    "221NCH_2024-12.pdf": {
+      "fileHash": "707700eeb40be9ad30cc7f397a4def42be5fc467de0d1825172cc2d79b63a15e",
+      "fileType": "PDF Document",
+      "status": "Processed",
+      "fileName": "221NCH_2024-12.pdf"
+    },
+    "ALTA - LEGACY VENTURE FUNDS_CAPITAL CALL NOTICES_LEGACY VENTURE XI, LLC_LEGACY VENTURE XI, LLC - CAPITAL CALL NOTICE - DUE MAY 30, 2025_TT+OG0EZTY2HKYQRJ31POI4+O538PTVPJOHC4USGA.pdf": {
+      "fileHash": "b9e4670d72de421b4b3eca426cc8d3772b1a5d0d62ea57ee1972f93231d80425",
+      "fileType": "PDF Document",
+      "status": "Processed",
+      "fileName": "ALTA - LEGACY VENTURE FUNDS_CAPITAL CALL NOTICES_LEGACY VENTURE XI, LLC_LEGACY VENTURE XI, LLC - CAPITAL CALL NOTICE - DUE MAY 30, 2025_TT+OG0EZTY2HKYQRJ31POI4+O538PTVPJOHC4USGA.pdf"
+    },
+    "accolade_cc.pdf": {
+      "fileHash": "81b26836f9135f3946e782e60f701d49b41f5fe298179b9b81da2f95fb59701b",
+      "fileType": "Capital Call Notice",
+      "status": "Processed",
+      "fileName": "accolade_cc.pdf"
+    },
+    "eIC Portal.pdf": {
+      "fileHash": "3516f2155c76ddbc3048c617774da016abe8c760c6a87f149e436d2ed877e00f",
+      "fileType": "Capital Call Notice",
+      "status": "Processed",
+      "fileName": "eIC Portal.pdf"
+    },
+    "Osso 4.23.25.pdf": {
+      "fileHash": "f6728e00daa96c9b72bc4b62d04e8ac555c157265147e192ef24ef93d5ade154",
+      "fileType": "PDF Document",
+      "status": "Processed",
+      "fileName": "Osso 4.23.25.pdf"
+    },
+    "06.2024 OPEB C&B 2172000078.PDF": {
+      "fileHash": "1965f3f4e5cb8db228fafe59fde7029b8a8f2a1b68f70d6200b5fe69a58b4f7e",
+      "fileType": "PDF Document",
+      "status": "Processed",
+      "fileName": "06.2024 OPEB C&B 2172000078.PDF"
+    },
+    "Dover VIII Cayman 2024 12 31 Capital Accounts Statement Notice.pdf": {
+      "fileHash": "00fba7ae77248242c8137b74a522bb977acda3371d99f2e264b3ac61990574f8",
+      "fileType": "Fund Statement",
+      "status": "Processed",
+      "fileName": "Dover VIII Cayman 2024 12 31 Capital Accounts Statement Notice.pdf"
+    },
+    "effl_new_sample.pdf": {
+      "fileHash": "9e9612f0152bf6f7ab2582a2d28258bb1192a9149fcbf4fd5429b2fe3e5e14ef",
+      "fileType": "PDF Document",
+      "status": "Processed",
+      "fileName": "effl_new_sample.pdf"
+    }
+  }

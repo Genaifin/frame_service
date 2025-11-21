@@ -1,0 +1,245 @@
+[
+    {
+        "username": "admin",
+        "displayName": "Admin",
+        "firstName": "Admin",
+        "lastName": "User",
+        "roleStr": "Admin",
+        "password": "$2b$12$EkgmNcnDvGErboLC3NGxrerBS3bVIS0ZnDNf/4yXKANI9nM/7SyGK",
+        "role": "admin_level_0"
+    },
+    {
+        "username": "roshi",
+        "displayName": "Roshi D.",
+        "firstName": "Roshi D.",
+        "lastName": "User",
+        "roleStr": "CEO",
+        "password": "$2b$12$rG5tb9mSDHjhctvBr4KbjeLFF8RolTRQnZQzWvuyZJUpXlj1JpQkC",
+        "role": "user"
+    },
+    {
+        "username": "chitra",
+        "displayName": "Chitra B.",
+        "firstName": "Chitra B.",
+        "lastName": "User",
+        "roleStr": "Internal",
+        "password": "$2b$12$pLbUoMQkflVML5/Kf8/uTeR8CHolHtP1LqKL4QdtyqVEMpNsOwrn2",
+        "role": "user"
+    },
+    {
+        "username": "kb",
+        "displayName": "K.B",
+        "firstName": "K.B",
+        "lastName": "User",
+        "roleStr": "Advisor",
+        "password": "$2b$12$outUsbVEhMS6lnKYRRklpO3Xwlw/UxarTqtGnRp7.k7aGbYrMR2hq",
+        "role": "user"
+    },
+    {
+        "username": "raman",
+        "displayName": "Raman D.",
+        "firstName": "Raman D.",
+        "lastName": "User",
+        "roleStr": "Internal",
+        "password": "$2b$12$gVD6JZiQoaL4kSYhIQC1H.Jb3KbKdJ9mxuA/Sk9nBYTZLGKW5Cc2C",
+        "role": "user"
+    },
+    {
+        "username": "harsha",
+        "displayName": "Harsha P.",
+        "firstName": "Harsha P.",
+        "lastName": "User",
+        "roleStr": "Internal",
+        "password": "$2b$12$DbWQ88j9datp.prBv02NX.OOmNxxA.4FIh3IycEg6RoMCXQ5AmLLu",
+        "role": "user"
+    },
+    {
+        "username": "demo",
+        "displayName": "Demo",
+        "firstName": "Demo",
+        "lastName": "User",
+        "roleStr": "Internal",
+        "password": "$2b$12$owG15gnJj52sSFQX1lKM5eSyeNWwBJMe/aAXnfY5UDlcEI8fu9c7S",
+        "role": "dev"
+    },
+    {
+        "username": "karan",
+        "displayName": "Karan D.",
+        "firstName": "Karan D.",
+        "lastName": "User",
+        "roleStr": "Internal",
+        "password": "$2b$12$l9jgUEVGYiBgyzAX1png3OerEVBaZUSOuJGkMG/LBO2v2YbawK0W.",
+        "role": "user"
+    },
+    {
+        "username": "sales@aimsb2b.com",
+        "displayName": "Rutvik U.",
+        "firstName": "Rutvik U.",
+        "lastName": "User",
+        "roleStr": "Developer",
+        "password": "$2b$12$ADXj.3sEH9pm2pfFAofT4u5RhJoTyoZAiQ1fx61aXe78N0WW4vFJq",
+        "role": "user"
+    },
+    {
+        "username": "faseeha",
+        "displayName": "Faseeha CP",
+        "firstName": "Faseeha",
+        "lastName": "CP",
+        "roleStr": "Internal",
+        "password": "$2b$12$3VHhH0svUbs2HY9jtA4ppO5WWTOKVdww24jqCe8xKcuG6R/dv5pRy",
+        "role": "user"
+    },
+    {
+        "username": "swapnil",
+        "displayName": "Swapnil G.",
+        "firstName": "Swapnil G.",
+        "lastName": "User",
+        "roleStr": "Developer",
+        "password": "$2b$12$Udq5ZytD.p2qY.ze1Vh/r.c2t2axcNK98quw5wxFnzQxbneEDDq0O",
+        "role": "user"
+    },
+    {
+        "username": "validusDEMO",
+        "displayName": "Sam Johnson",
+        "firstName": "Sam",
+        "lastName": "Johnson",
+        "roleStr": "Service Provider",
+        "password": "$2b$12$uP3OMQ.55KqzOxqPKR10QeWyFoapZV9YdvFzs3S2q2PN.ozn/wuk2",
+        "role": "user"
+    },
+    {
+        "username": "AIMS_demo",
+        "displayName": "AIMS DEMO",
+        "firstName": "AIMS",
+        "lastName": "DEMO",
+        "roleStr": "Demo User",
+        "password": "$2b$12$Vl9lxVeZ146teDHymGISnuBu29OjYdGo6HyC7eAxCtn1fXHGTnb56",
+        "role": "user"
+    },
+    {
+        "username": "sakshi",
+        "displayName": "Sakshi",
+        "firstName": "Sakshi",
+        "lastName": "User",
+        "roleStr": "Developer",
+        "password": "$2b$12$8f9TXIuiFg3vcn76acP9WugtK4cVWn88Lbd1SCsD946Mhy2XzVs0q",
+        "role": "dev"
+    },      
+    {
+        "username": "faseeha_dev",
+        "displayName": "Faseeha CP",
+        "firstName": "Faseeha",
+        "lastName": "CP",
+        "roleStr": "Developer",
+        "password": "$2b$12$V.ypp/4HgVBDdGLHAjJ0DexWt/1pK4meYNZbfR8a5SY4Zzy9Wq4pm",
+        "role": "dev"
+    },
+    {
+        "username": "swapnil_dev",
+        "displayName": "Swapnil G.",
+        "firstName": "Swapnil G.",
+        "lastName": "User",
+        "roleStr": "Developer",
+        "password": "$2b$12$qeE2VnrDg8LfbjRpf4tGpuSE2oOx3fLj24gOwCI/yXoHQroXk01S.",
+        "role": "dev"
+    },
+    {
+        "username": "roshi_dev",
+        "displayName": "Roshi D.",
+        "firstName": "Roshi D.",
+        "lastName": "User",
+        "roleStr": "Developer",
+        "password": "$2b$12$nHUxgNsWGvfFyW6EZobaF.7LONcaIYq3H08EkQrE5/fTh/QGsq/6W",
+        "role": "dev"
+    },
+    {
+        "username": "raman_dev",
+        "displayName": "Raman D.",
+        "firstName": "Raman D.",
+        "lastName": "User",
+        "roleStr": "Developer",
+        "password": "$2b$12$LaH3rzmeyGCGs9U44ggrgOE.8cc2o6AFZpyi6G6gTSVZuHRPZgLyu",
+        "role": "dev"
+    },
+    {
+        "username": "EY_dev",
+        "displayName": "EY Developer",
+        "firstName": "EY",
+        "lastName": "Developer",
+        "roleStr": "Developer",
+        "password": "$2b$12$y5.usbm14SmGUSxSj6NCoezxOf8RDupDy2FaqhZ3Yr9PwBWVBKFPe",
+        "role": "dev"
+    },
+    {
+        "username": "EY_nex",
+        "displayName": "EY NexBridge",
+        "firstName": "EY",
+        "lastName": "NexBridge",
+        "roleStr": "Service Provider",
+        "password": "$2b$12$KiBPitnRazX4QgvEXQV7ougx4yCe1/qNsjKwvMSHkYv0AW9QUKYVW",
+        "role": "user"
+    },
+    {
+        "username": "EY_fund2",
+        "displayName": "EY Fund 2",
+        "firstName": "EY Fund",
+        "lastName": "2",
+        "roleStr": "Service Provider",
+        "password": "$2b$12$WzGRyJZswVSuf83753PYqu7JDVkSH3ltc2c3vl634smBCoPZK/Fci",
+        "role": "user"
+    },
+    {
+        "username": "zeeshan",
+        "displayName": "Zeeshan",
+        "firstName": "Zeeshan",
+        "lastName": "User",
+        "roleStr": "Internal",
+        "password": "$2b$12$F7vQFll9OeeZKgmC0oFgIu13NqK3Ey62Af5cSrpZEdewE2KZS3Uma",
+        "role": "user"
+    },
+    {
+        "username": "zeeshan_dev",
+        "displayName": "Zeeshan",
+        "firstName": "Zeeshan",
+        "lastName": "User",
+        "roleStr": "Developer",
+        "password": "$2b$12$KepXs/uwQUaxlh6VlFSMt.Y8EX3cZ6N8Oey708eIhbLqY8jg3vDAi",
+        "role": "dev"
+    },
+    {
+        "username": "nikhil",
+        "displayName": "Nikhil",
+        "firstName": "Nikhil",
+        "lastName": "User",
+        "roleStr": "Internal",
+        "password": "$2b$12$wQ5/eAFsf/uhfdJn4Q7pSu5ABlNIToTx/zsgzkubOseEeMpeyvf.S",
+        "role": "user"
+    },   
+    {
+        "username": "apptware",
+        "displayName": "Apptware",
+        "firstName": "Apptware",
+        "lastName": "User",
+        "roleStr": "Admin",
+        "password": "$2b$12$uJ/aE/hIZA3XysOuYQbKlOOFCAWvBvKYaBNR8e3b6gY/V5ml4sH36",
+        "role": "admin_level_0"
+    },
+    {
+        "username": "ops@aimsb2b.com",
+        "displayName": "AIMS Admin",
+        "firstName": "AIMS",
+        "lastName": "Admin",
+        "roleStr": "Admin",
+        "password": "$2b$12$ilHbgJH9i6ahJ52NnwbjluFnKkSEN5puDF/JFJfGQDfqzX7iCog/u",
+        "role": "admin_level_0"
+    },
+    {
+        "username": "client_poc_user",
+        "displayName": "Client POC User",
+        "firstName": "Client POC",
+        "lastName": "User",
+        "roleStr": "Client POC",
+        "password": "$2b$12$UeaMSifYk56tFTs9EHubD.en6RzVSYNGQnR.aNydoj0uuoaC/DDRS",
+        "role": "client_poc_user"
+    }
+]

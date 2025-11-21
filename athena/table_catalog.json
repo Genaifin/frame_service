@@ -1,0 +1,1082 @@
+{
+  "tables": {
+    "nexbridge.nav_pack": {
+      "synonyms": [
+        "nav pack",
+        "pack",
+        "file batch",
+        "month file",
+        "monthly data"
+      ],
+      "date_columns": [
+        "file_date"
+      ],
+      "description": "Monthly NAV pack file metadata for a fund - represents each month's data package",
+      "columns": [
+        {
+          "name": "navpack_id",
+          "type": "integer",
+          "description": "Unique identifier of the NAV pack"
+        },
+        {
+          "name": "fund_id",
+          "type": "integer",
+          "description": "Fund identifier"
+        },
+        {
+          "name": "source_id",
+          "type": "integer",
+          "description": "Source system id (links to source table)"
+        },
+        {
+          "name": "file_date",
+          "type": "date",
+          "description": "Month-end date for this NAV pack (e.g., 2024-04-30 for April 2024)"
+        }
+      ],
+      "relationships": [
+        {
+          "from": "navpack_id",
+          "to": "nexbridge.navpack_version.navpack_id",
+          "type": "one_to_many",
+          "description": "One NAV pack can have multiple versions"
+        },
+        {
+          "from": "source_id",
+          "to": "nexbridge.source.id",
+          "type": "many_to_one",
+          "description": "Links to data source"
+        }
+      ],
+      "common_queries": [
+        "Latest month data",
+        "Data for specific month",
+        "All available months"
+      ],
+      "date_relationship_info": "This table contains the primary date column (file_date) used for filtering time-based data"
+    },
+    "nexbridge.navpack_version": {
+      "synonyms": [
+        "navpack version",
+        "version",
+        "file version",
+        "upload"
+      ],
+      "date_columns": [
+        "uploaded_on",
+        "override_on"
+      ],
+      "description": "Each upload/version of a NAV pack - tracks file uploads and overrides",
+      "columns": [
+        {
+          "name": "navpack_version_id",
+          "type": "integer",
+          "description": "Unique identifier of the NAV pack version"
+        },
+        {
+          "name": "navpack_id",
+          "type": "integer",
+          "description": "Foreign key to nav_pack"
+        },
+        {
+          "name": "version",
+          "type": "integer",
+          "description": "Version number (starts at 1)"
+        },
+        {
+          "name": "file_name",
+          "type": "string",
+          "description": "Original uploaded file name"
+        },
+        {
+          "name": "uploaded_by",
+          "type": "string",
+          "description": "User who uploaded this version"
+        },
+        {
+          "name": "uploaded_on",
+          "type": "timestamp",
+          "description": "Upload timestamp"
+        },
+        {
+          "name": "override_on",
+          "type": "timestamp",
+          "description": "Override timestamp (nullable)"
+        },
+        {
+          "name": "override_by",
+          "type": "string",
+          "description": "User who created override (nullable)"
+        },
+        {
+          "name": "base_version",
+          "type": "integer",
+          "description": "Base version for overrides (nullable)"
+        }
+      ],
+      "relationships": [
+        {
+          "from": "navpack_id",
+          "to": "nexbridge.nav_pack.navpack_id",
+          "type": "many_to_one",
+          "description": "Links to parent NAV pack"
+        },
+        {
+          "from": "navpack_version_id",
+          "to": "nexbridge.trial_balance.navpack_version_id",
+          "type": "one_to_many",
+          "description": "One version has many trial balance entries"
+        },
+        {
+          "from": "navpack_version_id",
+          "to": "nexbridge.portfolio_valuation.navpack_version_id",
+          "type": "one_to_many",
+          "description": "One version has many portfolio positions"
+        },
+        {
+          "from": "navpack_version_id",
+          "to": "nexbridge.dividend.navpack_version_id",
+          "type": "one_to_many",
+          "description": "One version has many dividend entries"
+        }
+      ],
+      "common_queries": [
+        "Latest version for a month",
+        "Version history"
+      ],
+      "date_relationship_info": "Bridge table connecting nav_pack dates to actual data tables"
+    },
+    "nexbridge.trial_balance": {
+      "synonyms": [
+        "trial balance",
+        "tb",
+        "expenses",
+        "fees",
+        "revenue",
+        "assets",
+        "liabilities",
+        "balance sheet",
+        "income statement"
+      ],
+      "date_columns": [],
+      "description": "Trial balance entries by NAV version - contains assets, liabilities, revenue, and expenses. Date filtering requires joining through navpack_version and nav_pack tables.",
+      "columns": [
+        {
+          "name": "row_id",
+          "type": "integer",
+          "description": "Unique row identifier"
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "description": "Entry type in trial balance - CRITICAL: ALL VALUES ARE SINGULAR",
+          "possible_values": [
+            "Assets",
+            "Liabilities",
+            "Revenue",
+            "Expense",
+            "Capital"
+          ],
+          "value_notes": "CRITICAL: All values are SINGULAR (e.g., 'Expense' NOT 'Expenses', 'Revenue' NOT 'Revenues'). This is the most common error - never use plural forms!",
+          "usage_examples": [
+            "WHERE type = 'Expense'",
+            "WHERE type = 'Revenue'",
+            "WHERE type IN ('Assets', 'Liabilities')"
+          ],
+          "common_mistakes": [
+            "WRONG: type = 'Expenses' (plural)",
+            "WRONG: type = 'Revenues' (plural)",
+            "CORRECT: type = 'Expense' (singular)",
+            "CORRECT: type = 'Revenue' (singular)"
+          ]
+        },
+        {
+          "name": "category",
+          "type": "string",
+          "description": "Category within type (e.g., 'Investments in', 'Due to/from Custodians', 'AR', 'AP', 'Other')",
+          "nullable": true,
+          "null_percentage": "~30% of rows have NULL category",
+          "usage_notes": "Always handle NULLs with COALESCE or IS NULL/IS NOT NULL checks"
+        },
+        {
+          "name": "accounting_head",
+          "type": "string",
+          "description": "High-level technical classification code - THIS IS NOT THE ACCOUNT NAME",
+          "purpose": "Technical categorization for accounting systems using codes like 'PSEUDO SECURITIES::NONTRADEEXP'",
+          "nullable": true,
+          "null_percentage": "~20% of rows have NULL accounting_head",
+          "when_to_use": "Use for technical grouping by accounting classification codes, NOT for searching by expense/account names",
+          "when_NOT_to_use": "DO NOT use this column to search for expense names like 'Legal', 'Audit', 'Bank', etc. Use financial_account instead!",
+          "example_values": [
+            "PSEUDO SECURITIES::NONTRADEEXP",
+            "CASH - EQUIVALENTS::INTONCASH",
+            "Contracts For Differences::CFD",
+            "EQUITIES - NON-LISTED::COMMNNLT"
+          ],
+          "search_note": "This contains technical codes, NOT human-readable names. For searching by expense/account names, use financial_account column."
+        },
+        {
+          "name": "financial_account",
+          "type": "string",
+          "description": "Human-readable account name/description - THIS IS THE PRIMARY SEARCHABLE FIELD",
+          "purpose": "The actual account name that users refer to - this is what you search when looking for specific expenses or accounts",
+          "when_to_use": "USE THIS for searching expenses/accounts by name (Legal Expense, Audit Expense, Bank Fees, etc.)",
+          "example_values": [
+            "Legal Expense",
+            "Audit Expense",
+            "Bank Fees",
+            "Custodian Fees",
+            "Admin Fees",
+            "Interest Income on CASH - EQUIVALENTS",
+            "Change in Unrealized Price Gain/Loss on Contracts For Differences"
+          ],
+          "search_note": "This is the PRIMARY column for expense/account name searches. Always use this, NOT accounting_head, when searching by account name.",
+          "search_examples": [
+            "WHERE financial_account LIKE '%Legal%' -- finds Legal Expense",
+            "WHERE financial_account LIKE '%Audit%' -- finds Audit Expense",
+            "WHERE financial_account LIKE '%Bank%' -- finds Bank Fees"
+          ]
+        },
+        {
+          "name": "ending_balance",
+          "type": "numeric",
+          "description": "Account ending balance (positive for assets/expenses, negative for liabilities/revenue)"
+        },
+        {
+          "name": "navpack_version_id",
+          "type": "integer",
+          "description": "Foreign key to navpack_version - links to specific file version"
+        },
+        {
+          "name": "extra_data",
+          "type": "text",
+          "description": "JSON column containing detailed transaction-level data from General Ledger",
+          "json_structure": {
+            "general_ledger": {
+              "type": "array",
+              "description": "Array of individual transactions that make up the ending_balance",
+              "items": {
+                "tran_description": {
+                  "type": "string",
+                  "description": "Transaction description - contains entity/counterparty names (law firms, banks, brokers, vendors, custodians, etc.)",
+                  "examples": [
+                    "Paul Hastings",
+                    "Haynes and Boones",
+                    "Latham & Watkins",
+                    "UBS",
+                    "JPM",
+                    "GS",
+                    "Goldman Sachs",
+                    "JP Morgan"
+                  ]
+                },
+                "local_amount": {
+                  "type": "numeric",
+                  "description": "Individual transaction amount (book amount for that transaction)"
+                }
+              }
+            }
+          },
+          "usage_notes": [
+            "To analyze individual transactions/entities: Extract from JSON using jsonb_array_elements",
+            "For ANY entity analysis (law firms, banks, brokers, vendors, counterparties): Look at tran_description field in general_ledger array",
+            "When question asks 'which [entities]' or 'for which [entities]': Extract individual entity names from tran_description",
+            "The sum of all local_amount values equals the ending_balance"
+          ],
+          "extraction_example": "SELECT jsonb_array_elements(extra_data::jsonb->'general_ledger')->>'tran_description' as vendor_name"
+        }
+      ],
+      "relationships": [
+        {
+          "from": "navpack_version_id",
+          "to": "nexbridge.navpack_version.navpack_version_id",
+          "type": "many_to_one",
+          "description": "Links to specific NAV pack version, then to nav_pack for dates"
+        }
+      ],
+      "common_queries": [
+        "Total assets for a specific month",
+        "Revenue breakdown by category",
+        "Expense analysis by account name",
+        "Assets minus liabilities",
+        "Balance sheet items",
+        "Specific expense tracking (Legal, Audit, etc.)"
+      ],
+      "date_relationship_info": "To filter by date, JOIN with navpack_version and nav_pack: FROM trial_balance tb JOIN navpack_version nv ON tb.navpack_version_id = nv.navpack_version_id JOIN nav_pack np ON nv.navpack_id = np.navpack_id WHERE np.file_date = '2024-04-30'",
+      "query_patterns": {
+        "total_assets": {
+          "description": "Sum all assets",
+          "pattern": "SELECT SUM(ending_balance) FROM trial_balance WHERE type = 'Assets'",
+          "note": "Use singular 'Assets'"
+        },
+        "find_expense_by_name": {
+          "description": "Search for expenses by name (Legal, Audit, Bank, etc.)",
+          "pattern": "WHERE type = 'Expense' AND financial_account LIKE '%keyword%'",
+          "example": "WHERE type = 'Expense' AND financial_account LIKE '%Legal%'",
+          "critical_notes": [
+            "MUST use type = 'Expense' (singular)",
+            "MUST search financial_account (NOT accounting_head)",
+            "NEVER use type = 'Expenses' (plural)",
+            "NEVER search accounting_head for expense names"
+          ]
+        },
+        "specific_expense_in_month": {
+          "description": "Get specific expense amount for a particular month",
+          "pattern": "Filter by type='Expense', financial_account, and join for specific file_date",
+          "full_example": "SELECT SUM(tb.ending_balance) as total_amount\nFROM nexbridge.trial_balance tb\nJOIN nexbridge.navpack_version nv ON tb.navpack_version_id = nv.navpack_version_id\nJOIN nexbridge.nav_pack np ON nv.navpack_id = np.navpack_id\nWHERE tb.type = 'Expense'\n  AND tb.financial_account LIKE '%Management%'\n  AND np.file_date = '2024-02-29'",
+          "critical_notes": [
+            "Always join through navpack_version and nav_pack for dates",
+            "Use SUM(ending_balance) for total amounts",
+            "ending_balance is already the aggregated value"
+          ]
+        },
+        "percentage_change_between_months": {
+          "description": "Calculate percentage change between two specific months",
+          "pattern": "Use CTEs to get values for each month, then calculate percentage",
+          "full_example": "WITH feb_data AS (\n  SELECT SUM(tb.ending_balance) as feb_amount\n  FROM nexbridge.trial_balance tb\n  JOIN nexbridge.navpack_version nv ON tb.navpack_version_id = nv.navpack_version_id\n  JOIN nexbridge.nav_pack np ON nv.navpack_id = np.navpack_id\n  WHERE tb.type = 'Expense'\n    AND tb.financial_account LIKE '%Management%'\n    AND np.file_date = '2024-02-29'\n),\njan_data AS (\n  SELECT SUM(tb.ending_balance) as jan_amount\n  FROM nexbridge.trial_balance tb\n  JOIN nexbridge.navpack_version nv ON tb.navpack_version_id = nv.navpack_version_id\n  JOIN nexbridge.nav_pack np ON nv.navpack_id = np.navpack_id\n  WHERE tb.type = 'Expense'\n    AND tb.financial_account LIKE '%Management%'\n    AND np.file_date = '2024-01-31'\n)\nSELECT \n  feb.feb_amount as current_month_amount,\n  jan.jan_amount as previous_month_amount,\n  ROUND(((feb.feb_amount - jan.jan_amount) / NULLIF(ABS(jan.jan_amount), 0) * 100), 2) as percentage_change\nFROM feb_data feb, jan_data jan",
+          "formula": "((current - previous) / ABS(previous)) * 100",
+          "critical_notes": [
+            "Use NULLIF to avoid division by zero",
+            "Use ABS() on denominator to handle negative values correctly",
+            "Round to 2 decimal places for readability"
+          ]
+        },
+        "total_expenses_by_account": {
+          "description": "Sum expenses grouped by account name",
+          "pattern": "SELECT financial_account, SUM(ending_balance) FROM trial_balance WHERE type = 'Expense' GROUP BY financial_account",
+          "note": "Groups by the human-readable account name from financial_account"
+        },
+        "analyze_by_individual_entity": {
+          "description": "Analyze individual entities (law firms, banks, brokers, vendors, counterparties, etc.) from transaction-level detail",
+          "when_to_use": "When question asks 'which [entities]' or 'for which [entities]' - e.g., 'which banks', 'which law firms', 'which brokers' (NOT just account totals)",
+          "pattern": "Extract from extra_data JSON using jsonb_array_elements to get tran_description and local_amount",
+          "full_example": "WITH transactions AS (\n  SELECT \n    np.file_date,\n    tb.financial_account,\n    jsonb_array_elements(tb.extra_data::jsonb->'general_ledger') AS ledger_entry\n  FROM nexbridge.trial_balance tb\n  JOIN nexbridge.navpack_version nv ON tb.navpack_version_id = nv.navpack_version_id\n  JOIN nexbridge.nav_pack np ON nv.navpack_id = np.navpack_id\n  WHERE tb.type = 'Expense' AND tb.financial_account LIKE '%Legal%'\n)\nSELECT \n  file_date,\n  ledger_entry->>'tran_description' AS entity_name,\n  (ledger_entry->>'local_amount')::numeric AS amount\nFROM transactions",
+          "critical_notes": [
+            "ALWAYS use this pattern when question asks 'which [entities]' or 'for which [entities]'",
+            "Works for ANY entity type: law firms, banks, brokers, vendors, counterparties, custodians, etc.",
+            "The tran_description field contains the actual entity names",
+            "Compare individual entities month-over-month, not account totals",
+            "Use LAG/LEAD on individual entities for month-over-month comparisons"
+          ]
+        },
+        "month_over_month_comparison": {
+          "description": "Compare values across consecutive months FOR ALL DATA",
+          "pattern": "Use LAG/LEAD window functions to compare each month to previous - returns ALL months meeting criteria",
+          "example": "WITH monthly_totals AS (SELECT financial_account, SUM(ending_balance) as total, np.file_date FROM nexbridge.trial_balance tb JOIN nexbridge.navpack_version nv ON tb.navpack_version_id = nv.navpack_version_id JOIN nexbridge.nav_pack np ON nv.navpack_id = np.navpack_id WHERE type = 'Expense' AND financial_account LIKE '%Legal%' GROUP BY financial_account, np.file_date), with_previous AS (SELECT *, LAG(total) OVER (PARTITION BY financial_account ORDER BY file_date) as prev_total FROM monthly_totals) SELECT file_date, financial_account, total as current_fees, prev_total as previous_fees, ((total - prev_total) / NULLIF(ABS(prev_total), 0) * 100) as pct_change FROM with_previous WHERE prev_total IS NOT NULL AND (total - prev_total) / NULLIF(ABS(prev_total), 0) > 0.5",
+          "critical": [
+            "MUST join through navpack_version and nav_pack for dates",
+            "For 'all data' queries: DO NOT filter for specific file_date - let LAG compare ALL months",
+            "Returns ALL months where condition is met, not just latest month"
+          ]
+        },
+        "entity_month_over_month_comparison": {
+          "description": "Compare individual entities (law firms, banks, brokers, vendors, etc.) month-over-month",
+          "when_to_use": "When question asks 'which [entities]' or 'for which [entities]' - e.g., 'which banks', 'which law firms', 'for which brokers'",
+          "full_example": "WITH transactions AS (\n  SELECT \n    np.file_date,\n    jsonb_array_elements(tb.extra_data::jsonb->'general_ledger') AS ledger_entry\n  FROM nexbridge.trial_balance tb\n  JOIN nexbridge.navpack_version nv ON tb.navpack_version_id = nv.navpack_version_id\n  JOIN nexbridge.nav_pack np ON nv.navpack_id = np.navpack_id\n  WHERE tb.type = 'Expense' AND tb.financial_account LIKE '%Bank%'\n),\nmonthly_by_entity AS (\n  SELECT \n    file_date,\n    ledger_entry->>'tran_description' AS entity_name,\n    (ledger_entry->>'local_amount')::numeric AS amount\n  FROM transactions\n),\nwith_previous AS (\n  SELECT \n    file_date,\n    entity_name,\n    amount,\n    LAG(amount) OVER (PARTITION BY entity_name ORDER BY file_date) AS prev_amount\n  FROM monthly_by_entity\n)\nSELECT \n  file_date,\n  entity_name,\n  amount as current_amount,\n  prev_amount as previous_amount,\n  ((amount - prev_amount) / NULLIF(ABS(prev_amount), 0) * 100) as percent_change\nFROM with_previous\nWHERE prev_amount IS NOT NULL \n  AND ((amount - prev_amount) / NULLIF(ABS(prev_amount), 0)) > 1.0\nORDER BY file_date, entity_name",
+          "critical": [
+            "ALWAYS use this when question asks 'which [entities]' or 'for which [entities]'",
+            "Extract from extra_data JSON to get individual entity names (banks, law firms, brokers, vendors, etc.)",
+            "Compare each entity individually, not aggregated account totals",
+            "Returns entity names that meet the criteria",
+            "Pattern works for ANY entity type in tran_description field"
+          ]
+        },
+        "by_month": {
+          "description": "Filter by specific month",
+          "pattern": "Must join through navpack_version and nav_pack to filter by file_date",
+          "critical": "Date is in nav_pack table, not trial_balance"
+        },
+        "by_category": {
+          "description": "Group by type and category",
+          "pattern": "GROUP BY type, category",
+          "note": "category can be NULL - handle with COALESCE if needed",
+          "example": "GROUP BY type, COALESCE(category, 'Uncategorized')"
+        },
+        "expense_account_mapping": {
+          "description": "Map common expense search terms to actual account names",
+          "pattern": "Use exact financial_account values from mapping when searching",
+          "mappings": {
+            "management fee": "MgmtFeeExpense",
+            "management fees": "MgmtFeeExpense",
+            "mgmt fee": "MgmtFeeExpense",
+            "performance fee": "PerfFeeExpense",
+            "perf fee": "PerfFeeExpense",
+            "legal fee": "Legal Expense",
+            "legal fees": "Legal Expense",
+            "audit fee": "Audit Expense",
+            "audit fees": "Audit Expense",
+            "bank fee": "Bank Fees",
+            "bank fees": "Bank Fees",
+            "custodian fee": "Custodian Fees",
+            "custodian fees": "Custodian Fees",
+            "admin fee": "Fund Administration Fees",
+            "admin fees": "Fund Administration Fees",
+            "administration fee": "Fund Administration Fees",
+            "administration fees": "Fund Administration Fees"
+          },
+          "usage_note": "When user asks about 'management fees', use financial_account = 'MgmtFeeExpense' NOT LIKE '%Management%'",
+          "example": "WHERE tb.type = 'Expense' AND tb.financial_account = 'MgmtFeeExpense'"
+        }
+      },
+      "data_statistics": {
+        "total_rows_per_month": "~1900-2000 rows",
+        "type_distribution": {
+          "Assets": "~35-40% of rows",
+          "Liabilities": "~5-10% of rows",
+          "Revenue": "~30-35% of rows",
+          "Expense": "~15-20% of rows",
+          "Capital": "~1-2% of rows"
+        },
+        "common_expense_accounts": [
+          "Legal Expense",
+          "Audit Expense",
+          "Bank Fees",
+          "Custodian Fees",
+          "Admin Fees",
+          "Management Fees",
+          "Performance Fees"
+        ],
+        "null_handling": {
+          "category": "~30% NULL - always check for NULLs",
+          "accounting_head": "~20% NULL - always check for NULLs",
+          "financial_account": "0% NULL - always populated"
+        }
+      }
+    },
+    "nexbridge.portfolio_valuation": {
+      "synonyms": [
+        "positions",
+        "portfolio valuation",
+        "portfolio",
+        "holdings",
+        "investments",
+        "market value",
+        "mv",
+        "asset allocation",
+        "asset classes",
+        "investment types",
+        "portfolio composition"
+      ],
+      "date_columns": [],
+      "description": "End-of-period portfolio positions and valuations - investment holdings by type and identifier. Date filtering requires joining through navpack_version and nav_pack tables. CRITICAL: For 'asset class allocation' or 'asset classes' questions, use inv_type column from this table, NOT trial_balance categories.",
+      "columns": [
+        {
+          "name": "id",
+          "type": "integer",
+          "description": "Unique row identifier"
+        },
+        {
+          "name": "inv_type",
+          "type": "string",
+          "description": "Investment type classification - THIS IS THE 'ASSET CLASS' FIELD. When questions ask about 'asset classes', 'asset allocation', 'investment types', or 'portfolio composition', use THIS column.",
+          "possible_values": [
+            "CASH",
+            "EQUITY",
+            "BOND",
+            "DERIVATIVE",
+            "FUND",
+            "OTHER",
+            "COMMNNLT",
+            "CASHF",
+            "CFD",
+            "PSEUDOBND",
+            "INTONCASH",
+            "EQINDFUT",
+            "COMMNLST",
+            "EQTYCWRT",
+            "MMKTEQ"
+          ],
+          "common_values": [
+            "COMMNNLT",
+            "CASH",
+            "CASHF",
+            "PSEUDOBND"
+          ],
+          "example_values": [
+            "COMMNNLT - Common stock non-listed (equity)",
+            "CASH - Cash holdings",
+            "CASHF - Cash funds",
+            "PSEUDOBND - Pseudo bonds",
+            "CFD - Contracts for difference",
+            "INTONCASH - Interest on cash"
+          ],
+          "terminology_mapping": {
+            "COMMNNLT": "Equity UnListed",
+            "Equity UnListed": "COMMNNLT",
+            "equity unlisted": "COMMNNLT",
+            "COMMNLST": "Equity Listed",
+            "Equity Listed": "COMMNLST",
+            "equity listed": "COMMNLST",
+            "common stock": [
+              "COMMNNLT",
+              "COMMNLST"
+            ],
+            "common stock securities": [
+              "COMMNNLT",
+              "COMMNLST"
+            ],
+            "common stocks": [
+              "COMMNNLT",
+              "COMMNLST"
+            ]
+          },
+          "usage_examples": [
+            "WHERE inv_type = 'CASH'",
+            "WHERE inv_type IN ('COMMNNLT', 'CASH')",
+            "GROUP BY inv_type -- For asset class allocation analysis"
+          ],
+          "critical_notes": [
+            "For 'asset class allocation' questions: GROUP BY inv_type and calculate percentage of total portfolio",
+            "For 'which asset classes' questions: Use inv_type, NOT trial_balance.category",
+            "This represents the financial investment classification, not accounting categories"
+          ]
+        },
+        {
+          "name": "inv_id",
+          "type": "string",
+          "description": "Investment identifier (e.g., currency code for CASH like 'USD', 'EUR', or ticker/ISIN for securities)"
+        },
+        {
+          "name": "end_qty",
+          "type": "numeric",
+          "description": "Ending quantity/shares"
+        },
+        {
+          "name": "end_local_market_price",
+          "type": "numeric",
+          "description": "Ending local market price per unit"
+        },
+        {
+          "name": "end_local_mv",
+          "type": "numeric",
+          "description": "Ending local market value (qty * price)"
+        },
+        {
+          "name": "end_book_mv",
+          "type": "numeric",
+          "description": "Ending book market value"
+        },
+        {
+          "name": "navpack_version_id",
+          "type": "integer",
+          "description": "Foreign key to navpack_version - links to specific file version"
+        },
+        {
+          "name": "extra_data",
+          "type": "text",
+          "description": "Additional JSON data containing description field, e.g., {\"description\": \"AUSTRALIAN DOLLAR CASH\"}"
+        }
+      ],
+      "relationships": [
+        {
+          "from": "navpack_version_id",
+          "to": "nexbridge.navpack_version.navpack_version_id",
+          "type": "many_to_one",
+          "description": "Links to specific NAV pack version, then to nav_pack for dates"
+        }
+      ],
+      "common_queries": [
+        "Total portfolio value by month",
+        "Holdings breakdown by investment type",
+        "Largest positions",
+        "Cash positions",
+        "Asset class allocation",
+        "Portfolio composition by asset class"
+      ],
+      "date_relationship_info": "To filter by date, JOIN with navpack_version and nav_pack: FROM portfolio_valuation pv JOIN navpack_version nv ON pv.navpack_version_id = nv.navpack_version_id JOIN nav_pack np ON nv.navpack_id = np.navpack_id WHERE np.file_date = '2024-04-30'",
+      "query_patterns": {
+        "total_value": "SELECT SUM(end_local_mv) FROM portfolio_valuation",
+        "by_type": "GROUP BY inv_type",
+        "by_month": "Must join through navpack_version and nav_pack to filter by file_date",
+        "inv_type_terminology": {
+          "description": "Map common user terminology to actual database inv_type values",
+          "when_to_use": "When user mentions investment types using business terminology instead of database codes",
+          "mappings": {
+            "COMMNNLT": "Equity UnListed (common stock non-listed)",
+            "Equity UnListed": "COMMNNLT",
+            "equity unlisted": "COMMNNLT",
+            "COMMNLST": "Equity Listed (common stock listed)",
+            "Equity Listed": "COMMNLST",
+            "equity listed": "COMMNLST",
+            "common stock": [
+              "COMMNNLT",
+              "COMMNLST"
+            ],
+            "common stock securities": [
+              "COMMNNLT",
+              "COMMNLST"
+            ],
+            "common stocks": [
+              "COMMNNLT",
+              "COMMNLST"
+            ]
+          },
+          "usage_note": "When user asks about 'common stock' or 'common stock securities', use inv_type IN ('COMMNNLT', 'COMMNLST') to include BOTH listed and unlisted. For specific types, use 'Equity Listed' (COMMNLST) or 'Equity UnListed' (COMMNNLT)",
+          "example_specific": "WHERE pv.inv_type = 'COMMNNLT' -- For Equity UnListed only",
+          "example_both": "WHERE pv.inv_type IN ('COMMNNLT', 'COMMNLST') -- For all common stock securities (both listed and unlisted)",
+          "critical_notes": [
+            "COMMNNLT is the database code for 'Equity UnListed' (common stock non-listed)",
+            "COMMNLST is the database code for 'Equity Listed' (common stock listed)",
+            "When user says 'common stock' or 'common stock securities' WITHOUT specifying listed/unlisted, include BOTH types",
+            "Use inv_type IN ('COMMNNLT', 'COMMNLST') for general common stock queries",
+            "Always use the database codes in SQL queries, NOT the user-friendly names"
+          ]
+        },
+        "asset_class_allocation": {
+          "description": "Calculate asset class allocation as percentage of total portfolio - use for 'asset classes', 'asset allocation', 'portfolio composition' questions",
+          "when_to_use": "When question asks about 'asset classes', 'asset allocation', 'investment types allocation', or 'portfolio composition percentage'",
+          "full_example": "WITH latest_date AS (\n  SELECT MAX(file_date) as max_date FROM nexbridge.nav_pack\n),\ntotal_portfolio AS (\n  SELECT SUM(pv.end_book_mv) as total_mv\n  FROM nexbridge.portfolio_valuation pv\n  JOIN nexbridge.navpack_version nv ON pv.navpack_version_id = nv.navpack_version_id\n  JOIN nexbridge.nav_pack np ON nv.navpack_id = np.navpack_id\n  WHERE np.file_date = (SELECT max_date FROM latest_date)\n),\ninv_type_totals AS (\n  SELECT pv.inv_type,\n         SUM(pv.end_book_mv) as inv_total\n  FROM nexbridge.portfolio_valuation pv\n  JOIN nexbridge.navpack_version nv ON pv.navpack_version_id = nv.navpack_version_id\n  JOIN nexbridge.nav_pack np ON nv.navpack_id = np.navpack_id\n  WHERE np.file_date = (SELECT max_date FROM latest_date)\n  GROUP BY pv.inv_type\n)\nSELECT it.inv_type as asset_class,\n       it.inv_total,\n       tp.total_mv,\n       ROUND((it.inv_total / tp.total_mv * 100), 2) as allocation_percentage\nFROM inv_type_totals it, total_portfolio tp\nWHERE (it.inv_total / tp.total_mv) > 0.25\nORDER BY allocation_percentage DESC",
+          "critical_notes": [
+            "ALWAYS use portfolio_valuation.inv_type for asset class questions",
+            "NEVER use trial_balance.category for asset class allocation",
+            "Use end_book_mv (book value) for allocation calculations",
+            "Calculate percentage as: (inv_type_total / portfolio_total) * 100",
+            "Asset classes = investment types (COMMNNLT, CASH, etc.), NOT accounting categories",
+            "For 'in the total portfolio' use LATEST date unless specific period mentioned",
+            "Return DISTINCT asset classes, not duplicates across months"
+          ]
+        },
+        "securities_price_difference": {
+          "description": "Compare securities prices between months to find differences exceeding threshold",
+          "when_to_use": "When question asks about securities where price difference is more than X between months",
+          "full_example": "WITH monthly_prices AS (\n  SELECT \n    pv.inv_id as security_id,\n    MAX(CASE WHEN np.file_date = '2024-02-29' THEN pv.end_book_mv END) as feb_price,\n    MAX(CASE WHEN np.file_date = '2024-01-31' THEN pv.end_book_mv END) as jan_price\n  FROM nexbridge.portfolio_valuation pv\n  JOIN nexbridge.navpack_version nv ON pv.navpack_version_id = nv.navpack_version_id\n  JOIN nexbridge.nav_pack np ON nv.navpack_id = np.navpack_id\n  WHERE np.file_date IN ('2024-01-31', '2024-02-29')\n    AND pv.inv_type = 'COMMNNLT'  -- Common stock securities\n  GROUP BY pv.inv_id\n)\nSELECT \n  security_id,\n  feb_price,\n  jan_price,\n  (feb_price - jan_price) as price_difference\nFROM monthly_prices\nWHERE ABS(feb_price - jan_price) > 100000000  -- 100 million\n  AND feb_price IS NOT NULL \n  AND jan_price IS NOT NULL",
+          "critical_notes": [
+            "Use CASE WHEN to pivot data for month comparison",
+            "Filter for specific investment types (COMMNNLT for common stocks)",
+            "Use ABS() for absolute difference if direction doesn't matter",
+            "Check for NULL values to ensure both months have data"
+          ]
+        },
+        "largest_position_by_type": {
+          "description": "Find the largest position (highest value) for a specific investment type",
+          "when_to_use": "When question asks for largest contributor or highest value security of specific type",
+          "full_example": "SELECT \n  pv.inv_id as security_id,\n  pv.end_book_mv as market_value,\n  pv.end_qty as quantity,\n  pv.end_local_market_price as price_per_unit\nFROM nexbridge.portfolio_valuation pv\nJOIN nexbridge.navpack_version nv ON pv.navpack_version_id = nv.navpack_version_id\nJOIN nexbridge.nav_pack np ON nv.navpack_id = np.navpack_id\nWHERE pv.inv_type = 'COMMNNLT'\n  AND np.file_date = '2024-02-29'\n  AND pv.end_book_mv > 0\nORDER BY pv.end_book_mv DESC\nLIMIT 1",
+          "critical_notes": [
+            "Return INDIVIDUAL security (inv_id), NOT sum or total",
+            "Order by end_book_mv DESC to get largest first",
+            "Use LIMIT 1 for single largest",
+            "Filter by inv_type for specific investment types",
+            "Add end_book_mv > 0 for positive contributors only"
+          ]
+        },
+        "total_nav_by_investment_type": {
+          "description": "Calculate total NAV contribution from specific investment type",
+          "when_to_use": "When question asks for total NAV from specific instruments/types",
+          "full_example": "SELECT \n  pv.inv_type,\n  SUM(pv.end_book_mv) as total_nav_contribution,\n  COUNT(DISTINCT pv.inv_id) as number_of_securities\nFROM nexbridge.portfolio_valuation pv\nJOIN nexbridge.navpack_version nv ON pv.navpack_version_id = nv.navpack_version_id\nJOIN nexbridge.nav_pack np ON nv.navpack_id = np.navpack_id\nWHERE pv.inv_type IN ('COMMNNLT', 'CASH')\n  AND np.file_date = '2024-02-29'\nGROUP BY pv.inv_type",
+          "critical_notes": [
+            "Use SUM(end_book_mv) for total NAV contribution",
+            "Group by inv_type when showing by type",
+            "Can filter multiple types using IN clause"
+          ]
+        },
+        "price_change_within_range": {
+          "description": "Find securities where price change is within a specific percentage range",
+          "when_to_use": "When question asks for securities with price changes between X% and Y%",
+          "full_example": "WITH price_changes AS (\n  SELECT \n    pv.inv_id as security_id,\n    pv.end_local_market_price as current_price,\n    LAG(pv.end_local_market_price) OVER (PARTITION BY pv.inv_id ORDER BY np.file_date) as prev_price,\n    np.file_date\n  FROM nexbridge.portfolio_valuation pv\n  JOIN nexbridge.navpack_version nv ON pv.navpack_version_id = nv.navpack_version_id\n  JOIN nexbridge.nav_pack np ON nv.navpack_id = np.navpack_id\n  WHERE pv.end_local_market_price > 0\n),\npercentage_changes AS (\n  SELECT \n    security_id,\n    file_date,\n    current_price,\n    prev_price,\n    ROUND(((current_price - prev_price) / NULLIF(prev_price, 0) * 100), 2) as percent_change\n  FROM price_changes\n  WHERE prev_price IS NOT NULL AND prev_price > 0\n)\nSELECT security_id, file_date, current_price, prev_price, percent_change\nFROM percentage_changes\nWHERE percent_change BETWEEN 8 AND 10\nORDER BY security_id, file_date",
+          "critical_notes": [
+            "Use LAG window function for previous period comparison",
+            "Filter for valid prices (> 0) to avoid calculation errors",
+            "Use BETWEEN for range filtering",
+            "Calculate percentage as ((current - previous) / previous) * 100",
+            "NEVER put comments at end of lines in CTEs",
+            "Use nested CTE to avoid alias in WHERE clause"
+          ]
+        },
+        "securities_exceeding_price_change": {
+          "description": "Find securities where price has exceeded a certain percentage compared to prior period",
+          "when_to_use": "When question asks for securities with price changes more than X%",
+          "full_example": "WITH price_changes AS (\n  SELECT \n    pv.inv_id as security_id,\n    pv.end_local_market_price as current_price,\n    LAG(pv.end_local_market_price) OVER (PARTITION BY pv.inv_id ORDER BY np.file_date) as prev_price,\n    np.file_date\n  FROM nexbridge.portfolio_valuation pv\n  JOIN nexbridge.navpack_version nv ON pv.navpack_version_id = nv.navpack_version_id\n  JOIN nexbridge.nav_pack np ON nv.navpack_id = np.navpack_id\n  WHERE pv.end_local_market_price > 0\n),\npercent_calculations AS (\n  SELECT \n    security_id,\n    file_date,\n    current_price,\n    prev_price,\n    ROUND(((current_price - prev_price) / NULLIF(prev_price, 0) * 100), 2) as percent_change\n  FROM price_changes\n  WHERE prev_price IS NOT NULL AND prev_price > 0\n)\nSELECT \n  security_id,\n  file_date,\n  current_price,\n  prev_price,\n  percent_change\nFROM percent_calculations\nWHERE percent_change > 10\nORDER BY percent_change DESC",
+          "critical_notes": [
+            "Use LAG() for ALL consecutive periods, not just specific months",
+            "Filter for percent change > threshold",
+            "Handle NULL and zero prices appropriately",
+            "Use nested CTE to avoid alias in WHERE clause",
+            "This shows ALL occurrences across ALL periods"
+          ]
+        },
+        "count_securities_exceeding_change": {
+          "description": "Count distinct securities that exceeded price change threshold",
+          "when_to_use": "When question asks for count/number of securities with price changes",
+          "full_example": "WITH price_changes AS (\n  SELECT \n    pv.inv_id as security_id,\n    pv.end_local_market_price as current_price,\n    LAG(pv.end_local_market_price) OVER (PARTITION BY pv.inv_id ORDER BY np.file_date) as prev_price\n  FROM nexbridge.portfolio_valuation pv\n  JOIN nexbridge.navpack_version nv ON pv.navpack_version_id = nv.navpack_version_id\n  JOIN nexbridge.nav_pack np ON nv.navpack_id = np.navpack_id\n  WHERE pv.end_local_market_price > 0\n)\nSELECT COUNT(DISTINCT security_id) as securities_count\nFROM price_changes\nWHERE prev_price IS NOT NULL \n  AND prev_price > 0\n  AND ((current_price - prev_price) / prev_price * 100) > 10",
+          "critical_notes": [
+            "Use COUNT(DISTINCT) to avoid counting same security multiple times",
+            "Checks ALL periods, not just latest"
+          ]
+        }
+      }
+    },
+    "nexbridge.dividend": {
+      "synonyms": [
+        "dividend",
+        "dividends",
+        "income",
+        "distribution"
+      ],
+      "date_columns": [],
+      "description": "Dividend amounts by security for a NAV version. Date filtering requires joining through navpack_version and nav_pack tables.",
+      "columns": [
+        {
+          "name": "id",
+          "type": "integer",
+          "description": "Unique row identifier"
+        },
+        {
+          "name": "security_id",
+          "type": "string",
+          "description": "Security identifier"
+        },
+        {
+          "name": "security_name",
+          "type": "string",
+          "description": "Security name/description"
+        },
+        {
+          "name": "amount",
+          "type": "numeric",
+          "description": "Dividend amount received"
+        },
+        {
+          "name": "navpack_version_id",
+          "type": "integer",
+          "description": "Foreign key to navpack_version - links to specific file version"
+        },
+        {
+          "name": "extra_data",
+          "type": "text",
+          "description": "Additional JSON data (currently unused)"
+        }
+      ],
+      "relationships": [
+        {
+          "from": "navpack_version_id",
+          "to": "nexbridge.navpack_version.navpack_version_id",
+          "type": "many_to_one",
+          "description": "Links to specific NAV pack version, then to nav_pack for dates"
+        }
+      ],
+      "common_queries": [
+        "Total dividends for a month",
+        "Dividends by security"
+      ],
+      "date_relationship_info": "To filter by date, JOIN with navpack_version and nav_pack: FROM dividend d JOIN navpack_version nv ON d.navpack_version_id = nv.navpack_version_id JOIN nav_pack np ON nv.navpack_id = np.navpack_id WHERE np.file_date = '2024-04-30'"
+    },
+    "nexbridge.kpi_library": {
+      "synonyms": [
+        "kpi",
+        "validation rules",
+        "ratios",
+        "metrics"
+      ],
+      "date_columns": [
+        "created_at",
+        "updated_at"
+      ],
+      "description": "Library of KPI/validation definitions for fund data validation",
+      "columns": [
+        {
+          "name": "id",
+          "type": "integer",
+          "description": "Unique KPI identifier"
+        },
+        {
+          "name": "kpi_code",
+          "type": "string",
+          "description": "Unique code of the KPI"
+        },
+        {
+          "name": "kpi_name",
+          "type": "string",
+          "description": "Display name of the KPI"
+        },
+        {
+          "name": "kpi_type",
+          "type": "string",
+          "description": "Type: 'NAV_VALIDATION' or 'RATIO_VALIDATION'"
+        },
+        {
+          "name": "category",
+          "type": "string",
+          "description": "Category of KPI (e.g., 'Financial', 'Liquidity')"
+        },
+        {
+          "name": "description",
+          "type": "text",
+          "description": "Detailed description"
+        },
+        {
+          "name": "source_type",
+          "type": "string",
+          "description": "'SINGLE_SOURCE' or 'DUAL_SOURCE'"
+        },
+        {
+          "name": "precision_type",
+          "type": "string",
+          "description": "'PERCENTAGE' or 'ABSOLUTE'"
+        },
+        {
+          "name": "numerator_field",
+          "type": "string",
+          "description": "Numerator field name (for ratio KPIs)"
+        },
+        {
+          "name": "denominator_field",
+          "type": "string",
+          "description": "Denominator field name (for ratio KPIs)"
+        },
+        {
+          "name": "numerator_description",
+          "type": "text",
+          "description": "Description of numerator"
+        },
+        {
+          "name": "denominator_description",
+          "type": "text",
+          "description": "Description of denominator"
+        },
+        {
+          "name": "is_active",
+          "type": "boolean",
+          "description": "Active flag"
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp",
+          "description": "Creation timestamp"
+        },
+        {
+          "name": "updated_at",
+          "type": "timestamp",
+          "description": "Last update timestamp"
+        },
+        {
+          "name": "created_by",
+          "type": "string",
+          "description": "User who created"
+        },
+        {
+          "name": "updated_by",
+          "type": "string",
+          "description": "User who last updated"
+        }
+      ],
+      "relationships": [
+        {
+          "from": "id",
+          "to": "nexbridge.kpi_thresholds.kpi_id",
+          "type": "one_to_many",
+          "description": "One KPI can have multiple thresholds"
+        }
+      ],
+      "common_queries": [
+        "Active KPIs",
+        "KPIs by type",
+        "KPIs by category"
+      ]
+    },
+    "nexbridge.kpi_thresholds": {
+      "synonyms": [
+        "threshold",
+        "thresholds",
+        "limits",
+        "validation limits"
+      ],
+      "date_columns": [
+        "created_at",
+        "updated_at"
+      ],
+      "description": "Per-fund thresholds for KPI validation rules",
+      "columns": [
+        {
+          "name": "id",
+          "type": "integer",
+          "description": "Unique row identifier"
+        },
+        {
+          "name": "kpi_id",
+          "type": "integer",
+          "description": "Foreign key to kpi_library"
+        },
+        {
+          "name": "fund_id",
+          "type": "string",
+          "description": "Fund identifier (nullable for global thresholds)"
+        },
+        {
+          "name": "threshold_value",
+          "type": "numeric",
+          "description": "Threshold value"
+        },
+        {
+          "name": "is_active",
+          "type": "boolean",
+          "description": "Active flag"
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp",
+          "description": "Creation timestamp"
+        },
+        {
+          "name": "updated_at",
+          "type": "timestamp",
+          "description": "Last update timestamp"
+        },
+        {
+          "name": "created_by",
+          "type": "string",
+          "description": "User who created"
+        },
+        {
+          "name": "updated_by",
+          "type": "string",
+          "description": "User who last updated"
+        }
+      ],
+      "relationships": [
+        {
+          "from": "kpi_id",
+          "to": "nexbridge.kpi_library.id",
+          "type": "many_to_one",
+          "description": "Links to KPI definition"
+        }
+      ],
+      "common_queries": [
+        "Thresholds for a specific fund",
+        "Global thresholds (where fund_id IS NULL)"
+      ]
+    },
+    "nexbridge.source": {
+      "synonyms": [
+        "source",
+        "data source",
+        "data provider"
+      ],
+      "date_columns": [
+        "created_at"
+      ],
+      "description": "Reference table of upstream data sources",
+      "columns": [
+        {
+          "name": "id",
+          "type": "integer",
+          "description": "Unique source identifier"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "Source name"
+        },
+        {
+          "name": "created_at",
+          "type": "timestamp",
+          "description": "Creation timestamp"
+        },
+        {
+          "name": "created_by",
+          "type": "string",
+          "description": "User who created"
+        }
+      ],
+      "relationships": [
+        {
+          "from": "id",
+          "to": "nexbridge.nav_pack.source_id",
+          "type": "one_to_many",
+          "description": "One source can provide multiple NAV packs"
+        }
+      ],
+      "common_queries": [
+        "All sources",
+        "Source by name",
+        "Data by source"
+      ],
+      "query_patterns": {
+        "filter_by_source": {
+          "description": "Filter data by source administrator/provider",
+          "when_to_use": "When user asks about data 'from Harborview', 'from Bluefield', 'according to StratusGA', etc.",
+          "pattern": "JOIN source s ON np.source_id = s.id WHERE s.name = 'SourceName'",
+          "available_sources": [
+            "Bluefield - NexBridge fund administrator",
+            "Harborview - ASOF fund administrator",
+            "ClearLedger - Alternative ASOF administrator",
+            "StratusGA - Stonewell fund administrator",
+            "VeridexAS - Alternative Stonewell administrator"
+          ],
+          "full_example": "SELECT SUM(tb.ending_balance) as total\nFROM nexbridge.trial_balance tb\nJOIN nexbridge.navpack_version nv ON tb.navpack_version_id = nv.navpack_version_id\nJOIN nexbridge.nav_pack np ON nv.navpack_id = np.navpack_id\nJOIN nexbridge.source s ON np.source_id = s.id\nWHERE s.name = 'Harborview'\n  AND np.file_date = '2024-02-29'\n  AND tb.type = 'Expense'",
+          "critical_notes": [
+            "Multiple sources can provide data for the same fund",
+            "Source is stored at nav_pack level, inherited by all data tables",
+            "Always join through nav_pack to access source information",
+            "Use exact source names (case-sensitive): 'Harborview', 'Bluefield', etc."
+          ]
+        },
+        "compare_sources": {
+          "description": "Compare data from different sources for the same fund and period",
+          "when_to_use": "When user asks to 'compare Harborview vs ClearLedger', 'difference between sources', etc.",
+          "full_example": "WITH source1_data AS (\n  SELECT SUM(tb.ending_balance) as total\n  FROM nexbridge.trial_balance tb\n  JOIN nexbridge.navpack_version nv ON tb.navpack_version_id = nv.navpack_version_id\n  JOIN nexbridge.nav_pack np ON nv.navpack_id = np.navpack_id\n  JOIN nexbridge.source s ON np.source_id = s.id\n  WHERE s.name = 'Harborview'\n    AND np.file_date = '2024-02-29'\n    AND tb.type = 'Assets'\n),\nsource2_data AS (\n  SELECT SUM(tb.ending_balance) as total\n  FROM nexbridge.trial_balance tb\n  JOIN nexbridge.navpack_version nv ON tb.navpack_version_id = nv.navpack_version_id\n  JOIN nexbridge.nav_pack np ON nv.navpack_id = np.navpack_id\n  JOIN nexbridge.source s ON np.source_id = s.id\n  WHERE s.name = 'ClearLedger'\n    AND np.file_date = '2024-02-29'\n    AND tb.type = 'Assets'\n)\nSELECT \n  s1.total as harborview_total,\n  s2.total as clearledger_total,\n  (s1.total - s2.total) as difference,\n  ROUND(((s1.total - s2.total) / NULLIF(ABS(s2.total), 0) * 100), 2) as percent_diff\nFROM source1_data s1, source2_data s2",
+          "critical_notes": [
+            "Useful for dual-source validation and reconciliation",
+            "Same fund can have data from multiple administrators",
+            "Compare using same fund_id, file_date, but different source_id"
+          ]
+        }
+      }
+    }
+  },
+  "global_query_patterns": {
+    "date_filtering": {
+      "description": "Most tables (trial_balance, portfolio_valuation, dividend) don't have direct date columns. To filter by month/date, you MUST join through navpack_version and nav_pack.",
+      "standard_join_pattern": "FROM <data_table> dt JOIN nexbridge.navpack_version nv ON dt.navpack_version_id = nv.navpack_version_id JOIN nexbridge.nav_pack np ON nv.navpack_id = np.navpack_id WHERE np.file_date = 'YYYY-MM-DD'",
+      "example": "SELECT SUM(tb.ending_balance) FROM nexbridge.trial_balance tb JOIN nexbridge.navpack_version nv ON tb.navpack_version_id = nv.navpack_version_id JOIN nexbridge.nav_pack np ON nv.navpack_id = np.navpack_id WHERE np.file_date = '2024-04-30' AND tb.type = 'Assets'"
+    },
+    "latest_data": {
+      "description": "To get the latest month's data, find MAX(file_date) from nav_pack first",
+      "example": "WITH latest_date AS (SELECT MAX(file_date) as max_date FROM nexbridge.nav_pack) SELECT ... WHERE np.file_date = (SELECT max_date FROM latest_date)"
+    },
+    "handling_nulls": {
+      "description": "category, accounting_head in trial_balance can be NULL. Use appropriate NULL handling in WHERE and GROUP BY clauses.",
+      "example": "GROUP BY type, COALESCE(category, 'Uncategorized')"
+    },
+    "source_filtering": {
+      "description": "DUAL-SOURCE SUPPORT: The system supports multiple data sources (administrators) for funds. Data from different sources is distinguished by source_id in nav_pack table.",
+      "fund_source_mapping": {
+        "NexBridge (fund_id=1)": ["Bluefield"],
+        "ASOF (fund_id=2)": ["Harborview", "ClearLedger"],
+        "Stonewell (fund_id=3)": ["StratusGA", "VeridexAS"]
+      },
+      "when_to_filter_by_source": [
+        "User explicitly mentions source name (e.g., 'from Harborview', 'according to Bluefield')",
+        "Comparing data between sources",
+        "Validating/reconciling dual-source data"
+      ],
+      "standard_join_pattern": "JOIN nexbridge.source s ON np.source_id = s.id WHERE s.name = 'SourceName'",
+      "example": "SELECT tb.financial_account, SUM(tb.ending_balance) as total, s.name as source\nFROM nexbridge.trial_balance tb\nJOIN nexbridge.navpack_version nv ON tb.navpack_version_id = nv.navpack_version_id\nJOIN nexbridge.nav_pack np ON nv.navpack_id = np.navpack_id\nJOIN nexbridge.source s ON np.source_id = s.id\nWHERE np.file_date = '2024-02-29'\n  AND s.name = 'Harborview'\n  AND tb.type = 'Expense'\nGROUP BY tb.financial_account, s.name",
+      "critical_notes": [
+        "If user does NOT mention a specific source, do NOT filter by source (return all sources)",
+        "Source names are case-sensitive: 'Bluefield', 'Harborview', 'ClearLedger', 'StratusGA', 'VeridexAS'",
+        "Always join through nav_pack to access source information",
+        "For dual-source funds (ASOF, Stonewell), users may want to compare sources"
+      ]
+    },
+    "latest_version_filtering": {
+      "description": "CRITICAL: Each NAV pack can have multiple versions (e.g., original upload, corrections, overrides). ALWAYS use the LATEST version unless user specifically asks for a particular version or version history.",
+      "when_to_use": "ALL queries that retrieve data from trial_balance, portfolio_valuation, or dividend tables",
+      "why_important": [
+        "NAV packs can be re-uploaded with corrections",
+        "Users may override data, creating new versions",
+        "Using old versions will return outdated/incorrect data",
+        "The latest version represents the current, most accurate data"
+      ],
+      "standard_pattern": "WITH latest_versions AS (\n  SELECT navpack_id, MAX(version) as latest_version\n  FROM nexbridge.navpack_version\n  GROUP BY navpack_id\n)\nSELECT ...\nFROM <data_table> dt\nJOIN nexbridge.navpack_version nv ON dt.navpack_version_id = nv.navpack_version_id\nJOIN latest_versions lv ON nv.navpack_id = lv.navpack_id AND nv.version = lv.latest_version\nJOIN nexbridge.nav_pack np ON nv.navpack_id = np.navpack_id",
+      "full_example": "WITH latest_versions AS (\n  SELECT navpack_id, MAX(version) as latest_version\n  FROM nexbridge.navpack_version\n  GROUP BY navpack_id\n),\njan_data AS (\n  SELECT SUM(tb.ending_balance) AS total\n  FROM nexbridge.trial_balance tb\n  JOIN nexbridge.navpack_version nv ON tb.navpack_version_id = nv.navpack_version_id\n  JOIN latest_versions lv ON nv.navpack_id = lv.navpack_id AND nv.version = lv.latest_version\n  JOIN nexbridge.nav_pack np ON nv.navpack_id = np.navpack_id\n  WHERE np.file_date = '2024-01-31' AND tb.type = 'Expense'\n),\nfeb_data AS (\n  SELECT SUM(tb.ending_balance) AS total\n  FROM nexbridge.trial_balance tb\n  JOIN nexbridge.navpack_version nv ON tb.navpack_version_id = nv.navpack_version_id\n  JOIN latest_versions lv ON nv.navpack_id = lv.navpack_id AND nv.version = lv.latest_version\n  JOIN nexbridge.nav_pack np ON nv.navpack_id = np.navpack_id\n  WHERE np.file_date = '2024-02-29' AND tb.type = 'Expense'\n)\nSELECT jan.total as jan_total, feb.total as feb_total, (feb.total - jan.total) as difference\nFROM jan_data jan, feb_data feb",
+      "critical_notes": [
+        "ALWAYS include the latest_versions CTE at the beginning of queries",
+        "ALWAYS join with latest_versions to filter to latest version only",
+        "Join condition: nv.navpack_id = lv.navpack_id AND nv.version = lv.latest_version",
+        "This pattern ensures data accuracy and consistency",
+        "Exception: Only skip this pattern if user explicitly asks for 'all versions', 'version history', or 'show me version X'"
+      ],
+      "version_comparison_example": "If user asks to compare versions, use this pattern:\nSELECT nv.version, SUM(tb.ending_balance) as total\nFROM nexbridge.trial_balance tb\nJOIN nexbridge.navpack_version nv ON tb.navpack_version_id = nv.navpack_version_id\nJOIN nexbridge.nav_pack np ON nv.navpack_id = np.navpack_id\nWHERE np.file_date = '2024-02-29'\nGROUP BY nv.version\nORDER BY nv.version"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "typeName": "application/pdf",
+  "fileHash": "81b26836f9135f3946e782e60f701d49b41f5fe298179b9b81da2f95fb59701b",
+  "fileOriginalName": "accolade_cc.pdf",
+  "fileOriginalPath": "data/frameDemo/l0/accolade_cc.pdf",
+  "typeSpecificParams": {
+    "numPages": 1,
+    "EXIF": {
+      "/Author": "Shrishti Dubey",
+      "/CreationDate": "2025-05-18T04:30:31.000Z",
+      "/ModDate": "2025-05-18T04:30:31.000Z",
+      "/Producer": "Microsoft: Print To PDF",
+      "/Title": "ShareSecure"
+    }
+  }
+}

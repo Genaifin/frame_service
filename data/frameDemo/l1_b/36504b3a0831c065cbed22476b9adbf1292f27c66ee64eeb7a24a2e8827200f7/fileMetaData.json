@@ -1,0 +1,17 @@
+{
+  "typeName": "application/pdf",
+  "fileHash": "36504b3a0831c065cbed22476b9adbf1292f27c66ee64eeb7a24a2e8827200f7",
+  "fileOriginalName": "samplePPM2.pdf",
+  "fileOriginalPath": "data\\frameDemo\\l0\\samplePPM2.pdf",
+  "typeSpecificParams": {
+    "numPages": 7,
+    "EXIF": {
+      "/Author": "Chen, Glen",
+      "/CreationDate": "2024-03-21T23:07:42.000Z",
+      "/Creator": "Microsoft\u00ae Word for Microsoft 365",
+      "/ModDate": "2024-03-21T23:07:42.000Z",
+      "/Producer": "SEI INVESTMENTS using ABCpdf",
+      "/Title": ""
+    }
+  }
+}

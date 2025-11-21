@@ -1,0 +1,12 @@
+{
+  "typeName": "application/pdf",
+  "fileHash": "687ae32975de1b6ce7dd35ffc9c3fa3790f84b11ac3dbbe15540d558ce7a0a98",
+  "fileOriginalName": "sampleCapitalStatement1.pdf",
+  "fileOriginalPath": "data\\frameDemo\\l0\\sampleCapitalStatement1.pdf",
+  "typeSpecificParams": {
+    "numPages": 2,
+    "EXIF": {
+      "/Producer": "pypdf"
+    }
+  }
+}

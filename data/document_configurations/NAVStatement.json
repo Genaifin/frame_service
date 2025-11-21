@@ -1,0 +1,231 @@
+{
+  "response": [
+    {
+      "schema_id": 3,
+      "document_type_id": 4,
+      "document_type": "NAVStatement",
+      "is_active": true,
+      "created_at": "2025-02-12T10:45:10.960018",
+      "updated_at": "2025-02-12T10:45:10.960018",
+      "description": "Statements documents are financial reports providing a broader overview of accounts, focusing on capital accounts, end-of-period balances, and performance metrics. - These are typically comprehensive and cover capital account summaries, management fees, realized/unrealized gains or losses, and net income over specified periods. - Statements might include partner capital breakdowns, beginning and ending capital balances, contributions, withdrawals, net trading profits or losses, and realized and unrealized gains. - They often contain sections on administrative fees, management fees, incentive allocations, performance metrics, and net returns, as well as gain and loss attribution details. - The documents highlight net performance returns, rates of return, and sometimes compare new income allocations to historical figures. - Statements documents can provide additional support and context in the form of capital account schedules, commitment summaries, fee calculations, and details on investor commitments. - These documents are more analytical, including supplementary notes, performance analysis, and investor breakdowns, often showing allocation across multiple investor entities or fund components. - The emphasis is on an overall account analysis with financial implications over various periods, addressing both internal and regulatory perspectives, and sometimes providing specific notes on tax and valuation impacts.",
+      "sla": "T +2 Days",
+      "schema_blob": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "Account": {
+            "type": "string",
+            "description": "This is the fund name and investor name combined in a piped format. For instance, if fund name is 'ABC Investments' and investor is 'Scott', then account is 'ABC Investments|Scott'."
+          },
+          "AccountRefID": {
+            "type": "string",
+            "description": "Unique reference identifier linking to the specific account in the account master table"
+          },
+          "CarriedInterest": {
+            "type": "number",
+            "description": "Carried interest/performance fees charged"
+          },
+          "Commitment": {
+            "type": "number",
+            "description": "Total capital amount the investor has legally committed to invest in the fund over its life"
+          },
+          "CommitmentOnlyStatement": {
+            "type": "string",
+            "description": "Flag indicating if statement shows only commitment info (no transactions)"
+          },
+          "ContributionOutsideCommitment": {
+            "type": "number",
+            "description": "Capital call amount that exceeds the investor's original commitment (typically requires special consent)"
+          },
+          "Contributions": {
+            "type": "number",
+            "description": "Capital contributions for current period"
+          },
+          "ContributionsToDate": {
+            "type": "number",
+            "description": "Total cumulative capital contributions made by the investor from inception to date"
+          },
+          "Currency": {
+            "type": "string",
+            "description": "ISO 4217 three-letter currency code for the transaction (e.g., USD, EUR, GBP)"
+          },
+          "DistributionsSubjectToRecall": {
+            "type": "number",
+            "description": "Amount that can be recalled"
+          },
+          "IncomeDistribution": {
+            "type": "number",
+            "description": "Income/profit distribution component"
+          },
+          "InvestmentIncome": {
+            "type": "number",
+            "description": "Income from investments (dividends, interest)"
+          },
+          "Investor": {
+            "type": "string",
+            "description": "Human-readable name or description of the investor (individual, entity, or institution name)"
+          },
+          "InvestorRefID": {
+            "type": "string",
+            "description": "Unique reference identifier linking to the specific investor in the investor master table"
+          },
+          "IRR": {
+            "type": "number",
+            "description": "Internal Rate of Return as percentage (e.g., 15.2500 for 15.25%)"
+          },
+          "ManagementFee": {
+            "type": "number",
+            "description": "Management fees charged for the period"
+          },
+          "MTDPerformance": {
+            "type": "number",
+            "description": "Month-to-Date performance percentage (can be negative)"
+          },
+          "NetCapitalActivity": {
+            "type": "number",
+            "description": "Net change in capital (contributions minus distributions)"
+          },
+          "NetClosingCapital": {
+            "type": "number",
+            "description": "Net capital balance at period end"
+          },
+          "NetGainLoss": {
+            "type": "number",
+            "description": "Total gains/losses (Realized + Unrealized) (can be negative)"
+          },
+          "NetOpeningCapital": {
+            "type": "number",
+            "description": "Net capital balance at period start"
+          },
+          "NetTransfers": {
+            "type": "number",
+            "description": "Net transfer amount (TransfersIn minus TransfersOut)"
+          },
+          "OtherAdjustments": {
+            "type": "number",
+            "description": "Miscellaneous adjustments to capital account (can be negative)"
+          },
+          "OtherExpenses": {
+            "type": "number",
+            "description": "Other fund expenses or adjustments"
+          },
+          "OtherIncomeLoss": {
+            "type": "number",
+            "description": "Other income or losses not classified elsewhere (can be negative)"
+          },
+          "PeriodBeginningDT": {
+            "type": "string",
+            "description": "Start date of reporting period"
+          },
+          "PeriodEndingDT": {
+            "type": "string",
+            "description": "End date of reporting period"
+          },
+          "Price": {
+            "type": "number",
+            "description": "NAV per unit or share price (4-6 decimal precision)"
+          },
+          "QTDPerformance": {
+            "type": "number",
+            "description": "Quarter-to-Date performance percentage (can be negative)"
+          },
+          "Quantity": {
+            "type": "number",
+            "description": "Number of units/shares held (4-6 decimal precision)"
+          },
+          "RealizedGainLoss": {
+            "type": "number",
+            "description": "Gains/losses from completed transactions (can be negative)"
+          },
+          "RecallableDistribution": {
+            "type": "number",
+            "description": "Distribution subject to potential recall"
+          },
+          "ReturnOfCapital": {
+            "type": "number",
+            "description": "Return of original capital component"
+          },
+          "Security": {
+            "type": "string",
+            "description": "Identifier or name of the fund, investment vehicle, or security involved in the transaction"
+          },
+          "TotalDistributions": {
+            "type": "number",
+            "description": "Total distributions for the period"
+          },
+          "TransfersIn": {
+            "type": "number",
+            "description": "Capital amount transferred into the account (e.g., from another investor or account)"
+          },
+          "TransfersOut": {
+            "type": "number",
+            "description": "Capital amount transferred out of the account (e.g., to another investor or account)"
+          },
+          "UnfundedCommitment": {
+            "type": "number",
+            "description": "Remaining unfunded commitment"
+          },
+          "UnfundedCommitmentAdj": {
+            "type": "number",
+            "description": "Adjustments to unfunded commitment"
+          },
+          "UnrealizedGainLoss": {
+            "type": "number",
+            "description": "Gains/losses from mark-to-market valuation (can be negative)"
+          },
+          "Withdrawals": {
+            "type": "number",
+            "description": "Withdrawal amounts for the period"
+          },
+          "YTDPerformance": {
+            "type": "number",
+            "description": "Year-to-Date performance percentage (can be negative)"
+          },
+          "VerbatimText": {
+            "type": "object"
+          },
+          "ConfidenceScore": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "Account",
+          "Contributions",
+          "Currency",
+          "Investor",
+          "NetClosingCapital",
+          "NetOpeningCapital",
+          "PeriodEndingDT",
+          "Security",
+          "Withdrawals",
+          "VerbatimText",
+          "ConfidenceScore"
+        ],
+        "additionalProperties": false,
+        "definitions": {
+          "ConfidenceScore": {
+            "type": "string",
+            "enum": [
+              "HIGH",
+              "MID",
+              "LOW"
+            ],
+            "description": "Confidence score for the extracted value."
+          },
+          "VerbatimText": {
+            "type": "string",
+            "description": "The exact verbatim text extracted from the document."
+          }
+        }
+      },
+      "meta_schema_blob": null,
+      "meta_data": null
+    }
+  ],
+  "pagination": {
+    "total_count": 1,
+    "total_pages": 1,
+    "current_page": 1,
+    "page_size": 10
+  }
+}

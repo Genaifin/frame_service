@@ -1,0 +1,309 @@
+{
+  "response": [
+    {
+      "schema_id": 5,
+      "document_type_id": 5,
+      "document_type": "k-1 , 1065 ( for a partnership)",
+      "is_active": true,
+      "created_at": "2025-02-12T10:46:13.962654",
+      "updated_at": "2025-02-12T10:46:13.962654",
+      "description": "Schedule K-1 (Form 1065): Partner’s Share of Income, Deductions, Credits, etc.” — is a U.S. tax document used to report each partner’s share of a partnership’s earnings, losses, deductions, and credits.",
+      "sla": "T + 2 Days",
+      "schema_blob": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "Item A": {
+            "fieldName": "ItemA",
+            "type": "String",
+            "description": "Partnership\u2019s Employer Identification Number (EIN)",
+            "group": "Part 1 - Information about Partnership"
+          },
+          "Item B": {
+            "fieldName": "ItemB",
+            "type": "String",
+            "description": "Partnership\u2019s contact information",
+            "group": "Part 1 - Information about Partnership"
+          },
+          "Item C": {
+            "fieldName": "ItemC",
+            "type": "String",
+            "description": "IRS filing center",
+            "group": "Part 1 - Information about Partnership"
+          },
+          "Item D": {
+            "fieldName": "ItemD",
+            "type": "String",
+            "description": "Check this box if your partnership is a publicly traded partnership (PTP)...",
+            "group": "Part 1 - Information about Partnership"
+          },
+          "Item E": {
+            "fieldName": "ItemE",
+            "type": "String",
+            "description": "Partner\u2019s Taxpayer Identification Number (TIN)\u2014which can be either your SSN, ITIN, or EIN.",
+            "group": "Part 1 - Information about Partnership"
+          },
+          "Item F": {
+            "fieldName": "ItemF",
+            "type": "String",
+            "description": "Partner\u2019s contact information and whether you\u2019re a foreign or domestic partner.",
+            "group": "Part 1 - Information about Partnership"
+          },
+          "Item G": {
+            "fieldName": "ItemG",
+            "type": "String",
+            "description": "Partner is a general partner or limited partner?",
+            "group": "Part 1 - Information about Partnership"
+          },
+          "Item H": {
+            "fieldName": "ItemH",
+            "type": "String",
+            "description": "Partner is a foreign or domestic partner?",
+            "group": "Part 1 - Information about Partnership"
+          },
+          "Item I": {
+            "fieldName": "ItemI",
+            "type": "String",
+            "description": "Type of Entity?",
+            "group": "Part 1 - Information about Partnership"
+          },
+          "Item J": {
+            "fieldName": "ItemJ",
+            "type": "Numeric",
+            "description": "Share of the partnership\u2019s profits, loss, and capital...",
+            "group": "Part 3 - Partner\u2019s Share of Current Year Income, Deductions, Credits, and Other Items"
+          },
+          "Item K": {
+            "fieldName": "ItemK",
+            "type": "Numeric",
+            "description": "Share of the partnership\u2019s liabilities (recourse, qualified nonrecourse, and recourse).",
+            "group": "Part 3 - Partner\u2019s Share of Current Year Income, Deductions, Credits, and Other Items"
+          },
+          "Item L": {
+            "fieldName": "ItemL",
+            "type": "Numeric",
+            "description": "Capital account changes during the year.",
+            "group": "Part 3 - Partner\u2019s Share of Current Year Income, Deductions, Credits, and Other Items"
+          },
+          "Item M": {
+            "fieldName": "ItemM",
+            "type": "String",
+            "description": "Check 'yes' if you contributed property with a built-in gain or loss.",
+            "group": "Part 3 - Partner\u2019s Share of Current Year Income, Deductions, Credits, and Other Items"
+          },
+          "Item n": {
+            "fieldName": "Itemn",
+            "type": "Numeric",
+            "description": "Partner\u2019s Share of Net Unrecognized Section 704(c) Gain or (Loss).",
+            "group": "Part 3 - Partner\u2019s Share of Current Year Income, Deductions, Credits, and Other Items"
+          },
+          "Box 1": {
+            "fieldName": "Box1",
+            "type": "Numeric",
+            "description": "Auto-generated description for Box 1 based on Schedule K-1 (Form 1065).",
+            "group": "Part 3 - Partner\u2019s Share of Current Year Income, Deductions, Credits, and Other Items"
+          },
+          "Box 2": {
+            "fieldName": "Box2",
+            "type": "Numeric",
+            "description": "Auto-generated description for Box 2 based on Schedule K-1 (Form 1065).",
+            "group": "Part 3 - Partner\u2019s Share of Current Year Income, Deductions, Credits, and Other Items"
+          },
+          "Box 3": {
+            "fieldName": "Box3",
+            "type": "Numeric",
+            "description": "Auto-generated description for Box 3 based on Schedule K-1 (Form 1065).",
+            "group": "Part 3 - Partner\u2019s Share of Current Year Income, Deductions, Credits, and Other Items"
+          },
+          "Box 4": {
+            "fieldName": "Box4",
+            "type": "Numeric",
+            "description": "Auto-generated description for Box 4 based on Schedule K-1 (Form 1065).",
+            "group": "Part 3 - Partner\u2019s Share of Current Year Income, Deductions, Credits, and Other Items"
+          },
+          "Box 5": {
+            "fieldName": "Box5",
+            "type": "Numeric",
+            "description": "Auto-generated description for Box 5 based on Schedule K-1 (Form 1065).",
+            "group": "Part 3 - Partner\u2019s Share of Current Year Income, Deductions, Credits, and Other Items"
+          },
+          "Box 6": {
+            "fieldName": "Box6",
+            "type": "Numeric",
+            "description": "Auto-generated description for Box 6 based on Schedule K-1 (Form 1065).",
+            "group": "Part 3 - Partner\u2019s Share of Current Year Income, Deductions, Credits, and Other Items"
+          },
+          "Box 7": {
+            "fieldName": "Box7",
+            "type": "Numeric",
+            "description": "Auto-generated description for Box 7 based on Schedule K-1 (Form 1065).",
+            "group": "Part 3 - Partner\u2019s Share of Current Year Income, Deductions, Credits, and Other Items"
+          },
+          "Box 8": {
+            "fieldName": "Box8",
+            "type": "Numeric",
+            "description": "Auto-generated description for Box 8 based on Schedule K-1 (Form 1065).",
+            "group": "Part 3 - Partner\u2019s Share of Current Year Income, Deductions, Credits, and Other Items"
+          },
+          "Box 9": {
+            "fieldName": "Box9",
+            "type": "Numeric",
+            "description": "Auto-generated description for Box 9 based on Schedule K-1 (Form 1065).",
+            "group": "Part 3 - Partner\u2019s Share of Current Year Income, Deductions, Credits, and Other Items"
+          },
+          "Box 10": {
+            "fieldName": "Box10",
+            "type": "Numeric",
+            "description": "Auto-generated description for Box 10 based on Schedule K-1 (Form 1065).",
+            "group": "Part 3 - Partner\u2019s Share of Current Year Income, Deductions, Credits, and Other Items"
+          },
+          "Box 11": {
+            "fieldName": "Box11",
+            "type": "Numeric",
+            "description": "Auto-generated description for Box 11 based on Schedule K-1 (Form 1065).",
+            "group": "Part 3 - Partner\u2019s Share of Current Year Income, Deductions, Credits, and Other Items"
+          },
+          "Box 12": {
+            "fieldName": "Box12",
+            "type": "Numeric",
+            "description": "Auto-generated description for Box 12 based on Schedule K-1 (Form 1065).",
+            "group": "Part 3 - Partner\u2019s Share of Current Year Income, Deductions, Credits, and Other Items"
+          },
+          "Box 13": {
+            "fieldName": "Box13",
+            "type": "Numeric",
+            "description": "Auto-generated description for Box 13 based on Schedule K-1 (Form 1065).",
+            "group": "Part 3 - Partner\u2019s Share of Current Year Income, Deductions, Credits, and Other Items"
+          },
+          "Box 14": {
+            "fieldName": "Box14",
+            "type": "Numeric",
+            "description": "Auto-generated description for Box 14 based on Schedule K-1 (Form 1065).",
+            "group": "Part 3 - Partner\u2019s Share of Current Year Income, Deductions, Credits, and Other Items"
+          },
+          "Box 15": {
+            "fieldName": "Box15",
+            "type": "Numeric",
+            "description": "Auto-generated description for Box 15 based on Schedule K-1 (Form 1065).",
+            "group": "Part 3 - Partner\u2019s Share of Current Year Income, Deductions, Credits, and Other Items"
+          },
+          "Box 16": {
+            "fieldName": "Box16",
+            "type": "String",
+            "description": "Auto-generated description for Box 16 based on Schedule K-1 (Form 1065).",
+            "group": "Part 3 - Partner\u2019s Share of Current Year Income, Deductions, Credits, and Other Items"
+          },
+          "Box 17": {
+            "fieldName": "Box17",
+            "type": "String",
+            "description": "Auto-generated description for Box 17 based on Schedule K-1 (Form 1065).",
+            "group": "Part 3 - Partner\u2019s Share of Current Year Income, Deductions, Credits, and Other Items"
+          },
+          "Box 18": {
+            "fieldName": "Box18",
+            "type": "Numeric",
+            "description": "Auto-generated description for Box 18 based on Schedule K-1 (Form 1065).",
+            "group": "Part 3 - Partner\u2019s Share of Current Year Income, Deductions, Credits, and Other Items"
+          },
+          "Box 19": {
+            "fieldName": "Box19",
+            "type": "Numeric",
+            "description": "Auto-generated description for Box 19 based on Schedule K-1 (Form 1065).",
+            "group": "Part 3 - Partner\u2019s Share of Current Year Income, Deductions, Credits, and Other Items"
+          },
+          "Box 20": {
+            "fieldName": "Box20",
+            "type": "String",
+            "description": "Auto-generated description for Box 20 based on Schedule K-1 (Form 1065).",
+            "group": "Part 3 - Partner\u2019s Share of Current Year Income, Deductions, Credits, and Other Items"
+          },
+          "Box 21": {
+            "fieldName": "Box21",
+            "type": "Numeric",
+            "description": "Auto-generated description for Box 21 based on Schedule K-1 (Form 1065).",
+            "group": "Part 3 - Partner\u2019s Share of Current Year Income, Deductions, Credits, and Other Items"
+          },
+          "Box 22": {
+            "fieldName": "Box22",
+            "type": "String",
+            "description": "Auto-generated description for Box 22 based on Schedule K-1 (Form 1065).",
+            "group": "Part 3 - Partner\u2019s Share of Current Year Income, Deductions, Credits, and Other Items"
+          },
+          "Box 23": {
+            "fieldName": "Box23",
+            "type": "String",
+            "description": "Auto-generated description for Box 23 based on Schedule K-1 (Form 1065).",
+            "group": "Part 3 - Partner\u2019s Share of Current Year Income, Deductions, Credits, and Other Items"
+          },
+          "ConfidenceScore": {
+            "type": "object"
+          },
+          "VerbatimText": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "Item A",
+          "Item B",
+          "Item C",
+          "Item D",
+          "Item E",
+          "Item F",
+          "Item G",
+          "Item H",
+          "Item I",
+          "Item J",
+          "Item K",
+          "Item L",
+          "Item M",
+          "Item n",
+          "Box 1",
+          "Box 2",
+          "Box 3",
+          "Box 4",
+          "Box 5",
+          "Box 6",
+          "Box 7",
+          "Box 8",
+          "Box 9",
+          "Box 10",
+          "Box 11",
+          "Box 12",
+          "Box 13",
+          "Box 14",
+          "Box 15",
+          "Box 16",
+          "Box 17",
+          "Box 18",
+          "Box 19",
+          "Box 20",
+          "Box 21",
+          "Box 22",
+          "Box 23",
+          "ConfidenceScore",
+          "VerbatimText"
+        ],
+        "additionalProperties": false,
+        "definitions": {
+          "ConfidenceScore": {
+            "type": "string",
+            "enum": ["HIGH", "MID", "LOW"],
+            "description": "Confidence score for the extracted value."
+          },
+          "VerbatimText": {
+            "type": "string",
+            "description": "The exact verbatim text extracted from the document."
+          }
+        }
+      },
+      "meta_schema_blob": null,
+      "meta_data": null
+    }
+  ],
+  "pagination": {
+    "total_count": 1,
+    "total_pages": 1,
+    "current_page": 1,
+    "page_size": 10
+  }
+}

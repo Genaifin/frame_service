@@ -1,0 +1,538 @@
+{
+  "response": [
+    {
+      "schema_id": 3,
+      "document_type_id": 3,
+      "document_type": "CapitalAccountStatement",
+      "document_description": "A Capital Account Statement is typically used to track the ownership interests and capital transactions within a business, partnership, or other entity, showing how each owner's share has changed over time. This statement is particularly relevant for partnerships, limited liability companies (LLCs), and other entities where ownership is divided into equity stakes.",
+      "is_active": true,
+      "created_at": "2025-02-12T10:47:59.534720",
+      "updated_at": "2025-02-12T10:47:59.534720",
+      "schema_blob": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "Investor": {
+            "type": "string",
+            "description": "Name of the investor indicated in the document"
+          },
+          "Account": {
+            "type": "string",
+            "description": "This is the fund name and investor name combined in a piped format. For instance, if fund name is 'ABC Investments' and investor is 'Scott', then account is 'ABC Investments|Scott'."
+          },
+          "InvestorRefID": {
+            "type": "string",
+            "description": "A unique reference ID for the investor. Only extract this if it is explicitly mentioned in the document as being a reference ID."
+          },
+          "AccountRefID": {
+            "type": "string",
+            "description": "A unique reference ID for the account. Only extract this if it is explicitly mentioned in the document as being a reference ID."
+          },
+          "Security": {
+            "type": "string",
+            "description": "The fund name mentioned in the document. This typically can be in the header of the document. Fund names are generally longer and typically include LLC, LLP or something similar in."
+          },
+          "PeriodBeginningDT": {
+            "type": "string",
+            "description": "Starting date of the reporting period in YYYY-MM-DD format."
+          },
+          "PeriodEndingDT": {
+            "type": "string",
+            "description": "Ending date of the reporting period in YYYY-MM-DD format."
+          },
+          "Currency": {
+            "type": "string",
+            "enum": [
+              "AED",
+              "AFN",
+              "ALL",
+              "AMD",
+              "ANG",
+              "AOA",
+              "ARS",
+              "AUD",
+              "AWG",
+              "AZN",
+              "BAM",
+              "BBD",
+              "BDT",
+              "BGN",
+              "BHD",
+              "BIF",
+              "BMD",
+              "BND",
+              "BOB",
+              "BRL",
+              "BSD",
+              "BTN",
+              "BWP",
+              "BYN",
+              "BZD",
+              "CAD",
+              "CDF",
+              "CHF",
+              "CLP",
+              "CNY",
+              "COP",
+              "CRC",
+              "CUP",
+              "CVE",
+              "CZK",
+              "DJF",
+              "DKK",
+              "DOP",
+              "DZD",
+              "EGP",
+              "ERN",
+              "ETB",
+              "EUR",
+              "FJD",
+              "FKP",
+              "FOK",
+              "GBP",
+              "GEL",
+              "GGP",
+              "GHS",
+              "GIP",
+              "GMD",
+              "GNF",
+              "GTQ",
+              "GYD",
+              "HKD",
+              "HNL",
+              "HRK",
+              "HTG",
+              "HUF",
+              "IDR",
+              "ILS",
+              "IMP",
+              "INR",
+              "IQD",
+              "IRR",
+              "ISK",
+              "JMD",
+              "JOD",
+              "JPY",
+              "KES",
+              "KGS",
+              "KHR",
+              "KID",
+              "KMF",
+              "KRW",
+              "KWD",
+              "KYD",
+              "KZT",
+              "LAK",
+              "LBP",
+              "LKR",
+              "LRD",
+              "LSL",
+              "LYD",
+              "MAD",
+              "MDL",
+              "MGA",
+              "MKD",
+              "MMK",
+              "MNT",
+              "MOP",
+              "MRU",
+              "MUR",
+              "MVR",
+              "MWK",
+              "MXN",
+              "MYR",
+              "MZN",
+              "NAD",
+              "NGN",
+              "NIO",
+              "NOK",
+              "NPR",
+              "NZD",
+              "OMR",
+              "PAB",
+              "PEN",
+              "PGK",
+              "PHP",
+              "PKR",
+              "PLN",
+              "PYG",
+              "QAR",
+              "RON",
+              "RSD",
+              "RUB",
+              "RWF",
+              "SAR",
+              "SBD",
+              "SCR",
+              "SDG",
+              "SEK",
+              "SGD",
+              "SHP",
+              "SLE",
+              "SLL",
+              "SOS",
+              "SRD",
+              "SSP",
+              "STN",
+              "SYP",
+              "SZL",
+              "THB",
+              "TJS",
+              "TMT",
+              "TND",
+              "TOP",
+              "TRY",
+              "TTD",
+              "TVD",
+              "TWD",
+              "TZS",
+              "UAH",
+              "UGX",
+              "USD",
+              "UYU",
+              "UZS",
+              "VES",
+              "VND",
+              "VUV",
+              "WST",
+              "XAF",
+              "XCD",
+              "XDR",
+              "XOF",
+              "XPF",
+              "YER",
+              "ZAR",
+              "ZMW",
+              "ZWL"
+            ],
+            "description": "Currency code for the transactions (e.g., USD, EUR)."
+          },
+          "NetOpeningCapital": {
+            "type": "number",
+            "description": "Opening capital for the period after all adjustments."
+          },
+          "Contributions": {
+            "type": "number",
+            "description": "Total capital contributions made during the period."
+          },
+          "ContributionOutsideCommitment": {
+            "type": "number",
+            "description": "Contributions made outside of the initially committed capital."
+          },
+          "Withdrawals": {
+            "type": "number",
+            "description": "Total amount withdrawn by the investor during the period."
+          },
+          "RecallableDistribution": {
+            "type": "number",
+            "description": "A recallable distribution is a fund distribution that can be called back within a set time period. Recallable distributions are a flexibility option that can be added to a limited partnership agreement (LPA). They can be used to distribute funds immediately when there is uncertainty about the fund's future cash needs."
+          },
+          "ReturnOfCapital": {
+            "type": "number",
+            "description": "Amount of capital returned to the investor during the period."
+          },
+          "NetCapitalActivity": {
+            "type": "number",
+            "description": "Net activity of capital including contributions, withdrawals, and returns."
+          },
+          "TransfersIn": {
+            "type": "number",
+            "description": "Total capital transferred into the account during the period."
+          },
+          "TransfersOut": {
+            "type": "number",
+            "description": "Total capital transferred out of the account during the period."
+          },
+          "NetTransfers": {
+            "type": "number",
+            "description": "Net transfers, calculated as Transfers In minus Transfers Out."
+          },
+          "IncomeDistribution": {
+            "type": "number",
+            "description": "Total income distributed to the investor during the period."
+          },
+          "RealizedGainLoss": {
+            "type": "number",
+            "description": "Only use this field if the statement provides a separate line for realized gains/(losses) DISTINCT from unrealized gains/(losses). If the statement lumps realized and unrealized gains into one line, do NOT map that combined figure here; instead, use NetGainLoss."
+          },
+          "UnrealizedGainLoss": {
+            "type": "number",
+            "description": "Only use this field if the statement provides a separate line for unrealized gains/(losses) DISTINCT from realized gains/(losses). If the statement lumps realized and unrealized gains into one line, do NOT map that combined figure here; instead, use NetGainLoss."
+          },
+          "NetGainLoss": {
+            "type": "number",
+            "description": "If the statement lumps realized and unrealized gains/(losses) together on a single line (often called 'Net realized and unrealized gain/(loss)'), map that amount here. Do NOT map net income or net investment income to this field. This field is specifically for the COMBINED realized + unrealized gain/(loss)."
+          },
+          "InvestmentIncome": {
+            "type": "number",
+            "description": "Map the statement's 'Net income/(loss)' here ONLY if it is the TOTAL bottom-line figure that includes all sources of income, gains, and losses. If you see a line explicitly labeled 'Net income/(loss)' that reflects the grand total, store it here."
+          },
+          "OtherIncomeLoss": {
+            "type": "number",
+            "description": "Map any additional or separate income/(loss) lines (e.g., 'Net investment income/(loss)' or 'Operating income/(loss)' or 'Other income/(loss)') that do NOT represent the combined realized/unrealized gain or the final total net income. If there is a specific line for 'Net investment income/(loss),' store that here."
+          },
+          "ManagementFee": {
+            "type": "number",
+            "description": "Total management fees charged during the period."
+          },
+          "OtherExpenses": {
+            "type": "number",
+            "description": "Other expenses incurred during the period."
+          },
+          "CarriedInterest": {
+            "type": "number",
+            "description": "Interest carried over from previous periods or due to future periods."
+          },
+          "OtherAdjustments": {
+            "type": "number",
+            "description": "Adjustments made to the account for various reasons."
+          },
+          "NetClosingCapital": {
+            "type": "number",
+            "description": "Closing capital for the period after all transactions and adjustments. Calculate this field as the net after accounting for the payment for incentive or profits or fees etc."
+          },
+          "Quantity": {
+            "type": "number",
+            "description": "Quantity of securities involved in the transactions during the period."
+          },
+          "Price": {
+            "type": "number",
+            "description": "Price per unit of security at the time of the transaction."
+          },
+          "MTDPerformance": {
+            "type": "number",
+            "maximum": 100,
+            "minimum": 0,
+            "description": "Performance of the investments for the month-to-date. This is a percentage value."
+          },
+          "QTDPerformance": {
+            "type": "number",
+            "maximum": 100,
+            "minimum": 0,
+            "description": "Performance of the investments for the quarter-to-date. This is a percentage value."
+          },
+          "YTDPerformance": {
+            "type": "number",
+            "maximum": 100,
+            "minimum": 0,
+            "description": "Performance of the investments for the year-to-date. This is a percentage value."
+          },
+          "IRR": {
+            "type": "number",
+            "maximum": 100,
+            "minimum": 0,
+            "description": "Internal Rate of Return for the investments during the period. This is a percentage value."
+          },
+          "Commitment": {
+            "type": "number",
+            "description": "Total committed capital by the investor."
+          },
+          "ContributionsToDate": {
+            "type": "number",
+            "description": "Total contributions made by the investor up to the current date. If total contributions is not mentioned, calculate this as the difference between total Commitment and UnfundedCommitment. This property must be extracted from Life to date or Inception to date column and not from any other period."
+          },
+          "UnfundedCommitment": {
+            "type": "number",
+            "description": "Amount of committed capital not yet funded by the investor."
+          },
+          "UnfundedCommitmentAdj": {
+            "type": "number",
+            "description": "Adjustments made to the unfunded commitments."
+          },
+          "DistributionsSubjectToRecall": {
+            "type": "number",
+            "description": "Total distributions that are subject to recall."
+          },
+          "TotalDistributions": {
+            "type": "number",
+            "description": "Total distributions made during the period of the statement. Do not take extract full distributions by the fund. Rather the distributions to the investor. Do not extract the values under inception to date (ITD). Do not extract the values under life to date (LTD). Do not extract the values under year to date (YTD)."
+          },
+          "CommitmentOnlyStatement": {
+            "type": "number",
+            "description": "The amount corresponds to the total financial obligations or liabilities that have been agreed upon but not yet realized through actual transactions or payments"
+          },
+          "ConfidenceScore": {
+            "type": "object",
+            "properties": {
+              "Investor": { "$ref": "#/definitions/ConfidenceScore" },
+              "Account": { "$ref": "#/definitions/ConfidenceScore" },
+              "InvestorRefID": { "$ref": "#/definitions/ConfidenceScore" },
+              "AccountRefID": { "$ref": "#/definitions/ConfidenceScore" },
+              "Security": { "$ref": "#/definitions/ConfidenceScore" },
+              "PeriodBeginningDT": { "$ref": "#/definitions/ConfidenceScore" },
+              "PeriodEndingDT": { "$ref": "#/definitions/ConfidenceScore" },
+              "Currency": { "$ref": "#/definitions/ConfidenceScore" },
+              "NetOpeningCapital": { "$ref": "#/definitions/ConfidenceScore" },
+              "Contributions": { "$ref": "#/definitions/ConfidenceScore" },
+              "ContributionOutsideCommitment": {
+                "$ref": "#/definitions/ConfidenceScore"
+              },
+              "Withdrawals": { "$ref": "#/definitions/ConfidenceScore" },
+              "RecallableDistribution": {
+                "$ref": "#/definitions/ConfidenceScore"
+              },
+              "ReturnOfCapital": { "$ref": "#/definitions/ConfidenceScore" },
+              "NetCapitalActivity": { "$ref": "#/definitions/ConfidenceScore" },
+              "TransfersIn": { "$ref": "#/definitions/ConfidenceScore" },
+              "TransfersOut": { "$ref": "#/definitions/ConfidenceScore" },
+              "NetTransfers": { "$ref": "#/definitions/ConfidenceScore" },
+              "IncomeDistribution": { "$ref": "#/definitions/ConfidenceScore" },
+              "RealizedGainLoss": { "$ref": "#/definitions/ConfidenceScore" },
+              "UnrealizedGainLoss": { "$ref": "#/definitions/ConfidenceScore" },
+              "NetGainLoss": { "$ref": "#/definitions/ConfidenceScore" },
+              "InvestmentIncome": { "$ref": "#/definitions/ConfidenceScore" },
+              "OtherIncomeLoss": { "$ref": "#/definitions/ConfidenceScore" },
+              "ManagementFee": { "$ref": "#/definitions/ConfidenceScore" },
+              "OtherExpenses": { "$ref": "#/definitions/ConfidenceScore" },
+              "CarriedInterest": { "$ref": "#/definitions/ConfidenceScore" },
+              "OtherAdjustments": { "$ref": "#/definitions/ConfidenceScore" },
+              "NetClosingCapital": { "$ref": "#/definitions/ConfidenceScore" },
+              "Quantity": { "$ref": "#/definitions/ConfidenceScore" },
+              "Price": { "$ref": "#/definitions/ConfidenceScore" },
+              "MTDPerformance": { "$ref": "#/definitions/ConfidenceScore" },
+              "QTDPerformance": { "$ref": "#/definitions/ConfidenceScore" },
+              "YTDPerformance": { "$ref": "#/definitions/ConfidenceScore" },
+              "IRR": { "$ref": "#/definitions/ConfidenceScore" },
+              "Commitment": { "$ref": "#/definitions/ConfidenceScore" },
+              "ContributionsToDate": {
+                "$ref": "#/definitions/ConfidenceScore"
+              },
+              "UnfundedCommitment": { "$ref": "#/definitions/ConfidenceScore" },
+              "UnfundedCommitmentAdj": {
+                "$ref": "#/definitions/ConfidenceScore"
+              },
+              "DistributionsSubjectToRecall": {
+                "$ref": "#/definitions/ConfidenceScore"
+              },
+              "TotalDistributions": { "$ref": "#/definitions/ConfidenceScore" },
+              "CommitmentOnlyStatement": {
+                "$ref": "#/definitions/ConfidenceScore"
+              }
+            }
+          },
+          "VerbatimText": {
+            "type": "object",
+            "properties": {
+              "Investor": { "$ref": "#/definitions/VerbatimText" },
+              "Account": { "$ref": "#/definitions/VerbatimText" },
+              "InvestorRefID": { "$ref": "#/definitions/VerbatimText" },
+              "AccountRefID": { "$ref": "#/definitions/VerbatimText" },
+              "Security": { "$ref": "#/definitions/VerbatimText" },
+              "PeriodBeginningDT": { "$ref": "#/definitions/VerbatimText" },
+              "PeriodEndingDT": { "$ref": "#/definitions/VerbatimText" },
+              "Currency": { "$ref": "#/definitions/VerbatimText" },
+              "NetOpeningCapital": { "$ref": "#/definitions/VerbatimText" },
+              "Contributions": { "$ref": "#/definitions/VerbatimText" },
+              "ContributionOutsideCommitment": {
+                "$ref": "#/definitions/VerbatimText"
+              },
+              "Withdrawals": { "$ref": "#/definitions/VerbatimText" },
+              "RecallableDistribution": {
+                "$ref": "#/definitions/VerbatimText"
+              },
+              "ReturnOfCapital": { "$ref": "#/definitions/VerbatimText" },
+              "NetCapitalActivity": { "$ref": "#/definitions/VerbatimText" },
+              "TransfersIn": { "$ref": "#/definitions/VerbatimText" },
+              "TransfersOut": { "$ref": "#/definitions/VerbatimText" },
+              "NetTransfers": { "$ref": "#/definitions/VerbatimText" },
+              "IncomeDistribution": { "$ref": "#/definitions/VerbatimText" },
+              "RealizedGainLoss": { "$ref": "#/definitions/VerbatimText" },
+              "UnrealizedGainLoss": { "$ref": "#/definitions/VerbatimText" },
+              "NetGainLoss": { "$ref": "#/definitions/VerbatimText" },
+              "InvestmentIncome": { "$ref": "#/definitions/VerbatimText" },
+              "OtherIncomeLoss": { "$ref": "#/definitions/VerbatimText" },
+              "ManagementFee": { "$ref": "#/definitions/VerbatimText" },
+              "OtherExpenses": { "$ref": "#/definitions/VerbatimText" },
+              "CarriedInterest": { "$ref": "#/definitions/VerbatimText" },
+              "OtherAdjustments": { "$ref": "#/definitions/VerbatimText" },
+              "NetClosingCapital": { "$ref": "#/definitions/VerbatimText" },
+              "Quantity": { "$ref": "#/definitions/VerbatimText" },
+              "Price": { "$ref": "#/definitions/VerbatimText" },
+              "MTDPerformance": { "$ref": "#/definitions/VerbatimText" },
+              "QTDPerformance": { "$ref": "#/definitions/VerbatimText" },
+              "YTDPerformance": { "$ref": "#/definitions/VerbatimText" },
+              "IRR": { "$ref": "#/definitions/VerbatimText" },
+              "Commitment": { "$ref": "#/definitions/VerbatimText" },
+              "ContributionsToDate": { "$ref": "#/definitions/VerbatimText" },
+              "UnfundedCommitment": { "$ref": "#/definitions/VerbatimText" },
+              "UnfundedCommitmentAdj": { "$ref": "#/definitions/VerbatimText" },
+              "DistributionsSubjectToRecall": {
+                "$ref": "#/definitions/VerbatimText"
+              },
+              "TotalDistributions": { "$ref": "#/definitions/VerbatimText" },
+              "CommitmentOnlyStatement": {
+                "$ref": "#/definitions/VerbatimText"
+              }
+            }
+          }
+        },
+        "required": [
+          "Investor",
+          "Account",
+          "InvestorRefID",
+          "AccountRefID",
+          "Security",
+          "PeriodBeginningDT",
+          "PeriodEndingDT",
+          "Currency",
+          "NetOpeningCapital",
+          "Contributions",
+          "ContributionOutsideCommitment",
+          "Withdrawals",
+          "RecallableDistribution",
+          "ReturnOfCapital",
+          "NetCapitalActivity",
+          "TransfersIn",
+          "TransfersOut",
+          "NetTransfers",
+          "IncomeDistribution",
+          "RealizedGainLoss",
+          "UnrealizedGainLoss",
+          "NetGainLoss",
+          "InvestmentIncome",
+          "OtherIncomeLoss",
+          "ManagementFee",
+          "OtherExpenses",
+          "CarriedInterest",
+          "OtherAdjustments",
+          "NetClosingCapital",
+          "Quantity",
+          "Price",
+          "MTDPerformance",
+          "QTDPerformance",
+          "YTDPerformance",
+          "IRR",
+          "Commitment",
+          "ContributionsToDate",
+          "UnfundedCommitment",
+          "UnfundedCommitmentAdj",
+          "DistributionsSubjectToRecall",
+          "TotalDistributions",
+          "CommitmentOnlyStatement",
+          "ConfidenceScore",
+          "VerbatimText"
+        ],
+        "additionalProperties": false,
+        "definitions": {
+          "ConfidenceScore": {
+            "type": "string",
+            "enum": ["HIGH", "MID", "LOW"],
+            "description": "Confidence score for the extracted value: 'HIGH' if the field name is mentioned as it is in the document, 'MID' if the key matches a semantically similar word, 'LOW' if the field is not matching exactly but AI system inferred this value. Feel free to show some fields with low confidence"
+          },
+          "VerbatimText": {
+            "type": "string",
+            "description": "The exact verbatim text extracted from the document for the corresponding field. Avoid any braces or brackets from the outputs. For currency, you might want to pick up symbols from the document."
+          }
+        }
+      },
+      "meta_schema_blob": null,
+      "meta_data": null
+    }
+  ],
+  "pagination": {
+    "total_count": 1,
+    "total_pages": 1,
+    "current_page": 1,
+    "page_size": 10
+  }
+}

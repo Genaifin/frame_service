@@ -1,0 +1,116 @@
+{
+    "data": [
+      {
+        "id": "org-details",
+        "title": "GENERAL DETAILS",
+        "fields": [
+          {
+            "id": "company-logo",
+            "label": "Company Logo",
+            "type": "image",
+            "defaultValue": "https://product.aithonsolutions.com/dummyDocs/CompanyLogo.svg",
+            "width": "100%"
+          },
+          {
+            "id": "org-name",
+            "label": "Org Name",
+            "defaultValue": "Finance Bank National Association",
+            "type": "text",
+            "width": "33%"
+          },
+          {
+            "id": "org-type",
+            "label": "Org Type",
+            "defaultValue": "Service Provider",
+            "type": "text",
+            "width": "33%"
+          },
+          {
+            "id": "org-id",
+            "label": "Org ID",
+            "defaultValue": "CLNT0011",
+            "type": "text",
+            "width": "33%"
+          },
+          {
+            "id": "status",
+            "label": "Status",
+            "type": "status-badge",
+            "status": {
+              "name": "Active"
+            },
+            "width": "33%"
+          },
+          {
+            "id": "created-date",
+            "label": "Created Date",
+            "defaultValue": "02/08/2025",
+            "type": "date",
+            "width": "66%"
+          }
+        ],
+        "withAccordion": false,
+        "width": "100%"
+      },
+      {
+        "id": "contact-details",
+        "title": "Contact Details",
+        "fields": [
+          {
+            "id": "contact-name",
+            "label": "Contact Name",
+            "defaultValue": "Mr. John Doe",
+            "type": "text",
+            "width": "33%"
+          },
+          {
+            "id": "contact-email",
+            "label": "Email",
+            "defaultValue": "johndoe@mail.com",
+            "type": "text",
+            "width": "33%"
+          },
+          {
+            "id": "contact-number",
+            "label": "Contact Number",
+            "defaultValue": "+1 (123) 456-7890",
+            "type": "text",
+            "width": "33%"
+          }
+        ],
+        "withAccordion": false,
+        "width": "100%"
+      },
+      {
+        "id": "admin-details",
+        "title": "Admin Details",
+        "fields": [
+          {
+            "id": "admin-name",
+            "label": "Admin Name",
+            "defaultValue": "Mr. Sam Johnson",
+            "type": "text",
+            "width": "33%"
+          },
+          {
+            "id": "admin-email",
+            "label": "Email",
+            "defaultValue": "samj@mail.com",
+            "type": "text",
+            "width": "33%"
+          },
+          {
+            "id": "admin-role",
+            "label": "Contact Number",
+            "defaultValue": "System Administrator",
+            "type": "text",
+            "width": "33%"
+          }
+        ],
+        "withAccordion": false,
+        "width": "100%"
+      }
+    ]
+  }
+  
+  

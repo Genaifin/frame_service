@@ -1,0 +1,399 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Annual General Meeting Schema",
+    "type": "object",
+    "description": "Schema for extracting and organizing detailed information from annual general meeting documents.",
+    "properties": {
+        "Agenda": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "A list of items to be discussed at a meeting. Extract any section that outlines the topics, items, or points scheduled for discussion. Look for headings like 'Agenda', 'Meeting Agenda', or bullet-pointed lists that represent discussion points."
+        },
+        "Account": {
+            "type": "string",
+            "description": "A concatenated string combining the fund name and the investor's name, separated by a pipe character (|). For example, 'ABC Investments|Scott' where 'ABC Investments' is the fund name and 'Scott' is the investor name."
+        },
+        "Minutes": {
+            "type": "string",
+            "description": "A written record of the proceedings and decisions made at a meeting. Extract summaries that describe discussions, decisions, actions taken, and resolutions passed during the meeting. Look for sections titled 'Minutes', 'Meeting Minutes', or narrative descriptions of events."
+        },
+        "Chairman": {
+            "type": "string",
+            "description": "The person who presides over a meeting and ensures that it is conducted according to the rules. Extract the name and title of the individual identified as the chairman or chairperson. Look for phrases like 'Chairman', 'Chairperson', 'Presiding Officer', or 'Meeting led by...'."
+        },
+        "ReportDate": {
+            "type": "string",
+            "format": "date",
+            "description": "The date of meeting which is to be made in YYYY-MM-DD format."
+        },
+        "BoardofDirectors": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Name": {
+                        "type": "string",
+                        "description": "The full name of the board member."
+                    },
+                    "Title": {
+                        "type": "string",
+                        "description": "The title or position of the board member."
+                    }
+                }
+            },
+            "description": "A group of individuals elected by shareholders to oversee the company's management and make important decisions. Extract names, titles, and any relevant details of directors. Look for sections titled 'Board of Directors', 'Directors'. Do not pick partners or other non-board members."
+        },
+        "Investments": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "CompanyName": {
+                        "type": "string",
+                        "description": "Name of the company invested in."
+                    },
+                    "Sector": {
+                        "type": "string",
+                        "description": "Sector or industry of the company."
+                    },
+                    "InvestmentDetails": {
+                        "type": "string",
+                        "description": "Details about the investment, including amount, year, and any relevant notes."
+                    },
+                    "Performance": {
+                        "type": "string",
+                        "description": "Performance of the investment, including returns, multiples, and IRR."
+                    },
+                    "RecentDevelopments": {
+                        "type": "string",
+                        "description": "Recent news or updates about the company."
+                    },
+                    "FutureOutlook": {
+                        "type": "string",
+                        "description": "Projected future performance or strategic direction of the company."
+                    },
+                    "People": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "Name": {
+                                    "type": "string",
+                                    "description": "Full name of the individual."
+                                },
+                                "Title": {
+                                    "type": "string",
+                                    "description": "Position or role within the company."
+                                }
+                            }
+                        },
+                        "description": "Key personnel associated with the company."
+                    }
+                },
+                "description": "Detailed information about each investment or portfolio company."
+            },
+            "description": "Information about investments or portfolio companies."
+        },
+        "FinancialPerformance": {
+            "type": "object",
+            "properties": {
+                "OverallPerformance": {
+                    "type": "string",
+                    "description": "An overview of the financial performance, including metrics like revenue, EBITDA, net income, etc."
+                },
+                "FinancialStatements": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "StatementType": {
+                                "type": "string",
+                                "description": "Type of financial statement, e.g., 'Income Statement', 'Balance Sheet', 'Cash Flow Statement'."
+                            },
+                            "Period": {
+                                "type": "string",
+                                "description": "The financial period covered, e.g., 'Q1 2023', 'FY2022'."
+                            },
+                            "Data": {
+                                "type": "string",
+                                "description": "Extracted data or summaries from the financial statement."
+                            }
+                        }
+                    },
+                    "description": "Financial statements providing information about financial performance and position."
+                },
+                "KeyMetrics": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "MetricName": {
+                                "type": "string",
+                                "description": "Name of the financial metric, e.g., 'Revenue Growth', 'Adjusted EBITDA'."
+                            },
+                            "Value": {
+                                "type": "string",
+                                "description": "The value of the metric."
+                            }
+                        }
+                    },
+                    "description": "List of key financial metrics and their values."
+                }
+            },
+            "description": "Information related to financial performance."
+        },
+        "Shareholders": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Name": {
+                        "type": "string",
+                        "description": "The full name of the shareholder."
+                    },
+                    "SharePercentage": {
+                        "type": "string",
+                        "description": "The percentage of shares owned by the shareholder."
+                    }
+                }
+            },
+            "description": "Individuals or entities that own shares in the company. Extract names and, if available, the percentage of shares they own. Look for sections referring to 'Shareholders', 'Investors', 'Stakeholders', or ownership lists."
+        },
+        "Quorum": {
+            "type": "string",
+            "description": "The minimum number of people required to be present at a meeting for it to be valid. Extract statements about quorum requirements or confirmations that a quorum was met. Look for phrases like 'quorum required', 'quorum present', or specific numbers related to attendee counts."
+        },
+        "Resolutions": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "ResolutionText": {
+                        "type": "string",
+                        "description": "The text of the resolution."
+                    },
+                    "Outcome": {
+                        "type": "string",
+                        "description": "The outcome of the resolution."
+                    }
+                }
+            },
+            "description": "Formal decisions made during the meeting. Extract the text of each resolution and its outcome (e.g., passed, rejected). Look for sections titled 'Resolutions', statements beginning with 'Resolved that', or documented decisions."
+        },
+        "Voting": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "Method": {
+                        "type": "string",
+                        "description": "The process used for voting, such as 'show of hands', 'ballot', or 'electronic voting'."
+                    },
+                    "Results": {
+                        "type": "string",
+                        "description": "The outcome of the voting process, including counts or percentages if available."
+                    }
+                }
+            },
+            "description": "Details about how voting was conducted and the results. Extract information on the voting procedures and the outcomes for each vote taken."
+        },
+        "Proxy": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "ProxyHolder": {
+                        "type": "string",
+                        "description": "The name of the person who holds the proxy."
+                    },
+                    "RepresentedShareholder": {
+                        "type": "string",
+                        "description": "The name of the shareholder the proxy represents."
+                    }
+                }
+            },
+            "description": "Persons authorized to act on behalf of shareholders in voting. Extract names of proxy holders and the shareholders they represent. Look for terms like 'proxy', 'represented by', or 'authorized representative'."
+        },
+        "Dividend": {
+            "type": "string",
+            "description": "Information about any distribution of profits to shareholders. Extract details on declared dividends, amounts per share, payment dates, and any related announcements."
+        },
+        "FinancialStatements": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "IncomeStatement": {
+                        "type": "string",
+                        "description": "Extract data or summaries from the Income Statement, detailing revenues, expenses, and net income."
+                    },
+                    "BalanceSheet": {
+                        "type": "string",
+                        "description": "Extract data or summaries from the Balance Sheet, showing assets, liabilities, and shareholders' equity."
+                    },
+                    "CashFlowStatement": {
+                        "type": "string",
+                        "description": "Extract data or summaries from the Cash Flow Statement, outlining cash inflows and outflows from operating, investing, and financing activities."
+                    }
+                },
+                "description": "Official documents providing information about the company's financial performance and position. Extract key figures and summaries from each statement."
+            }
+        },
+        "ReportoftheDirectors": {
+            "type": "string",
+            "description": "A document prepared by the board providing information about the company's activities and performance during the year. Extract the full text of this report or key highlights, including discussions on operations, strategy, and outlook."
+        },
+        "ReportoftheAuditors": {
+            "type": "string",
+            "description": "A document prepared by auditors providing their opinion on the accuracy of the financial statements. Extract the auditors' report in full, including any qualifications, emphases, or confirmations of fair presentation."
+        },
+        "ElectionofDirectors": {
+            "type": "string",
+            "description": "Information about the process of choosing new board members. Extract details on nominations, candidates, voting results, and any changes to the board's composition. Look for phrases like 'Election of Directors', 'Board Appointments', or 'Board Changes'."
+        },
+        "AppointmentofAuditors": {
+            "type": "string",
+            "description": "Details about selecting or reappointing auditors for the company. Extract information on the appointed auditing firm, terms of engagement, and any related resolutions. Look for sections titled 'Appointment of Auditors' or 'Auditor Engagement'."
+        },
+        "RemunerationofDirectors": {
+            "type": "string",
+            "description": "Information on the payment and benefits received by directors. Extract details on salaries, bonuses, stock options, and other forms of compensation. Look for sections like 'Directors' Remuneration', 'Compensation Report', or 'Executive Pay'."
+        },
+        "AuthoritytoIssueShares": {
+            "type": "string",
+            "description": "Information about the board's power to issue new shares. Extract details on any resolutions granting this authority, including limits on amounts, timeframes, and purposes. Look for phrases like 'Authority to Allot Shares' or 'Share Issuance Authorization'."
+        },
+        "AuthoritytoBuyBackShares": {
+            "type": "string",
+            "description": "Details about the board's power to repurchase the company's own shares. Extract information on any approved buyback programs, including terms and conditions. Look for phrases like 'Share Buyback Authorization' or 'Repurchase of Shares'."
+        },
+        "SpecialBusiness": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "Items not included in the regular agenda but discussed due to their importance. Extract details on any special resolutions or motions brought up during the meeting. Look for sections titled 'Special Business' or unexpected topics addressed."
+        },
+        "AnyOtherBusiness": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "Additional items discussed at the meeting that were not specified in the agenda. Extract notes on miscellaneous topics, questions from attendees, or last-minute discussions. Look for phrases like 'Any Other Business', 'Open Discussion', or 'Questions and Answers'."
+        },
+        "ConfidenceScore": {
+            "type": "object",
+            "description": "Confidence levels indicating the reliability of the extracted values for each field.",
+            "properties": {
+                "Agenda": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "Minutes": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "Chairman": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "ReportDate": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "BoardofDirectors": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "Shareholders": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "Quorum": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "Resolutions": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "Voting": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "Proxy": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "Dividend": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "FinancialStatements": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "ReportoftheDirectors": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "ReportoftheAuditors": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "ElectionofDirectors": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "AppointmentofAuditors": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "RemunerationofDirectors": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "AuthoritytoIssueShares": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "AuthoritytoBuyBackShares": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "SpecialBusiness": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "AnyOtherBusiness": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                },
+                "Account": {
+                    "$ref": "#/definitions/ConfidenceScore"
+                }
+            }
+        }
+    },
+    "required": [
+        "Agenda",
+        "Account",
+        "Minutes",
+        "Chairman",
+        "ReportDate",
+        "BoardofDirectors",
+        "Shareholders",
+        "Quorum",
+        "Resolutions",
+        "Voting",
+        "Proxy",
+        "Dividend",
+        "FinancialStatements",
+        "ReportoftheDirectors",
+        "ReportoftheAuditors",
+        "ElectionofDirectors",
+        "AppointmentofAuditors",
+        "RemunerationofDirectors",
+        "AuthoritytoIssueShares",
+        "AuthoritytoBuyBackShares",
+        "SpecialBusiness",
+        "AnyOtherBusiness",
+        "ConfidenceScore"
+    ],
+    "definitions": {
+        "ConfidenceScore": {
+            "type": "string",
+            "enum": [
+                "HIGH",
+                "MID",
+                "LOW"
+            ],
+            "description": "A classification indicating the confidence level of the extracted value: 'HIGH' if the field name appears exactly as in the document, 'MID' if the key is semantically similar to the document's content, and 'LOW' if the value was inferred by the AI system without an exact match."
+        },
+        "VerbatimText": {
+            "type": "string",
+            "description": "The exact text excerpt extracted from the document for the corresponding field, without any additional formatting such as braces or brackets. For currency fields, include the relevant currency symbols present in the document."
+        }
+    }
+}

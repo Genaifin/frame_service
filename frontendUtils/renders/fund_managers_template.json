@@ -1,0 +1,65 @@
+{
+  "rowClickEnabled": true,
+  "rowClickAction": {
+    "type": "storeValues",
+    "store": {
+      "key": "commonRightDrawer",
+      "value": {
+        "page": "detailedInfo",
+        "getAPIURL": "funds/managers/details",
+        "parameters": [
+          {
+            "name": "fund_manager_id",
+            "value": "",
+            "dynamicValue": {
+              "enabled": true,
+              "id": "fundManagerID"
+            }
+          }
+        ],
+        "isOpen": true
+      }
+    }
+  },
+  "colsToShow": [
+    "fundManagerID",
+    "fundManagerName",
+    "contactName",
+    "createdDate",
+    "status"
+  ],
+  "columnConfig": {
+    "fundManagerID": {
+      "name": "Fund Manager ID",
+      "filter": "true",
+      "suppressHeaderMenuButton": false
+    },
+    "fundManagerName": {
+      "name": "Fund Manager Name",
+      "filter": "true",
+      "suppressHeaderMenuButton": false
+    },
+    "contactName": {
+      "name": "Contact Name",
+      "filter": "true",
+      "suppressHeaderMenuButton": false
+    },
+    "createdDate": {
+      "name": "Created Date",
+      "filter": "true",
+      "suppressHeaderMenuButton": false
+    },
+    "status": {
+      "name": "Status",
+      "filter": "true",
+      "customCellRenderer": "statusAggregator",
+      "suppressHeaderMenuButton": false
+    }
+  },
+  "rowData": [],
+  "pagination": {
+    "current_page": 1,
+    "page_size": 10,
+    "total_pages": 1
+  }
+}

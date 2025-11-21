@@ -1,0 +1,419 @@
+{
+  "sections": [
+    {
+      "id": "genaral-details",
+      "title": "GENERAL DETAILS",
+      "idToShow": "FUND0001",
+      "fields": [
+        {
+          "id": "fund-name",
+          "label": "Fund Name",
+          "placeholder": "Ex. Elliott Investment Management",
+          "defaultValue": "Elliott Investment Management",
+          "type": "text",
+          "width": "50%",
+          "required": true
+        },
+        {
+          "id": "fund-type",
+          "label": "Fund Type",
+          "placeholder": "Select Fund Type",
+          "defaultValue": "Hedge Fund",
+          "type": "select",
+          "options": [
+            "Hedge Fund",
+            "Private Equity Fund",
+            "Private credit Fund",
+            "REIT",
+            "Pension Fund",
+            "Mutual Fund"
+          ],
+          "width": "50%",
+          "required": true
+        },
+        {
+          "id": "fund-manager",
+          "label": "Fund Manager",
+          "placeholder": "Select Fund Manager",
+          "defaultValue": "Growth Asset Management",
+          "type": "select",
+          "options": [
+            "Capital X Asset Management Partners",
+            "Growth Asset Management",
+            "Silverline Capital Advisors",
+            "Pinnacle Investment Group",
+            "Innovative Equity Solutions",
+            "Future Wealth Partners",
+            "Blue Horizon Investments",
+            "Vertex Capital Management",
+            "Nexus Wealth Management",
+            "Summit Financial Services"
+          ],
+          "width": "50%",
+          "required": true
+        },
+        {
+          "id": "base-currency",
+          "label": "Base Currency",
+          "placeholder": "Select Base Currency",
+          "defaultValue": "USD - US Dollars",
+          "type": "select",
+          "options": ["USD - US Dollars", "INR - Indian Rupee"],
+          "width": "50%",
+          "required": true
+        },
+        {
+          "id": "fund-admins",
+          "type": "single-active-group",
+          "addButtonLabel": "Add another fund admin?",
+          "fields": [
+            {
+              "id": "fund-admin-1",
+              "type": "text",
+              "label": "Name of Fund Admin",
+              "placeholder": "Ex. Harborview Fund Services",
+              "defaultValue": "ClearLedger Solutions",
+              "isActive": false
+            },
+            {
+              "id": "fund-admin-2",
+              "type": "text",
+              "label": "Name of Fund Admin",
+              "placeholder": "Ex. Harborview Fund Services",
+              "defaultValue": "Harborview Fund Services",
+              "isActive": true
+            }
+          ],
+          "width": "50%",
+          "required": true
+        },
+        {
+          "id": "shadow-admins",
+          "type": "single-active-group",
+          "addButtonLabel": "Add another shadow?",
+          "fields": [
+            {
+              "id": "shadow-admin-1",
+              "type": "text",
+              "label": "Name of Shadow (Optional)",
+              "placeholder": "Ex. ClearLedger Solutions",
+              "defaultValue": "ClearLedger Solutions",
+              "isActive": true
+            }
+          ],
+          "width": "50%"
+        }
+      ],
+      "width": "100%"
+    },
+    {
+      "id": "lifecycle",
+      "title": "Lifecycle",
+      "fields": [
+        {
+          "id": "stage",
+          "label": "Stage",
+          "placeholder": "Select Stage",
+          "type": "select",
+          "options": [
+            "Receiving",
+            "Deployment",
+            "Monitoring",
+            "Harvesting",
+            "Wind-down"
+          ],
+          "defaultValue": "Deployment",
+          "width": "50%",
+          "required": true
+        },
+        {
+          "id": "inception-date",
+          "label": "Inception Date",
+          "placeholder": "DD/MM/YYYY",
+          "type": "date",
+          "defaultValue": "15/08/2022",
+          "width": "50%",
+          "required": true
+        },
+        {
+          "id": "investment-start-date",
+          "label": "Investment Start Date",
+          "placeholder": "DD/MM/YYYY",
+          "type": "date",
+          "defaultValue": "25/12/2024",
+          "width": "50%",
+          "required": true
+        },
+        {
+          "id": "subscription",
+          "label": "Commitment / Subscription",
+          "type": "unit-frequency",
+          "inputType": "number",
+          "defaultValue": "10000000",
+          "width": "50%",
+          "placeholder": "Enter Amount",
+          "unitLabel": "CCY"
+        }
+      ],
+      "width": "100%"
+    },
+    {
+      "id": "contact-details",
+      "title": "CONTACT DETAILS",
+      "fields": [
+        {
+          "id": "title",
+          "label": "Title",
+          "placeholder": "Ex. Mr.",
+          "defaultValue": "Mr.",
+          "type": "select",
+          "options": ["Mr.", "Ms.", "Mrs."],
+          "width": "12%",
+          "required": true
+        },
+        {
+          "id": "first-name",
+          "label": "First Name",
+          "placeholder": "Ex. John",
+          "defaultValue": "John",
+          "type": "text",
+          "width": "38%",
+          "required": true
+        },
+        {
+          "id": "last-name",
+          "label": "Last Name",
+          "placeholder": "Ex. Doe",
+          "defaultValue": "Doe",
+          "type": "text",
+          "width": "50%",
+          "required": true
+        },
+        {
+          "id": "email",
+          "label": "Email ID",
+          "placeholder": "Ex. johndoe@mail.com",
+          "defaultValue": "johndoe@mail.com",
+          "type": "text",
+          "width": "50%",
+          "required": true
+        },
+        {
+          "id": "contact-number",
+          "label": "Contact Number",
+          "placeholder": "Ex. +1 (123) 456-7890",
+          "defaultValue": "+1 (123) 456-7890",
+          "type": "telephone",
+          "width": "50%",
+          "required": true
+        }
+      ],
+      "width": "100%"
+    },
+    {
+      "id": "reporting-attributes",
+      "title": "Reporting Attributes",
+      "fields": [
+        {
+          "id": "sector",
+          "label": "Sector",
+          "placeholder": "Select Sector",
+          "defaultValue": "Technology",
+          "type": "select",
+          "options": [
+            "Technology",
+            "Healthcare",
+            "Industrials",
+            "Energy",
+            "Consumer Goods"
+          ],
+          "width": "50%",
+          "required": true
+        },
+        {
+          "id": "geography",
+          "label": "Geography",
+          "placeholder": "Select Geography",
+          "defaultValue": "USA",
+          "type": "select",
+          "options": [
+            "USA",
+            "Europe",
+            "Asia",
+            "Africa",
+            "Australia",
+            "Middle East",
+            "Central America",
+            "Southeast Asia"
+          ],
+          "width": "50%",
+          "required": true
+        },
+        {
+          "id": "strategy",
+          "label": "Strategy",
+          "placeholder": "Select Strategy",
+          "defaultValue": ["Global Macro", "Directional"],
+          "type": "select",
+          "options": [
+            "Global Macro",
+            "Directional",
+            "Event-driven",
+            "Relative Value (Arbitrage)"
+          ],
+          "multi": true,
+          "width": "50%",
+          "required": true
+        },
+        {
+          "id": "market-cap",
+          "label": "Market Cap",
+          "placeholder": "Select Market Cap",
+          "defaultValue": "Large Cap (500M+)",
+          "type": "select",
+          "options": [
+            "Large Cap (500M+)",
+            "Mid Cap ($101M-$500M)",
+            "Small Cap ($10M-$100M)"
+          ],
+          "width": "50%",
+          "required": true
+        },
+        {
+          "id": "benchmarks",
+          "label": "Benchmarks for Comparison",
+          "placeholder": "Select Benchmarks for Comparison",
+          "defaultValue": ["NASDAQ Composite", "S&P 500"],
+          "type": "select",
+          "options": [
+            {
+              "label": "Equity Indices",
+              "options": [
+                "S&P 500",
+                "MSCI World Index",
+                "MSCI Emerging Markets Index",
+                "NASDAQ Composite",
+                "Russell 1000",
+                "Russell 2000",
+                "MSCI ACWI",
+                "FTSE All-World Index",
+                "Dow Jones Industrial Average",
+                "STOXX Europe 600",
+                "FTSE 100",
+                "DAX 40",
+                "CAC 40",
+                "TOPIX",
+                "Nikkei 225",
+                "Hang Seng Index",
+                "S&P/TSX Composite",
+                "BSE Sensex / Nifty 50",
+                "CSI 300 Index",
+                "S&P Global 1200"
+              ]
+            },
+            {
+              "label": "Bond Indices",
+              "options": [
+                "Bloomberg U.S. Aggregate Bond Index",
+                "Bloomberg Global Aggregate Bond Index",
+                "ICE BofA Global Broad Market Index",
+                "J.P. Morgan EMBI Global",
+                "J.P. Morgan GBI-EM Global Diversified",
+                "ICE BofA U.S. Corporate Index",
+                "ICE BofA U.S. High Yield Index",
+                "Bloomberg U.S. Treasury Index",
+                "Bloomberg Euro Aggregate Bond Index",
+                "ICE BofA Euro High Yield Index",
+                "Bloomberg U.S. TIPS Index",
+                "FTSE World Government Bond Index (WGBI)",
+                "Bloomberg Emerging Markets USD Aggregate Index",
+                "ICE BofA U.S. Municipal Index",
+                "iBoxx USD Investment Grade Index",
+                "iBoxx USD High Yield Index",
+                "Bloomberg CMBS Index",
+                "Bloomberg ABS Index",
+                "Bloomberg MBS Index",
+                "Bloomberg MSCI Green Bond Index"
+              ]
+            },
+            {
+              "label": "OTC Indices",
+              "options": [
+                "Bloomberg U.S. Aggregate Bond Index",
+                "ICE BofA U.S. Corporate Index",
+                "ICE BofA U.S. High Yield Index",
+                "Bloomberg Global Aggregate Bond Index",
+                "J.P. Morgan EMBI Global",
+                "J.P. Morgan GBI-EM Global Diversified",
+                "ICE BofA Global Broad Market Index",
+                "Bloomberg U.S. TIPS Index",
+                "Bloomberg U.S. MBS Index",
+                "Bloomberg ABS Index",
+                "Bloomberg CMBS Index",
+                "ICE BofA U.S. Municipal Securities Index",
+                "FTSE WGBI",
+                "iBoxx USD Liquid Investment Grade Index",
+                "iBoxx USD High Yield Index",
+                "Bloomberg Euro Aggregate Bond Index",
+                "ICE BofA Euro High Yield Index",
+                "Bloomberg Emerging Markets USD Aggregate",
+                "Bloomberg MSCI Green Bond Index",
+                "Markit iBoxx Asia ex-Japan Bond Index"
+              ]
+            }
+          ],
+          "multi": true,
+          "width": "50%",
+          "required": true
+        },
+        {
+          "id": "additional-attribute-1",
+          "label": "Additional Attribute",
+          "placeholder": "Placeholder",
+          "defaultValue": "ABC",
+          "type": "text",
+          "width": "50%",
+          "isDynamic": true
+        }
+      ],
+      "addMore": {
+        "enabled": true,
+        "initialLabel": "Add more attributes?",
+        "labelAfterAddition": "Edit additional attributes?",
+        "title": "Additional Attributes",
+        "buttonText": "Add Attributes"
+      },
+      "width": "100%"
+    }
+  ],
+  "buttonText": "Update",
+  "onConfirmation": {
+    "title": "Edit Fund",
+    "description": "Are you sure you want to update Elliott Investment Management?",
+    "buttonText": "Update",
+    "clickAction": {
+      "type": "putData",
+      "putAPIURL": "funds",
+      "actionAfterAPICall": {
+        "type": "navigation",
+        "to": "/frame",
+        "parameters": [
+          {
+            "key": "page",
+            "value": "FundMasterDetail"
+          },
+          {
+            "key": "fund_id",
+            "value": "",
+            "dynamicValue": {
+              "enabled": true,
+              "id": "fund_id",
+              "source": "url"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
+

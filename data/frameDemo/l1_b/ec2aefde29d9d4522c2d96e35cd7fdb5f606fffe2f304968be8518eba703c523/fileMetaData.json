@@ -1,0 +1,16 @@
+{
+  "typeName": "application/pdf",
+  "fileHash": "ec2aefde29d9d4522c2d96e35cd7fdb5f606fffe2f304968be8518eba703c523",
+  "fileOriginalName": "sampleDocument3.pdf",
+  "fileOriginalPath": "data\\frameDemo\\l0\\sampleDocument3.pdf",
+  "typeSpecificParams": {
+    "numPages": 2,
+    "EXIF": {
+      "/Producer": "Aspose.Cells v21.2; modified using iText\u00ae 5.5.11 \u00a92000-2017 iText Group NV (AGPL-version)",
+      "/Creator": "Aspose.Cells",
+      "/CreationDate": "2023-08-03T21:57:14.000Z",
+      "/ModDate": "2023-08-17T07:16:58.000Z",
+      "/Title": ""
+    }
+  }
+}

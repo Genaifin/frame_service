@@ -1,0 +1,17 @@
+{
+  "typeName": "application/pdf",
+  "fileHash": "1965f3f4e5cb8db228fafe59fde7029b8a8f2a1b68f70d6200b5fe69a58b4f7e",
+  "fileOriginalName": "06.2024 OPEB C&B 2172000078.PDF",
+  "fileOriginalPath": "data/frameDemo/l0/06.2024 OPEB C&B 2172000078.PDF",
+  "typeSpecificParams": {
+    "numPages": 43,
+    "EXIF": {
+      "/Author": "\"TRUIST Financial - New Regular EBR1\"",
+      "/CreationDate": "2024-07-03T21:29:38.000Z",
+      "/Creator": "Ricoh Americas Corporation, AFP2PDF Plus Version: 1.300.14",
+      "/ModDate": "2024-07-03T21:29:38.000Z",
+      "/MSDH34TAG": ".TEZUF76X5TAHATHESADREYAK-00-CLA190+*99190-10=plaistow,MD=20241205092405/-0500,TC=plaistow,ZZ=000I-46f4.",
+      "/Producer": "Ricoh Americas Corporation, AFP2PDF Plus Version: 1.300.14, Linux"
+    }
+  }
+}

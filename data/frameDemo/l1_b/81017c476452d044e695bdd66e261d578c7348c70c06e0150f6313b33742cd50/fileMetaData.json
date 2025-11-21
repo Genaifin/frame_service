@@ -1,0 +1,19 @@
+{
+  "typeName": "application/pdf",
+  "fileHash": "81017c476452d044e695bdd66e261d578c7348c70c06e0150f6313b33742cd50",
+  "fileOriginalName": "sampleDocument1.pdf",
+  "fileOriginalPath": "data\\frameDemo\\l0\\sampleDocument1.pdf",
+  "typeSpecificParams": {
+    "numPages": 159,
+    "EXIF": {
+      "/Keywords": "GUID:XXXXX9662",
+      "/Creator": "Actuate e.Reports",
+      "/ModDate": "2024-05-05T16:05:37.000Z",
+      "/CreationDate": "2024-05-05T16:05:29.000Z",
+      "/Subject": "",
+      "/Producer": "Actuate PDF Writer 2.1; modified using iText\u00ae 5.5.6 \u00a92000-2015 iText Group NV (AGPL-version)",
+      "/Author": "Actuate Corporation",
+      "/Title": ""
+    }
+  }
+}

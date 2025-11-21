@@ -1,0 +1,26 @@
+{
+  "typeName": "application/pdf",
+  "fileHash": "f2a5ffa9cad1a7fbd43dd3b5c911cda33d568d9acaa047eca0050cf441c94b47",
+  "fileOriginalName": "235-050193 - 103 - Dec2024.pdf",
+  "fileOriginalPath": "data/frameDemo/l0/235-050193 - 103 - Dec2024.pdf",
+  "typeSpecificParams": {
+    "numPages": 10,
+    "EXIF": {
+      "/Author": "UPT",
+      "/CreationDate": "2025-02-01T08:36:09.000Z",
+      "/Creator": "The Portable Document Format (PDF) Tool",
+      "/ModDate": "2025-02-20T14:12:22.000Z",
+      "/MSDH34TAG": ".TEZUF76X5TAHATHESADREYAK-00-CLA190+*99190-10=plaistow,MD=20250401162211/-0400,TC=plaistow,ZZ=000I-c9c1.",
+      "/MSIP_Label_07f119e6-c6cd-44b0-a5ee-ac1aff68c56e_ActionId": "52c6935c-1a4d-4f73-b665-c63cb47ad69d",
+      "/MSIP_Label_07f119e6-c6cd-44b0-a5ee-ac1aff68c56e_ContentBits": "0",
+      "/MSIP_Label_07f119e6-c6cd-44b0-a5ee-ac1aff68c56e_Enabled": "true",
+      "/MSIP_Label_07f119e6-c6cd-44b0-a5ee-ac1aff68c56e_Method": "Privileged",
+      "/MSIP_Label_07f119e6-c6cd-44b0-a5ee-ac1aff68c56e_Name": "Confidential v1",
+      "/MSIP_Label_07f119e6-c6cd-44b0-a5ee-ac1aff68c56e_SetDate": "2025-02-20T14:10:06Z",
+      "/MSIP_Label_07f119e6-c6cd-44b0-a5ee-ac1aff68c56e_SiteId": "e29b8111-49f8-418d-ac2a-935335a52614",
+      "/Producer": "iText 2.1.7 by 1T3XT",
+      "/Subject": "Plan Allocation Package - As of20241231",
+      "/Title": "Plan Allocation Package"
+    }
+  }
+}

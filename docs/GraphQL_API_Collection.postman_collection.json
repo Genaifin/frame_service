@@ -1,0 +1,1017 @@
+{
+  "info": {
+    "name": "GraphQL API Collection",
+    "_postman_id": "graphql-api-collection-2024",
+    "description": "Complete GraphQL API collection for Authentication, Users, Clients, Roles, Fund Managers, Investors, and Documents. All requests use POST method to http://localhost:8000/v2",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{access_token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"mutation Login($input: LoginInput!) { login(input: $input) { success message accessToken tokenType expiresIn username displayName role } }\",\n  \"variables\": {\n    \"input\": {\n      \"username\": \"demo\",\n      \"password\": \"demo_aithon\"\n    }\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"mutation Logout { logout { success message username } }\",\n  \"variables\": {}\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Refresh Token",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"mutation RefreshToken { refreshToken { success message accessToken tokenType expiresIn } }\",\n  \"variables\": {}\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Change Password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"mutation ChangePassword($input: PasswordChangeInput!) { changePassword(input: $input) { success message username displayName role } }\",\n  \"variables\": {\n    \"input\": {\n      \"currentPassword\": \"oldpassword\",\n      \"newPassword\": \"newpassword123\"\n    }\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Current User (Me)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"query Me { me { username displayName role isActive } }\",\n  \"variables\": {}\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Check Auth Status",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"query AuthStatus { authStatus { isAuthenticated message } }\",\n  \"variables\": {}\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "User Management",
+      "item": [
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"query GetUsers($limit: Int, $offset: Int, $search: String) { users(limit: $limit, offset: $offset, search: $search) { id username email displayName firstName lastName isActive role { roleName roleCode } client { name code } } }\",\n  \"variables\": {\n    \"limit\": 10,\n    \"offset\": 0,\n    \"search\": \"\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get User Edit Form",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"query GetUserEditForm($userId: Int!) { userEditForm(userId: $userId) { id username email displayName firstName lastName isActive role { roleName roleCode } client { name code } } }\",\n  \"variables\": {\n    \"userId\": 1\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"mutation CreateUser($input: UserCreateInput!) { createUser(input: $input) { id username email displayName firstName lastName isActive } }\",\n  \"variables\": {\n    \"input\": {\n      \"firstName\": \"John\",\n      \"lastName\": \"Doe\",\n      \"email\": \"john@example.com\",\n      \"jobTitle\": \"Developer\",\n      \"roleId\": 1,\n      \"clientId\": 1\n    }\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"mutation UpdateUser($userId: Int!, $input: UserUpdateInput!) { updateUser(userId: $userId, input: $input) { id displayName firstName lastName isActive } }\",\n  \"variables\": {\n    \"userId\": 1,\n    \"input\": {\n      \"firstName\": \"John Updated\",\n      \"lastName\": \"Doe\",\n      \"email\": \"john.updated@example.com\",\n      \"jobTitle\": \"Senior Developer\"\n    }\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Toggle User Status",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"mutation ToggleUserStatus($userId: Int!) { toggleUserStatus(userId: $userId) { id displayName isActive } }\",\n  \"variables\": {\n    \"userId\": 1\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Users Bulk",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"mutation CreateUsersBulk($input: BulkUserCreateInput!) { createUsersBulk(input: $input) { id username displayName firstName lastName email } }\",\n  \"variables\": {\n    \"input\": {\n      \"forms\": {\n        \"form1\": {\n          \"firstName\": \"User1\",\n          \"lastName\": \"Test\",\n          \"email\": \"user1@test.com\",\n          \"jobTitle\": \"Developer\",\n          \"roleId\": 1,\n          \"clientId\": 1\n        },\n        \"form2\": {\n          \"firstName\": \"User2\",\n          \"lastName\": \"Test\",\n          \"email\": \"user2@test.com\",\n          \"jobTitle\": \"Developer\",\n          \"roleId\": 1,\n          \"clientId\": 1\n        }\n      }\n    }\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Client Management",
+      "item": [
+        {
+          "name": "Get All Clients",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"query GetClients($limit: Int, $offset: Int, $search: String) { clients(limit: $limit, offset: $offset, search: $search) { id name code description type isActive createdAt } }\",\n  \"variables\": {\n    \"limit\": 10,\n    \"offset\": 0,\n    \"search\": \"\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Client Details",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"query GetClientDetails($clientId: Int!) { clientDetails(clientId: $clientId) { id name code description type userCount users { id displayName email } } }\",\n  \"variables\": {\n    \"clientId\": 1\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Client",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"mutation CreateClient($input: ClientCreateInput!) { createClient(input: $input) { id name code description type isActive } }\",\n  \"variables\": {\n    \"input\": {\n      \"name\": \"New Client\",\n      \"code\": \"NC001\",\n      \"description\": \"A new client\",\n      \"type\": \"enterprise\"\n    }\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Client",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"mutation UpdateClient($clientId: Int!, $input: ClientUpdateInput!) { updateClient(clientId: $clientId, input: $input) { id name description isActive } }\",\n  \"variables\": {\n    \"clientId\": 1,\n    \"input\": {\n      \"name\": \"Updated Client Name\",\n      \"description\": \"Updated description\"\n    }\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Toggle Client Status",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"mutation ToggleClientStatus($clientId: Int!) { toggleClientStatus(clientId: $clientId) { id name isActive } }\",\n  \"variables\": {\n    \"clientId\": 1\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Role Management",
+      "item": [
+        {
+          "name": "Get All Roles",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"query GetRoles($limit: Int, $offset: Int, $search: String) { roles(limit: $limit, offset: $offset, search: $search) { id roleName roleCode description isActive createdAt } }\",\n  \"variables\": {\n    \"limit\": 10,\n    \"offset\": 0,\n    \"search\": \"\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Role Details",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"query GetRoleDetails($roleId: Int!) { roleDetails(roleId: $roleId) { id roleName roleCode description isActive userCount users { id displayName email } modulePermissions } }\",\n  \"variables\": {\n    \"roleId\": 1\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Roles Summary",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"query GetRolesSummary($page: Int, $pageSize: Int) { rolesSummary(page: $page, pageSize: $pageSize) { roleId roleName roleCode totalUsers products status isActive } }\",\n  \"variables\": {\n    \"page\": 1,\n    \"pageSize\": 10\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Role",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"mutation CreateRole($input: RoleCreateInput!) { createRole(input: $input) { id roleName roleCode description isActive } }\",\n  \"variables\": {\n    \"input\": {\n      \"roleName\": \"New Role\",\n      \"roleCode\": \"NR001\",\n      \"description\": \"A new role\",\n      \"modulePermissions\": [\n        {\n          \"moduleId\": 1,\n          \"canView\": true,\n          \"canEdit\": false\n        }\n      ]\n    }\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Role",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"mutation UpdateRole($roleId: Int!, $input: RoleUpdateInput!) { updateRole(roleId: $roleId, input: $input) { id roleName description isActive } }\",\n  \"variables\": {\n    \"roleId\": 1,\n    \"input\": {\n      \"roleName\": \"Updated Role Name\",\n      \"description\": \"Updated description\",\n      \"modulePermissions\": [\n        {\n          \"moduleId\": 1,\n          \"canView\": true,\n          \"canEdit\": true\n        }\n      ]\n    }\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Activate Role",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"mutation ActivateRole($roleId: Int!) { activateRole(roleId: $roleId) { id roleName isActive } }\",\n  \"variables\": {\n    \"roleId\": 1\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Deactivate Role",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"mutation DeactivateRole($roleId: Int!) { deactivateRole(roleId: $roleId) { id roleName isActive } }\",\n  \"variables\": {\n    \"roleId\": 1\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Fund Manager Management",
+      "item": [
+        {
+          "name": "Get All Fund Managers",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"query GetFundManagers($search: String, $statusFilter: String, $limit: Int, $offset: Int) { fundManagers(search: $search, statusFilter: $statusFilter, limit: $limit, offset: $offset) { id fundManagerName contactTitle contactFirstName contactLastName contactEmail contactNumber status createdAt updatedAt } }\",\n  \"variables\": {\n    \"search\": \"\",\n    \"statusFilter\": \"active\",\n    \"limit\": 10,\n    \"offset\": 0\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Fund Manager",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"mutation CreateFundManager($input: FundManagerCreateInput!) { createFundManager(input: $input) { id fundManagerName contactTitle contactFirstName contactLastName contactEmail contactNumber status createdAt } }\",\n  \"variables\": {\n    \"input\": {\n      \"fundManagerName\": \"New Fund Manager\",\n      \"contactTitle\": \"Mr.\",\n      \"contactFirstName\": \"John\",\n      \"contactLastName\": \"Doe\",\n      \"contactEmail\": \"john@fundmanager.com\",\n      \"contactNumber\": \"+1234567890\"\n    }\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Fund Manager",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"mutation UpdateFundManager($fundManagerId: Int!, $input: FundManagerUpdateInput!) { updateFundManager(fundManagerId: $fundManagerId, input: $input) { id fundManagerName contactTitle contactFirstName contactLastName contactEmail contactNumber status updatedAt } }\",\n  \"variables\": {\n    \"fundManagerId\": 1,\n    \"input\": {\n      \"fundManagerName\": \"Updated Fund Manager\",\n      \"contactEmail\": \"updated@fundmanager.com\"\n    }\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Toggle Fund Manager Status",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"mutation ToggleFundManagerStatus($fundManagerId: Int!) { toggleFundManagerStatus(fundManagerId: $fundManagerId) { id fundManagerName status updatedAt } }\",\n  \"variables\": {\n    \"fundManagerId\": 1\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Investor Management",
+      "item": [
+        {
+          "name": "Get All Investors",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"query GetInvestors($id: Int, $search: String, $statusFilter: String, $investorType: String, $kycStatus: String, $limit: Int, $offset: Int) { investors(id: $id, search: $search, statusFilter: $statusFilter, investorType: $investorType, kycStatus: $kycStatus, limit: $limit, offset: $offset) { id investorName accountName accountNumber contactEmail contactNumber investorType kycStatus isActive createdAt } }\",\n  \"variables\": {\n    \"search\": \"\",\n    \"statusFilter\": \"active\",\n    \"limit\": 10,\n    \"offset\": 0\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Investor Edit Form",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"query GetInvestorEditForm($investorId: Int!) { investorEditForm(investorId: $investorId) { id investorName accountName accountNumber contactTitle contactFirstName contactLastName contactEmail contactNumber city state country investorType taxId kycStatus riskProfile isActive } }\",\n  \"variables\": {\n    \"investorId\": 1\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Fund Investors",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"query GetFundInvestors($fundId: Int, $investorId: Int, $limit: Int, $offset: Int) { fundInvestors(fundId: $fundId, investorId: $investorId, limit: $limit, offset: $offset) { id fundId investorId investmentAmount investmentDate investmentType unitsHeld unitPrice isActive } }\",\n  \"variables\": {\n    \"fundId\": 1,\n    \"limit\": 10,\n    \"offset\": 0\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Investor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"mutation CreateInvestor($input: InvestorCreateInput!) { createInvestor(input: $input) { id investorName accountName accountNumber contactEmail investorType kycStatus isActive createdAt } }\",\n  \"variables\": {\n    \"input\": {\n      \"investorName\": \"New Investor\",\n      \"accountName\": \"INV-001\",\n      \"accountNumber\": \"ACC123456\",\n      \"contactEmail\": \"investor@example.com\",\n      \"investorType\": \"Individual\",\n      \"kycStatus\": \"pending\"\n    }\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Investor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"mutation UpdateInvestor($investorId: Int!, $input: InvestorUpdateInput!) { updateInvestor(investorId: $investorId, input: $input) { id investorName accountName contactEmail investorType kycStatus isActive } }\",\n  \"variables\": {\n    \"investorId\": 1,\n    \"input\": {\n      \"investorName\": \"Updated Investor\",\n      \"contactEmail\": \"updated@example.com\",\n      \"kycStatus\": \"verified\"\n    }\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Toggle Investor Status",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"mutation ToggleInvestorStatus($investorId: Int!) { toggleInvestorStatus(investorId: $investorId) { id investorName isActive } }\",\n  \"variables\": {\n    \"investorId\": 1\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Fund Investor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"mutation CreateFundInvestor($input: FundInvestorCreateInput!) { createFundInvestor(input: $input) { id fundId investorId investmentAmount investmentDate investmentType unitsHeld unitPrice isActive } }\",\n  \"variables\": {\n    \"input\": {\n      \"fundId\": 1,\n      \"investorId\": 1,\n      \"investmentAmount\": 100000,\n      \"investmentDate\": \"2024-01-15\",\n      \"investmentType\": \"equity\",\n      \"unitsHeld\": 1000,\n      \"unitPrice\": 100\n    }\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Fund Investor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"mutation UpdateFundInvestor($mappingId: Int!, $input: FundInvestorUpdateInput!) { updateFundInvestor(mappingId: $mappingId, input: $input) { id fundId investorId investmentAmount unitsHeld unitPrice } }\",\n  \"variables\": {\n    \"mappingId\": 1,\n    \"input\": {\n      \"investmentAmount\": 150000,\n      \"unitsHeld\": 1500,\n      \"unitPrice\": 100\n    }\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Toggle Fund Investor Status",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"mutation ToggleFundInvestorStatus($mappingId: Int!) { toggleFundInvestorStatus(mappingId: $mappingId) { id fundId investorId isActive } }\",\n  \"variables\": {\n    \"mappingId\": 1\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Document Management",
+      "item": [
+        {
+          "name": "Get All Documents",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"query GetDocuments($filter: DocumentFilterInput, $limit: Int, $offset: Int) { documents(filter: $filter, limit: $limit, offset: $offset) { success message total documents { id name type path size status fundId uploadDate replay createdBy isActive } } }\",\n  \"variables\": {\n    \"filter\": {\n      \"fundId\": 1\n    },\n    \"limit\": 10,\n    \"offset\": 0\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Document by ID",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"query GetDocument($documentId: Int!) { document(documentId: $documentId) { success message document { id name type path size status fundId uploadDate replay createdBy metadata isActive createdAt updatedAt } } }\",\n  \"variables\": {\n    \"documentId\": 1\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Documents by Fund",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"query GetDocumentsByFund($fundId: Int!, $limit: Int, $offset: Int) { documentsByFund(fundId: $fundId, limit: $limit, offset: $offset) { success message total documents { id name type path status uploadDate replay isActive } } }\",\n  \"variables\": {\n    \"fundId\": 1,\n    \"limit\": 10,\n    \"offset\": 0\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Document",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"mutation CreateDocument($input: DocumentCreateInput!) { createDocument(input: $input) { success message document { id name type path size status fundId replay createdBy isActive } } }\",\n  \"variables\": {\n    \"input\": {\n      \"name\": \"New Document\",\n      \"type\": \"statement\",\n      \"path\": \"/documents/statement.pdf\",\n      \"size\": 1024000,\n      \"fundId\": 1,\n      \"replay\": false\n    }\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Document",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"mutation UpdateDocument($documentId: Int!, $input: DocumentUpdateInput!) { updateDocument(documentId: $documentId, input: $input) { success message document { id name type status fundId isActive updatedAt } } }\",\n  \"variables\": {\n    \"documentId\": 1,\n    \"input\": {\n      \"name\": \"Updated Document\",\n      \"status\": \"processed\"\n    }\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Toggle Document Status",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"mutation ToggleDocumentStatus($documentId: Int!) { toggleDocumentStatus(documentId: $documentId) { success message document { id name isActive } } }\",\n  \"variables\": {\n    \"documentId\": 1\n  }\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/v2",
+              "host": ["{{base_url}}"],
+              "path": ["v2"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://10.0.137.5",
+      "type": "string"
+    },
+    {
+      "key": "access_token",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}
+

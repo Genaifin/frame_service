@@ -1,0 +1,21 @@
+{
+  "typeName": "application/pdf",
+  "fileHash": "06aadf38e3b3a6f66d6966fa36963253d487135f6be40a721eb85e5304eb86d5",
+  "fileOriginalName": "samplePPM_1.pdf",
+  "fileOriginalPath": "data\\frameDemo\\l0\\samplePPM_1.pdf",
+  "typeSpecificParams": {
+    "numPages": 23,
+    "EXIF": {
+      "/Company": "Maples and Calder",
+      "/CreationDate": "2024-01-24T17:13:27.000",
+      "/Creator": "Acrobat PDFMaker 15 for Word",
+      "/DocXFormat": "Standard",
+      "/DocXLocation": "Every Page (skip First Page)",
+      "/ModDate": "2024-01-29T05:14:53.000Z",
+      "/Producer": "Adobe PDF Library 15.0; modified using iText\u00ae 5.5.11 \u00a92000-2017 iText Group NV (AGPL-version)",
+      "/SourceModified": "D:20240124165144",
+      "/docIndexRef": "9d2b7121-1e04-470e-9752-de76e954f655",
+      "/Title": ""
+    }
+  }
+}

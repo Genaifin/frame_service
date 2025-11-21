@@ -1,0 +1,15 @@
+{
+  "typeName": "application/pdf",
+  "fileHash": "4734ae970fd11820ed6f3981160cc61950d549f1c778fc4bf4ae8d21f859be8a",
+  "fileOriginalName": "sampleFinancialStatement2.pdf",
+  "fileOriginalPath": "data\\frameDemo\\l0\\sampleFinancialStatement2.pdf",
+  "typeSpecificParams": {
+    "numPages": 24,
+    "EXIF": {
+      "/CreationDate": "2025-03-05T13:40:25.000Z",
+      "/Creator": "Microsoft\u00ae Word for Microsoft 365",
+      "/ModDate": "2025-03-05T13:45:56.000Z",
+      "/Producer": "Microsoft\u00ae Word for Microsoft 365"
+    }
+  }
+}

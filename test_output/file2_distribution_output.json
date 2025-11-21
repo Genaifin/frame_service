@@ -1,0 +1,496 @@
+{
+    "doc_id": "25d7712b-3940-4a65-8320-2542f591b1c8",
+    "task_id": "90b043a9-ded9-4957-9362-13c3fb1a6772",
+    "ext_doc_id": null,
+    "original_filename": "file2_distribution.pdf",
+    "pipeline_status": "Completed_With_Error",
+    "error_message": "Bounding box extraction failed: Tesseract is not available for OCR processing",
+    "is_scanned": false,
+    "raw_text": "1 of 1\n ILPA Standards Committee:  Capital Call & Distribution Template\n2.01 Fund Name\nEnCap Energy Capital Fund X, L.P.\nSection A:  Fund Level  / Cash Flow Information (Fund Local Currency)\n2.02 Issue Date (MM/DD/YYYY):\n06/09/2025\n2.03 Due Date (MM/DD/YYYY):\n06/10/2025\n2.04 Fund Local Currency:\nUSD\n2.05 GP Commitment\n201,030,927.84\n2.06 Fund Size, Including all AIVs (Fund Local Currency):\n6,701,030,927.84\nFund Aggregate Calls / Distributions (Incl. GP's Share)\nContributions\n(Distributions)\n2.07 Cumulative Fund Amount (Prior To Current Notice)1:\n7,018,526,063.44\n(12,552,200,964.19)\n2.08 Fund Amount (Current Notice)\n-\n(46,483,528.20)\nCumulative Fund Amount (Including Current Notice):\n7,018,526,063.44\n(12,598,684,492.39)\nSection B:  LP Information (Fund Local Currency) - Enter All Values as Positive Amounts \n2.09 LP Name / ID Number:\nThe Cleveland Foundation\n2.10 LP Commitment:\n3,000,000.00\n        LP % of Fund (LP Commitment / Fund Size)\n0.044769%\n2.11 LP % of Cap. Account (% of NAV)\n0.035815%\n2.12 LP Unfunded Commitment1 (Prior to current notice)\n116,089.07\n2.13 LP Cumulative Contributions1,2 (Prior to current notice)\n3,142,140.23\n2.14 LP Cumulative Distributions1,2 (Prior to current notice)\n5,124,339.80\nLP Balances / Totals (Fund Local Currency) - Formulas, Do Not Overwrite\n2.19 Unfunded Commitment\nUnfunded Balance (Prior to Current Notice)\n116,089.07\nImpact on Unfunded Balance (Current Notice)\n-\nUnfunded Balance (Including Current Notice)\n116,089.07\nAggregate Calls / Distributions\nContributions\n(Distributions)\n2.20 Cumulative LP Amount (Prior To Current Notice)1,2:\n3,142,140.23\n(5,124,339.80)\nas a % of Fund Amount2\n0.044769%\n0.040824%\n2.21 LP Amount (Current Notice):\n-\n(16,648.25)\nas a % of Fund Amount\n0.000000%\n0.035815%\n2.22 Cumulative LP Amount (Including Current Notice)2:\n3,142,140.23\n(5,140,988.05)\nas a % of Fund Amount2\n0.044769%\n0.040806%\n2.23 LP Total Net Amount Called / (Distributed) -\n Current Notice\n(17,619.25)\n1If value does not match the ending balance from the prior notice, please provide a description for the variance in a side calculation (Section D - 2.28)\n2Due to variations in the definitions used by different funds, these balances may not necessarily tie to cumulative contributions/distributions reported in quarterly fund financials; Do not use these balances to calculate performance multiples (e.g. DPI)\nSection C:  Worksheet - LP Amounts (Fund Local Currency) - Please include any transactions that net to zero\n2.15 Holding Name / Transaction Description\n(If applicable, please provide a 2-3 word description of each\ntransaction, particularly for misc. fees or income)\n2.16 Transaction Type\n(Choose from Dropdown)\n2.17 LP Amount\n(Enter all Values as\nPositive Amounts)\n2.18 Impact to Unfunded Commitment\n(Choose from Dropdown)\nValue Impact to\nUnfunded Commitment\n(Net Contributed)\nNet Amount Called\n/ (Distributed) -\nCurrent Notice\nOperations\nDist: Carry\n4,162.06\nNo Impact\n0.00\n4,162.06\nStaghorn Petroleum, LLC\nDist: Income/Dividends\n51.48\nNo Impact\n0.00\n(51.48)\nMorita Ranches Holdings, LLC (OGX IV - Quinn Ranch)\nDist: Income/Dividends\n616.93\nNo Impact\n0.00\n(616.93)\nOperations\nDist: Taxes Withheld - State\n971.00\nNo Impact\n0.00\n(971.00)\nNovo Oil & Gas Holdings, LLC\nDist: Income/Dividends\n1,477.38\nNo Impact\n0.00\n(1,477.38)\nPlains All American Pipeline, LP\nDist: Interest\n3,492.16\nNo Impact\n0.00\n(3,492.16)\nVerdun Oil Company, LLC\nDist: Income/Dividends\n5,730.46\nNo Impact\n0.00\n(5,730.46)\nEnCap Minerals Holdings, LLC\nDist: Income/Dividends\n9,441.90\nNo Impact\n0.00\n(9,441.90)\n",
+    "cleaned_text": "1 of 1 ILPA Standards Committee: CapitaI CaII & Distribution TempIate 2.01 Fund Name EnCap Energy CapitaI Fund X, L.P. Section A: Fund LeveI / Cash FIow Information (Fund LocaI Currency) 2.02 Issue Date (MM/DD/YYYY): 06/09/2025 2.03 Due Date (MM/DD/YYYY): 06/10/2025 2.04 Fund LocaI Currency: USD 2.05 GP Commitment 201030,927.84 2.06 Fund Size, IncIuding aII AIVs (Fund LocaI Currency): 6701,030927.84 Fund Aggregate CaIIs / Distributions (IncI. GP's Share) Contributions (Distributions) 2.07 CumuIative Fund Amount (Prior To Current Notice)1: 7018,526063.44 (12552,200964.19) 2.08 Fund Amount (Current Notice) - (46483,528.20) CumuIative Fund Amount (IncIuding Current Notice): 7018,526063.44 (12598,684492.39) Section B: LP Information (Fund LocaI Currency) - Enter AII VaIues as Positive Amounts 2.09 LP Name / ID Number: The CIeveIand Foundation 2.10 LP Commitment: 3000,000.00 LP % of Fund (LP Commitment / Fund Size) 0.044769 percent 2.11 LP % of Cap. Account (% of NAV) 0.035815 percent 2.12 LP Unfunded Commitment1 (Prior to current notice) 116089.07 2.13 LP CumuIative Contributions1,2 (Prior to current notice) 3142,140.23 2.14 LP CumuIative Distributions1,2 (Prior to current notice) 5124,339.80 LP BaIances / TotaIs (Fund LocaI Currency) - FormuIas, Do Not 0verwrite 2.19 Unfunded Commitment Unfunded BaIance (Prior to Current Notice) 116089.07 Impact on Unfunded BaIance (Current Notice) - Unfunded BaIance (IncIuding Current Notice) 116089.07 Aggregate CaIIs / Distributions Contributions (Distributions) 2.20 CumuIative LP Amount (Prior To Current Notice)1,2: 3142,140.23 (5124,339.80) as a % of Fund Amount2 0.044769 percent 0.040824 percent 2.21 LP Amount (Current Notice): - (16648.25) as a % of Fund Amount 0.000000 percent 0.035815 percent 2.22 CumuIative LP Amount (IncIuding Current Notice)2: 3142,140.23 (5140,988.05) as a % of Fund Amount2 0.044769 percent 0.040806 percent 2.23 LP TotaI Net Amount CaIIed / (Distributed) - Current Notice (17619.25) 1If vaIue does not match the ending baIance from the prior notice, pIease provide a description for the variance in a side caIcuIation (Section D - 2.28) 2Due to variations in the definitions used by different funds, these baIances may not necessariIy tie to cumuIative contributions/distributions reported in quarterIy fund financiaIs; Do not use these baIances to caIcuIate performance muItipIes (e.g. DPI) Section C: Worksheet - LP Amounts (Fund LocaI Currency) - PIease incIude any transactions that net to zero 2.15 HoIding Name / Transaction Description (If appIicabIe, pIease provide a 2-3 word description of each transaction, particuIarIy for misc. fees or income) 2.16 Transaction Type (Choose from Dropdown) 2.17 LP Amount (Enter aII VaIues as Positive Amounts) 2.18 Impact to Unfunded Commitment (Choose from Dropdown) VaIue Impact to Unfunded Commitment (Net Contributed) Net Amount CaIIed / (Distributed) - Current Notice 0perations Dist: Carry 4162.06 No Impact 0.00 4162.06 Staghorn PetroIeum, LLC Dist: Income/Dividends 51.48 No Impact 0.00 (51.48) Morita Ranches HoIdings, LLC (0GX IV - Quinn Ranch) Dist: Income/Dividends 616.93 No Impact 0.00 (616.93) 0perations Dist: Taxes WithheId - State 971.00 No Impact 0.00 (971.00) Novo 0iI & Gas HoIdings, LLC Dist: Income/Dividends 1477.38 No Impact 0.00 (1477.38) PIains AII American PipeIine, LP Dist: Interest 3492.16 No Impact 0.00 (3492.16) Verdun 0iI Company, LLC Dist: Income/Dividends 5730.46 No Impact 0.00 (5730.46) EnCap MineraIs HoIdings, LLC Dist: Income/Dividends 9441.90 No Impact 0.00 (9441.90)",
+    "classification_modality": "hybrid_classification",
+    "document_type": "Distribution",
+    "classification_confidence": 0.85,
+    "extracted_data": {
+        "entities": [
+            {
+                "portfolio": [
+                    {
+                        "Investor": {
+                            "Value": "The Cleveland Foundation",
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "The CIeveIand Foundation",
+                            "BoundingBox": null,
+                            "PageNumber": 1
+                        },
+                        "Account": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "InvestorRefID": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "AccountRefID": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Fund_ID": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Series_ID": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Series_Description": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Security": {
+                            "Value": "EnCap Energy CapitaI Fund X, L.P.",
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "EnCap Energy CapitaI Fund X, L.P.",
+                            "BoundingBox": null,
+                            "PageNumber": 1
+                        },
+                        "TransactionDate": {
+                            "Value": "2025-06-09",
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "06/09/2025",
+                            "BoundingBox": null,
+                            "PageNumber": 1
+                        },
+                        "Currency": {
+                            "Value": "USD",
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "USD",
+                            "BoundingBox": null,
+                            "PageNumber": 1
+                        },
+                        "Distribution": {
+                            "Value": 16648.25,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "(16648.25)",
+                            "BoundingBox": null,
+                            "PageNumber": 1
+                        },
+                        "DeemeedCapitalCall": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "IncomeDistribution": {
+                            "Value": 17317.15,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "51.48, 616.93, 1477.38, 5730.46, 9441.90",
+                            "BoundingBox": null,
+                            "PageNumber": 1
+                        },
+                        "IncomeReinvested": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "RecallableSell": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "ReturnOfCapital": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "DistributionOutsideCommitment": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "CapitalCall": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "CapitalCallOutsideCommitment": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "NetCashFlowQC": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "TransferOut": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Quantity": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Price": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "RemainingCommittedCapital": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "DistributionsToDate": {
+                            "Value": 5140988.05,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "5140,988.05",
+                            "BoundingBox": null,
+                            "PageNumber": 1
+                        },
+                        "ReturnOfCapitalToDate": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "CommittedCapital": {
+                            "Value": 3000000.0,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "3000,000.00",
+                            "BoundingBox": null,
+                            "PageNumber": 1
+                        },
+                        "ContributionsToDate": {
+                            "Value": 3142140.23,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "3142,140.23",
+                            "BoundingBox": null,
+                            "PageNumber": 1
+                        },
+                        "Carry": {
+                            "Value": 4162.06,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "4162.06",
+                            "BoundingBox": null,
+                            "PageNumber": 1
+                        },
+                        "Clawback": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "RealizedGainCash": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "RealizedGainStock": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "RealizedLossCash": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "RealizedLossStock": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "ReturnOfCapitalManagementFees": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "ReturnOfCapitalPartnershipExpenses": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "ReturnOfCapitalStock": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "TemporaryReturnOfCapitalManagementFees": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "SubsequentCloseInterest": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Other": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "ILPAIncomeDistribution": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "ILPAReturnOfCapitalCash": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "ILPAReturnOfExcessCapitalCalled": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "validation_errors": [],
+    "events_log": [
+        {
+            "timestamp": "2025-11-10 17:11:19,444",
+            "level": "INFO",
+            "stage": "Ingestion",
+            "message": "Successfully ingested 'file2_distribution.pdf'. Document ID: 25d7712b-3940-4a65-8320-2542f591b1c8",
+            "details": null
+        },
+        {
+            "timestamp": "2025-11-10 17:11:19,453",
+            "level": "INFO",
+            "stage": "OCR",
+            "message": "Successfully processed through OCR Box: file2_distribution.pdf",
+            "details": null
+        },
+        {
+            "timestamp": "2025-11-10 17:11:19,455",
+            "level": "INFO",
+            "stage": "Preprocessing",
+            "message": "Successfully processed through Enhanced Preprocessing Box: file2_distribution.pdf",
+            "details": {
+                "quality_score": 1.0
+            }
+        },
+        {
+            "timestamp": "2025-11-10 17:11:24,287",
+            "level": "INFO",
+            "stage": "Classification",
+            "message": "Classified 'file2_distribution.pdf' as: Distribution (confidence: 0.85)",
+            "details": {
+                "document_type": "Distribution",
+                "confidence": 0.85,
+                "confidence_level": "MEDIUM"
+            }
+        },
+        {
+            "timestamp": "2025-11-10 17:11:44,266",
+            "level": "INFO",
+            "stage": "Extraction",
+            "message": "Extraction completed for 'file2_distribution.pdf'",
+            "details": {
+                "extraction_quality": 1.0,
+                "extraction_confidence": null,
+                "processing_time": 19.978271007537842,
+                "extracted_data_present": false
+            }
+        },
+        {
+            "timestamp": "2025-11-10 17:11:44,267",
+            "level": "WARNING",
+            "stage": "BoundingBox",
+            "message": "Bounding box extraction failed: Bounding box extraction failed: Tesseract is not available for OCR processing",
+            "details": null
+        },
+        {
+            "timestamp": "2025-11-10 17:11:44,269",
+            "level": "INFO",
+            "stage": "Validation & Enrichment",
+            "message": "Validation & Enrichment completed for 'file2_distribution.pdf': no enrichment",
+            "details": null
+        },
+        {
+            "timestamp": "2025-11-10 17:11:44,269",
+            "level": "INFO",
+            "stage": "Output",
+            "message": "Successfully wrote output for 'file2_distribution.pdf' to test_output/file2_distribution_output.json",
+            "details": null
+        }
+    ],
+    "metadata": {
+        "preprocessing_quality": {
+            "quality_score": 1.0,
+            "warnings": [],
+            "metrics": {
+                "original_length": 3543,
+                "cleaned_length": 3548,
+                "length_reduction_ratio": -0.0014112334180073384,
+                "word_count_original": 505,
+                "word_count_cleaned": 513,
+                "line_count_original": 142,
+                "line_count_cleaned": 1
+            }
+        },
+        "preserved_structure": {
+            "tables": [],
+            "lists": [
+                "-\n(46,483,528.20)\n",
+                "-\nUnfunded Balance (Including Current Notice)\n",
+                "-\n(16,648.25)\n"
+            ],
+            "headers": [],
+            "dates": [
+                "06/09/2025",
+                "06/10/2025"
+            ],
+            "amounts": [],
+            "addresses": []
+        },
+        "cleaning_timestamp": "2025-11-10 17:11:19,455",
+        "text_quality_score": 0.0,
+        "classification_mode": "hybrid_classification",
+        "text_length": 3548,
+        "num_pages": 1,
+        "confidence_level": "MEDIUM",
+        "llm_provider": "openai",
+        "retry_count": 0,
+        "processing_time": 4.832271099090576,
+        "file_hash": "e374c6d14efea8fab04de9a55a70e16d",
+        "classification_metrics": {
+            "processing_time": 4.832258939743042,
+            "api_calls": 1,
+            "retry_count": 0,
+            "provider_attempts": {
+                "openai": 1
+            },
+            "error_count": 0,
+            "cache_hits": 0,
+            "efficiency_score": 0.0
+        },
+        "extraction_mode": "text_based_extraction",
+        "schema_loaded": true,
+        "is_scanned": false,
+        "schema_validation_passed": true,
+        "validation_errors": [],
+        "extraction_quality_score": 1.0,
+        "extraction_quality_level": "EXCELLENT",
+        "total_processing_time": 19.978271007537842,
+        "extraction_metrics": {
+            "total_processing_time": 19.97825312614441,
+            "extraction_time": 19.975919246673584,
+            "schema_validation_time": 7.867813110351562e-06,
+            "post_processing_time": 0,
+            "api_calls": 1,
+            "retry_count": 0,
+            "validation_attempts": 1,
+            "error_count": 0,
+            "cache_hits": 0,
+            "token_usage": {
+                "input": 11878,
+                "output": 2074
+            },
+            "efficiency_score": 0.0,
+            "tokens_per_second": 698.3591566220905,
+            "model_used": "gpt-4o",
+            "prompt_tokens": 11878,
+            "completion_tokens": 2074,
+            "total_tokens": 13952,
+            "chunk_info": "single_pass"
+        },
+        "bounding_box_error": "Tesseract is not available for OCR processing",
+        "bounding_box_processing_time": 0.00080108642578125,
+        "validation_passed": true,
+        "validation_errors_count": 0,
+        "validation_warnings_count": 0,
+        "validation_severity_counts": {
+            "CRITICAL": 0,
+            "HIGH": 0,
+            "MEDIUM": 0,
+            "LOW": 0,
+            "INFO": 0
+        },
+        "completeness_score": 1.0,
+        "accuracy_score": 1.0,
+        "consistency_score": 1.0,
+        "overall_quality_score": 1.0,
+        "validation_processing_time": 0.0001049041748046875,
+        "enrichment_enabled": false,
+        "enrichment_skipped_reason": "No page data available or enrichment disabled",
+        "total_validation_enrichment_time": 0.0012569427490234375
+    }
+}

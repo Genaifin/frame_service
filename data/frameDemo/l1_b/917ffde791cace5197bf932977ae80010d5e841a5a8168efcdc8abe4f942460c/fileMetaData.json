@@ -1,0 +1,15 @@
+{
+  "typeName": "application/pdf",
+  "fileHash": "917ffde791cace5197bf932977ae80010d5e841a5a8168efcdc8abe4f942460c",
+  "fileOriginalName": "sampleK1_1.pdf",
+  "fileOriginalPath": "data\\frameDemo\\l0\\sampleK1_1.pdf",
+  "typeSpecificParams": {
+    "numPages": 24,
+    "EXIF": {
+      "/Creator": "pdftk 2.02 - www.pdftk.com",
+      "/Producer": "itext-paulo-155 (itextpdf.sf.net-lowagie.com)",
+      "/ModDate": "2024-07-15T16:46:42.000Z",
+      "/CreationDate": "2024-07-15T16:46:42.000Z"
+    }
+  }
+}

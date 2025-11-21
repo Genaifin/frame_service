@@ -1,0 +1,533 @@
+{
+    "doc_id": "4629f182-0a1d-4c04-a2d9-3dd133a89425",
+    "task_id": "7523ed92-67a0-4e39-b5bb-c71cb01f7576",
+    "ext_doc_id": null,
+    "original_filename": "09302025 - TREE TOP INC.pdf",
+    "pipeline_status": "Completed_With_Error",
+    "error_message": "Bounding box extraction failed: Tesseract is not available for OCR processing",
+    "is_scanned": false,
+    "raw_text": "TREE TOP INC\nACCOUNT # ENDING IN: 0453\n09/01/2025 - 09/30/2025\nACCOUNT STATEMENT\nPlease read this statement carefully. Any errors must be reported to Fidelity Institutional Asset Management® within 90 days.\nTREE TOP INC\nACCOUNT # ENDING IN: 0453\n09/01/2025 - 09/30/2025\nACCOUNT STATEMENT\nYou can access your account information at https://institutional.fidelity.com\nACCOUNT SUMMARY\n$30,333,347.04\nBeginning Balance\n0.00\nContributions\nWithdrawals\n0.00\nIncome\n0.00\nChange in Market Value\n923,305.80\nEnding Balance\n$31,256,652.84\nDisplayed in this section is the value of your account for the current and previous statement period, in both units and dollars.\nMARKET VALUE\nInvestment\nUnits on\n08/31/2025\nUnits on\n09/30/2025\nUnit Price on\n09/30/2025\nUnit Price on\n08/31/2025\nMarket Value on\n08/31/2025\nMarket Value on\n09/30/2025\n$30,333,347.04\n$31,256,652.84\nFixed Income\n830,767.516\n830,767.516\n$12.81\n$12.99\n$10,642,131.88\n$10,791,670.03\nFIAM 8-10 Yr Crp Bnd CP\n1,618,619.282\n1,618,619.282\n$10.04\n$10.37\n$16,250,937.59\n$16,785,081.95\nFIAM Long Corporate CP\n39,607.156\n39,607.156\n$86.86\n$92.91\n$3,440,277.57\n$3,679,900.86\nFIAM US Long STRIPS\nAccount Total\n$30,333,347.04\n$31,256,652.84\nThis section will provide you with detailed day-to-day activity in your account during the statement period.\nTRANSACTION DETAILS\nThere were no transactions to report for the period.\nIMPORTANT LEGAL INFORMATION\nAll data is shown in U.S. dollars. Data related to commingled pool holdings or LLC or LP holdings does not reflect the deduction of investment management fees but is inclusive of\nother fees and expenses described in the FIAM Group Trust documents or LLC or LP offering documents, as may be applicable. When investment management fees are deducted the\nvalue of your account will be lower. Data related to mutual fund shares, denoted with a *, is reflective of the net asset value of the fund's shares which includes a deduction of the\nexpense ratio as described in the fund's prospectus.\n",
+    "cleaned_text": "TREE T0P INC ACC0UNT # ENDING IN: 0453 09/01/2025 - 09/30/2025 ACC0UNT STATEMENT PIease read this statement carefuIIy. Any errors must be reported to FideIity InstitutionaI Asset ManagementR within 90 days. TREE T0P INC ACC0UNT # ENDING IN: 0453 09/01/2025 - 09/30/2025 ACC0UNT STATEMENT You can access your account information at https://institutionaI.fideIity.com ACC0UNT SUMMARY USD 30333,347.04 Beginning BaIance 0.00 Contributions WithdrawaIs 0.00 Income 0.00 Change in Market VaIue 923305.80 Ending BaIance USD 31256,652.84 DispIayed in this section is the vaIue of your account for the current and previous statement period, in both units and doIIars. MARKET VALUE Investment Units on 08/31/2025 Units on 09/30/2025 Unit Price on 09/30/2025 Unit Price on 08/31/2025 Market VaIue on 08/31/2025 Market VaIue on 09/30/2025 USD 30333,347.04 USD 31256,652.84 Fixed Income 830767.516 830767.516 USD 12.81 USD 12.99 USD 10642,131.88 USD 10791,670.03 FIAM 8-10 Yr Crp Bnd CP 1618,619.282 1618,619.282 USD 10.04 USD 10.37 USD 16250,937.59 USD 16785,081.95 FIAM Long Corporate CP 39607.156 39607.156 USD 86.86 USD 92.91 USD 3440,277.57 USD 3679,900.86 FIAM US Long STRIPS Account TotaI USD 30333,347.04 USD 31256,652.84 This section wiII provide you with detaiIed day-to-day activity in your account during the statement period. TRANSACTI0N DETAILS There were no transactions to report for the period. IMP0RTANT LEGAL INF0RMATI0N AII data is shown in U.S. doIIars. Data reIated to commingIed pooI hoIdings or LLC or LP hoIdings does not refIect the deduction of investment management fees but is incIusive of other fees and expenses described in the FIAM Group Trust documents or LLC or LP offering documents, as may be appIicabIe. When investment management fees are deducted the vaIue of your account wiII be Iower. Data reIated to mutuaI fund shares, denoted with a *, is refIective of the net asset vaIue of the fund's shares which incIudes a deduction of the expense ratio as described in the fund's prospectus.",
+    "classification_modality": "hybrid_classification",
+    "document_type": "Statement",
+    "classification_confidence": 0.85,
+    "extracted_data": {
+        "entities": [
+            {
+                "portfolio": [
+                    {
+                        "Investor": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Account": {
+                            "Value": "TREE T0P INC",
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "TREE T0P INC",
+                            "BoundingBox": null,
+                            "PageNumber": 1
+                        },
+                        "InvestorRefID": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "AccountRefID": {
+                            "Value": "0453",
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "0453",
+                            "BoundingBox": null,
+                            "PageNumber": 1
+                        },
+                        "FundID": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "SeriesID": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "SeriesDescription": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Security": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "PeriodBeginningDT": {
+                            "Value": "2025-09-01",
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "09/01/2025",
+                            "BoundingBox": null,
+                            "PageNumber": 1
+                        },
+                        "PeriodEndingDT": {
+                            "Value": "2025-09-30",
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "09/30/2025",
+                            "BoundingBox": null,
+                            "PageNumber": 1
+                        },
+                        "Currency": {
+                            "Value": "USD",
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "USD",
+                            "BoundingBox": null,
+                            "PageNumber": 1
+                        },
+                        "NetOpeningCapital": {
+                            "Value": 30680.04,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "USD 30333,347.04",
+                            "BoundingBox": null,
+                            "PageNumber": 1
+                        },
+                        "Contributions": {
+                            "Value": 0.0,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "0.00",
+                            "BoundingBox": null,
+                            "PageNumber": 1
+                        },
+                        "ContributionOutsideCommitment": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Withdrawals": {
+                            "Value": 0.0,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "0.00",
+                            "BoundingBox": null,
+                            "PageNumber": 1
+                        },
+                        "RecallableDistribution": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "ReturnOfCapital": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "NetCapitalActivity": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "TransfersIn": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "TransfersOut": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "NetTransfers": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "IncomeDistribution": {
+                            "Value": 0.0,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "0.00",
+                            "BoundingBox": null,
+                            "PageNumber": 1
+                        },
+                        "RealizedGainLoss": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "UnrealizedGainLoss": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "NetGainLoss": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "InvestmentIncome": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "OtherIncomeLoss": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "ManagementFee": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "OtherExpenses": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "CarriedInterest": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "OtherAdjustments": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "NetClosingCapital": {
+                            "Value": 31908.84,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "USD 31256,652.84",
+                            "BoundingBox": null,
+                            "PageNumber": 1
+                        },
+                        "Quantity": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Price": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "MTDPerformance": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "QTDPerformance": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "YTDPerformance": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "IRR": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Commitment": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "ContributionsToDate": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "UnfundedCommitment": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "UnfundedCommitmentAdj": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "DistributionsSubjectToRecall": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "TotalDistributions": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "CommitmentOnlyStatement": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "validation_errors": [],
+    "events_log": [
+        {
+            "timestamp": "2025-11-11 13:39:34,361",
+            "level": "INFO",
+            "stage": "Ingestion",
+            "message": "Successfully ingested '09302025 - TREE TOP INC.pdf'. Document ID: 4629f182-0a1d-4c04-a2d9-3dd133a89425",
+            "details": null
+        },
+        {
+            "timestamp": "2025-11-11 13:39:34,406",
+            "level": "INFO",
+            "stage": "OCR",
+            "message": "Successfully processed through OCR Box: 09302025 - TREE TOP INC.pdf",
+            "details": null
+        },
+        {
+            "timestamp": "2025-11-11 13:39:34,408",
+            "level": "INFO",
+            "stage": "Preprocessing",
+            "message": "Successfully processed through Enhanced Preprocessing Box: 09302025 - TREE TOP INC.pdf",
+            "details": {
+                "quality_score": 1.0
+            }
+        },
+        {
+            "timestamp": "2025-11-11 13:39:35,400",
+            "level": "INFO",
+            "stage": "Classification",
+            "message": "Classified '09302025 - TREE TOP INC.pdf' as: Statement (confidence: 0.85)",
+            "details": {
+                "document_type": "Statement",
+                "confidence": 0.85,
+                "confidence_level": "MEDIUM"
+            }
+        },
+        {
+            "timestamp": "2025-11-11 13:39:56,622",
+            "level": "INFO",
+            "stage": "Extraction",
+            "message": "Extraction completed for '09302025 - TREE TOP INC.pdf'",
+            "details": {
+                "extraction_quality": 1.0,
+                "extraction_confidence": null,
+                "processing_time": 21.220766067504883,
+                "extracted_data_present": false
+            }
+        },
+        {
+            "timestamp": "2025-11-11 13:39:56,624",
+            "level": "WARNING",
+            "stage": "BoundingBox",
+            "message": "Bounding box extraction failed: Bounding box extraction failed: Tesseract is not available for OCR processing",
+            "details": null
+        },
+        {
+            "timestamp": "2025-11-11 13:39:56,628",
+            "level": "INFO",
+            "stage": "Validation & Enrichment",
+            "message": "Validation & Enrichment completed for '09302025 - TREE TOP INC.pdf': no enrichment",
+            "details": null
+        },
+        {
+            "timestamp": "2025-11-11 13:39:56,628",
+            "level": "INFO",
+            "stage": "Output",
+            "message": "Successfully wrote output for '09302025 - TREE TOP INC.pdf' to test_output/09302025 - TREE TOP INC_output.json",
+            "details": null
+        }
+    ],
+    "metadata": {
+        "preprocessing_quality": {
+            "quality_score": 1.0,
+            "warnings": [],
+            "metrics": {
+                "original_length": 1979,
+                "cleaned_length": 2013,
+                "length_reduction_ratio": -0.017180394138453764,
+                "word_count_original": 289,
+                "word_count_cleaned": 307,
+                "line_count_original": 74,
+                "line_count_cleaned": 1
+            }
+        },
+        "preserved_structure": {
+            "tables": [],
+            "lists": [],
+            "headers": [],
+            "dates": [
+                "09/01/2025",
+                "09/30/2025",
+                "09/01/2025",
+                "09/30/2025",
+                "08/31/2025",
+                "09/30/2025",
+                "09/30/2025",
+                "08/31/2025",
+                "08/31/2025",
+                "09/30/2025"
+            ],
+            "amounts": [
+                "$30,333,347.04",
+                "$31,256,652.84",
+                "$30,333,347.04",
+                "$31,256,652.84",
+                "$12.81",
+                "$12.99",
+                "$10,642,131.88",
+                "$10,791,670.03",
+                "$10.04",
+                "$10.37",
+                "$16,250,937.59",
+                "$16,785,081.95",
+                "$86.86",
+                "$92.91",
+                "$3,440,277.57",
+                "$3,679,900.86",
+                "$30,333,347.04",
+                "$31,256,652.84"
+            ],
+            "addresses": []
+        },
+        "cleaning_timestamp": "2025-11-11 13:39:34,408",
+        "text_quality_score": 0.0,
+        "classification_mode": "hybrid_classification",
+        "text_length": 2013,
+        "num_pages": 1,
+        "confidence_level": "MEDIUM",
+        "llm_provider": "openai",
+        "retry_count": 0,
+        "processing_time": 0.9920239448547363,
+        "file_hash": "dc843a1627602adfcb9d138330a33e2a",
+        "classification_metrics": {
+            "processing_time": 0.9920117855072021,
+            "api_calls": 1,
+            "retry_count": 0,
+            "provider_attempts": {
+                "openai": 1
+            },
+            "error_count": 0,
+            "cache_hits": 0,
+            "efficiency_score": 0.0
+        },
+        "extraction_mode": "structured_extraction",
+        "schema_loaded": true,
+        "is_scanned": false,
+        "schema_validation_passed": true,
+        "validation_errors": [],
+        "extraction_quality_score": 1.0,
+        "extraction_quality_level": "EXCELLENT",
+        "total_processing_time": 21.220766067504883,
+        "extraction_metrics": {
+            "total_processing_time": 21.220715045928955,
+            "extraction_time": 21.21841788291931,
+            "schema_validation_time": 2.384185791015625e-05,
+            "post_processing_time": 0,
+            "api_calls": 1,
+            "retry_count": 0,
+            "validation_attempts": 1,
+            "error_count": 0,
+            "cache_hits": 0,
+            "token_usage": {
+                "input": 10573,
+                "output": 2099
+            },
+            "efficiency_score": 0.0,
+            "tokens_per_second": 597.1522694562778,
+            "model_used": "gpt-4o",
+            "prompt_tokens": 10573,
+            "completion_tokens": 2099,
+            "total_tokens": 12672,
+            "chunk_info": "single_pass"
+        },
+        "bounding_box_error": "Tesseract is not available for OCR processing",
+        "bounding_box_processing_time": 0.002349853515625,
+        "validation_passed": true,
+        "validation_errors_count": 0,
+        "validation_warnings_count": 0,
+        "validation_severity_counts": {
+            "CRITICAL": 0,
+            "HIGH": 0,
+            "MEDIUM": 0,
+            "LOW": 0,
+            "INFO": 0
+        },
+        "completeness_score": 1.0,
+        "accuracy_score": 1.0,
+        "consistency_score": 1.0,
+        "overall_quality_score": 1.0,
+        "validation_processing_time": 0.0009551048278808594,
+        "enrichment_enabled": false,
+        "enrichment_skipped_reason": "No page data available or enrichment disabled",
+        "total_validation_enrichment_time": 0.0030438899993896484
+    }
+}

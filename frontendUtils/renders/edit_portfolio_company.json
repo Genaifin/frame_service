@@ -1,0 +1,31 @@
+{
+    "portfolio_companies": [
+        {
+            "company_name": "Avitex BioPharma Inc",
+            "sector": [
+                "Energy",
+                "Materials",
+                "Manufacturing"
+            ],
+            "geography": [
+                "USA"
+            ],
+            "investment_date": "2025-09-15T18:30:00.000Z",
+            "status": "invested"
+        },
+        {
+            "company_name": "Test",
+            "sector": [
+                "Utilities",
+                "Consumer Discretionary",
+                "Consumer Staples"
+            ],
+            "geography": [
+                "USA",
+                "India"
+            ],
+            "investment_date": "2025-10-01T18:30:00.000Z",
+            "status": "exited"
+        }
+    ]
+}

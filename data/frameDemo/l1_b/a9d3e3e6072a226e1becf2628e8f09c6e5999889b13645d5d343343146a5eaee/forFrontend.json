@@ -1,0 +1,828 @@
+{
+    "extracted_fields": [
+      {
+        "fields": {
+          "Investor": "Elizabeth R. Patterson Living Trust created under agreement William and Elizabeth Patterson Trust dated 6/22/95, as amended",
+          "Account": "The Värde Fund XIII, L.P.|Elizabeth R. Patterson Living Trust created under agreement William and Elizabeth Patterson Trust dated 6/22/95, as amended",
+          "InvestorRefID": null,
+          "AccountRefID": null,
+          "Security": "The Värde Fund XIII, L.P.",
+          "PeriodBeginningDT": "2024-05-01",
+          "PeriodEndingDT": "2024-05-31",
+          "Currency": "USD",
+          "NetOpeningCapital": 1388297.67,
+          "Contributions": 0,
+          "ContributionOutsideCommitment": null,
+          "Withdrawals": 0,
+          "RecallableDistribution": null,
+          "ReturnOfCapital": null,
+          "NetCapitalActivity": 0,
+          "TransfersIn": null,
+          "TransfersOut": null,
+          "NetTransfers": null,
+          "IncomeDistribution": null,
+          "RealizedGainLoss": null,
+          "UnrealizedGainLoss": null,
+          "NetGainLoss": 12687.28,
+          "InvestmentIncome": null,
+          "OtherIncomeLoss": null,
+          "ManagementFee": -1211.81,
+          "OtherExpenses": -108.53,
+          "CarriedInterest": null,
+          "OtherAdjustments": null,
+          "NetClosingCapital": 1400984.95,
+          "Quantity": null,
+          "Price": null,
+          "MTDPerformance": null,
+          "QTDPerformance": null,
+          "YTDPerformance": null,
+          "IRR": null,
+          "Commitment": 1500000,
+          "ContributionsToDate": null,
+          "UnfundedCommitment": 956266,
+          "UnfundedCommitmentAdj": null,
+          "DistributionsSubjectToRecall": null,
+          "TotalDistributions": null,
+          "CommitmentOnlyStatement": null,
+          "ConfidenceScore": {
+            "Account": "HIGH",
+            "Currency": "HIGH",
+            "Investor": "HIGH",
+            "Security": "HIGH",
+            "Commitment": "HIGH",
+            "NetGainLoss": "HIGH",
+            "Withdrawals": "HIGH",
+            "Contributions": "HIGH",
+            "ManagementFee": "HIGH",
+            "OtherExpenses": "HIGH",
+            "PeriodEndingDT": "HIGH",
+            "NetClosingCapital": "HIGH",
+            "NetOpeningCapital": "HIGH",
+            "PeriodBeginningDT": "HIGH",
+            "NetCapitalActivity": "HIGH",
+            "UnfundedCommitment": "HIGH"
+          }
+        },
+        "meta_data": {
+          "doc_id": 100010,
+          "schema_id": 3,
+          "created_at": "2025-02-13T21:23:18.645385",
+          "updated_at": "2025-02-13T21:23:18.645385",
+          "additional_columns": {},
+          "document_name": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf",
+          "extraction": "HARVEST_ONLY",
+          "total": 42,
+          "found": 16,
+          "missing": 26,
+          "BoundingBox": {},
+          "id": 1,
+          "PageNumber": {
+            "Investor": 1,
+            "PeriodBeginningDT": 1,
+            "PeriodEndingDT": 1,
+            "Currency": 1,
+            "NetOpeningCapital": 1,
+            "Contributions": 1,
+            "Withdrawals": 1,
+            "NetCapitalActivity": 1,
+            "NetGainLoss": 1,
+            "ManagementFee": 1,
+            "OtherExpenses": 1,
+            "NetClosingCapital": 1,
+            "Commitment": 1,
+            "UnfundedCommitment": 1
+          }
+        },
+        "Covenants": []
+      }
+    ],
+    "doc_details": [
+      {
+        "fields": {
+          "id": 11,
+          "created_at": "2025-02-13T21:23:18.636369",
+          "updated_at": "2025-02-13T21:23:18.636369",
+          "document_type": "CapitalAccountStatement",
+          "fund_name": "The Värde Fund XIII, L.P.",
+          "firm_name": null,
+          "investor_name": "Elizabeth R. Patterson Living Trust created under agreement William and Elizabeth Patterson Trust dated 6/22/95, as amended",
+          "account_sid": null,
+          "account_no": "The Värde Fund XIII, L.P.|Elizabeth R. Patterson Living Trust created under agreement William and Elizabeth Patterson Trust dated 6/22/95, as amended",
+          "status": "EXTRACTED_IN_REVIEW",
+          "num_pages": 1,
+          "doc_source": "S3",
+          "document_name": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf",
+          "report_date": "2025-02-13T21:21:53.441331",
+          "recieved_date": "2025-02-13T21:21:53.441331",
+          "extraction": "EXTRACTED_IN_REVIEW",
+          "in_review": true,
+          "duplicate_ids_to_update": null,
+          "true_duplicate_ids": [100011, 100012],
+          "ext_comments": null,
+          "ext_doc_id": null,
+          "ext_document_type": null
+        },
+        "meta_data": {
+          "doc_id": 100010
+        }
+      }
+    ],
+    "audit_logs": [
+      {
+        "fields": {
+          "status": false,
+          "description": "type object  here is changed 'datetime.datetime' has no attribute 'datetime'",
+          "time": "2025-02-13T22:17:36.325736"
+        },
+        "meta_data": {
+          "id": 28,
+          "doc_id": 100012,
+          "created_at": "2025-02-13T22:17:36.325736",
+          "updated_at": "2025-02-13T22:17:36.325736",
+          "message": "type object 'datetime.datetime' has no attribute 'datetime'",
+          "document_name": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf",
+          "meta_data": {},
+          "request": {
+            "file": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf"
+          },
+          "response": {
+            "Investor": "Elizabeth R. Patterson Living Trust created under agreement William and Elizabeth Patterson Trust dated 6/22/95, as amended",
+            "Account": "The Värde Fund XIII, L.P.|Elizabeth R. Patterson Living Trust created under agreement William and Elizabeth Patterson Trust dated 6/22/95, as amended",
+            "Security": "The Värde Fund XIII, L.P.",
+            "PeriodBeginningDT": "2024-05-01",
+            "PeriodEndingDT": "2024-05-31",
+            "Currency": "USD",
+            "NetOpeningCapital": 1388297.67,
+            "Contributions": 0,
+            "Withdrawals": 0,
+            "NetCapitalActivity": 0,
+            "NetGainLoss": 12687.28,
+            "ManagementFee": -1211.81,
+            "OtherExpenses": -108.53,
+            "NetClosingCapital": 1400984.95,
+            "Commitment": 1500000,
+            "UnfundedCommitment": 956266,
+            "ConfidenceScore": {
+              "Investor": "HIGH",
+              "Account": "HIGH",
+              "Security": "HIGH",
+              "PeriodBeginningDT": "HIGH",
+              "PeriodEndingDT": "HIGH",
+              "Currency": "HIGH",
+              "NetOpeningCapital": "HIGH",
+              "Contributions": "HIGH",
+              "Withdrawals": "HIGH",
+              "NetCapitalActivity": "HIGH",
+              "NetGainLoss": "HIGH",
+              "ManagementFee": "HIGH",
+              "OtherExpenses": "HIGH",
+              "NetClosingCapital": "HIGH",
+              "Commitment": "HIGH",
+              "UnfundedCommitment": "HIGH"
+            },
+            "VerbatimText": {
+              "Investor": "Elizabeth R. Patterson Living Trust created under agreement William and Elizabeth Patterson Trust dated 6/22/95, as amended",
+              "Account": "The Värde Fund XIII, L.P.|Elizabeth R. Patterson Living Trust created under agreement William and Elizabeth Patterson Trust dated 6/22/95, as amended",
+              "Security": "The Värde Fund XIII, L.P.",
+              "PeriodBeginningDT": "May 01, 2024",
+              "PeriodEndingDT": "May 31, 2024",
+              "Currency": "USD",
+              "NetOpeningCapital": "1,388,297.67",
+              "Contributions": "0.00",
+              "Withdrawals": "0.00",
+              "NetCapitalActivity": "0.00",
+              "NetGainLoss": "12,687.28",
+              "ManagementFee": "(1,211.81)",
+              "OtherExpenses": "(108.53)",
+              "NetClosingCapital": "1,400,984.95",
+              "Commitment": "1,500,000",
+              "UnfundedCommitment": "956,266"
+            },
+            "BoundingBox": {
+              "Investor": "0.37750385208012327,0.16380952380952382,0.08320493066255778,0.011666666666666667,0.5898305084745763,0.16380952380952382,0.054853620955315874,0.014761904761904763,0.7069337442218798,0.16380952380952382,0.0674884437596302,0.011666666666666667,0.7827426810477658,0.16380952380952382,0.05362095531587057,0.011666666666666667,0.46902927580893683,0.16404761904761905,0.017257318952234205,0.01119047619047619,0.6514637904468413,0.16404761904761905,0.05023112480739599,0.011428571428571429,0.4939907550077042,0.16428571428571428,0.08782742681047766,0.01119047619047619,0.4810477657935285,0.18071428571428572,0.06687211093990755,0.011666666666666667,0.5553158705701079,0.18071428571428572,0.03297380585516179,0.011666666666666667,0.5966101694915255,0.18071428571428572,0.08320493066255778,0.011666666666666667,0.8375963020030817,0.18071428571428572,0.05023112480739599,0.011666666666666667,0.7824345146379045,0.18095238095238095,0.05023112480739599,0.011428571428571429,0.688135593220339,0.18119047619047618,0.08751926040061633,0.01119047619047619,0.3765793528505393,0.18142857142857144,0.09984591679506934,0.014047619047619048,0.48012326656394455,0.1976190476190476,0.08412942989214175,0.011666666666666667,0.3768875192604006,0.19785714285714287,0.06933744221879815,0.013333333333333334,0.4530046224961479,0.20047619047619047,0.01941448382126348,0.008809523809523809",
+              "PeriodBeginningDT": "0.41602465331278893,0.26452380952380955,0.022187981510015407,0.012142857142857143,0.44591679506933746,0.26452380952380955,0.03790446841294299,0.010714285714285714,0.37750385208012327,0.26476190476190475,0.03204930662557781,0.013095238095238096",
+              "PeriodEndingDT": "0.5411402157164868,0.26452380952380955,0.022187981510015407,0.012142857142857143,0.5710323574730355,0.26452380952380955,0.037596302003081665,0.010714285714285714,0.50231124807396,0.26476190476190475,0.03204930662557781,0.013095238095238096",
+              "Currency": "0.37719568567026196,0.2866666666666667,0.034822804314329735,0.010476190476190476",
+              "NetOpeningCapital": "0.6234206471494607,0.6266666666666667,0.10200308166409862,0.012142857142857143",
+              "Contributions": "0.6930662557781202,0.4230952380952381,0.03266563944530046,0.010476190476190476",
+              "Withdrawals": "0.6930662557781202,0.4230952380952381,0.03266563944530046,0.010476190476190476",
+              "NetCapitalActivity": "0.6930662557781202,0.4230952380952381,0.03266563944530046,0.010476190476190476",
+              "NetGainLoss": "0.6486902927580893,0.5330952380952381,0.07704160246533127,0.011904761904761904",
+              "ManagementFee": "0.6514637904468413,0.40095238095238095,0.07919876733436056,0.012619047619047618",
+              "OtherExpenses": "0.6662557781201849,0.44452380952380954,0.06440677966101695,0.015714285714285715",
+              "NetClosingCapital": "0.6234206471494607,0.714047619047619,0.10200308166409862,0.011904761904761904",
+              "Commitment": "0.37750385208012327,0.2195238095238095,0.07704160246533127,0.011904761904761904",
+              "UnfundedCommitment": "0.3768875192604006,0.2423809523809524,0.06317411402157165,0.011904761904761904"
+            },
+            "PageNumber": {
+              "Investor": 1,
+              "PeriodBeginningDT": 1,
+              "PeriodEndingDT": 1,
+              "Currency": 1,
+              "NetOpeningCapital": 1,
+              "Contributions": 1,
+              "Withdrawals": 1,
+              "NetCapitalActivity": 1,
+              "NetGainLoss": 1,
+              "ManagementFee": 1,
+              "OtherExpenses": 1,
+              "NetClosingCapital": 1,
+              "Commitment": 1,
+              "UnfundedCommitment": 1
+            }
+          },
+          "classification_status": true,
+          "extraction_status": true,
+          "ingestion_status": false,
+          "document_readable": true,
+          "extraction_via": "text"
+        }
+      },
+      {
+        "fields": {
+          "status": true,
+          "description": "Duplicated entries found for 05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf for all fields..",
+          "time": "2025-02-13T22:16:10.778061"
+        },
+        "meta_data": {
+          "id": 27,
+          "doc_id": 100010,
+          "created_at": "2025-02-13T22:16:10.778061",
+          "updated_at": "2025-02-13T22:16:10.778061",
+          "message": "Duplicated entries found for 05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf for all fields..",
+          "document_name": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf",
+          "meta_data": {},
+          "request": {
+            "file": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf"
+          },
+          "response": {
+            "Investor": "Elizabeth R. Patterson Living Trust created under agreement William and Elizabeth Patterson Trust dated 6/22/95, as amended",
+            "Account": "The Värde Fund XIII, L.P.|Elizabeth R. Patterson Living Trust created under agreement William and Elizabeth Patterson Trust dated 6/22/95, as amended",
+            "Security": "The Värde Fund XIII, L.P.",
+            "PeriodBeginningDT": "2024-05-01",
+            "PeriodEndingDT": "2024-05-31",
+            "Currency": "USD",
+            "NetOpeningCapital": 1388297.67,
+            "Contributions": 0,
+            "Withdrawals": 0,
+            "NetCapitalActivity": 0,
+            "NetGainLoss": 12687.28,
+            "ManagementFee": -1211.81,
+            "OtherExpenses": -108.53,
+            "NetClosingCapital": 1400984.95,
+            "Commitment": 1500000,
+            "UnfundedCommitment": 956266,
+            "ConfidenceScore": {
+              "Investor": "HIGH",
+              "Account": "HIGH",
+              "Security": "HIGH",
+              "PeriodBeginningDT": "HIGH",
+              "PeriodEndingDT": "HIGH",
+              "Currency": "HIGH",
+              "NetOpeningCapital": "HIGH",
+              "Contributions": "HIGH",
+              "Withdrawals": "HIGH",
+              "NetCapitalActivity": "HIGH",
+              "NetGainLoss": "HIGH",
+              "ManagementFee": "HIGH",
+              "OtherExpenses": "HIGH",
+              "NetClosingCapital": "HIGH",
+              "Commitment": "HIGH",
+              "UnfundedCommitment": "HIGH"
+            },
+            "VerbatimText": {
+              "Investor": "Elizabeth R. Patterson Living Trust created under agreement William and Elizabeth Patterson Trust dated 6/22/95, as amended",
+              "Account": "The Värde Fund XIII, L.P.|Elizabeth R. Patterson Living Trust created under agreement William and Elizabeth Patterson Trust dated 6/22/95, as amended",
+              "Security": "The Värde Fund XIII, L.P.",
+              "PeriodBeginningDT": "May 01, 2024",
+              "PeriodEndingDT": "May 31, 2024",
+              "Currency": "USD",
+              "NetOpeningCapital": "1,388,297.67",
+              "Contributions": "0.00",
+              "Withdrawals": "0.00",
+              "NetCapitalActivity": "0.00",
+              "NetGainLoss": "12,687.28",
+              "ManagementFee": "(1,211.81)",
+              "OtherExpenses": "(108.53)",
+              "NetClosingCapital": "1,400,984.95",
+              "Commitment": "1,500,000",
+              "UnfundedCommitment": "956,266"
+            },
+            "BoundingBox": {
+              "Investor": "0.37750385208012327,0.16380952380952382,0.08320493066255778,0.011666666666666667,0.5898305084745763,0.16380952380952382,0.054853620955315874,0.014761904761904763,0.7069337442218798,0.16380952380952382,0.0674884437596302,0.011666666666666667,0.7827426810477658,0.16380952380952382,0.05362095531587057,0.011666666666666667,0.46902927580893683,0.16404761904761905,0.017257318952234205,0.01119047619047619,0.6514637904468413,0.16404761904761905,0.05023112480739599,0.011428571428571429,0.4939907550077042,0.16428571428571428,0.08782742681047766,0.01119047619047619,0.4810477657935285,0.18071428571428572,0.06687211093990755,0.011666666666666667,0.5553158705701079,0.18071428571428572,0.03297380585516179,0.011666666666666667,0.5966101694915255,0.18071428571428572,0.08320493066255778,0.011666666666666667,0.8375963020030817,0.18071428571428572,0.05023112480739599,0.011666666666666667,0.7824345146379045,0.18095238095238095,0.05023112480739599,0.011428571428571429,0.688135593220339,0.18119047619047618,0.08751926040061633,0.01119047619047619,0.3765793528505393,0.18142857142857144,0.09984591679506934,0.014047619047619048,0.48012326656394455,0.1976190476190476,0.08412942989214175,0.011666666666666667,0.3768875192604006,0.19785714285714287,0.06933744221879815,0.013333333333333334,0.4530046224961479,0.20047619047619047,0.01941448382126348,0.008809523809523809",
+              "PeriodBeginningDT": "0.41602465331278893,0.26452380952380955,0.022187981510015407,0.012142857142857143,0.44591679506933746,0.26452380952380955,0.03790446841294299,0.010714285714285714,0.37750385208012327,0.26476190476190475,0.03204930662557781,0.013095238095238096",
+              "PeriodEndingDT": "0.5411402157164868,0.26452380952380955,0.022187981510015407,0.012142857142857143,0.5710323574730355,0.26452380952380955,0.037596302003081665,0.010714285714285714,0.50231124807396,0.26476190476190475,0.03204930662557781,0.013095238095238096",
+              "Currency": "0.37719568567026196,0.2866666666666667,0.034822804314329735,0.010476190476190476",
+              "NetOpeningCapital": "0.6234206471494607,0.6266666666666667,0.10200308166409862,0.012142857142857143",
+              "Contributions": "0.6930662557781202,0.4230952380952381,0.03266563944530046,0.010476190476190476",
+              "Withdrawals": "0.6930662557781202,0.4230952380952381,0.03266563944530046,0.010476190476190476",
+              "NetCapitalActivity": "0.6930662557781202,0.4230952380952381,0.03266563944530046,0.010476190476190476",
+              "NetGainLoss": "0.6486902927580893,0.5330952380952381,0.07704160246533127,0.011904761904761904",
+              "ManagementFee": "0.6514637904468413,0.40095238095238095,0.07919876733436056,0.012619047619047618",
+              "OtherExpenses": "0.6662557781201849,0.44452380952380954,0.06440677966101695,0.015714285714285715",
+              "NetClosingCapital": "0.6234206471494607,0.714047619047619,0.10200308166409862,0.011904761904761904",
+              "Commitment": "0.37750385208012327,0.2195238095238095,0.07704160246533127,0.011904761904761904",
+              "UnfundedCommitment": "0.3768875192604006,0.2423809523809524,0.06317411402157165,0.011904761904761904"
+            },
+            "PageNumber": {
+              "Investor": 1,
+              "PeriodBeginningDT": 1,
+              "PeriodEndingDT": 1,
+              "Currency": 1,
+              "NetOpeningCapital": 1,
+              "Contributions": 1,
+              "Withdrawals": 1,
+              "NetCapitalActivity": 1,
+              "NetGainLoss": 1,
+              "ManagementFee": 1,
+              "OtherExpenses": 1,
+              "NetClosingCapital": 1,
+              "Commitment": 1,
+              "UnfundedCommitment": 1
+            }
+          },
+          "classification_status": true,
+          "extraction_status": true,
+          "ingestion_status": false,
+          "document_readable": true,
+          "extraction_via": "text"
+        }
+      },
+      {
+        "fields": {
+          "status": true,
+          "description": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf received starting classification and extraction if file is valid..",
+          "time": "2025-02-13T22:16:07.616063"
+        },
+        "meta_data": {
+          "id": 26,
+          "doc_id": 100012,
+          "created_at": "2025-02-13T22:16:07.616063",
+          "updated_at": "2025-02-13T22:16:07.616063",
+          "message": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf received starting classification and extraction if file is valid..",
+          "document_name": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf",
+          "meta_data": {},
+          "request": {
+            "file": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf"
+          },
+          "response": null,
+          "classification_status": false,
+          "extraction_status": false,
+          "ingestion_status": false,
+          "document_readable": false,
+          "extraction_via": "text"
+        }
+      },
+      {
+        "fields": {
+          "status": false,
+          "description": "type object 'datetime.datetime' has no attribute 'datetime'",
+          "time": "2025-02-13T21:56:35.508086"
+        },
+        "meta_data": {
+          "id": 25,
+          "doc_id": 100011,
+          "created_at": "2025-02-13T21:56:35.508086",
+          "updated_at": "2025-02-13T21:56:35.508086",
+          "message": "type object 'datetime.datetime' has no attribute 'datetime'",
+          "document_name": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf",
+          "meta_data": {},
+          "request": {
+            "file": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf"
+          },
+          "response": {
+            "Investor": "Elizabeth R. Patterson Living Trust created under agreement William and Elizabeth Patterson Trust dated 6/22/95, as amended",
+            "Account": "The Värde Fund XIII, L.P.|Elizabeth R. Patterson Living Trust created under agreement William and Elizabeth Patterson Trust dated 6/22/95, as amended",
+            "Security": "The Värde Fund XIII, L.P.",
+            "PeriodBeginningDT": "2024-05-01",
+            "PeriodEndingDT": "2024-05-31",
+            "Currency": "USD",
+            "NetOpeningCapital": 1388297.67,
+            "Contributions": 0,
+            "Withdrawals": 0,
+            "NetCapitalActivity": 0,
+            "NetGainLoss": 12687.28,
+            "ManagementFee": -1211.81,
+            "OtherExpenses": -108.53,
+            "NetClosingCapital": 1400984.95,
+            "Commitment": 1500000,
+            "UnfundedCommitment": 956266,
+            "ConfidenceScore": {
+              "Investor": "HIGH",
+              "Account": "HIGH",
+              "Security": "HIGH",
+              "PeriodBeginningDT": "HIGH",
+              "PeriodEndingDT": "HIGH",
+              "Currency": "HIGH",
+              "NetOpeningCapital": "HIGH",
+              "Contributions": "HIGH",
+              "Withdrawals": "HIGH",
+              "NetCapitalActivity": "HIGH",
+              "NetGainLoss": "HIGH",
+              "ManagementFee": "HIGH",
+              "OtherExpenses": "HIGH",
+              "NetClosingCapital": "HIGH",
+              "Commitment": "HIGH",
+              "UnfundedCommitment": "HIGH"
+            },
+            "VerbatimText": {
+              "Investor": "Elizabeth R. Patterson Living Trust created under agreement William and Elizabeth Patterson Trust dated 6/22/95, as amended",
+              "Account": "The Värde Fund XIII, L.P.|Elizabeth R. Patterson Living Trust created under agreement William and Elizabeth Patterson Trust dated 6/22/95, as amended",
+              "Security": "The Värde Fund XIII, L.P.",
+              "PeriodBeginningDT": "May 01, 2024",
+              "PeriodEndingDT": "May 31, 2024",
+              "Currency": "USD",
+              "NetOpeningCapital": "1,388,297.67",
+              "Contributions": "0.00",
+              "Withdrawals": "0.00",
+              "NetCapitalActivity": "0.00",
+              "NetGainLoss": "12,687.28",
+              "ManagementFee": "(1,211.81)",
+              "OtherExpenses": "(108.53)",
+              "NetClosingCapital": "1,400,984.95",
+              "Commitment": "1,500,000",
+              "UnfundedCommitment": "956,266"
+            },
+            "BoundingBox": {
+              "Investor": "0.37750385208012327,0.16380952380952382,0.08320493066255778,0.011666666666666667,0.5898305084745763,0.16380952380952382,0.054853620955315874,0.014761904761904763,0.7069337442218798,0.16380952380952382,0.0674884437596302,0.011666666666666667,0.7827426810477658,0.16380952380952382,0.05362095531587057,0.011666666666666667,0.46902927580893683,0.16404761904761905,0.017257318952234205,0.01119047619047619,0.6514637904468413,0.16404761904761905,0.05023112480739599,0.011428571428571429,0.4939907550077042,0.16428571428571428,0.08782742681047766,0.01119047619047619,0.4810477657935285,0.18071428571428572,0.06687211093990755,0.011666666666666667,0.5553158705701079,0.18071428571428572,0.03297380585516179,0.011666666666666667,0.5966101694915255,0.18071428571428572,0.08320493066255778,0.011666666666666667,0.8375963020030817,0.18071428571428572,0.05023112480739599,0.011666666666666667,0.7824345146379045,0.18095238095238095,0.05023112480739599,0.011428571428571429,0.688135593220339,0.18119047619047618,0.08751926040061633,0.01119047619047619,0.3765793528505393,0.18142857142857144,0.09984591679506934,0.014047619047619048,0.48012326656394455,0.1976190476190476,0.08412942989214175,0.011666666666666667,0.3768875192604006,0.19785714285714287,0.06933744221879815,0.013333333333333334,0.4530046224961479,0.20047619047619047,0.01941448382126348,0.008809523809523809",
+              "PeriodBeginningDT": "0.41602465331278893,0.26452380952380955,0.022187981510015407,0.012142857142857143,0.44591679506933746,0.26452380952380955,0.03790446841294299,0.010714285714285714,0.37750385208012327,0.26476190476190475,0.03204930662557781,0.013095238095238096",
+              "PeriodEndingDT": "0.5411402157164868,0.26452380952380955,0.022187981510015407,0.012142857142857143,0.5710323574730355,0.26452380952380955,0.037596302003081665,0.010714285714285714,0.50231124807396,0.26476190476190475,0.03204930662557781,0.013095238095238096",
+              "Currency": "0.37719568567026196,0.2866666666666667,0.034822804314329735,0.010476190476190476",
+              "NetOpeningCapital": "0.6234206471494607,0.6266666666666667,0.10200308166409862,0.012142857142857143",
+              "Contributions": "0.6930662557781202,0.4230952380952381,0.03266563944530046,0.010476190476190476",
+              "Withdrawals": "0.6930662557781202,0.4230952380952381,0.03266563944530046,0.010476190476190476",
+              "NetCapitalActivity": "0.6930662557781202,0.4230952380952381,0.03266563944530046,0.010476190476190476",
+              "NetGainLoss": "0.6486902927580893,0.5330952380952381,0.07704160246533127,0.011904761904761904",
+              "ManagementFee": "0.6514637904468413,0.40095238095238095,0.07919876733436056,0.012619047619047618",
+              "OtherExpenses": "0.6662557781201849,0.44452380952380954,0.06440677966101695,0.015714285714285715",
+              "NetClosingCapital": "0.6234206471494607,0.714047619047619,0.10200308166409862,0.011904761904761904",
+              "Commitment": "0.37750385208012327,0.2195238095238095,0.07704160246533127,0.011904761904761904",
+              "UnfundedCommitment": "0.3768875192604006,0.2423809523809524,0.06317411402157165,0.011904761904761904"
+            },
+            "PageNumber": {
+              "Investor": 1,
+              "PeriodBeginningDT": 1,
+              "PeriodEndingDT": 1,
+              "Currency": 1,
+              "NetOpeningCapital": 1,
+              "Contributions": 1,
+              "Withdrawals": 1,
+              "NetCapitalActivity": 1,
+              "NetGainLoss": 1,
+              "ManagementFee": 1,
+              "OtherExpenses": 1,
+              "NetClosingCapital": 1,
+              "Commitment": 1,
+              "UnfundedCommitment": 1
+            }
+          },
+          "classification_status": true,
+          "extraction_status": true,
+          "ingestion_status": false,
+          "document_readable": true,
+          "extraction_via": "text"
+        }
+      },
+      {
+        "fields": {
+          "status": true,
+          "description": "Duplicated entries found for 05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf for all fields..",
+          "time": "2025-02-13T21:55:11.222399"
+        },
+        "meta_data": {
+          "id": 24,
+          "doc_id": 100010,
+          "created_at": "2025-02-13T21:55:11.222399",
+          "updated_at": "2025-02-13T21:55:11.222399",
+          "message": "Duplicated entries found for 05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf for all fields..",
+          "document_name": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf",
+          "meta_data": {},
+          "request": {
+            "file": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf"
+          },
+          "response": {
+            "Investor": "Elizabeth R. Patterson Living Trust created under agreement William and Elizabeth Patterson Trust dated 6/22/95, as amended",
+            "Account": "The Värde Fund XIII, L.P.|Elizabeth R. Patterson Living Trust created under agreement William and Elizabeth Patterson Trust dated 6/22/95, as amended",
+            "Security": "The Värde Fund XIII, L.P.",
+            "PeriodBeginningDT": "2024-05-01",
+            "PeriodEndingDT": "2024-05-31",
+            "Currency": "USD",
+            "NetOpeningCapital": 1388297.67,
+            "Contributions": 0,
+            "Withdrawals": 0,
+            "NetCapitalActivity": 0,
+            "NetGainLoss": 12687.28,
+            "ManagementFee": -1211.81,
+            "OtherExpenses": -108.53,
+            "NetClosingCapital": 1400984.95,
+            "Commitment": 1500000,
+            "UnfundedCommitment": 956266,
+            "ConfidenceScore": {
+              "Investor": "HIGH",
+              "Account": "HIGH",
+              "Security": "HIGH",
+              "PeriodBeginningDT": "HIGH",
+              "PeriodEndingDT": "HIGH",
+              "Currency": "HIGH",
+              "NetOpeningCapital": "HIGH",
+              "Contributions": "HIGH",
+              "Withdrawals": "HIGH",
+              "NetCapitalActivity": "HIGH",
+              "NetGainLoss": "HIGH",
+              "ManagementFee": "HIGH",
+              "OtherExpenses": "HIGH",
+              "NetClosingCapital": "HIGH",
+              "Commitment": "HIGH",
+              "UnfundedCommitment": "HIGH"
+            },
+            "VerbatimText": {
+              "Investor": "Elizabeth R. Patterson Living Trust created under agreement William and Elizabeth Patterson Trust dated 6/22/95, as amended",
+              "Account": "The Värde Fund XIII, L.P.|Elizabeth R. Patterson Living Trust created under agreement William and Elizabeth Patterson Trust dated 6/22/95, as amended",
+              "Security": "The Värde Fund XIII, L.P.",
+              "PeriodBeginningDT": "May 01, 2024",
+              "PeriodEndingDT": "May 31, 2024",
+              "Currency": "USD",
+              "NetOpeningCapital": "1,388,297.67",
+              "Contributions": "0.00",
+              "Withdrawals": "0.00",
+              "NetCapitalActivity": "0.00",
+              "NetGainLoss": "12,687.28",
+              "ManagementFee": "(1,211.81)",
+              "OtherExpenses": "(108.53)",
+              "NetClosingCapital": "1,400,984.95",
+              "Commitment": "1,500,000",
+              "UnfundedCommitment": "956,266"
+            },
+            "BoundingBox": {
+              "Investor": "0.37750385208012327,0.16380952380952382,0.08320493066255778,0.011666666666666667,0.5898305084745763,0.16380952380952382,0.054853620955315874,0.014761904761904763,0.7069337442218798,0.16380952380952382,0.0674884437596302,0.011666666666666667,0.7827426810477658,0.16380952380952382,0.05362095531587057,0.011666666666666667,0.46902927580893683,0.16404761904761905,0.017257318952234205,0.01119047619047619,0.6514637904468413,0.16404761904761905,0.05023112480739599,0.011428571428571429,0.4939907550077042,0.16428571428571428,0.08782742681047766,0.01119047619047619,0.4810477657935285,0.18071428571428572,0.06687211093990755,0.011666666666666667,0.5553158705701079,0.18071428571428572,0.03297380585516179,0.011666666666666667,0.5966101694915255,0.18071428571428572,0.08320493066255778,0.011666666666666667,0.8375963020030817,0.18071428571428572,0.05023112480739599,0.011666666666666667,0.7824345146379045,0.18095238095238095,0.05023112480739599,0.011428571428571429,0.688135593220339,0.18119047619047618,0.08751926040061633,0.01119047619047619,0.3765793528505393,0.18142857142857144,0.09984591679506934,0.014047619047619048,0.48012326656394455,0.1976190476190476,0.08412942989214175,0.011666666666666667,0.3768875192604006,0.19785714285714287,0.06933744221879815,0.013333333333333334,0.4530046224961479,0.20047619047619047,0.01941448382126348,0.008809523809523809",
+              "PeriodBeginningDT": "0.41602465331278893,0.26452380952380955,0.022187981510015407,0.012142857142857143,0.44591679506933746,0.26452380952380955,0.03790446841294299,0.010714285714285714,0.37750385208012327,0.26476190476190475,0.03204930662557781,0.013095238095238096",
+              "PeriodEndingDT": "0.5411402157164868,0.26452380952380955,0.022187981510015407,0.012142857142857143,0.5710323574730355,0.26452380952380955,0.037596302003081665,0.010714285714285714,0.50231124807396,0.26476190476190475,0.03204930662557781,0.013095238095238096",
+              "Currency": "0.37719568567026196,0.2866666666666667,0.034822804314329735,0.010476190476190476",
+              "NetOpeningCapital": "0.6234206471494607,0.6266666666666667,0.10200308166409862,0.012142857142857143",
+              "Contributions": "0.6930662557781202,0.4230952380952381,0.03266563944530046,0.010476190476190476",
+              "Withdrawals": "0.6930662557781202,0.4230952380952381,0.03266563944530046,0.010476190476190476",
+              "NetCapitalActivity": "0.6930662557781202,0.4230952380952381,0.03266563944530046,0.010476190476190476",
+              "NetGainLoss": "0.6486902927580893,0.5330952380952381,0.07704160246533127,0.011904761904761904",
+              "ManagementFee": "0.6514637904468413,0.40095238095238095,0.07919876733436056,0.012619047619047618",
+              "OtherExpenses": "0.6662557781201849,0.44452380952380954,0.06440677966101695,0.015714285714285715",
+              "NetClosingCapital": "0.6234206471494607,0.714047619047619,0.10200308166409862,0.011904761904761904",
+              "Commitment": "0.37750385208012327,0.2195238095238095,0.07704160246533127,0.011904761904761904",
+              "UnfundedCommitment": "0.3768875192604006,0.2423809523809524,0.06317411402157165,0.011904761904761904"
+            },
+            "PageNumber": {
+              "Investor": 1,
+              "PeriodBeginningDT": 1,
+              "PeriodEndingDT": 1,
+              "Currency": 1,
+              "NetOpeningCapital": 1,
+              "Contributions": 1,
+              "Withdrawals": 1,
+              "NetCapitalActivity": 1,
+              "NetGainLoss": 1,
+              "ManagementFee": 1,
+              "OtherExpenses": 1,
+              "NetClosingCapital": 1,
+              "Commitment": 1,
+              "UnfundedCommitment": 1
+            }
+          },
+          "classification_status": true,
+          "extraction_status": true,
+          "ingestion_status": false,
+          "document_readable": true,
+          "extraction_via": "text"
+        }
+      },
+      {
+        "fields": {
+          "status": true,
+          "description": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf received starting classification and extraction if file is valid..",
+          "time": "2025-02-13T21:55:04.571200"
+        },
+        "meta_data": {
+          "id": 23,
+          "doc_id": 100011,
+          "created_at": "2025-02-13T21:55:04.571200",
+          "updated_at": "2025-02-13T21:55:04.571200",
+          "message": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf received starting classification and extraction if file is valid..",
+          "document_name": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf",
+          "meta_data": {},
+          "request": {
+            "file": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf"
+          },
+          "response": null,
+          "classification_status": false,
+          "extraction_status": false,
+          "ingestion_status": false,
+          "document_readable": false,
+          "extraction_via": "text"
+        }
+      },
+      {
+        "fields": {
+          "status": true,
+          "description": "Classfication & extraction completed and Unlinked",
+          "time": "2025-02-13T21:21:57.168186"
+        },
+        "meta_data": {
+          "id": 22,
+          "doc_id": 100010,
+          "created_at": "2025-02-13T21:21:57.168186",
+          "updated_at": "2025-02-13T21:21:57.168186",
+          "message": "Classfication & extraction completed and Unlinked",
+          "document_name": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf",
+          "meta_data": {},
+          "request": {
+            "file": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf"
+          },
+          "response": {
+            "Investor": "Elizabeth R. Patterson Living Trust created under agreement William and Elizabeth Patterson Trust dated 6/22/95, as amended",
+            "Account": "The Värde Fund XIII, L.P.|Elizabeth R. Patterson Living Trust created under agreement William and Elizabeth Patterson Trust dated 6/22/95, as amended",
+            "Security": "The Värde Fund XIII, L.P.",
+            "PeriodBeginningDT": "2024-05-01",
+            "PeriodEndingDT": "2024-05-31",
+            "Currency": "USD",
+            "NetOpeningCapital": 1388297.67,
+            "Contributions": 0,
+            "Withdrawals": 0,
+            "NetCapitalActivity": 0,
+            "NetGainLoss": 12687.28,
+            "ManagementFee": -1211.81,
+            "OtherExpenses": -108.53,
+            "NetClosingCapital": 1400984.95,
+            "Commitment": 1500000,
+            "UnfundedCommitment": 956266,
+            "ConfidenceScore": {
+              "Investor": "HIGH",
+              "Account": "HIGH",
+              "Security": "HIGH",
+              "PeriodBeginningDT": "HIGH",
+              "PeriodEndingDT": "HIGH",
+              "Currency": "HIGH",
+              "NetOpeningCapital": "HIGH",
+              "Contributions": "HIGH",
+              "Withdrawals": "HIGH",
+              "NetCapitalActivity": "HIGH",
+              "NetGainLoss": "HIGH",
+              "ManagementFee": "HIGH",
+              "OtherExpenses": "HIGH",
+              "NetClosingCapital": "HIGH",
+              "Commitment": "HIGH",
+              "UnfundedCommitment": "HIGH"
+            },
+            "VerbatimText": {
+              "Investor": "Elizabeth R. Patterson Living Trust created under agreement William and Elizabeth Patterson Trust dated 6/22/95, as amended",
+              "Account": "The Värde Fund XIII, L.P.|Elizabeth R. Patterson Living Trust created under agreement William and Elizabeth Patterson Trust dated 6/22/95, as amended",
+              "Security": "The Värde Fund XIII, L.P.",
+              "PeriodBeginningDT": "May 01, 2024",
+              "PeriodEndingDT": "May 31, 2024",
+              "Currency": "USD",
+              "NetOpeningCapital": "1,388,297.67",
+              "Contributions": "0.00",
+              "Withdrawals": "0.00",
+              "NetCapitalActivity": "0.00",
+              "NetGainLoss": "12,687.28",
+              "ManagementFee": "(1,211.81)",
+              "OtherExpenses": "(108.53)",
+              "NetClosingCapital": "1,400,984.95",
+              "Commitment": "1,500,000",
+              "UnfundedCommitment": "956,266"
+            },
+            "BoundingBox": {},
+            "PageNumber": {}
+          },
+          "classification_status": true,
+          "extraction_status": true,
+          "ingestion_status": false,
+          "document_readable": true,
+          "extraction_via": "text"
+        }
+      },
+      {
+        "fields": {
+          "status": true,
+          "description": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf received starting classification and extraction if file is valid..",
+          "time": "2025-02-13T21:21:53.451055"
+        },
+        "meta_data": {
+          "id": 21,
+          "doc_id": 100010,
+          "created_at": "2025-02-13T21:21:53.451055",
+          "updated_at": "2025-02-13T21:21:53.451055",
+          "message": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf received starting classification and extraction if file is valid..",
+          "document_name": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf",
+          "meta_data": {},
+          "request": {
+            "file": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf"
+          },
+          "response": null,
+          "classification_status": false,
+          "extraction_status": false,
+          "ingestion_status": false,
+          "document_readable": false,
+          "extraction_via": "text"
+        }
+      },
+      {
+        "fields": {
+          "status": false,
+          "description": "Error code: 401 - {'error': {'message': \"Incorrect API key provided: 'sk-proj**********************************************************************************************************************************************************mUA'. You can find your API key at https://platform.openai.com/account/api-keys.\", 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+          "time": "2025-02-13T21:17:00.149906"
+        },
+        "meta_data": {
+          "id": 20,
+          "doc_id": 100009,
+          "created_at": "2025-02-13T21:17:00.149906",
+          "updated_at": "2025-02-13T21:17:00.149906",
+          "message": "Error code: 401 - {'error': {'message': \"Incorrect API key provided: 'sk-proj**********************************************************************************************************************************************************mUA'. You can find your API key at https://platform.openai.com/account/api-keys.\", 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+          "document_name": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf",
+          "meta_data": {},
+          "request": {
+            "file": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf"
+          },
+          "response": null,
+          "classification_status": false,
+          "extraction_status": false,
+          "ingestion_status": false,
+          "document_readable": false,
+          "extraction_via": "text"
+        }
+      },
+      {
+        "fields": {
+          "status": true,
+          "description": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf received starting classification and extraction if file is valid..",
+          "time": "2025-02-13T21:17:00.108820"
+        },
+        "meta_data": {
+          "id": 19,
+          "doc_id": 100009,
+          "created_at": "2025-02-13T21:17:00.108820",
+          "updated_at": "2025-02-13T21:17:00.108820",
+          "message": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf received starting classification and extraction if file is valid..",
+          "document_name": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf",
+          "meta_data": {},
+          "request": {
+            "file": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf"
+          },
+          "response": null,
+          "classification_status": false,
+          "extraction_status": false,
+          "ingestion_status": false,
+          "document_readable": false,
+          "extraction_via": "text"
+        }
+      },
+      {
+        "fields": {
+          "status": false,
+          "description": "Error code: 401 - {'error': {'message': \"Incorrect API key provided: 'sk-proj**********************************************************************************************************************************************************mUA'. You can find your API key at https://platform.openai.com/account/api-keys.\", 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+          "time": "2025-02-13T20:55:57.552891"
+        },
+        "meta_data": {
+          "id": 18,
+          "doc_id": 100008,
+          "created_at": "2025-02-13T20:55:57.552891",
+          "updated_at": "2025-02-13T20:55:57.552891",
+          "message": "Error code: 401 - {'error': {'message': \"Incorrect API key provided: 'sk-proj**********************************************************************************************************************************************************mUA'. You can find your API key at https://platform.openai.com/account/api-keys.\", 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}",
+          "document_name": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf",
+          "meta_data": {},
+          "request": {
+            "file": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf"
+          },
+          "response": null,
+          "classification_status": false,
+          "extraction_status": false,
+          "ingestion_status": false,
+          "document_readable": false,
+          "extraction_via": "text"
+        }
+      },
+      {
+        "fields": {
+          "status": true,
+          "description": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf received starting classification and extraction if file is valid..",
+          "time": "2025-02-13T20:55:57.520129"
+        },
+        "meta_data": {
+          "id": 17,
+          "doc_id": 100008,
+          "created_at": "2025-02-13T20:55:57.520129",
+          "updated_at": "2025-02-13T20:55:57.520129",
+          "message": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf received starting classification and extraction if file is valid..",
+          "document_name": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf",
+          "meta_data": {},
+          "request": {
+            "file": "05.31.2024 Elizabeth R. Patterson Living Trust Fund XIII, L.P. Monthly Capital Statement.pdf"
+          },
+          "response": null,
+          "classification_status": false,
+          "extraction_status": false,
+          "ingestion_status": false,
+          "document_readable": false,
+          "extraction_via": "text"
+        }
+      }
+    ]
+  }
+  

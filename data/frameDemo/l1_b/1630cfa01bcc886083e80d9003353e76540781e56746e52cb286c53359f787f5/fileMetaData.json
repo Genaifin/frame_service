@@ -1,0 +1,16 @@
+{
+  "typeName": "application/pdf",
+  "fileHash": "1630cfa01bcc886083e80d9003353e76540781e56746e52cb286c53359f787f5",
+  "fileOriginalName": "077-010300.pdf",
+  "fileOriginalPath": "data/frameDemo/l0/077-010300.pdf",
+  "typeSpecificParams": {
+    "numPages": 4,
+    "EXIF": {
+      "/Author": "Avanee Sharma",
+      "/CreationDate": "2025-02-06T05:11:37.000Z",
+      "/ModDate": "2025-02-06T05:11:37.000Z",
+      "/Producer": "Microsoft: Print To PDF",
+      "/Title": "215262_2024-12.pdf"
+    }
+  }
+}

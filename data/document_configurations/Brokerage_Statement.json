@@ -1,0 +1,294 @@
+{
+  "response": [
+    {
+      "schema_id": 4,
+      "document_type_id": 4,
+      "document_type": "Brokerage Statement",
+      "is_active": true,
+      "created_at": "2025-02-12T10:46:13.962654",
+      "updated_at": "2025-02-12T10:46:13.962654",
+      "description": "A brokerage statement in the context of Alternatives (ALTS) such as hedge funds, private equity, private credit, real estate funds, etc and traditional asset management is a periodic report provided by a custodian, prime broker, executing broker or investment platform that details your holdings, transactions, and account activity related to alternative investment products.",
+      "sla": "T + 3 Days",
+      "schema_blob": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "Broker Custodian Name": {
+            "fieldName": "BrokerCustodianName",
+            "type": "String",
+            "description": "Name of the financial institution or custodian responsible for holding and safeguarding the client's assets.",
+            "group": "Position & Holdings Summary"
+          },
+          "Fund Account Name": {
+            "fieldName": "FundAccountName",
+            "type": "String",
+            "description": "Official name of the fund or investment account as registered with the custodian or fund administrator.",
+            "group": "Position & Holdings Summary"
+          },
+          "Fund Account Number": {
+            "fieldName": "FundAccountNumber",
+            "type": "String",
+            "description": "Unique identification number assigned to the fund or brokerage account.",
+            "group": "Position & Holdings Summary"
+          },
+          "Statement Period Start Date": {
+            "fieldName": "StatementPeriodStartDate",
+            "type": "Date",
+            "description": "The beginning date of the reporting period covered in the brokerage statement.",
+            "group": "Position & Holdings Summary"
+          },
+          "Statement Period End Date": {
+            "fieldName": "StatementPeriodEndDate",
+            "type": "Date",
+            "description": "The closing date of the reporting period covered in the brokerage statement.",
+            "group": "Position & Holdings Summary"
+          },
+          "Base Currency": {
+            "fieldName": "BaseCurrency",
+            "type": "String",
+            "description": "The main currency in which the account’s values, balances, and reports are presented.",
+            "group": "Position & Holdings Summary"
+          },
+          "Office Address Phone": {
+            "fieldName": "OfficeAddressPhone",
+            "type": "String",
+            "description": "Contact phone number associated with the custodian or account management office.",
+            "group": "Position & Holdings Summary"
+          },
+          "Valuation": {
+            "fieldName": "Valuation",
+            "type": "Numeric",
+            "description": "Total market value of all assets held in the account as of the statement end date.",
+            "group": "Position & Holdings Summary"
+          },
+          "Cash balance": {
+            "fieldName": "CashBalance",
+            "type": "Numeric",
+            "description": "Amount of cash or cash equivalents available in the account at the reporting date.",
+            "group": "Cash & Collateral"
+          },
+          "Margin balances": {
+            "fieldName": "MarginBalances",
+            "type": "Numeric",
+            "description": "Outstanding debit or credit balances resulting from margin trading activities.",
+            "group": "Cash & Collateral"
+          },
+          "Collateral posted / received": {
+            "fieldName": "CollateralPostedReceived",
+            "type": "String",
+            "description": "Assets or cash pledged or received as collateral for margin or financing arrangements.",
+            "group": "Cash & Collateral"
+          },
+          "Accrued interest receivable / payable": {
+            "fieldName": "AccruedInterestReceivablePayable",
+            "type": "Numeric",
+            "description": "Interest income earned but not yet received, or interest expense incurred but not yet paid.",
+            "group": "Cash & Collateral"
+          },
+          "Trade date": {
+            "fieldName": "TradeDate",
+            "type": "Date",
+            "description": "The date when a trade order was executed in the market.",
+            "group": "Transactions"
+          },
+          "Settlement date": {
+            "fieldName": "SettlementDate",
+            "type": "Date",
+            "description": "The date when the traded securities and cash are exchanged and ownership is transferred.",
+            "group": "Transactions"
+          },
+          "Security": {
+            "fieldName": "Security",
+            "type": "String",
+            "description": "The name or identifier of the financial instrument traded (e.g., stock, bond, ETF).",
+            "group": "Transactions"
+          },
+          "Quantity": {
+            "fieldName": "Quantity",
+            "type": "Numeric",
+            "description": "The number of units or shares of the security bought or sold.",
+            "group": "Transactions"
+          },
+          "Price": {
+            "fieldName": "Price",
+            "type": "Numeric",
+            "description": "The per-unit execution price of the traded security.",
+            "group": "Transactions"
+          },
+          "Total amount": {
+            "fieldName": "TotalAmount",
+            "type": "Numeric",
+            "description": "Total transaction value, typically calculated as quantity multiplied by price.",
+            "group": "Transactions"
+          },
+          "Corporate actions": {
+            "fieldName": "CorporateActions",
+            "type": "String",
+            "description": "Events such as dividends, stock splits, mergers, or rights issues affecting securities in the account.",
+            "group": "Transactions"
+          },
+          "Contributions / Withdrawals": {
+            "fieldName": "ContributionsWithdrawals",
+            "type": "String",
+            "description": "Cash inflows or outflows resulting from deposits or redemptions made by the account holder.",
+            "group": "Transactions"
+          },
+          "Pending Trades": {
+            "fieldName": "PendingTrades",
+            "type": "String",
+            "description": "Transactions that have been executed but not yet settled as of the statement date.",
+            "group": "Transactions"
+          },
+          "Repo financing terms": {
+            "fieldName": "RepoFinancingTerms",
+            "type": "String",
+            "description": "Details of repurchase agreement (repo) financing arrangements, including rate and maturity.",
+            "group": "Financing & Fees"
+          },
+          "Swap financing": {
+            "fieldName": "SwapFinancing",
+            "type": "String",
+            "description": "Information about open swap contracts and related financing obligations.",
+            "group": "Financing & Fees"
+          },
+          "Stock borrow / securities lending fees": {
+            "fieldName": "StockBorrowSecuritiesLendingFees",
+            "type": "Numeric",
+            "description": "Fees incurred or earned from borrowing or lending securities.",
+            "group": "Financing & Fees"
+          },
+          "Commissions & transaction costs": {
+            "fieldName": "CommissionsTransactionCosts",
+            "type": "String",
+            "description": "Brokerage fees, taxes, or other costs associated with trade execution.",
+            "group": "Financing & Fees"
+          },
+          "Interest income": {
+            "fieldName": "InterestIncome",
+            "type": "Numeric",
+            "description": "Interest earned from fixed income instruments, deposits, or cash balances.",
+            "group": "Income & Expense Accruals"
+          },
+          "Dividend income": {
+            "fieldName": "DividendIncome",
+            "type": "String",
+            "description": "Dividends received from equity holdings during the reporting period.",
+            "group": "Income & Expense Accruals"
+          },
+          "Accrued interest payable": {
+            "fieldName": "AccruedInterestPayable",
+            "type": "Numeric",
+            "description": "Interest expense accumulated but not yet paid on borrowed funds or margin loans.",
+            "group": "Income & Expense Accruals"
+          },
+          "Other accruals": {
+            "fieldName": "OtherAccruals",
+            "type": "String",
+            "description": "Miscellaneous income or expense accruals not categorized elsewhere.",
+            "group": "Income & Expense Accruals"
+          },
+          "Beginning balance": {
+            "fieldName": "BeginningBalance",
+            "type": "Numeric",
+            "description": "The starting value of the account at the beginning of the reporting period.",
+            "group": "Account Balance"
+          },
+          "Net cash flows": {
+            "fieldName": "NetCashFlows",
+            "type": "String",
+            "description": "Net total of all cash inflows and outflows during the reporting period.",
+            "group": "Account Balance"
+          },
+          "Net realized P&L": {
+            "fieldName": "NetRealizedPnL",
+            "type": "Numeric",
+            "description": "Profit or loss from completed transactions where gains or losses have been realized.",
+            "group": "Account Balance"
+          },
+          "Net unrealized P&L": {
+            "fieldName": "NetUnrealizedPnL",
+            "type": "Numeric",
+            "description": "Profit or loss from open positions based on current market valuation.",
+            "group": "Account Balance"
+          },
+          "Ending balance": {
+            "fieldName": "EndingBalance",
+            "type": "Numeric",
+            "description": "The total account value at the end of the reporting period after accounting for all activity.",
+            "group": "Account Balance"
+          },
+          "": {
+            "fieldName": "",
+            "type": "string",
+            "description": "TThis section helps you understand your statement by providing legal and administrative explanations about fees, penalties, and the terms and codes used in your statement. “Stuffers” and brochures (some mandated by regulators) may also be included in your account statement. ",
+            "group": "Disclosures and Definitions"
+          },
+          "ConfidenceScore": {
+            "type": "object"
+          },
+          "VerbatimText": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "Broker Custodian Name",
+          "Fund Account Name",
+          "Fund Account Number",
+          "Statement Period Start Date",
+          "Statement Period End Date",
+          "Base Currency",
+          "Office Address Phone",
+          "Valuation",
+          "Cash balance",
+          "Margin balances",
+          "Collateral posted / received",
+          "Accrued interest receivable / payable",
+          "Trade date",
+          "Settlement date",
+          "Security",
+          "Quantity",
+          "Price",
+          "Total amount",
+          "Corporate actions",
+          "Contributions / Withdrawals",
+          "Pending Trades",
+          "Repo financing terms",
+          "Swap financing",
+          "Stock borrow / securities lending fees",
+          "Commissions & transaction costs",
+          "Interest income",
+          "Dividend income",
+          "Accrued interest payable",
+          "Other accruals",
+          "Beginning balance",
+          "Net cash flows",
+          "Net realized P&L",
+          "Net unrealized P&L",
+          "Ending balance",
+          "ConfidenceScore",
+          "VerbatimText"
+        ],
+        "additionalProperties": false,
+        "definitions": {
+          "ConfidenceScore": {
+            "type": "string",
+            "enum": ["HIGH", "MID", "LOW"],
+            "description": "Confidence score for the extracted value."
+          },
+          "VerbatimText": {
+            "type": "string",
+            "description": "The exact verbatim text extracted from the document."
+          }
+        }
+      },
+      "meta_schema_blob": null,
+      "meta_data": null
+    }
+  ],
+  "pagination": {
+    "total_count": 1,
+    "total_pages": 1,
+    "current_page": 1,
+    "page_size": 10
+  }
+}

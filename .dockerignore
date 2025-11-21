@@ -1,0 +1,162 @@
+# =============================================================================
+# DOCKER IGNORE FILE FOR FASTER BUILDS
+# =============================================================================
+# This file excludes unnecessary files from Docker build context
+# to reduce build time and image size
+
+# =============================================================================
+# DEVELOPMENT FILES
+# =============================================================================
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+venv31/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# =============================================================================
+# IDE AND EDITOR FILES
+# =============================================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# =============================================================================
+# VERSION CONTROL
+# =============================================================================
+.git/
+.gitignore
+.gitattributes
+
+# =============================================================================
+# DOCUMENTATION AND README FILES
+# =============================================================================
+*.md
+README*
+CHANGELOG*
+LICENSE*
+CONTRIBUTING*
+
+# =============================================================================
+# TESTING AND DEVELOPMENT
+# =============================================================================
+tests/
+test_*/
+*_test.py
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+
+# =============================================================================
+# LOGS AND TEMPORARY FILES
+# =============================================================================
+*.log
+logs/
+temp/
+tmp/
+*.tmp
+*.temp
+
+# =============================================================================
+# ENVIRONMENT AND CONFIG FILES
+# =============================================================================
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+config.env
+*.conf
+*.ini
+!alembic.ini
+!uvicornLogConfig.yaml
+
+# =============================================================================
+# DATA FILES (Large files that shouldn't be in Docker image)
+# =============================================================================
+data/frameDemo/l0/
+data/frameDemo/l1/
+data/frameDemo/l1_b/
+data/frameDemo/ldummy/
+data/validusDemo/l0/
+data/validusDemo/l1/
+*.csv
+*.xlsx
+*.pdf
+*.PDF
+*.json
+!**/states/*.json
+!**/frontendModules/*.json
+!**/schemas/*.json
+!**/fileConfigs/*.json
+
+# =============================================================================
+# OUTPUT AND GENERATED FILES
+# =============================================================================
+output_documents/
+frameEngine/output_documents/
+frameEngine/temp/
+frameEngine/source_documents/
+*.ipynb
+*.ipynb_checkpoints/
+
+# =============================================================================
+# DOCKER FILES
+# =============================================================================
+Dockerfile*
+docker-compose*
+.dockerignore
+
+# =============================================================================
+# DEPLOYMENT AND SCRIPTS
+# =============================================================================
+deploy.sh
+start_server.bat
+# start_server.sh - needed for Docker build
+*.bat
+
+# =============================================================================
+# MONITORING AND PROFILING
+# =============================================================================
+*.prof
+*.profile
+memory_profiler_*
+
+# =============================================================================
+# BACKUP FILES
+# =============================================================================
+*.bak
+*.backup
+*.old

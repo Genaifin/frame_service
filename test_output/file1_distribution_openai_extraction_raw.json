@@ -1,0 +1,304 @@
+{
+  "source": "openai",
+  "response_type": "extraction",
+  "original_filename": "file1_distribution.xlsx",
+  "timestamp": 1762778174.7374249,
+  "raw_response": {
+    "entities": [
+      {
+        "portfolio": [
+          {
+            "Investor": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Account": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "InvestorRefID": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "AccountRefID": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Fund_ID": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Series_ID": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Series_Description": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Security": {
+              "Value": "Blackstone Real Estate Partners IX",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "BIackstone ReaI Estate Partners IX",
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "TransactionDate": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Currency": {
+              "Value": "USD",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD",
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Distribution": {
+              "Value": -44351.51,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "-44351.51",
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "DeemeedCapitalCall": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "IncomeDistribution": {
+              "Value": 5988.99,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "2893.8, 2223.3, 871.89",
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "IncomeReinvested": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "RecallableSell": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "ReturnOfCapital": {
+              "Value": 35218.74,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "5880.5, 5526.0, 6196.0, 5035.1, 1346.6, 863.55, 690.98, 383.81",
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "DistributionOutsideCommitment": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "CapitalCall": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "CapitalCallOutsideCommitment": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "NetCashFlowQC": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "TransferOut": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Quantity": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Price": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "RemainingCommittedCapital": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "DistributionsToDate": {
+              "Value": 3772416.54,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "3772416.54",
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "ReturnOfCapitalToDate": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "CommittedCapital": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "ContributionsToDate": {
+              "Value": 10602346.74,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "10602346.74",
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Carry": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Clawback": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "RealizedGainCash": {
+              "Value": 5625.3,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "5625.3",
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "RealizedGainStock": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "RealizedLossCash": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "RealizedLossStock": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "ReturnOfCapitalManagementFees": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "ReturnOfCapitalPartnershipExpenses": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "ReturnOfCapitalStock": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "TemporaryReturnOfCapitalManagementFees": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "SubsequentCloseInterest": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Other": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "raw_text": "{\n  \"entities\": [\n    {\n      \"portfolio\": [\n        {\n          \"Investor\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"Account\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"InvestorRefID\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"AccountRefID\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"Fund_ID\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"Series_ID\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"Series_Description\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"Security\": {\n            \"Value\": \"Blackstone Real Estate Partners IX\",\n            \"ConfidenceScore\": \"HIGH\",\n            \"VerbatimText\": \"BIackstone ReaI Estate Partners IX\",\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"TransactionDate\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"Currency\": {\n            \"Value\": \"USD\",\n            \"ConfidenceScore\": \"HIGH\",\n            \"VerbatimText\": \"USD\",\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"Distribution\": {\n            \"Value\": -44351.51,\n            \"ConfidenceScore\": \"HIGH\",\n            \"VerbatimText\": \"-44351.51\",\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"DeemeedCapitalCall\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"IncomeDistribution\": {\n            \"Value\": 5988.99,\n            \"ConfidenceScore\": \"HIGH\",\n            \"VerbatimText\": \"2893.8, 2223.3, 871.89\",\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"IncomeReinvested\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"RecallableSell\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"ReturnOfCapital\": {\n            \"Value\": 35218.74,\n            \"ConfidenceScore\": \"HIGH\",\n            \"VerbatimText\": \"5880.5, 5526.0, 6196.0, 5035.1, 1346.6, 863.55, 690.98, 383.81\",\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"DistributionOutsideCommitment\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"CapitalCall\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"CapitalCallOutsideCommitment\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"NetCashFlowQC\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"TransferOut\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"Quantity\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"Price\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"RemainingCommittedCapital\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"DistributionsToDate\": {\n            \"Value\": 3772416.54,\n            \"ConfidenceScore\": \"HIGH\",\n            \"VerbatimText\": \"3772416.54\",\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"ReturnOfCapitalToDate\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"CommittedCapital\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"ContributionsToDate\": {\n            \"Value\": 10602346.74,\n            \"ConfidenceScore\": \"HIGH\",\n            \"VerbatimText\": \"10602346.74\",\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"Carry\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"Clawback\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"RealizedGainCash\": {\n            \"Value\": 5625.3,\n            \"ConfidenceScore\": \"HIGH\",\n            \"VerbatimText\": \"5625.3\",\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"RealizedGainStock\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"RealizedLossCash\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"RealizedLossStock\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"ReturnOfCapitalManagementFees\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"ReturnOfCapitalPartnershipExpenses\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"ReturnOfCapitalStock\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"TemporaryReturnOfCapitalManagementFees\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"SubsequentCloseInterest\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"Other\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          }\n        }\n      ]\n    }\n  ]\n}",
+  "response_metadata": {
+    "has_markdown_wrapper": true,
+    "detected_format": "json",
+    "is_valid_json": true,
+    "original_length": 8583,
+    "cleaned_length": 8571
+  }
+}

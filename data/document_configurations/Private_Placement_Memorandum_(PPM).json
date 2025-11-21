@@ -1,0 +1,1156 @@
+{
+  "response": [
+    {
+      "schema_id": 6,
+      "document_type_id": 6,
+      "document_type": "Private Placement Memorandum (PPM)",
+      "is_active": true,
+      "created_at": "2025-02-12T10:46:13.962654",
+      "updated_at": "2025-02-12T10:46:13.962654",
+      "description": "A Private Placement Memorandum (“PPM”), also known as a private offering document and confidential offering memorandum, is a securities disclosure document used in a private offering of securities by a private placement issuer or an investment fund (collectively, the “Issuer”) 1.From an investor’s point of view, the purpose of the PPM is to obtain needed information about the Issuer and its securities, both good and bad, to make an informed decision about whether to purchase the security. 2.The investor wants to know the parameters of investing in the Issuer and the potential rights, risks, and rewards of its investment. 3. For the Issuer, the purpose of the PPM is to provide the necessary disclosures about the risks, strategies, management team, investment criteria, and other information about its securities to protect itself and its managers against claims of misstatements or omissions.",
+      "sla": "T + 5 Days",
+      "schema_blob": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "Fund name and legal entity": {
+            "fieldName": "Fundnameandlegalentity",
+            "type": "String",
+            "description": "Official registered name and legal entity structure",
+            "group": "Fund Overview & Basics"
+          },
+          "Fund type": {
+            "fieldName": "Fundtype",
+            "type": "String",
+            "description": "Classification (e.g., Hedge Fund, PE, VC, Real Estate)",
+            "group": "Fund Overview & Basics"
+          },
+          "Domicile/jurisdiction of formation": {
+            "fieldName": "Domicile/jurisdictionofformation",
+            "type": "String",
+            "description": "Location where fund is legally established",
+            "group": "Fund Overview & Basics"
+          },
+          "Fund manager/General Partner": {
+            "fieldName": "Fundmanager/GeneralPartner",
+            "type": "String",
+            "description": "Entity responsible for managing fund operations",
+            "group": "Fund Overview & Basics"
+          },
+          "Investment advisor": {
+            "fieldName": "Investmentadvisor",
+            "type": "String",
+            "description": "Registered advisor providing investment guidance",
+            "group": "Fund Overview & Basics"
+          },
+          "Date of formation": {
+            "fieldName": "Dateofformation",
+            "type": "Date",
+            "description": "Official establishment date of the fund",
+            "group": "Fund Overview & Basics"
+          },
+          "Fund term/life": {
+            "fieldName": "Fundterm/life",
+            "type": "String",
+            "description": "Duration of fund existence (e.g., 10 years)",
+            "group": "Fund Overview & Basics"
+          },
+          "Fiscal year end": {
+            "fieldName": "Fiscalyearend",
+            "type": "Date",
+            "description": "End date of fund's fiscal year",
+            "group": "Fund Overview & Basics"
+          },
+          "Primary investment objective": {
+            "fieldName": "Primaryinvestmentobjective",
+            "type": "String",
+            "description": "Main goal (e.g., capital appreciation, income)",
+            "group": "Investment Strategy & Objective"
+          },
+          "Detailed investment strategy and methodology": {
+            "fieldName": "Detailedinvestmentstrategyandmethodology",
+            "type": "String",
+            "description": "Comprehensive explanation of investment approach",
+            "group": "Investment Strategy & Objective"
+          },
+          "Target asset classes": {
+            "fieldName": "Targetassetclasses",
+            "type": "String",
+            "description": "Types of assets (equities, fixed income, real estate, etc.)",
+            "group": "Investment Strategy & Objective"
+          },
+          "Target sectors/industries": {
+            "fieldName": "Targetsectors/industries",
+            "type": "String",
+            "description": "Specific industries or sectors of focus",
+            "group": "Investment Strategy & Objective"
+          },
+          "Geographic focus": {
+            "fieldName": "Geographicfocus",
+            "type": "String",
+            "description": "Geographic regions for investments",
+            "group": "Investment Strategy & Objective"
+          },
+          "Investment stage": {
+            "fieldName": "Investmentstage",
+            "type": "String",
+            "description": "Stage focus (seed, early, growth, late stage)",
+            "group": "Investment Strategy & Objective"
+          },
+          "Investment horizon/holding period": {
+            "fieldName": "Investmenthorizon/holdingperiod",
+            "type": "String",
+            "description": "Typical duration for holding investments",
+            "group": "Investment Strategy & Objective"
+          },
+          "Target returns": {
+            "fieldName": "Targetreturns",
+            "type": "Numeric",
+            "description": "Expected return metrics (IRR, multiple, etc.)",
+            "group": "Investment Strategy & Objective"
+          },
+          "Benchmark index (if applicable)": {
+            "fieldName": "Benchmarkindex(ifapplicable)",
+            "type": "String",
+            "description": "Performance comparison index",
+            "group": "Investment Strategy & Objective"
+          },
+          "Use of leverage": {
+            "fieldName": "Useofleverage",
+            "type": "String",
+            "description": "Whether and how leverage is employed",
+            "group": "Investment Strategy & Objective"
+          },
+          "Hedging strategies": {
+            "fieldName": "Hedgingstrategies",
+            "type": "String",
+            "description": "Risk mitigation approaches used",
+            "group": "Investment Strategy & Objective"
+          },
+          "Minimum investment amount": {
+            "fieldName": "Minimuminvestmentamount",
+            "type": "Numeric",
+            "description": "Smallest acceptable investment",
+            "group": "Fund Size & Capitalization"
+          },
+          "Initial closing date": {
+            "fieldName": "Initialclosingdate",
+            "type": "Date",
+            "description": "Date of first capital acceptance",
+            "group": "Fund Size & Capitalization"
+          },
+          "Final closing date": {
+            "fieldName": "Finalclosingdate",
+            "type": "Date",
+            "description": "Last date for accepting commitments",
+            "group": "Fund Size & Capitalization"
+          },
+          "Subsequent closings": {
+            "fieldName": "Subsequentclosings",
+            "type": "String",
+            "description": "Additional closing dates between initial and final",
+            "group": "Fund Size & Capitalization"
+          },
+          "Subscription frequency": {
+            "fieldName": "Subscriptionfrequency",
+            "type": "String",
+            "description": "How often investors can subscribe",
+            "group": "Fund Size & Capitalization"
+          },
+          "Redemption frequency": {
+            "fieldName": "Redemptionfrequency",
+            "type": "String",
+            "description": "How often investors can redeem",
+            "group": "Fund Size & Capitalization"
+          },
+          "Lock-up period": {
+            "fieldName": "Lock-upperiod",
+            "type": "String",
+            "description": "Period during which redemptions are prohibited",
+            "group": "Fund Size & Capitalization"
+          },
+          "Redemption notice period": {
+            "fieldName": "Redemptionnoticeperiod",
+            "type": "Numeric",
+            "description": "Advance notice required for redemption",
+            "group": "Fund Size & Capitalization"
+          },
+          "Gate provisions": {
+            "fieldName": "Gateprovisions",
+            "type": "String",
+            "description": "Limits on redemption amounts per period",
+            "group": "Fund Size & Capitalization"
+          },
+          "Suspension of redemptions conditions": {
+            "fieldName": "Suspensionofredemptionsconditions",
+            "type": "String",
+            "description": "Circumstances allowing redemption suspension",
+            "group": "Fund Size & Capitalization"
+          },
+          "Side pocket provisions": {
+            "fieldName": "Sidepocketprovisions",
+            "type": "String",
+            "description": "Provisions for segregating illiquid assets",
+            "group": "Fund Size & Capitalization"
+          },
+          "Most Favored Nation (MFN) clauses": {
+            "fieldName": "MostFavoredNation(MFN)clauses",
+            "type": "String",
+            "description": "Equal treatment provisions for investors",
+            "group": "Fund Size & Capitalization"
+          },
+          "Side letter arrangements": {
+            "fieldName": "Sideletterarrangements",
+            "type": "String",
+            "description": "Custom agreements with specific investors",
+            "group": "Fund Size & Capitalization"
+          },
+          "Management fee rate": {
+            "fieldName": "Managementfeerate",
+            "type": "Numeric",
+            "description": "Annual fee as percentage of AUM/commitments",
+            "group": "Management Fees"
+          },
+          "Calculation basis": {
+            "fieldName": "Calculationbasis",
+            "type": "String",
+            "description": "Basis for fee calculation (NAV, committed capital, etc.)",
+            "group": "Management Fees"
+          },
+          "Fee during investment period vs. harvest period": {
+            "fieldName": "Feeduringinvestmentperiodvs.harvestperiod",
+            "type": "String",
+            "description": "Different rates for different fund phases",
+            "group": "Management Fees"
+          },
+          "Fee on recycled capital": {
+            "fieldName": "Feeonrecycledcapital",
+            "type": "String",
+            "description": "Whether fees apply to reinvested proceeds",
+            "group": "Management Fees"
+          },
+          "Management fee offsets": {
+            "fieldName": "Managementfeeoffsets",
+            "type": "String",
+            "description": "Reductions for transaction/monitoring fees",
+            "group": "Management Fees"
+          },
+          "Performance fee/carry rate": {
+            "fieldName": "Performancefee/carryrate",
+            "type": "Numeric",
+            "description": "Percentage of profits paid to manager",
+            "group": "Performance Fees/Carried Interest:"
+          },
+          "Calculation method": {
+            "fieldName": "Calculationmethod",
+            "type": "String",
+            "description": "How performance fee is calculated",
+            "group": "Performance Fees/Carried Interest:"
+          },
+          "Hurdle rate/preferred return": {
+            "fieldName": "Hurdlerate/preferredreturn",
+            "type": "Numeric",
+            "description": "Minimum return before performance fees",
+            "group": "Performance Fees/Carried Interest:"
+          },
+          "Catch-up provisions": {
+            "fieldName": "Catch-upprovisions",
+            "type": "String",
+            "description": "GP ability to catch up after hurdle is met",
+            "group": "Performance Fees/Carried Interest:"
+          },
+          "High water mark": {
+            "fieldName": "Highwatermark",
+            "type": "String",
+            "description": "Mechanism preventing fees on recovered losses",
+            "group": "Performance Fees/Carried Interest:"
+          },
+          "Crystallization/lookback provisions": {
+            "fieldName": "Crystallization/lookbackprovisions",
+            "type": "String",
+            "description": "Timing of performance fee determination",
+            "group": "Performance Fees/Carried Interest:"
+          },
+          "Clawback provisions": {
+            "fieldName": "Clawbackprovisions",
+            "type": "String",
+            "description": "Requirement to return excess carried interest",
+            "group": "Performance Fees/Carried Interest:"
+          },
+          "Distribution waterfall": {
+            "fieldName": "Distributionwaterfall",
+            "type": "String",
+            "description": "Order of profit distribution among parties",
+            "group": "Performance Fees/Carried Interest:"
+          },
+          "Organizational/formation expenses": {
+            "fieldName": "Organizational/formationexpenses",
+            "type": "String",
+            "description": "Costs for establishing the fund",
+            "group": "Other Fees:"
+          },
+          "Operating expenses": {
+            "fieldName": "Operatingexpenses",
+            "type": "String",
+            "description": "Ongoing operational costs",
+            "group": "Other Fees:"
+          },
+          "Transaction fees and offsets": {
+            "fieldName": "Transactionfeesandoffsets",
+            "type": "String",
+            "description": "Fees related to deals and their treatment",
+            "group": "Other Fees:"
+          },
+          "Broken deal expenses": {
+            "fieldName": "Brokendealexpenses",
+            "type": "String",
+            "description": "Cost treatment for unsuccessful transactions",
+            "group": "Other Fees:"
+          },
+          "Monitoring fees from portfolio companies": {
+            "fieldName": "Monitoringfeesfromportfoliocompanies",
+            "type": "String",
+            "description": "Fees collected from portfolio companies",
+            "group": "Other Fees:"
+          },
+          "Legal structure": {
+            "fieldName": "Legalstructure",
+            "type": "String",
+            "description": "Entity type (LP, LLC, etc.)",
+            "group": "Fund Structure & Tax"
+          },
+          "Master-feeder structure details": {
+            "fieldName": "Master-feederstructuredetails",
+            "type": "String",
+            "description": "Description of master-feeder arrangement",
+            "group": "Fund Structure & Tax"
+          },
+          "Offshore vehicle": {
+            "fieldName": "Offshorevehicle",
+            "type": "String",
+            "description": "Details of offshore entity",
+            "group": "Fund Structure & Tax"
+          },
+          "Onshore vehicle": {
+            "fieldName": "Onshorevehicle",
+            "type": "String",
+            "description": "Details of onshore entity",
+            "group": "Fund Structure & Tax"
+          },
+          "Parallel fund arrangements": {
+            "fieldName": "Parallelfundarrangements",
+            "type": "String",
+            "description": "Description of parallel fund structures",
+            "group": "Fund Structure & Tax"
+          },
+          "Blocker structures": {
+            "fieldName": "Blockerstructures",
+            "type": "String",
+            "description": "Tax blocker entity details",
+            "group": "Fund Structure & Tax"
+          },
+          "ERISA considerations and compliance": {
+            "fieldName": "ERISAconsiderationsandcompliance",
+            "type": "String",
+            "description": "Compliance with pension fund regulations",
+            "group": "Fund Structure & Tax"
+          },
+          "Tax treatment for investors": {
+            "fieldName": "Taxtreatmentforinvestors",
+            "type": "String",
+            "description": "Expected tax treatment by investor type",
+            "group": "Fund Structure & Tax"
+          },
+          "UBTI/UBI considerations": {
+            "fieldName": "UBTI/UBIconsiderations",
+            "type": "String",
+            "description": "Unrelated business taxable income details",
+            "group": "Fund Structure & Tax"
+          },
+          "Tax reporting": {
+            "fieldName": "Taxreporting",
+            "type": "String",
+            "description": "Tax reporting obligations and timing",
+            "group": "Fund Structure & Tax"
+          },
+          "FATCA/CRS compliance": {
+            "fieldName": "FATCA/CRScompliance",
+            "type": "String",
+            "description": "Foreign account tax compliance details",
+            "group": "Fund Structure & Tax"
+          },
+          "Qualified Purchaser/Accredited Investor status": {
+            "fieldName": "QualifiedPurchaser/AccreditedInvestorstatus",
+            "type": "String",
+            "description": "Investor qualification requirements",
+            "group": "Fund Structure & Tax"
+          },
+          "Fund administrator": {
+            "fieldName": "Fundadministrator",
+            "type": "String",
+            "description": "Entity handling fund administration",
+            "group": "Key Service Providers"
+          },
+          "Independent auditor": {
+            "fieldName": "Independentauditor",
+            "type": "String",
+            "description": "External audit firm",
+            "group": "Key Service Providers"
+          },
+          "Legal counsel": {
+            "fieldName": "Legalcounsel",
+            "type": "String",
+            "description": "Law firm(s) representing the fund",
+            "group": "Key Service Providers"
+          },
+          "Tax advisor": {
+            "fieldName": "Taxadvisor",
+            "type": "String",
+            "description": "Tax advisory firm",
+            "group": "Key Service Providers"
+          },
+          "Custodian/prime broker": {
+            "fieldName": "Custodian/primebroker",
+            "type": "String",
+            "description": "Entity holding fund assets",
+            "group": "Key Service Providers"
+          },
+          "Valuation agent": {
+            "fieldName": "Valuationagent",
+            "type": "String",
+            "description": "Independent valuation service provider",
+            "group": "Key Service Providers"
+          },
+          "Placement agent (if applicable)": {
+            "fieldName": "Placementagent(ifapplicable)",
+            "type": "String",
+            "description": "Agent assisting with fundraising",
+            "group": "Key Service Providers"
+          },
+          "Compliance officer": {
+            "fieldName": "Complianceofficer",
+            "type": "String",
+            "description": "Person/entity responsible for compliance",
+            "group": "Key Service Providers"
+          },
+          "Depositary (for EU funds)": {
+            "fieldName": "Depositary(forEUfunds)",
+            "type": "String",
+            "description": "Depositary for EU-regulated funds",
+            "group": "Key Service Providers"
+          },
+          "Investment authority": {
+            "fieldName": "Investmentauthority",
+            "type": "String",
+            "description": "Decision-making authority structure",
+            "group": "GP/Manager Rights:"
+          },
+          "Key person provisions": {
+            "fieldName": "Keypersonprovisions",
+            "type": "String",
+            "description": "Requirements for key personnel continuity",
+            "group": "GP/Manager Rights:"
+          },
+          "Conflicts of interest policies": {
+            "fieldName": "Conflictsofinterestpolicies",
+            "type": "String",
+            "description": "Policies managing conflicts",
+            "group": "GP/Manager Rights:"
+          },
+          "Co-investment rights/obligations": {
+            "fieldName": "Co-investmentrights/obligations",
+            "type": "String",
+            "description": "LP rights to co-invest alongside fund",
+            "group": "GP/Manager Rights:"
+          },
+          "Allocation policies": {
+            "fieldName": "Allocationpolicies",
+            "type": "String",
+            "description": "How opportunities are allocated",
+            "group": "GP/Manager Rights:"
+          },
+          "Advisory committee/LPAC composition and powers": {
+            "fieldName": "Advisorycommittee/LPACcompositionandpowers",
+            "type": "String",
+            "description": "Committee structure and authority",
+            "group": "LP/Investor Rights:"
+          },
+          "Consent rights": {
+            "fieldName": "Consentrights",
+            "type": "String",
+            "description": "Matters requiring investor consent",
+            "group": "LP/Investor Rights:"
+          },
+          "Information and inspection rights": {
+            "fieldName": "Informationandinspectionrights",
+            "type": "String",
+            "description": "Investor rights to information and access",
+            "group": "LP/Investor Rights:"
+          },
+          "Reporting frequency and format": {
+            "fieldName": "Reportingfrequencyandformat",
+            "type": "String",
+            "description": "How often and what reports are provided",
+            "group": "LP/Investor Rights:"
+          },
+          "Audit rights": {
+            "fieldName": "Auditrights",
+            "type": "String",
+            "description": "Investor rights to conduct audits",
+            "group": "LP/Investor Rights:"
+          },
+          "Removal rights": {
+            "fieldName": "Removalrights",
+            "type": "String",
+            "description": "Conditions for removing GP/manager",
+            "group": "LP/Investor Rights:"
+          },
+          "Amendment procedures": {
+            "fieldName": "Amendmentprocedures",
+            "type": "String",
+            "description": "Process for amending fund documents",
+            "group": "LP/Investor Rights:"
+          },
+          "Transfer/assignment restrictions": {
+            "fieldName": "Transfer/assignmentrestrictions",
+            "type": "String",
+            "description": "Limits on transferring interests",
+            "group": "LP/Investor Rights:"
+          },
+          "Tag-along/drag-along rights": {
+            "fieldName": "Tag-along/drag-alongrights",
+            "type": "String",
+            "description": "Co-sale and forced sale provisions",
+            "group": "LP/Investor Rights:"
+          },
+          "Deal sourcing methodology": {
+            "fieldName": "Dealsourcingmethodology",
+            "type": "String",
+            "description": "How investment opportunities are identified",
+            "group": "Investment Process & Guidelines"
+          },
+          "Due diligence process": {
+            "fieldName": "Duediligenceprocess",
+            "type": "String",
+            "description": "Investigation process for investments",
+            "group": "Investment Process & Guidelines"
+          },
+          "Investment committee structure": {
+            "fieldName": "Investmentcommitteestructure",
+            "type": "String",
+            "description": "Committee composition and process",
+            "group": "Investment Process & Guidelines"
+          },
+          "Approval thresholds": {
+            "fieldName": "Approvalthresholds",
+            "type": "String",
+            "description": "Vote requirements for investment decisions",
+            "group": "Investment Process & Guidelines"
+          },
+          "Portfolio construction approach": {
+            "fieldName": "Portfolioconstructionapproach",
+            "type": "String",
+            "description": "Method for building portfolio",
+            "group": "Investment Process & Guidelines"
+          },
+          "Position sizing/concentration limits": {
+            "fieldName": "Positionsizing/concentrationlimits",
+            "type": "Numeric",
+            "description": "Maximum exposure per investment",
+            "group": "Investment Process & Guidelines"
+          },
+          "Diversification requirements": {
+            "fieldName": "Diversificationrequirements",
+            "type": "String",
+            "description": "Requirements for portfolio diversification",
+            "group": "Investment Process & Guidelines"
+          },
+          "Prohibited investments": {
+            "fieldName": "Prohibitedinvestments",
+            "type": "String",
+            "description": "Types of investments not permitted",
+            "group": "Investment Process & Guidelines"
+          },
+          "Investment restrictions": {
+            "fieldName": "Investmentrestrictions",
+            "type": "String",
+            "description": "Other limitations on investments",
+            "group": "Investment Process & Guidelines"
+          },
+          "Borrowing limits": {
+            "fieldName": "Borrowinglimits",
+            "type": "Numeric",
+            "description": "Maximum leverage allowed",
+            "group": "Investment Process & Guidelines"
+          },
+          "Short selling restrictions (if applicable)": {
+            "fieldName": "Shortsellingrestrictions(ifapplicable)",
+            "type": "String",
+            "description": "Limitations on short positions",
+            "group": "Investment Process & Guidelines"
+          },
+          "Derivatives usage": {
+            "fieldName": "Derivativesusage",
+            "type": "String",
+            "description": "Permitted derivative instruments and purposes",
+            "group": "Investment Process & Guidelines"
+          },
+          "Portfolio managers/investment team bios": {
+            "fieldName": "Portfoliomanagers/investmentteambios",
+            "type": "String",
+            "description": "Biographies of key team members",
+            "group": "Key Personnel & Track Record"
+          },
+          "Relevant experience and tenure": {
+            "fieldName": "Relevantexperienceandtenure",
+            "type": "String",
+            "description": "Years and type of relevant experience",
+            "group": "Key Personnel & Track Record"
+          },
+          "Educational background": {
+            "fieldName": "Educationalbackground",
+            "type": "String",
+            "description": "Academic credentials",
+            "group": "Key Personnel & Track Record"
+          },
+          "Previous fund performance (if applicable)": {
+            "fieldName": "Previousfundperformance(ifapplicable)",
+            "type": "String",
+            "description": "Track record from prior funds",
+            "group": "Key Personnel & Track Record"
+          },
+          "Time commitment/exclusivity": {
+            "fieldName": "Timecommitment/exclusivity",
+            "type": "String",
+            "description": "Dedication to fund activities",
+            "group": "Key Personnel & Track Record"
+          },
+          "Succession planning": {
+            "fieldName": "Successionplanning",
+            "type": "String",
+            "description": "Plans for key person transitions",
+            "group": "Key Personnel & Track Record"
+          },
+          "Compensation structure": {
+            "fieldName": "Compensationstructure",
+            "type": "String",
+            "description": "How team is compensated",
+            "group": "Key Personnel & Track Record"
+          },
+          "Valuation methodology": {
+            "fieldName": "Valuationmethodology",
+            "type": "String",
+            "description": "Methods used to value investments",
+            "group": "Valuation & NAV Calculation"
+          },
+          "Frequency of valuations": {
+            "fieldName": "Frequencyofvaluations",
+            "type": "String",
+            "description": "How often valuations are performed",
+            "group": "Valuation & NAV Calculation"
+          },
+          "Independent valuation requirements": {
+            "fieldName": "Independentvaluationrequirements",
+            "type": "String",
+            "description": "When independent valuations are required",
+            "group": "Valuation & NAV Calculation"
+          },
+          "Fair value hierarchy": {
+            "fieldName": "Fairvaluehierarchy",
+            "type": "String",
+            "description": "Hierarchy for determining fair values",
+            "group": "Valuation & NAV Calculation"
+          },
+          "Treatment of illiquid securities": {
+            "fieldName": "Treatmentofilliquidsecurities",
+            "type": "String",
+            "description": "How illiquid holdings are valued",
+            "group": "Valuation & NAV Calculation"
+          },
+          "Valuation committee composition": {
+            "fieldName": "Valuationcommitteecomposition",
+            "type": "String",
+            "description": "Members of valuation committee",
+            "group": "Valuation & NAV Calculation"
+          },
+          "Valuation disputes process": {
+            "fieldName": "Valuationdisputesprocess",
+            "type": "String",
+            "description": "Process for resolving valuation disagreements",
+            "group": "Valuation & NAV Calculation"
+          },
+          "Market risks": {
+            "fieldName": "Marketrisks",
+            "type": "String",
+            "description": "Risks from market movements",
+            "group": "Risk Factors (Comprehensive Section)"
+          },
+          "Liquidity risks": {
+            "fieldName": "Liquidityrisks",
+            "type": "String",
+            "description": "Risks from inability to exit positions",
+            "group": "Risk Factors (Comprehensive Section)"
+          },
+          "Leverage/financing risks": {
+            "fieldName": "Leverage/financingrisks",
+            "type": "String",
+            "description": "Risks from use of borrowed funds",
+            "group": "Risk Factors (Comprehensive Section)"
+          },
+          "Operational risks": {
+            "fieldName": "Operationalrisks",
+            "type": "String",
+            "description": "Risks from operational failures",
+            "group": "Risk Factors (Comprehensive Section)"
+          },
+          "Concentration risks": {
+            "fieldName": "Concentrationrisks",
+            "type": "String",
+            "description": "Risks from concentrated positions",
+            "group": "Risk Factors (Comprehensive Section)"
+          },
+          "Valuation risks": {
+            "fieldName": "Valuationrisks",
+            "type": "String",
+            "description": "Risks from valuation uncertainties",
+            "group": "Risk Factors (Comprehensive Section)"
+          },
+          "Regulatory and compliance risks": {
+            "fieldName": "Regulatoryandcompliancerisks",
+            "type": "String",
+            "description": "Risks from regulatory changes",
+            "group": "Risk Factors (Comprehensive Section)"
+          },
+          "Cybersecurity risks": {
+            "fieldName": "Cybersecurityrisks",
+            "type": "String",
+            "description": "Risks from cyber threats",
+            "group": "Risk Factors (Comprehensive Section)"
+          },
+          "Key person risks": {
+            "fieldName": "Keypersonrisks",
+            "type": "String",
+            "description": "Risks from loss of key personnel",
+            "group": "Risk Factors (Comprehensive Section)"
+          },
+          "Conflicts of interest": {
+            "fieldName": "Conflictsofinterest",
+            "type": "String",
+            "description": "Potential conflicts and their risks",
+            "group": "Risk Factors (Comprehensive Section)"
+          },
+          "Emerging market risks": {
+            "fieldName": "Emergingmarketrisks",
+            "type": "String",
+            "description": "Risks specific to emerging markets",
+            "group": "Risk Factors (Comprehensive Section)"
+          },
+          "Currency/FX risks": {
+            "fieldName": "Currency/FXrisks",
+            "type": "String",
+            "description": "Risks from currency fluctuations",
+            "group": "Risk Factors (Comprehensive Section)"
+          },
+          "Counterparty risks": {
+            "fieldName": "Counterpartyrisks",
+            "type": "String",
+            "description": "Risks from counterparty defaults",
+            "group": "Risk Factors (Comprehensive Section)"
+          },
+          "ESG risks": {
+            "fieldName": "ESGrisks",
+            "type": "String",
+            "description": "Environmental, social, governance risks",
+            "group": "Risk Factors (Comprehensive Section)"
+          },
+          "SEC registration status": {
+            "fieldName": "SECregistrationstatus",
+            "type": "String",
+            "description": "Registration status with SEC",
+            "group": "Regulatory & Legal"
+          },
+          "Investment Company Act exemptions (3(c)(1) or 3(c)(7))": {
+            "fieldName": "InvestmentCompanyActexemptions(3(c)(1)or3(c)(7))",
+            "type": "String",
+            "description": "Exemption relied upon (3(c)(1) or 3(c)(7))",
+            "group": "Regulatory & Legal"
+          },
+          "Investor qualification requirements": {
+            "fieldName": "Investorqualificationrequirements",
+            "type": "String",
+            "description": "Specific investor qualification criteria",
+            "group": "Regulatory & Legal"
+          },
+          "Form ADV/PF requirements": {
+            "fieldName": "FormADV/PFrequirements",
+            "type": "String",
+            "description": "Regulatory filing obligations",
+            "group": "Regulatory & Legal"
+          },
+          "State/international registrations": {
+            "fieldName": "State/internationalregistrations",
+            "type": "String",
+            "description": "Other registration jurisdictions",
+            "group": "Regulatory & Legal"
+          },
+          "Governing law and jurisdiction": {
+            "fieldName": "Governinglawandjurisdiction",
+            "type": "String",
+            "description": "Applicable law and court jurisdiction",
+            "group": "Regulatory & Legal"
+          },
+          "Dispute resolution": {
+            "fieldName": "Disputeresolution",
+            "type": "String",
+            "description": "Arbitration or litigation procedures",
+            "group": "Regulatory & Legal"
+          },
+          "Indemnification provisions": {
+            "fieldName": "Indemnificationprovisions",
+            "type": "String",
+            "description": "Protections for GP/manager",
+            "group": "Regulatory & Legal"
+          },
+          "Limited liability provisions": {
+            "fieldName": "Limitedliabilityprovisions",
+            "type": "String",
+            "description": "Liability limitations for investors",
+            "group": "Regulatory & Legal"
+          },
+          "Confidentiality obligations": {
+            "fieldName": "Confidentialityobligations",
+            "type": "String",
+            "description": "Requirements to maintain confidentiality",
+            "group": "Regulatory & Legal"
+          },
+          "Distribution policy and timing": {
+            "fieldName": "Distributionpolicyandtiming",
+            "type": "String",
+            "description": "When and how distributions are made",
+            "group": "Distributions & Liquidity"
+          },
+          "Distribution waterfall mechanics": {
+            "fieldName": "Distributionwaterfallmechanics",
+            "type": "String",
+            "description": "Detailed distribution allocation method",
+            "group": "Distributions & Liquidity"
+          },
+          "Return of capital vs. profits": {
+            "fieldName": "Returnofcapitalvs.profits",
+            "type": "String",
+            "description": "How distributions are characterized",
+            "group": "Distributions & Liquidity"
+          },
+          "Escrow/holdback provisions": {
+            "fieldName": "Escrow/holdbackprovisions",
+            "type": "String",
+            "description": "Amounts held back for obligations",
+            "group": "Distributions & Liquidity"
+          },
+          "In-kind distributions": {
+            "fieldName": "In-kinddistributions",
+            "type": "String",
+            "description": "Ability to distribute securities",
+            "group": "Distributions & Liquidity"
+          },
+          "Liquidity for closed-end funds": {
+            "fieldName": "Liquidityforclosed-endfunds",
+            "type": "String",
+            "description": "Liquidity mechanisms for closed funds",
+            "group": "Distributions & Liquidity"
+          },
+          "Termination events": {
+            "fieldName": "Terminationevents",
+            "type": "String",
+            "description": "Events triggering fund termination",
+            "group": "Fund Termination & Wind-Down"
+          },
+          "Extension options": {
+            "fieldName": "Extensionoptions",
+            "type": "String",
+            "description": "Options to extend fund term",
+            "group": "Fund Termination & Wind-Down"
+          },
+          "Wind-down process": {
+            "fieldName": "Wind-downprocess",
+            "type": "String",
+            "description": "Process for orderly dissolution",
+            "group": "Fund Termination & Wind-Down"
+          },
+          "Final distributions": {
+            "fieldName": "Finaldistributions",
+            "type": "String",
+            "description": "How final assets are distributed",
+            "group": "Fund Termination & Wind-Down"
+          },
+          "Tail period provisions": {
+            "fieldName": "Tailperiodprovisions",
+            "type": "String",
+            "description": "Management during wind-down",
+            "group": "Fund Termination & Wind-Down"
+          },
+          "GP/manager rights during wind-down": {
+            "fieldName": "GP/managerrightsduringwind-down",
+            "type": "String",
+            "description": "Authority during termination",
+            "group": "Fund Termination & Wind-Down"
+          },
+          "GP/manager other activities": {
+            "fieldName": "GP/managerotheractivities",
+            "type": "String",
+            "description": "Other business activities of manager",
+            "group": "Conflicts of Interest"
+          },
+          "Co-investment opportunities": {
+            "fieldName": "Co-investmentopportunities",
+            "type": "String",
+            "description": "How co-investment opportunities are handled",
+            "group": "Conflicts of Interest"
+          },
+          "Allocation among funds": {
+            "fieldName": "Allocationamongfunds",
+            "type": "String",
+            "description": "How deals are allocated across funds",
+            "group": "Conflicts of Interest"
+          },
+          "Affiliated transactions": {
+            "fieldName": "Affiliatedtransactions",
+            "type": "String",
+            "description": "Transactions with affiliated parties",
+            "group": "Conflicts of Interest"
+          },
+          "Personal investments by management": {
+            "fieldName": "Personalinvestmentsbymanagement",
+            "type": "String",
+            "description": "Team's personal investment activities",
+            "group": "Conflicts of Interest"
+          },
+          "Mitigation procedures": {
+            "fieldName": "Mitigationprocedures",
+            "type": "String",
+            "description": "Procedures to mitigate conflicts",
+            "group": "Conflicts of Interest"
+          },
+          "ESG integration approach": {
+            "fieldName": "ESGintegrationapproach",
+            "type": "String",
+            "description": "How ESG factors are integrated",
+            "group": "ESG & Impact (if applicable)"
+          },
+          "Impact measurement": {
+            "fieldName": "Impactmeasurement",
+            "type": "String",
+            "description": "Methods for measuring impact",
+            "group": "ESG & Impact (if applicable)"
+          },
+          "UN PRI/SDG alignment": {
+            "fieldName": "UNPRI/SDGalignment",
+            "type": "String",
+            "description": "Alignment with UN principles",
+            "group": "ESG & Impact (if applicable)"
+          },
+          "Exclusion policies": {
+            "fieldName": "Exclusionpolicies",
+            "type": "String",
+            "description": "Industries or practices excluded",
+            "group": "ESG & Impact (if applicable)"
+          },
+          "Reporting commitments": {
+            "fieldName": "Reportingcommitments",
+            "type": "String",
+            "description": "ESG reporting obligations",
+            "group": "ESG & Impact (if applicable)"
+          },
+          "ConfidenceScore": {
+            "type": "object"
+          },
+          "VerbatimText": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "Fund name and legal entity",
+          "Fund type",
+          "Domicile/jurisdiction of formation",
+          "Fund manager/General Partner",
+          "Investment advisor",
+          "Date of formation",
+          "Fund term/life",
+          "Fiscal year end",
+          "Primary investment objective",
+          "Detailed investment strategy and methodology",
+          "Target asset classes",
+          "Target sectors/industries",
+          "Geographic focus",
+          "Investment stage",
+          "Investment horizon/holding period",
+          "Target returns",
+          "Benchmark index (if applicable)",
+          "Use of leverage",
+          "Hedging strategies",
+          "Minimum investment amount",
+          "Initial closing date",
+          "Final closing date",
+          "Subsequent closings",
+          "Subscription frequency",
+          "Redemption frequency",
+          "Lock-up period",
+          "Redemption notice period",
+          "Gate provisions",
+          "Suspension of redemptions conditions",
+          "Side pocket provisions",
+          "Most Favored Nation (MFN) clauses",
+          "Side letter arrangements",
+          "Management fee rate",
+          "Calculation basis",
+          "Fee during investment period vs. harvest period",
+          "Fee on recycled capital",
+          "Management fee offsets",
+          "Performance fee/carry rate",
+          "Calculation method",
+          "Hurdle rate/preferred return",
+          "Catch-up provisions",
+          "High water mark",
+          "Crystallization/lookback provisions",
+          "Clawback provisions",
+          "Distribution waterfall",
+          "Organizational/formation expenses",
+          "Operating expenses",
+          "Transaction fees and offsets",
+          "Broken deal expenses",
+          "Monitoring fees from portfolio companies",
+          "Legal structure",
+          "Master-feeder structure details",
+          "Offshore vehicle",
+          "Onshore vehicle",
+          "Parallel fund arrangements",
+          "Blocker structures",
+          "ERISA considerations and compliance",
+          "Tax treatment for investors",
+          "UBTI/UBI considerations",
+          "Tax reporting",
+          "FATCA/CRS compliance",
+          "Qualified Purchaser/Accredited Investor status",
+          "Fund administrator",
+          "Independent auditor",
+          "Legal counsel",
+          "Tax advisor",
+          "Custodian/prime broker",
+          "Valuation agent",
+          "Placement agent (if applicable)",
+          "Compliance officer",
+          "Depositary (for EU funds)",
+          "Investment authority",
+          "Key person provisions",
+          "Conflicts of interest policies",
+          "Co-investment rights/obligations",
+          "Allocation policies",
+          "Advisory committee/LPAC composition and powers",
+          "Consent rights",
+          "Information and inspection rights",
+          "Reporting frequency and format",
+          "Audit rights",
+          "Removal rights",
+          "Amendment procedures",
+          "Transfer/assignment restrictions",
+          "Tag-along/drag-along rights",
+          "Deal sourcing methodology",
+          "Due diligence process",
+          "Investment committee structure",
+          "Approval thresholds",
+          "Portfolio construction approach",
+          "Position sizing/concentration limits",
+          "Diversification requirements",
+          "Prohibited investments",
+          "Investment restrictions",
+          "Borrowing limits",
+          "Short selling restrictions (if applicable)",
+          "Derivatives usage",
+          "Portfolio managers/investment team bios",
+          "Relevant experience and tenure",
+          "Educational background",
+          "Previous fund performance (if applicable)",
+          "Time commitment/exclusivity",
+          "Succession planning",
+          "Compensation structure",
+          "Valuation methodology",
+          "Frequency of valuations",
+          "Independent valuation requirements",
+          "Fair value hierarchy",
+          "Treatment of illiquid securities",
+          "Valuation committee composition",
+          "Valuation disputes process",
+          "Market risks",
+          "Liquidity risks",
+          "Leverage/financing risks",
+          "Operational risks",
+          "Concentration risks",
+          "Valuation risks",
+          "Regulatory and compliance risks",
+          "Cybersecurity risks",
+          "Key person risks",
+          "Conflicts of interest",
+          "Emerging market risks",
+          "Currency/FX risks",
+          "Counterparty risks",
+          "ESG risks",
+          "SEC registration status",
+          "Investment Company Act exemptions (3(c)(1) or 3(c)(7))",
+          "Investor qualification requirements",
+          "Form ADV/PF requirements",
+          "State/international registrations",
+          "Governing law and jurisdiction",
+          "Dispute resolution",
+          "Indemnification provisions",
+          "Limited liability provisions",
+          "Confidentiality obligations",
+          "Distribution policy and timing",
+          "Distribution waterfall mechanics",
+          "Return of capital vs. profits",
+          "Escrow/holdback provisions",
+          "In-kind distributions",
+          "Liquidity for closed-end funds",
+          "Termination events",
+          "Extension options",
+          "Wind-down process",
+          "Final distributions",
+          "Tail period provisions",
+          "GP/manager rights during wind-down",
+          "GP/manager other activities",
+          "Co-investment opportunities",
+          "Allocation among funds",
+          "Affiliated transactions",
+          "Personal investments by management",
+          "Mitigation procedures",
+          "ESG integration approach",
+          "Impact measurement",
+          "UN PRI/SDG alignment",
+          "Exclusion policies",
+          "Reporting commitments",
+          "ConfidenceScore",
+          "VerbatimText"
+        ],
+        "additionalProperties": false,
+        "definitions": {
+          "ConfidenceScore": {
+            "type": "string",
+            "enum": ["HIGH", "MID", "LOW"],
+            "description": "Confidence score for the extracted value."
+          },
+          "VerbatimText": {
+            "type": "string",
+            "description": "The exact verbatim text extracted from the document."
+          }
+        }
+      },
+      "meta_schema_blob": null,
+      "meta_data": null
+    }
+  ],
+  "pagination": {
+    "total_count": 1,
+    "total_pages": 1,
+    "current_page": 1,
+    "page_size": 10
+  }
+}

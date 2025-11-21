@@ -1,0 +1,70 @@
+/clients/validusDemo/customFunctions/__pycache__
+/boxes/NAV/__pycache__
+/__pycache__
+/utils/__pycache__
+/.venv
+/venv
+/server/__pycache__
+/configData/__pycache__
+/server/APIServerUtils/__pycache__
+/frontendUtils/__pycache__
+/frontendUtils/renders/utils/__pycache__
+/frontendUtils/renders/validus/__pycache__
+/frontendUtils/renders/classes/__pycache__
+/frontendUtils/renders/config/__pycache__
+/boxes/frame/__pycache__
+/frontendUtils/renders/frame/__pycache__
+/rbac/utils/__pycache__
+/clients/validusDemo/compliance/utils/__pycache__
+rcenv/
+venv31
+
+# Additional Python ignores
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.so
+
+# Virtual environments
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+myenv/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Temporary files
+*.tmp
+*.temp
+
+# athena database
+data/query_cache/

@@ -1,0 +1,62 @@
+{
+  "response": {
+    "question": "Give me a line chart for revenue trend in last 6 months",
+    "text": "Here's the revenue trend for the last 6 months showing the progression of revenue over time.",
+    "username": "admin",
+    "modules": [
+      {
+        "moduleType": "chart",
+        "data": {
+          "icon": "Move3D",
+          "title": "Revenue Trend",
+          "date": "Jan 2024 - Jun 2024",
+          "chartConfig": {
+            "data": [
+              { "month": "Jan 2024", "value": 125000.50 },
+              { "month": "Feb 2024", "value": 132000.75 },
+              { "month": "Mar 2024", "value": 128500.00 },
+              { "month": "Apr 2024", "value": 145000.25 },
+              { "month": "May 2024", "value": 150000.00 },
+              { "month": "Jun 2024", "value": 162000.80 }
+            ],
+            "series": [
+              {
+                "type": "line",
+                "xKey": "month",
+                "yKey": "value",
+                "yName": "Revenue",
+                "label": {
+                  "enabled": false,
+                  "formatter": "({ value }) => value.toFixed(1) + 'k'"
+                }
+              }
+            ],
+            "legend": { "enabled": false },
+            "axes": [
+              {
+                "type": "category",
+                "position": "bottom",
+                "label": { "formatter": "", "rotation": 0 }
+              },
+              {
+                "type": "number",
+                "position": "left",
+                "label": { "formatter": "k" }
+              }
+            ]
+          },
+          "name": "SimpleLineChart"
+        }
+      }
+    ],
+    "metadata": {
+      "total": 842501.30,
+      "average": 140416.88,
+      "max": 162000.80,
+      "min": 125000.50,
+      "period": "Jan 2024 - Jun 2024",
+      "data_points": 6
+    }
+  }
+}
+

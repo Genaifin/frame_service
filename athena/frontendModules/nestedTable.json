@@ -1,0 +1,120 @@
+{
+  "response":{
+    "question": "What is the NAV for GMAC ASO FUND Inc?",
+    "text": "Here are the results of your query",
+    "modules": [
+        {
+            "moduleType": "nestedTable",
+            "data": {
+                "colsToShow": [
+                    "security_id",
+                    "current_price",
+                    "prev_price",
+                    "percent_change"
+                ],
+                "columnConfig": {
+                    "security_id": {
+                        "name": "Security Id"
+                    },
+                    "current_price": {
+                        "name": "Current Price"
+                    },
+                    "prev_price": {
+                        "name": "Prev Price"
+                    },
+                    "percent_change": {
+                        "name": "Percent Change"
+                    }
+                },
+                "rowData": [
+                    {
+                        "security_id": "Blackwood",
+                        "current_price": 4.208114,
+                        "prev_price": 2.005681,
+                        "percent_change": 109.81
+                    },
+                    {
+                        "security_id": "Blackwood",
+                        "current_price": 7.408288,
+                        "prev_price": 4.208114,
+                        "percent_change": 76.05
+                    },
+                    {
+                        "security_id": "Driftrock",
+                        "current_price": 2.154694,
+                        "prev_price": 1.847233,
+                        "percent_change": 16.64
+                    },
+                    {
+                        "security_id": "Falcontree",
+                        "current_price": 0.678799,
+                        "prev_price": 0.549308,
+                        "percent_change": 23.57
+                    },
+                    {
+                        "security_id": "GBPF",
+                        "current_price": 0.899077,
+                        "prev_price": 0.799077,
+                        "percent_change": 12.51
+                    },
+                    {
+                        "security_id": "Havenmill",
+                        "current_price": 0.18792,
+                        "prev_price": 0.108555,
+                        "percent_change": 73.11
+                    },
+                    {
+                        "security_id": "Havenmill",
+                        "current_price": 0.377451,
+                        "prev_price": 0.18792,
+                        "percent_change": 100.86
+                    },
+                    {
+                        "security_id": "Mapleline",
+                        "current_price": 0.026668,
+                        "prev_price": 0.003082,
+                        "percent_change": 765.28
+                    },
+                    {
+                        "security_id": "OHRP_WTSA",
+                        "current_price": 1.0,
+                        "prev_price": 0.01,
+                        "percent_change": 9900.0
+                    },
+                    {
+                        "security_id": "Oriole",
+                        "current_price": 0.89829,
+                        "prev_price": 0.391026,
+                        "percent_change": 129.73
+                    },
+                    {
+                        "security_id": "SCHON_FE",
+                        "current_price": 0.972739,
+                        "prev_price": 0.429764,
+                        "percent_change": 126.34
+                    },
+                    {
+                        "security_id": "Silverbank",
+                        "current_price": 0.190015,
+                        "prev_price": 0.13588,
+                        "percent_change": 39.84
+                    },
+                    {
+                        "security_id": "Silverbank",
+                        "current_price": 0.291252,
+                        "prev_price": 0.190015,
+                        "percent_change": 53.28
+                    },
+                    {
+                        "security_id": "Veridian",
+                        "current_price": 0.178799,
+                        "prev_price": 0.102871,
+                        "percent_change": 73.81
+                    }
+                ]
+            }
+        }
+    ]
+}
+
+}

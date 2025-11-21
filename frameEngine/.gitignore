@@ -1,0 +1,15 @@
+.env
+PCR_CODE
+
+# Credential files containing secrets
+PCR_CODE/document_processing/etc/s3_creds.json
+PCR_CODE/document_processing/etc/blob_creds.json
+PCR_CODE/backend/.env
+
+# Additional security files
+*.json
+!schemas/*.json
+**/etc/*.json
+**/*creds*
+**/*credentials*
+**/config/*.json

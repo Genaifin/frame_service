@@ -1,0 +1,338 @@
+{
+  "response": [
+    {
+      "schema_id": 2,
+      "document_type_id": 2,
+      "document_type": "Distributions",
+      "document_description": "A distribution generally refers to the disbursement of assets from a fund, account, or individual security to an investor.",
+      "is_active": true,
+      "created_at": "2025-02-12T10:44:07.957382",
+      "updated_at": "2025-02-12T10:44:07.957382",
+      "schema_blob": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "Investor": {
+            "type": "string",
+            "description": "Name of the investor."
+          },
+          "Account": {
+            "type": "string",
+            "description": "This is the fund name and investor name combined in a piped format. For instance, if fund name is 'ABC Investments' and investor is 'Scott', then account is 'ABC Investments|Scott'."
+          },
+          "InvestorRefID": {
+            "type": "string",
+            "description": "A unique reference ID for the investor."
+          },
+          "AccountRefID": {
+            "type": "string",
+            "description": "A unique reference ID for the account."
+          },
+          "Security": {
+            "type": "string",
+            "description": "The fund name mentioned in the document. This typically can be in the header of the document. Fund names are generally longer and typically include LLC, LLP or something similar in."
+          },
+          "TransactionDate": {
+            "type": "string",
+            "description": "The date of the transaction in YYYY-MM-DD format."
+          },
+          "Currency": {
+            "type": "string",
+            "enum": [
+              "AED",
+              "AFN",
+              "ALL",
+              "AMD",
+              "ANG",
+              "AOA",
+              "ARS",
+              "AUD",
+              "AWG",
+              "AZN",
+              "BAM",
+              "BBD",
+              "BDT",
+              "BGN",
+              "BHD",
+              "BIF",
+              "BMD",
+              "BND",
+              "BOB",
+              "BRL",
+              "BSD",
+              "BTN",
+              "BWP",
+              "BYN",
+              "BZD",
+              "CAD",
+              "CDF",
+              "CHF",
+              "CLP",
+              "CNY",
+              "COP",
+              "CRC",
+              "CUP",
+              "CVE",
+              "CZK",
+              "DJF",
+              "DKK",
+              "DOP",
+              "DZD",
+              "EGP",
+              "ERN",
+              "ETB",
+              "EUR",
+              "FJD",
+              "FKP",
+              "FOK",
+              "GBP",
+              "GEL",
+              "GGP",
+              "GHS",
+              "GIP",
+              "GMD",
+              "GNF",
+              "GTQ",
+              "GYD",
+              "HKD",
+              "HNL",
+              "HRK",
+              "HTG",
+              "HUF",
+              "IDR",
+              "ILS",
+              "IMP",
+              "INR",
+              "IQD",
+              "IRR",
+              "ISK",
+              "JMD",
+              "JOD",
+              "JPY",
+              "KES",
+              "KGS",
+              "KHR",
+              "KID",
+              "KMF",
+              "KRW",
+              "KWD",
+              "KYD",
+              "KZT",
+              "LAK",
+              "LBP",
+              "LKR",
+              "LRD",
+              "LSL",
+              "LYD",
+              "MAD",
+              "MDL",
+              "MGA",
+              "MKD",
+              "MMK",
+              "MNT",
+              "MOP",
+              "MRU",
+              "MUR",
+              "MVR",
+              "MWK",
+              "MXN",
+              "MYR",
+              "MZN",
+              "NAD",
+              "NGN",
+              "NIO",
+              "NOK",
+              "NPR",
+              "NZD",
+              "OMR",
+              "PAB",
+              "PEN",
+              "PGK",
+              "PHP",
+              "PKR",
+              "PLN",
+              "PYG",
+              "QAR",
+              "RON",
+              "RSD",
+              "RUB",
+              "RWF",
+              "SAR",
+              "SBD",
+              "SCR",
+              "SDG",
+              "SEK",
+              "SGD",
+              "SHP",
+              "SLE",
+              "SLL",
+              "SOS",
+              "SRD",
+              "SSP",
+              "STN",
+              "SYP",
+              "SZL",
+              "THB",
+              "TJS",
+              "TMT",
+              "TND",
+              "TOP",
+              "TRY",
+              "TTD",
+              "TVD",
+              "TWD",
+              "TZS",
+              "UAH",
+              "UGX",
+              "USD",
+              "UYU",
+              "UZS",
+              "VES",
+              "VND",
+              "VUV",
+              "WST",
+              "XAF",
+              "XCD",
+              "XDR",
+              "XOF",
+              "XPF",
+              "YER",
+              "ZAR",
+              "ZMW",
+              "ZWL"
+            ],
+            "description": "Currency code for the transaction (e.g., USD, EUR)."
+          },
+          "Distribution": {
+            "type": "number",
+            "description": "Amount of funds distributed to the investor. Do not extract the full distributions by the fund. Rather the distributions to the investor"
+          },
+          "DeemeedCapitalCall": {
+            "type": "number",
+            "description": "Amount that is deemed capital call."
+          },
+          "IncomeDistribution": {
+            "type": "number",
+            "description": "Amount of income distributed to the investor."
+          },
+          "IncomeReinvested": {
+            "type": "number",
+            "description": "Amount of income that is reinvested rather than distributed."
+          },
+          "RecallableSell": {
+            "type": "number",
+            "description": "Indicates whether the security can be recalled or if it has been sold."
+          },
+          "ReturnOfCapital": {
+            "type": "number",
+            "description": "Amount of the investor's capital that has been returned."
+          },
+          "DistributionOutsideCommitment": {
+            "type": "number",
+            "description": "Amount of funds distributed outside of the initial committed capital."
+          },
+          "CapitalCall": {
+            "type": "number",
+            "description": "Amount of capital called from the investor during this transaction."
+          },
+          "CapitalCallOutsideCommitment": {
+            "type": "number",
+            "description": "Amount of capital called that exceeds the initial commitment."
+          },
+          "NetCashFlowQC": {
+            "type": "number",
+            "description": "Net cash flow after quality control and adjustments."
+          },
+          "TransferIn": {
+            "type": "number",
+            "description": "Amount of capital or assets transferred into the investor's account."
+          },
+          "TransferOut": {
+            "type": "number",
+            "description": "Amount of capital or assets transferred out of the investor's account."
+          },
+          "Quantity": {
+            "type": "number",
+            "description": "Quantity of securities involved in the transaction."
+          },
+          "Price": {
+            "type": "number",
+            "description": "Price per unit of the security at the time of the transaction."
+          },
+          "CommittedCapital": {
+            "type": "number",
+            "description": "Total amount of capital that the investor has committed to contribute."
+          },
+          "RemainingCommittedCapital": {
+            "type": "number",
+            "description": "Remaining amount of capital that the investor has committed but not yet contributed."
+          },
+          "ContributionsToDate": {
+            "type": "number",
+            "description": "Total amount of contributions made by the investor up to the current date."
+          },
+          "DistributionsToDate": {
+            "type": "number",
+            "description": "Total amount of distributions received by the investor up to the current date."
+          },
+          "ReturnOfCapitalToDate": {
+            "type": "number",
+            "description": "Total amount of capital returned to the investor up to the current date.xxxx"
+          },
+          "ConfidenceScore": { "type": "object" },
+          "VerbatimText": { "type": "object" }
+        },
+        "required": [
+          "Investor",
+          "Account",
+          "InvestorRefID",
+          "AccountRefID",
+          "Security",
+          "TransactionDate",
+          "Currency",
+          "Distribution",
+          "DeemeedCapitalCall",
+          "IncomeDistribution",
+          "IncomeReinvested",
+          "RecallableSell",
+          "ReturnOfCapital",
+          "DistributionOutsideCommitment",
+          "CapitalCall",
+          "CapitalCallOutsideCommitment",
+          "NetCashFlowQC",
+          "TransferIn",
+          "TransferOut",
+          "Quantity",
+          "Price",
+          "CommittedCapital",
+          "RemainingCommittedCapital",
+          "ContributionsToDate",
+          "DistributionsToDate",
+          "ReturnOfCapitalToDate",
+          "ConfidenceScore",
+          "VerbatimText"
+        ],
+        "additionalProperties": false,
+        "definitions": {
+          "ConfidenceScore": {
+            "type": "string",
+            "enum": ["HIGH", "MID", "LOW"],
+            "description": "Confidence score for the extracted value: 'HIGH' if the field name is mentioned as it is in the document, 'MID' if the key matches a semantically similar word, 'LOW' if the field is not matching exactly but AI system inferred this value. Feel free to show some fields with low confidence"
+          },
+          "VerbatimText": {
+            "type": "string",
+            "description": "The exact verbatim text extracted from the document for the corresponding field. Avoid any braces or brackets from the outputs. For currency, you might want to pick up symbols from the document."
+          }
+        }
+      },
+      "meta_schema_blob": null,
+      "meta_data": null
+    }
+  ],
+  "pagination": {
+    "total_count": 1,
+    "total_pages": 1,
+    "current_page": 1,
+    "page_size": 10
+  }
+}

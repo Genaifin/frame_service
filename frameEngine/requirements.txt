@@ -1,0 +1,59 @@
+# Core dependencies
+pydantic>=2.0.0
+python-dotenv>=1.0.0
+pathlib-mate>=1.0.0
+
+# OCR and Image Processing
+pytesseract>=0.3.10
+Pillow>=10.0.0
+pdf2image>=1.16.0
+numpy>=1.24.0
+
+# Text Processing and Matching
+rapidfuzz>=3.0.0
+jsonschema>=4.0.0
+pandas>=2.0.0
+tabulate>=0.9.0
+profanity-check==1.0.3
+
+# LLM Integration
+openai>=1.55.3
+google-generativeai>=0.3.0
+
+# Optional: Azure Computer Vision (if using Azure OCR)
+azure-cognitiveservices-vision-computervision>=0.9.0
+
+# Retry Logic and Resilience
+tenacity>=8.2.0
+
+# Monitoring and Metrics
+psutil>=5.9.0
+prometheus-client>=0.17.0
+
+# Caching
+cachetools>=5.3.0
+
+# HTTP Requests
+requests>=2.31.0
+httpx==0.27.2
+
+# Logging and Configuration
+structlog>=23.1.0
+colorlog>=6.7.0
+
+# Time and Date Handling
+python-dateutil>=2.8.0
+
+# JSON Processing
+ujson>=5.8.0
+
+# Performance Monitoring
+memory-profiler>=0.61.0
+
+# Development and Testing
+pytest>=7.0.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+pytest-mock>=3.11.0
+PyMuPDF
+poppler

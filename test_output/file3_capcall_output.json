@@ -1,0 +1,524 @@
+{
+    "doc_id": "97b1527b-cc84-434c-afa2-f7a0bb295535",
+    "task_id": "ac3c5c64-05dd-4964-886b-60e024c74f9c",
+    "ext_doc_id": null,
+    "original_filename": "file3_capcall.pdf",
+    "pipeline_status": "Completed_With_Error",
+    "error_message": "Bounding box extraction failed: Tesseract is not available for OCR processing",
+    "is_scanned": false,
+    "raw_text": "ILPA Capital Call & Distribution Template\nGrain Spectrum \nHoldings III (Cayman), \nL.P.\n2.01 Fund\nGrain Spectrum Holdings III (GSH III)\nSection A: Fund Level / Cash Flow Information (Fund Local Currency)\n2.02 Issue Date (MM-DD-YYYY):\n06-11-2025\n2.03 Due Date (MM-DD-YYYY):\n06-26-2025\n2.04 Fund Local Currency:\nUSD\n2.05 GP Commitment\n12,750,758.00\n2.06 Fund Size, Including all AIVs (Fund Local Currency):\n1,510,075,758.00\nFund Aggregate Calls / Distributions (Incl. GP's Share)\nContributions\n(Distributions)\n2.07 Cumulative Fund Amount (Prior To Current Notice)¹,²:\n1,352,994,375.60\n(1,106,378.97)\n2.08 Fund Amount (Current Notice)\n1,362,835.07\n-\nCumulative Fund Amount (Including Current Notice)²:\n1,354,357,210.67\n(1,106,378.97)\nSection B:  LP Information (Fund Local Currency) - Enter All Values as Positive Amounts\n2.09 LP / ID Number:\nHartford Healthcare Corporation Defined Benefit Master Trust / \n480\n2.10 LP Commitment:\n8,000,000.00\n       LP % of Fund (LP Commitment / Fund Size)\n0.53%\n2.11 LP % of Cap. Account (% of NAV)\n0.53%\n2.12 LP Unfunded Commitment¹ (Prior to current notice)\n783,168.79\n2.13 LP Cumulative Contributions¹,² (Prior to current notice)\n7,222,633.60\n2.14 LP Cumulative Distributions¹,² (Prior to current notice)\n(5,802.39)\nLP Balances / Totals (Fund Local Currency) - Formulas, Do Not Overwrite\n2.19 Unfunded Commitment\n   Unfunded Balance (Prior to Current Notice)¹\n783,168.79\n   Impact on Unfunded Balance (Current Notice)\n(8,797.89)\n   Unfunded Balance (Including Current Notice)\n774,370.90\nAggregate Calls / Distributions\nContributions²\n(Distributions)²\n2.20 Cumulative LP Amount (Prior To Current Notice)¹,²:\n7,222,633.60\n(5,802.39)\n                                as a % of Fund Amount²\n0.53%\n0.52%\n2.21 LP Amount (Current Notice):\n8,797.89\n-\n                                as a % of Fund Amount\n0.65%\n0.00%\n2.22 Cumulative LP Amount (Including Current Notice)²:\n7,231,431.49\n(5,802.39)\n                                as a % of Fund Amount\n0.53%\n0.52%\n2.23 LP Total Net Amount Called / (Distributed) - \nCurrent Notice\n8,797.89\n¹ If value does not match the ending balance from the prior notice, please provide a description for the variance in a side calculation (Section D - 2.28)\n² Due to variations in the definitions used by different funds, these balances may not necessarily tie to cumulative contributions/distributions reported in quarterly fund financials; Do not use these balances to calculate performance multiples (e.g. DPI)\nSection C:  Worksheet - LP Amounts (Fund Local Currency) - Please include any transactions that net to zero\n2.15 Holding Name / Transaction Description\n2.16 Transaction Type\n2.17 LP Amount\n2.18 Impact to \nUnfunded \nCommitment\nValue Impact \nto Unfunded \nCommitment \n(Net \nContributed)\nNet Amount \nCalled / \n(Distributed) - \nCurrent Notice\nCapital Call for Management Fees\nCall: Management Fee (inside commitment)\n8,797.89\nDecreases\n(8,797.89)\n8,797.89\nSection D: Side Calculations (Fund Local Currency)\n2.24 Management Fee Calculation (per Section 2.7 of LPA)\nTime Period:\nRefer to calculation period noted on capital call/distribution notice\nCalculation Basis, per LPA:\n0.500% of Commitment or Actively Invested Capital as outlined in the LPA\nGross Calculation:\n8,797.89\nWaiver Amount\n-\nFee Offset\n-\nCall: Mgmt. Fee (Investor #X):\n8,797.89\n2.25 Cumulative Management Fees\n160,104.16\n2.26 Waterfall/Carry Calculation (per Section X.X(x) of LPA)\n Partial Sale of Company B\nInvestor #X\nAll LPs\nGP\nTotal\nDistributable Cash\n-\n-\n-\n-\nReturn of Capital\n-\n-\n-\n-\nG/L - pre LP/GP split [A]\n-\n-\n-\n-\nG/L - after LP/GP Split [B]\n-\n-\n-\n-\nCarry Paid/(Received) [A-B]\n-\n-\n-\n-\n2.27 Clawback Questions\nIs the fund in  a clawback situation (yes/no)\nNo\n     If yes: What is the amount\n     If yes: What is the proposed remedy\n2.28 Cumulative Balance - Reconciliation to a Prior Period Notice¹\nBalance Name (e.g. Unfunded Commitment Balance)\nEnding Balance -  Prior Period (as reported in prior notice)\nBeginning Balance - Current Period (as reported in current notice)\nVariance\nReason for Variance\n* Amounts may not foot due to rounding.\nConfidential\nOperations Department/Manual Entry Private Client Resources\noperations@privateclientresources.net\n06/12/2025 05:11:33\n",
+    "cleaned_text": "ILPA CapitaI CaII & Distribution TempIate Grain Spectrum HoIdings III (Cayman), L.P. 2.01 Fund Grain Spectrum HoIdings III (GSH III) Section A: Fund LeveI / Cash FIow Information (Fund LocaI Currency) 2.02 Issue Date (MM-DD-YYYY): 06-11-2025 2.03 Due Date (MM-DD-YYYY): 06-26-2025 2.04 Fund LocaI Currency: USD 2.05 GP Commitment 12750,758.00 2.06 Fund Size, IncIuding aII AIVs (Fund LocaI Currency): 1510,075758.00 Fund Aggregate CaIIs / Distributions (IncI. GP's Share) Contributions (Distributions) 2.07 CumuIative Fund Amount (Prior To Current Notice)1,2: 1352,994375.60 (1106,378.97) 2.08 Fund Amount (Current Notice) 1362,835.07 - CumuIative Fund Amount (IncIuding Current Notice)2: 1354,357210.67 (1106,378.97) Section B: LP Information (Fund LocaI Currency) - Enter AII VaIues as Positive Amounts 2.09 LP / ID Number: Hartford HeaIthcare Corporation Defined Benefit Master Trust / 480 2.10 LP Commitment: 8000,000.00 LP % of Fund (LP Commitment / Fund Size) 0.53 percent 2.11 LP % of Cap. Account (% of NAV) 0.53 percent 2.12 LP Unfunded Commitment1 (Prior to current notice) 783168.79 2.13 LP CumuIative Contributions1,2 (Prior to current notice) 7222,633.60 2.14 LP CumuIative Distributions1,2 (Prior to current notice) (5802.39) LP BaIances / TotaIs (Fund LocaI Currency) - FormuIas, Do Not 0verwrite 2.19 Unfunded Commitment Unfunded BaIance (Prior to Current Notice)1 783168.79 Impact on Unfunded BaIance (Current Notice) (8797.89) Unfunded BaIance (IncIuding Current Notice) 774370.90 Aggregate CaIIs / Distributions Contributions2 (Distributions)2 2.20 CumuIative LP Amount (Prior To Current Notice)1,2: 7222,633.60 (5802.39) as a % of Fund Amount2 0.53 percent 0.52 percent 2.21 LP Amount (Current Notice): 8797.89 - as a % of Fund Amount 0.65 percent 0.00 percent 2.22 CumuIative LP Amount (IncIuding Current Notice)2: 7231,431.49 (5802.39) as a % of Fund Amount 0.53 percent 0.52 percent 2.23 LP TotaI Net Amount CaIIed / (Distributed) - Current Notice 8797.89 1 If vaIue does not match the ending baIance from the prior notice, pIease provide a description for the variance in a side caIcuIation (Section D - 2.28) 2 Due to variations in the definitions used by different funds, these baIances may not necessariIy tie to cumuIative contributions/distributions reported in quarterIy fund financiaIs; Do not use these baIances to caIcuIate performance muItipIes (e.g. DPI) Section C: Worksheet - LP Amounts (Fund LocaI Currency) - PIease incIude any transactions that net to zero 2.15 HoIding Name / Transaction Description 2.16 Transaction Type 2.17 LP Amount 2.18 Impact to Unfunded Commitment VaIue Impactto Unfunded Commitment (Net Contributed) Net Amount CaIIed / (Distributed) - Current Notice CapitaI CaII for Management Fees CaII: Management Fee (inside commitment) 8797.89 Decreases (8797.89) 8797.89 Section D: Side CaIcuIations (Fund LocaI Currency) 2.24 Management Fee CaIcuIation (per Section 2.7 of LPA) Time Period: Refer to caIcuIation period noted on capitaI caII/distribution notice CaIcuIation Basis, per LPA: 0.500 percent of Commitment or ActiveIy Invested CapitaI as outIined in the LPA Gross CaIcuIation: 8797.89 Waiver Amount - Fee 0ffset - CaII: Mgmt. Fee (Investor #X): 8797.89 2.25 CumuIative Management Fees 160104.16 2.26 WaterfaII/Carry CaIcuIation (per Section X.X(x) of LPA) PartiaI SaIe of Company B Investor #X AII LPs GP TotaI DistributabIe Cash - - - - Return of CapitaI - - - - G/L - pre LP/GP spIit [A] - - - - G/L - after LP/GP SpIit [B] - - - - Carry Paid/(Received) [A-B] - - - - 2.27 CIawback Questions Is the fund in a cIawback situation (yes/no) No If yes: What is the amount If yes: What is the proposed remedy 2.28 CumuIative BaIance - ReconciIiation to a Prior Period Notice1 BaIance Name (e.g. Unfunded Commitment BaIance) Ending BaIance - Prior Period (as reported in prior notice) Beginning BaIance - Current Period (as reported in current notice) Variance Reason for Variance * Amounts may not foot due to rounding. ConfidentiaI 0perations Department/ManuaI Entry Private CIient Resourcesoperations@privatecIientresources.net 06/12/2025 05.11:33",
+    "classification_modality": "hybrid_classification",
+    "document_type": "CapCall",
+    "classification_confidence": 0.8075,
+    "extracted_data": {
+        "entities": [
+            {
+                "portfolio": [
+                    {
+                        "Investor": {
+                            "Value": "Hartford HeaIthcare Corporation Defined Benefit Master Trust",
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "Hartford HeaIthcare Corporation Defined Benefit Master Trust",
+                            "BoundingBox": null,
+                            "PageNumber": 1
+                        },
+                        "Account": {
+                            "Value": "Grain Spectrum HoIdings III (Cayman), L.P.|Hartford HeaIthcare Corporation Defined Benefit Master Trust",
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "Grain Spectrum HoIdings III (Cayman), L.P.|Hartford HeaIthcare Corporation Defined Benefit Master Trust",
+                            "BoundingBox": null,
+                            "PageNumber": 1
+                        },
+                        "InvestorRefID": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "AccountRefID": {
+                            "Value": "480",
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "480",
+                            "BoundingBox": null,
+                            "PageNumber": 1
+                        },
+                        "Fund_ID": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Series_ID": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Series_Description": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Security": {
+                            "Value": "Grain Spectrum HoIdings III (Cayman), L.P.",
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "Grain Spectrum HoIdings III (Cayman), L.P.",
+                            "BoundingBox": null,
+                            "PageNumber": 1
+                        },
+                        "TransactionDate": {
+                            "Value": "2025-06-26",
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "06-26-2025",
+                            "BoundingBox": null,
+                            "PageNumber": 1
+                        },
+                        "Currency": {
+                            "Value": "USD",
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "USD",
+                            "BoundingBox": null,
+                            "PageNumber": 1
+                        },
+                        "Distribution": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "DeemedCapitalCall": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "IncomeDistribution": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "IncomeReinvested": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "RecallableSell": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "ReturnOfCapital": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "DistributionOutsideCommitment": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "CapitalCall": {
+                            "Value": 8797.89,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "8797.89",
+                            "BoundingBox": null,
+                            "PageNumber": 1
+                        },
+                        "CapitalCallOutsideCommitment": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "NetCashFlowQC": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "TransferIn": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "TransferOut": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Quantity": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Price": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "CommittedCapital": {
+                            "Value": 8000000.0,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "8000,000.00",
+                            "BoundingBox": null,
+                            "PageNumber": 1
+                        },
+                        "RemainingCommittedCapital": {
+                            "Value": 774370.9,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "774370.90",
+                            "BoundingBox": null,
+                            "PageNumber": 1
+                        },
+                        "ContributionsToDate": {
+                            "Value": 7231431.49,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "7231,431.49",
+                            "BoundingBox": null,
+                            "PageNumber": 1
+                        },
+                        "DistributionsToDate": {
+                            "Value": 5802.39,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "5802.39",
+                            "BoundingBox": null,
+                            "PageNumber": 1
+                        },
+                        "ReturnOfCapitalToDate": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "DeemedGPContribution": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "Investments": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "ManagementFeeInsideCommitment": {
+                            "Value": 8797.89,
+                            "ConfidenceScore": "HIGH",
+                            "VerbatimText": "8797.89",
+                            "BoundingBox": null,
+                            "PageNumber": 1
+                        },
+                        "ManagementFeeOutsideCommitment": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "PartnershipExpenses": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "PartnershipExpensesAccountingAdminIT": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "PartnershipExpensesAuditTax": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "PartnershipExpensesBankFees": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "PartnershipExpensesCustodyFees": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "PartnershipExpensesDueDiligence": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "PartnershipExpensesLegal": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "PartnershipExpensesOrganizationCosts": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "PartnershipExpensesTravelEntertainment": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "PartnershipExpensesOther": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "PlacementAgentFees": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "SubsequentCloseInterest": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        },
+                        "WorkingCapital": {
+                            "Value": null,
+                            "ConfidenceScore": null,
+                            "VerbatimText": null,
+                            "BoundingBox": null,
+                            "PageNumber": null
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "validation_errors": [],
+    "events_log": [
+        {
+            "timestamp": "2025-11-10 17:10:52,924",
+            "level": "INFO",
+            "stage": "Ingestion",
+            "message": "Successfully ingested 'file3_capcall.pdf'. Document ID: 97b1527b-cc84-434c-afa2-f7a0bb295535",
+            "details": null
+        },
+        {
+            "timestamp": "2025-11-10 17:10:52,992",
+            "level": "INFO",
+            "stage": "OCR",
+            "message": "Successfully processed through OCR Box: file3_capcall.pdf",
+            "details": null
+        },
+        {
+            "timestamp": "2025-11-10 17:10:53,007",
+            "level": "INFO",
+            "stage": "Preprocessing",
+            "message": "Successfully processed through Enhanced Preprocessing Box: file3_capcall.pdf",
+            "details": {
+                "quality_score": 1.0
+            }
+        },
+        {
+            "timestamp": "2025-11-10 17:10:55,716",
+            "level": "INFO",
+            "stage": "Classification",
+            "message": "Classified 'file3_capcall.pdf' as: CapCall (confidence: 0.81)",
+            "details": {
+                "document_type": "CapCall",
+                "confidence": 0.8075,
+                "confidence_level": "MEDIUM"
+            }
+        },
+        {
+            "timestamp": "2025-11-10 17:11:19,372",
+            "level": "INFO",
+            "stage": "Extraction",
+            "message": "Extraction completed for 'file3_capcall.pdf'",
+            "details": {
+                "extraction_quality": 1.0,
+                "extraction_confidence": null,
+                "processing_time": 23.655484914779663,
+                "extracted_data_present": false
+            }
+        },
+        {
+            "timestamp": "2025-11-10 17:11:19,376",
+            "level": "WARNING",
+            "stage": "BoundingBox",
+            "message": "Bounding box extraction failed: Bounding box extraction failed: Tesseract is not available for OCR processing",
+            "details": null
+        },
+        {
+            "timestamp": "2025-11-10 17:11:19,377",
+            "level": "INFO",
+            "stage": "Validation & Enrichment",
+            "message": "Validation & Enrichment completed for 'file3_capcall.pdf': no enrichment",
+            "details": null
+        },
+        {
+            "timestamp": "2025-11-10 17:11:19,377",
+            "level": "INFO",
+            "stage": "Output",
+            "message": "Successfully wrote output for 'file3_capcall.pdf' to test_output/file3_capcall_output.json",
+            "details": null
+        }
+    ],
+    "metadata": {
+        "preprocessing_quality": {
+            "quality_score": 1.0,
+            "warnings": [],
+            "metrics": {
+                "original_length": 4222,
+                "cleaned_length": 4113,
+                "length_reduction_ratio": 0.02581714827096163,
+                "word_count_original": 610,
+                "word_count_cleaned": 617,
+                "line_count_original": 165,
+                "line_count_cleaned": 1
+            }
+        },
+        "preserved_structure": {
+            "tables": [],
+            "lists": [
+                "-\nCumulative Fund Amount (Including Current Notice)²:\n",
+                "-\n                                as a % of Fund Amount\n",
+                "-\nFee Offset\n-\nCall: Mgmt. Fee (Investor #X):\n",
+                "-\n-\n-\n-\n",
+                "-\n-\n-\n-\n",
+                "-\n-\n-\n-\n",
+                "-\n-\n-\n-\n",
+                "-\n-\n-\n-\n",
+                "* Amounts may not foot due to rounding.\n"
+            ],
+            "headers": [],
+            "dates": [
+                "06-11-2025",
+                "06-26-2025",
+                "06/12/2025"
+            ],
+            "amounts": [],
+            "addresses": []
+        },
+        "cleaning_timestamp": "2025-11-10 17:10:53,007",
+        "text_quality_score": 0.0,
+        "classification_mode": "hybrid_classification",
+        "text_length": 4113,
+        "num_pages": 1,
+        "confidence_level": "MEDIUM",
+        "llm_provider": "openai",
+        "retry_count": 0,
+        "processing_time": 2.7087390422821045,
+        "file_hash": "8a1d5dad3538698b50f732a61f54da61",
+        "classification_metrics": {
+            "processing_time": 2.7087278366088867,
+            "api_calls": 1,
+            "retry_count": 0,
+            "provider_attempts": {
+                "openai": 1
+            },
+            "error_count": 0,
+            "cache_hits": 0,
+            "efficiency_score": 0.0
+        },
+        "extraction_mode": "structured_extraction",
+        "schema_loaded": true,
+        "is_scanned": false,
+        "schema_validation_passed": true,
+        "validation_errors": [],
+        "extraction_quality_score": 1.0,
+        "extraction_quality_level": "EXCELLENT",
+        "total_processing_time": 23.655484914779663,
+        "extraction_metrics": {
+            "total_processing_time": 23.65546488761902,
+            "extraction_time": 23.652705192565918,
+            "schema_validation_time": 7.867813110351562e-06,
+            "post_processing_time": 0,
+            "api_calls": 1,
+            "retry_count": 0,
+            "validation_attempts": 1,
+            "error_count": 0,
+            "cache_hits": 0,
+            "token_usage": {
+                "input": 11803,
+                "output": 2265
+            },
+            "efficiency_score": 0.0,
+            "tokens_per_second": 594.703867462429,
+            "model_used": "gpt-4o",
+            "prompt_tokens": 11803,
+            "completion_tokens": 2265,
+            "total_tokens": 14068,
+            "chunk_info": "single_pass"
+        },
+        "bounding_box_error": "Tesseract is not available for OCR processing",
+        "bounding_box_processing_time": 0.003583192825317383,
+        "validation_passed": true,
+        "validation_errors_count": 0,
+        "validation_warnings_count": 0,
+        "validation_severity_counts": {
+            "CRITICAL": 0,
+            "HIGH": 0,
+            "MEDIUM": 0,
+            "LOW": 0,
+            "INFO": 0
+        },
+        "completeness_score": 1.0,
+        "accuracy_score": 1.0,
+        "consistency_score": 1.0,
+        "overall_quality_score": 1.0,
+        "validation_processing_time": 0.0002162456512451172,
+        "enrichment_enabled": false,
+        "enrichment_skipped_reason": "No page data available or enrichment disabled",
+        "total_validation_enrichment_time": 0.0008862018585205078
+    }
+}

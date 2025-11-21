@@ -1,0 +1,346 @@
+{
+  "source": "openai",
+  "response_type": "extraction",
+  "original_filename": "file4_capcall.pdf",
+  "timestamp": 1762774954.3172932,
+  "raw_response": {
+    "entities": [
+      {
+        "portfolio": [
+          {
+            "Investor": {
+              "Value": "The Robert A. Smith GRAT UAD 10/27/1994 FB0 MadeIeine Smith",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "The Robert A. Smith GRAT UAD 10/27/1994 FB0 MadeIeine Smith",
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Account": {
+              "Value": "Ethos CapitaI Investments LP|The Robert A. Smith GRAT UAD 10/27/1994 FB0 MadeIeine Smith",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "Ethos CapitaI Investments LP|The Robert A. Smith GRAT UAD 10/27/1994 FB0 MadeIeine Smith",
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "InvestorRefID": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "AccountRefID": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Fund_ID": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Series_ID": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Series_Description": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Security": {
+              "Value": "Ethos CapitaI Investments LP",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "Ethos CapitaI Investments LP",
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "TransactionDate": {
+              "Value": "2025-07-10",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "7/10/2025",
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Currency": {
+              "Value": "USD",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD",
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Distribution": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "DeemedCapitalCall": {
+              "Value": 2965.0,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD 2965",
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "IncomeDistribution": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "IncomeReinvested": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "RecallableSell": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "ReturnOfCapital": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "DistributionOutsideCommitment": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "CapitalCall": {
+              "Value": 57865.0,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD 57865",
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "CapitalCallOutsideCommitment": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "NetCashFlowQC": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "TransferIn": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "TransferOut": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Quantity": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Price": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "CommittedCapital": {
+              "Value": 500000.0,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD 500000",
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "RemainingCommittedCapital": {
+              "Value": 170035.0,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD 170035",
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "ContributionsToDate": {
+              "Value": 272100.0,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD 272100",
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "DistributionsToDate": {
+              "Value": 65997.0,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD 65997",
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "ReturnOfCapitalToDate": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "DeemedGPContribution": {
+              "Value": 2965.0,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD 2965",
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Investments": {
+              "Value": 48776.0,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD 48776",
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "ManagementFeeInsideCommitment": {
+              "Value": 4907.0,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD 4907",
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "ManagementFeeOutsideCommitment": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "PartnershipExpenses": {
+              "Value": 1217.0,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD 1217",
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "PartnershipExpensesAccountingAdminIT": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "PartnershipExpensesAuditTax": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "PartnershipExpensesBankFees": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "PartnershipExpensesCustodyFees": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "PartnershipExpensesDueDiligence": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "PartnershipExpensesLegal": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "PartnershipExpensesOrganizationCosts": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "PartnershipExpensesTravelEntertainment": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "PartnershipExpensesOther": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "PlacementAgentFees": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "SubsequentCloseInterest": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "WorkingCapital": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "raw_text": "{\n  \"entities\": [\n    {\n      \"portfolio\": [\n        {\n          \"Investor\": {\n            \"Value\": \"The Robert A. Smith GRAT UAD 10/27/1994 FB0 MadeIeine Smith\",\n            \"ConfidenceScore\": \"HIGH\",\n            \"VerbatimText\": \"The Robert A. Smith GRAT UAD 10/27/1994 FB0 MadeIeine Smith\",\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"Account\": {\n            \"Value\": \"Ethos CapitaI Investments LP|The Robert A. Smith GRAT UAD 10/27/1994 FB0 MadeIeine Smith\",\n            \"ConfidenceScore\": \"HIGH\",\n            \"VerbatimText\": \"Ethos CapitaI Investments LP|The Robert A. Smith GRAT UAD 10/27/1994 FB0 MadeIeine Smith\",\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"InvestorRefID\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"AccountRefID\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"Fund_ID\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"Series_ID\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"Series_Description\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"Security\": {\n            \"Value\": \"Ethos CapitaI Investments LP\",\n            \"ConfidenceScore\": \"HIGH\",\n            \"VerbatimText\": \"Ethos CapitaI Investments LP\",\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"TransactionDate\": {\n            \"Value\": \"2025-07-10\",\n            \"ConfidenceScore\": \"HIGH\",\n            \"VerbatimText\": \"7/10/2025\",\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"Currency\": {\n            \"Value\": \"USD\",\n            \"ConfidenceScore\": \"HIGH\",\n            \"VerbatimText\": \"USD\",\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"Distribution\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"DeemedCapitalCall\": {\n            \"Value\": 2965.00,\n            \"ConfidenceScore\": \"HIGH\",\n            \"VerbatimText\": \"USD 2965\",\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"IncomeDistribution\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"IncomeReinvested\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"RecallableSell\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"ReturnOfCapital\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"DistributionOutsideCommitment\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"CapitalCall\": {\n            \"Value\": 57865.00,\n            \"ConfidenceScore\": \"HIGH\",\n            \"VerbatimText\": \"USD 57865\",\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"CapitalCallOutsideCommitment\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"NetCashFlowQC\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"TransferIn\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"TransferOut\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"Quantity\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"Price\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"CommittedCapital\": {\n            \"Value\": 500000.00,\n            \"ConfidenceScore\": \"HIGH\",\n            \"VerbatimText\": \"USD 500000\",\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"RemainingCommittedCapital\": {\n            \"Value\": 170035.00,\n            \"ConfidenceScore\": \"HIGH\",\n            \"VerbatimText\": \"USD 170035\",\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"ContributionsToDate\": {\n            \"Value\": 272100.00,\n            \"ConfidenceScore\": \"HIGH\",\n            \"VerbatimText\": \"USD 272100\",\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"DistributionsToDate\": {\n            \"Value\": 65997.00,\n            \"ConfidenceScore\": \"HIGH\",\n            \"VerbatimText\": \"USD 65997\",\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"ReturnOfCapitalToDate\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"DeemedGPContribution\": {\n            \"Value\": 2965.00,\n            \"ConfidenceScore\": \"HIGH\",\n            \"VerbatimText\": \"USD 2965\",\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"Investments\": {\n            \"Value\": 48776.00,\n            \"ConfidenceScore\": \"HIGH\",\n            \"VerbatimText\": \"USD 48776\",\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"ManagementFeeInsideCommitment\": {\n            \"Value\": 4907.00,\n            \"ConfidenceScore\": \"HIGH\",\n            \"VerbatimText\": \"USD 4907\",\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"ManagementFeeOutsideCommitment\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"PartnershipExpenses\": {\n            \"Value\": 1217.00,\n            \"ConfidenceScore\": \"HIGH\",\n            \"VerbatimText\": \"USD 1217\",\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"PartnershipExpensesAccountingAdminIT\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"PartnershipExpensesAuditTax\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"PartnershipExpensesBankFees\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"PartnershipExpensesCustodyFees\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"PartnershipExpensesDueDiligence\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"PartnershipExpensesLegal\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"PartnershipExpensesOrganizationCosts\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"PartnershipExpensesTravelEntertainment\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"PartnershipExpensesOther\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"PlacementAgentFees\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"SubsequentCloseInterest\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          },\n          \"WorkingCapital\": {\n            \"Value\": null,\n            \"ConfidenceScore\": null,\n            \"VerbatimText\": null,\n            \"BoundingBox\": null,\n            \"PageNumber\": null\n          }\n        }\n      ]\n    }\n  ]\n}",
+  "response_metadata": {
+    "has_markdown_wrapper": true,
+    "detected_format": "json",
+    "is_valid_json": true,
+    "original_length": 10223,
+    "cleaned_length": 10211
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "typeName": "application/pdf",
+  "fileHash": "fdb4eceff9ddf34059ed78129008131d6dff16828f0828e07b08c7ae6130964a",
+  "fileOriginalName": "sampleFundFactSheet1.pdf",
+  "fileOriginalPath": "data\\frameDemo\\l0\\sampleFundFactSheet1.pdf",
+  "typeSpecificParams": {
+    "numPages": 4,
+    "EXIF": {
+      "/CreationDate": "2024-04-12T13:21:00.000Z",
+      "/Creator": "Microsoft Word 2016",
+      "/ModDate": "2024-04-12T13:21:22.000Z",
+      "/Producer": "SEI INVESTMENTS using ABCpdf",
+      "/Title": ""
+    }
+  }
+}

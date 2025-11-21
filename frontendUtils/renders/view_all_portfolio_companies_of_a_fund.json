@@ -1,0 +1,77 @@
+{
+  "rowClickEnabled": true,
+  "rowClickAction": {
+    "type": "storeValues",
+    "store": {
+        "key": "commonRightDrawer",
+        "value": {
+            "page": "detailedInfo",
+            "getAPIURL": "/funds/portfolio_companies/details",
+            "parameters": [
+                {
+                    "name": "investor_id",
+                    "value": "",
+                    "dynamicValue": {
+                        "enabled": true,
+                        "id": "portfolioCompanyID"
+                    }
+                }
+            ],
+            "isOpen": true
+        }
+    }
+  },
+  "colsToShow": [
+    "portfolioCompanyID",
+    "portfolioCompanyName",
+    "sector",
+    "geography",
+    "investmentDate",
+    "status"
+  ],
+  "columnConfig": {
+    "portfolioCompanyID": {
+      "name": "Portfolio Company ID",
+      "filter": "true",
+      "suppressHeaderMenuButton": false
+    },
+    "portfolioCompanyName": {
+      "name": "Portfolio Company Name",
+      "filter": "true",
+      "suppressHeaderMenuButton": false
+    },
+    "sector": {
+      "name": "Sector",
+      "filter": "true",
+      "suppressHeaderMenuButton": false
+    },
+    "geography": {
+      "name": "Geography",
+      "filter": "true",
+      "suppressHeaderMenuButton": false
+    },
+    "investmentDate": {
+      "name": "Investment Date",
+      "filter": "true",
+      "suppressHeaderMenuButton": false
+    },
+    "status": {
+      "name": "Status",
+      "filter": "true",
+      "customCellRenderer": "statusAggregator",
+      "suppressHeaderMenuButton": false
+    }
+  },
+  "rowData": [
+    {
+      "portfolioCompanyID": 1,
+      "portfolioCompanyName": "Avitex BioPharma Inc",
+      "sector": "Pharma",
+      "geography": "USA",
+      "investmentDate": "02/06/2025",
+      "status": "Invested"
+    }
+  ],
+  "noDataMessage": "Currently, there are no portfolio companies. Please add new investments to this fund."
+}
+

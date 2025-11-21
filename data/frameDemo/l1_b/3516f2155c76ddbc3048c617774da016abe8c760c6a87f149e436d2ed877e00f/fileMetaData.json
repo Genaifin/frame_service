@@ -1,0 +1,16 @@
+{
+  "typeName": "application/pdf",
+  "fileHash": "3516f2155c76ddbc3048c617774da016abe8c760c6a87f149e436d2ed877e00f",
+  "fileOriginalName": "eIC Portal.pdf",
+  "fileOriginalPath": "data/frameDemo/l0/eIC Portal.pdf",
+  "typeSpecificParams": {
+    "numPages": 1,
+    "EXIF": {
+      "/Title": "eIC Portal",
+      "/Creator": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0",
+      "/Producer": "Skia/PDF m136",
+      "/CreationDate": "2025-05-19T07:18:42.000Z",
+      "/ModDate": "2025-05-19T07:18:42.000Z"
+    }
+  }
+}

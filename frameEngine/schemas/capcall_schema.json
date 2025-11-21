@@ -1,0 +1,1537 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "entities": {
+            "type": "array",
+            "items": {
+                "portfolio": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "Investor": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "string",
+                                        "description": "Name of the investor."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "Account": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "string",
+                                        "description": "This is the fund name and investor name combined in a piped format. For instance, if fund name is 'ABC Investments' and investor is 'Scott', then account is 'ABC Investments|Scott'."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "InvestorRefID": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "string",
+                                        "description": "A unique reference ID for the investor. Only extract this field if you find mention of the field being Investor Reference ID otherwise do not extract this field"
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "AccountRefID": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "string",
+                                        "description": "A unique reference ID for the account. Only extract this field if you find mention of the field being Account Reference ID otherwise do not extract this field"
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "Fund_ID": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "string",
+                                        "description": "A Fund ID is a code (numeric or alphanumeric) used by financial institutions, fund managers, or platforms to uniquely identify a particular mutual fund, hedge fund, pension fund, or other pooled investment vehicle. The Fund ID becomes especially important when a fund has multiple series or share classes. In such cases, the Fund ID helps differentiate between the series."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "Series_ID": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "string",
+                                        "description": "The Series ID refers to a unique identifier for a specific series or class of units within a mutual fund or pooled investment vehicle. The Series ID distinguishes between different series or unit classes within the same fund."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "Series_Description": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "string",
+                                        "description": "Series Description provides a human-readable label or name that describes the specific series (or class) of units within a fund. It complements the Series ID by offering a more descriptive and understandable explanation of what the series represents."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "Security": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "string",
+                                        "description": "The fund name mentioned in the document. This typically can be in the header of the document. Fund names are generally longer and typically include LLC, LLP or something similar in."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "TransactionDate": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "string",
+                                        "description": "The due date of when the capital call is to be made in YYYY-MM-DD format. This is not the date on which the document was received, but this is the date when the capital call is due."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "Currency": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "string",
+                                        "enum": [
+                                            "AED",
+                                            "AFN",
+                                            "ALL",
+                                            "AMD",
+                                            "ANG",
+                                            "AOA",
+                                            "ARS",
+                                            "AUD",
+                                            "AWG",
+                                            "AZN",
+                                            "BAM",
+                                            "BBD",
+                                            "BDT",
+                                            "BGN",
+                                            "BHD",
+                                            "BIF",
+                                            "BMD",
+                                            "BND",
+                                            "BOB",
+                                            "BRL",
+                                            "BSD",
+                                            "BTN",
+                                            "BWP",
+                                            "BYN",
+                                            "BZD",
+                                            "CAD",
+                                            "CDF",
+                                            "CHF",
+                                            "CLP",
+                                            "CNY",
+                                            "COP",
+                                            "CRC",
+                                            "CUP",
+                                            "CVE",
+                                            "CZK",
+                                            "DJF",
+                                            "DKK",
+                                            "DOP",
+                                            "DZD",
+                                            "EGP",
+                                            "ERN",
+                                            "ETB",
+                                            "EUR",
+                                            "FJD",
+                                            "FKP",
+                                            "FOK",
+                                            "GBP",
+                                            "GEL",
+                                            "GGP",
+                                            "GHS",
+                                            "GIP",
+                                            "GMD",
+                                            "GNF",
+                                            "GTQ",
+                                            "GYD",
+                                            "HKD",
+                                            "HNL",
+                                            "HRK",
+                                            "HTG",
+                                            "HUF",
+                                            "IDR",
+                                            "ILS",
+                                            "IMP",
+                                            "INR",
+                                            "IQD",
+                                            "IRR",
+                                            "ISK",
+                                            "JMD",
+                                            "JOD",
+                                            "JPY",
+                                            "KES",
+                                            "KGS",
+                                            "KHR",
+                                            "KID",
+                                            "KMF",
+                                            "KRW",
+                                            "KWD",
+                                            "KYD",
+                                            "KZT",
+                                            "LAK",
+                                            "LBP",
+                                            "LKR",
+                                            "LRD",
+                                            "LSL",
+                                            "LYD",
+                                            "MAD",
+                                            "MDL",
+                                            "MGA",
+                                            "MKD",
+                                            "MMK",
+                                            "MNT",
+                                            "MOP",
+                                            "MRU",
+                                            "MUR",
+                                            "MVR",
+                                            "MWK",
+                                            "MXN",
+                                            "MYR",
+                                            "MZN",
+                                            "NAD",
+                                            "NGN",
+                                            "NIO",
+                                            "NOK",
+                                            "NPR",
+                                            "NZD",
+                                            "OMR",
+                                            "PAB",
+                                            "PEN",
+                                            "PGK",
+                                            "PHP",
+                                            "PKR",
+                                            "PLN",
+                                            "PYG",
+                                            "QAR",
+                                            "RON",
+                                            "RSD",
+                                            "RUB",
+                                            "RWF",
+                                            "SAR",
+                                            "SBD",
+                                            "SCR",
+                                            "SDG",
+                                            "SEK",
+                                            "SGD",
+                                            "SHP",
+                                            "SLE",
+                                            "SLL",
+                                            "SOS",
+                                            "SRD",
+                                            "SSP",
+                                            "STN",
+                                            "SYP",
+                                            "SZL",
+                                            "THB",
+                                            "TJS",
+                                            "TMT",
+                                            "TND",
+                                            "TOP",
+                                            "TRY",
+                                            "TTD",
+                                            "TVD",
+                                            "TWD",
+                                            "TZS",
+                                            "UAH",
+                                            "UGX",
+                                            "USD",
+                                            "UYU",
+                                            "UZS",
+                                            "VES",
+                                            "VND",
+                                            "VUV",
+                                            "WST",
+                                            "XAF",
+                                            "XCD",
+                                            "XDR",
+                                            "XOF",
+                                            "XPF",
+                                            "YER",
+                                            "ZAR",
+                                            "ZMW",
+                                            "ZWL"
+                                        ],
+                                        "description": "Currency code for the transaction (e.g., USD, EUR)."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "Distribution": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Amount of funds distributed."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "DeemedCapitalCall": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Amount of capital hypothetical or notional amount of capital that is considered 'called' from investors."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "IncomeDistribution": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Amount of income distributed."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "IncomeReinvested": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Amount of income that is reinvested."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "RecallableSell": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Amount or investments that can be recalled back."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "ReturnOfCapital": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Amount of capital returned to the investor."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "DistributionOutsideCommitment": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Amount of distribution made outside the committed capital."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "CapitalCall": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Amount of capital called during this transaction."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "CapitalCallOutsideCommitment": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Amount of capital called outside the initial commitment."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "NetCashFlowQC": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Net cash flow after quality check and adjustments."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "TransferIn": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Amount of capital transferred into the account."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "TransferOut": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Amount of capital transferred out of the account."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "Quantity": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Quantity of the securities transacted."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "Price": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Price per unit of security at the time of transaction."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "CommittedCapital": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Total capital committed by the investor."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "RemainingCommittedCapital": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Remaining capital that the investor has committed to contribute."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "ContributionsToDate": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Total contributions made by the investor to date."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "DistributionsToDate": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Total distributions received by the investor to date."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "ReturnOfCapitalToDate": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Total capital returned to the investor up to date."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "DeemedGPContribution": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Amount called for Deemed GP Contribution. Look for transaction type 'Deemed GP Contribution' or similar labels in Section C of ILPA capital call documents or in transaction descriptions. This represents the GP's contribution to the fund that is treated as if it were capital contributed by the GP. Extract the corresponding LP Amount value."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "Investments": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Total amount called for investments in portfolio companies. Look for transaction types labeled 'Call: Investments', 'Investments', 'Investment', 'Investment in [Company Name]', or 'Follow-on Investment in [Company Name]' in Section C of ILPA documents or in transaction descriptions. The transaction type may appear as 'Call: Investments' followed by a company name. If multiple investment transactions exist, sum all investment-related amounts. This may include new investments, follow-on investments, or add-on investments in portfolio companies."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "ManagementFeeInsideCommitment": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Management fees charged that reduce the investor's capital commitment. Look for transaction type 'Call: Management Fees', 'Management Fee (inside commitment)', or 'Management Fees' in Section C of ILPA documents, or find 'Management Fees - Net of Offsets, Waivers & Rebates' or similar in the NAV reconciliation section of ILPA Fee Reporting Templates. The transaction type may appear as 'Call: Management Fees' under 'Operations' in Section C. This fee is deducted from committed capital."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "ManagementFeeOutsideCommitment": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Management fees charged that do NOT reduce the investor's capital commitment. Look for transaction type 'Management Fee (outside commitment)' in Section C of ILPA documents. This fee is charged separately from the committed capital and does not reduce the unfunded commitment."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "PartnershipExpenses": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Total partnership expenses charged to the fund. Look for 'Call: Partnership Expenses' or 'Partnership Expenses' in Section C of capital call documents, or '(Partnership Expenses - Total):' in the NAV reconciliation section of ILPA Fee Reports. The transaction type may appear as 'Call: Partnership Expenses' under 'Operations' in Section C. This is the sum of all partnership expense categories including accounting, audit, bank fees, custody, due diligence, legal, organization costs, travel, and other expenses."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "PartnershipExpensesAccountingAdminIT": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Partnership expenses for accounting, administration, and IT services. Look for 'Partnership Expenses - Accounting, Administration & IT' or 'Partnership Expenses - Accounting, Administration and IT' or similar labels with variations in punctuation (en-dash, hyphen, or colon as separator). Found in detailed expense breakdowns in ILPA Fee Reporting Templates. Values are typically negative or shown in parentheses."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "PartnershipExpensesAuditTax": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Partnership expenses for audit and tax preparation services. Look for 'Partnership Expenses - Audit & Tax Preparatory' or 'Partnership Expenses - Audit and Tax' or similar variations. Found in ILPA Fee Reports expense breakdown section. Values are typically negative or shown in parentheses."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "PartnershipExpensesBankFees": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Partnership expenses for bank fees. Look for 'Partnership Expenses - Bank Fees' or similar labels. Found in ILPA Fee Reports expense breakdown. Values are typically negative or shown in parentheses."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "PartnershipExpensesCustodyFees": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Partnership expenses for custody fees. Look for 'Partnership Expenses - Custody Fees' or similar labels. Found in ILPA Fee Reports expense breakdown. May be zero if no custody services are used."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "PartnershipExpensesDueDiligence": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Partnership expenses for due diligence activities on potential investments. Look for 'Partnership Expenses - Due Diligence' or similar labels. Found in ILPA Fee Reports expense breakdown. May be zero in periods with no new due diligence activity. Includes costs for evaluating investment opportunities."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "PartnershipExpensesLegal": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Partnership expenses for legal services. Look for 'Partnership Expenses - Legal' or similar labels. Found in ILPA Fee Reports expense breakdown. Values are typically negative or shown in parentheses. Includes legal costs on behalf of the fund."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "PartnershipExpensesOrganizationCosts": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Partnership expenses for organization and formation costs of the fund. Look for 'Partnership Expenses - Organization Costs' or similar labels. Found in ILPA Fee Reports expense breakdown. Typically non-zero only in early fund periods or may be capitalized. Includes costs to establish the fund structure."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "PartnershipExpensesTravelEntertainment": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Partnership expenses for travel and entertainment. Look for 'Partnership Expenses - Other Travel & Entertainment' or 'Partnership Expenses - Travel & Entertainment' or similar labels. Found in ILPA Fee Reports expense breakdown. Values are typically negative or shown in parentheses. May include LPAC meeting travel."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "PartnershipExpensesOther": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Partnership expenses for other miscellaneous categories not covered elsewhere. Look for 'Partnership Expenses - Other' or similar labels with potential subcategory descriptions in adjacent columns. This is typically the catch-all category and may include detailed descriptions. Found in ILPA Fee Reports expense breakdown. Often the largest miscellaneous expense category. Values are typically negative or shown in parentheses."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "PlacementAgentFees": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Fees paid to placement agents for fundraising services. Look for 'Placement Fees' or 'Placement Agent Fees' in the NAV reconciliation section or fee offset section of ILPA documents. May also appear as transaction type in Section C. These fees are typically one-time charges during fund formation or subsequent closes."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "SubsequentCloseInterest": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Interest charged or credited to investors who commit capital in subsequent fund closes after the initial close. Look for 'Subsequent Close Interest' or 'Close Interest' or similar labels in Section C transaction descriptions or fee calculations. This equalizes returns between early and late investors in the fund."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            },
+                            "WorkingCapital": {
+                                "type": "object",
+                                "properties": {
+                                    "Value": {
+                                        "type": "number",
+                                        "description": "Amount called for working capital or operational expenses of the fund. Look for 'Working Capital' or similar labels in Section C transaction types or descriptions. This represents capital needed for day-to-day fund operations separate from investments in portfolio companies."
+                                    },
+                                    "ConfidenceScore": {
+                                        "$ref": "#/definitions/ConfidenceScore"
+                                    },
+                                    "VerbatimText": {
+                                        "$ref": "#/definitions/VerbatimText"
+                                    },
+                                    "BoundingBox": {
+                                        "$ref": "#/definitions/BoundingBox"
+                                    },
+                                    "PageNumber": {
+                                        "$ref": "#/definitions/PageNumber"
+                                    }
+                                },
+                                "required": [
+                                    "Value",
+                                    "ConfidenceScore",
+                                    "VerbatimText",
+                                    "BoundingBox",
+                                    "PageNumber"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "Investor",
+                            "Account",
+                            "Security",
+                            "TransactionDate",
+                            "ReturnOfCapital",
+                            "DistributionOutsideCommitment",
+                            "CapitalCall",
+                            "NetCashFlowQC",
+                            "VerbatimText",
+                            "InvestorRefID",
+                            "AccountRefID",
+                            "FundID",
+                            "SeriesID",
+                            "SeriesDescription",
+                            "Currency",
+                            "Distribution",
+                            "DeemedCapitalCall",
+                            "IncomeDistribution",
+                            "IncomeReinvested",
+                            "RecallableSell",
+                            "CapitalCallOutsideCommitment",
+                            "TransferIn",
+                            "TransferOut",
+                            "Quantity",
+                            "Price",
+                            "CommittedCapital",
+                            "RemainingCommittedCapital",
+                            "ContributionsToDate",
+                            "DistributionsToDate",
+                            "ReturnOfCapitalToDate"
+                        ],
+                        "additionalProperties": false
+                    },
+                    "description": "Portfolio statement for a single investor and account."
+                }
+            },
+            "required": [
+                "portfolio"
+            ]
+        }
+    },
+    "required": [
+        "entities"
+    ],
+    "additionalProperties": false,
+    "definitions": {
+        "ConfidenceScore": {
+            "type": "string",
+            "enum": [
+                "HIGH",
+                "MID",
+                "LOW"
+            ],
+            "description": "Confidence score for the extracted value: 'HIGH' if the field name is mentioned as it is in the document, 'MID' if the key matches a semantically similar word, 'LOW' if the field is not matching exactly but AI system inferred this value. Feel free to show some fields with low confidence. If the field is null or empty, then let the confidence score be null as well."
+        },
+        "VerbatimText": {
+            "type": "string",
+            "description": "The exact verbatim text extracted from the document for the corresponding field. Avoid any braces or brackets from the outputs. For currency, you might want to pick up symbols from the document."
+        },
+        "BoundingBox": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "Bounding box of the extracted value in the format [x1, y1, x2, y2]"
+        },
+        "PageNumber": {
+            "type": "number",
+            "description": "Page number of the extracted value"
+        }
+    }
+}

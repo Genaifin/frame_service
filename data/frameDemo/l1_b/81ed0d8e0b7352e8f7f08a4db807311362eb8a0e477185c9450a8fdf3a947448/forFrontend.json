@@ -1,0 +1,613 @@
+{
+  "document_details": {
+    "document_name": "20-75-067-3736086_2024-12.pdf",
+    "date": "2025-07-16",
+    "status": "EXTRACTION_FAILED",
+    "source": "Dashboard",
+    "processing_method": "Completely Automated",
+    "file_id": "4cd8da21-44ce-4e55-9e6a-c2691bac3503",
+    "business_date": "2025-07-16",
+    "file_type": "Statement",
+    "capture_system": "Aithon Frame",
+    "linking_system": "Automated",
+    "extractor": "Aithon Frame - AI"
+  },
+  "file_metadata_config": [
+    {
+      "key": "status",
+      "label": "Status",
+      "layout": "badge"
+    },
+    {
+      "key": "source",
+      "label": "Source"
+    },
+    {
+      "key": "processing_method",
+      "label": "Processing Method"
+    },
+    {
+      "key": "file_id",
+      "label": "File ID"
+    },
+    {
+      "key": "business_date",
+      "label": "Business Date"
+    },
+    {
+      "key": "file_type",
+      "label": "File Type"
+    },
+    {
+      "key": "capture_system",
+      "label": "Capture System"
+    },
+    {
+      "key": "linking_system",
+      "label": "Linking System"
+    },
+    {
+      "key": "extractor",
+      "label": "Extractor"
+    }
+  ],
+  "event_log_title": "Event Logs",
+  "event_logs": [
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 13:42:18,445",
+      "message": "Successfully ingested '20-75-067-3736086_2024-12.pdf'. Document ID: 4cd8da21-44ce-4e55-9e6a-c2691bac3503"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 13:42:18,550",
+      "message": "Successfully processed through OCR Box: 20-75-067-3736086_2024-12.pdf"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 13:42:18,601",
+      "message": "Successfully processed through Enhanced Preprocessing Box: 20-75-067-3736086_2024-12.pdf"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 13:42:19,726",
+      "message": "Classified '20-75-067-3736086_2024-12.pdf' as: Statement (confidence: 0.85)"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 13:43:20,684",
+      "message": "Extraction completed for '20-75-067-3736086_2024-12.pdf'"
+    },
+    {
+      "status": "error",
+      "timestamp": "2025-07-16 13:44:57,945",
+      "message": "Bounding box extraction failed: Bounding box extraction failed: Error code: 400 - {'error': {'message': \"This model's maximum context length is 128000 tokens. However, your messages resulted in 647359 tokens. Please reduce the length of the messages.\", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 13:44:57,958",
+      "message": "Validation & Enrichment completed for '20-75-067-3736086_2024-12.pdf': no enrichment"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 13:44:57,958",
+      "message": "Successfully wrote output for '20-75-067-3736086_2024-12.pdf' to output_documents/20-75-067-3736086_2024-12_output.json"
+    }
+  ],
+  "account_details": {
+    "account_sid": "4cd8da21-44ce-4e55-9e6a-c2691bac3503",
+    "fund_name": "Unknown Fund",
+    "entity": "Unknown Entity",
+    "created_on": "2025-07-16",
+    "frequency": 0,
+    "delay": 0,
+    "market_value": 0.0
+  },
+  "account_fields": [
+    {
+      "key": "account_sid",
+      "label": "Account SID"
+    },
+    {
+      "key": "frequency",
+      "label": "Frequency"
+    },
+    {
+      "key": "fund_name",
+      "label": "Fund Name"
+    },
+    {
+      "key": "delay",
+      "label": "Delay"
+    },
+    {
+      "key": "created_on",
+      "label": "Created on"
+    },
+    {
+      "key": "market_value",
+      "label": "Market Value"
+    }
+  ],
+  "file_fields": [
+    {
+      "key": "file_name",
+      "label": "File Name"
+    },
+    {
+      "key": "file_id",
+      "label": "File ID",
+      "isCopyable": true
+    },
+    {
+      "key": "market_value",
+      "label": "Market Value"
+    }
+  ],
+  "doc_id": "4cd8da21-44ce-4e55-9e6a-c2691bac3503",
+  "task_id": "ec126da0-368f-4dd5-a3d9-3c9a3694221e",
+  "original_filename": "20-75-067-3736086_2024-12.pdf",
+  "file_hash": "81ed0d8e0b7352e8f7f08a4db807311362eb8a0e477185c9450a8fdf3a947448",
+  "pipeline_status": "Completed_With_Error",
+  "document_type": "Statement",
+  "classification_confidence": 0.85,
+  "extracted_data": {
+    "entities": [
+      {
+        "portfolio": [
+          {
+            "Investor": {
+              "Value": "ELECTRICAL WORKERS INS CLARKSTON",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "ELECTRICAL WORKERS INS CLARKSTON",
+              "BoundingBox": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "PageNumber": 1
+            },
+            "Account": {
+              "Value": "PNC Bank|ELECTRICAL WORKERS INS CLARKSTON",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "PNC Bank|ELECTRICAL WORKERS INS CLARKSTON",
+              "BoundingBox": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "PageNumber": 1
+            },
+            "InvestorRefID": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "AccountRefID": {
+              "Value": "20-75-067-***6086",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "20-75-067-***6086",
+              "BoundingBox": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "PageNumber": 1
+            },
+            "Fund_ID": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Series_ID": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Series_Description": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Security": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "PeriodBeginningDT": {
+              "Value": "2024-12-01",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "December 1, 2024",
+              "BoundingBox": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "PageNumber": 1
+            },
+            "PeriodEndingDT": {
+              "Value": "2024-12-31",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "December 31, 2024",
+              "BoundingBox": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "PageNumber": 1
+            },
+            "Currency": {
+              "Value": "USD",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD",
+              "BoundingBox": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "PageNumber": 1
+            },
+            "NetOpeningCapital": {
+              "Value": 8584270.22,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "8584,270.22",
+              "BoundingBox": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "PageNumber": 1
+            },
+            "Contributions": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "ContributionOutsideCommitment": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Withdrawals": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "RecallableDistribution": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "ReturnOfCapital": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "NetCapitalActivity": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "TransfersIn": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "TransfersOut": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "NetTransfers": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "IncomeDistribution": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "RealizedGainLoss": {
+              "Value": 28656.71,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "28656.71",
+              "BoundingBox": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "PageNumber": 1
+            },
+            "UnrealizedGainLoss": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "NetGainLoss": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "InvestmentIncome": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "OtherIncomeLoss": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "ManagementFee": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "OtherExpenses": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "CarriedInterest": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "OtherAdjustments": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "NetClosingCapital": {
+              "Value": 8100130.92,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "8100,130.92",
+              "BoundingBox": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "PageNumber": 1
+            },
+            "Quantity": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Price": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "MTDPerformance": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "QTDPerformance": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "YTDPerformance": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "IRR": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Commitment": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "ContributionsToDate": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "UnfundedCommitment": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "UnfundedCommitmentAdj": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "DistributionsSubjectToRecall": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "TotalDistributions": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "CommitmentOnlyStatement": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "validation_errors": [],
+  "events_log": [
+    {
+      "timestamp": "2025-07-16 13:42:18,445",
+      "level": "INFO",
+      "stage": "Ingestion",
+      "message": "Successfully ingested '20-75-067-3736086_2024-12.pdf'. Document ID: 4cd8da21-44ce-4e55-9e6a-c2691bac3503",
+      "details": null
+    },
+    {
+      "timestamp": "2025-07-16 13:42:18,550",
+      "level": "INFO",
+      "stage": "OCR",
+      "message": "Successfully processed through OCR Box: 20-75-067-3736086_2024-12.pdf",
+      "details": null
+    },
+    {
+      "timestamp": "2025-07-16 13:42:18,601",
+      "level": "INFO",
+      "stage": "Preprocessing",
+      "message": "Successfully processed through Enhanced Preprocessing Box: 20-75-067-3736086_2024-12.pdf",
+      "details": {
+        "quality_score": 1.0
+      }
+    },
+    {
+      "timestamp": "2025-07-16 13:42:19,726",
+      "level": "INFO",
+      "stage": "Classification",
+      "message": "Classified '20-75-067-3736086_2024-12.pdf' as: Statement (confidence: 0.85)",
+      "details": {
+        "document_type": "Statement",
+        "confidence": 0.85,
+        "confidence_level": "MEDIUM"
+      }
+    },
+    {
+      "timestamp": "2025-07-16 13:43:20,684",
+      "level": "INFO",
+      "stage": "Extraction",
+      "message": "Extraction completed for '20-75-067-3736086_2024-12.pdf'",
+      "details": {
+        "extraction_quality": 1.0,
+        "extraction_confidence": null,
+        "processing_time": 60.95655798912048
+      }
+    },
+    {
+      "timestamp": "2025-07-16 13:44:57,945",
+      "level": "WARNING",
+      "stage": "BoundingBox",
+      "message": "Bounding box extraction failed: Bounding box extraction failed: Error code: 400 - {'error': {'message': \"This model's maximum context length is 128000 tokens. However, your messages resulted in 647359 tokens. Please reduce the length of the messages.\", 'type': 'invalid_request_error', 'param': 'messages', 'code': 'context_length_exceeded'}}",
+      "details": null
+    },
+    {
+      "timestamp": "2025-07-16 13:44:57,958",
+      "level": "INFO",
+      "stage": "Validation & Enrichment",
+      "message": "Validation & Enrichment completed for '20-75-067-3736086_2024-12.pdf': no enrichment",
+      "details": null
+    },
+    {
+      "timestamp": "2025-07-16 13:44:57,958",
+      "level": "INFO",
+      "stage": "Output",
+      "message": "Successfully wrote output for '20-75-067-3736086_2024-12.pdf' to output_documents/20-75-067-3736086_2024-12_output.json",
+      "details": null
+    }
+  ],
+  "processing_summary": {
+    "total_processing_time": 60.95655798912048,
+    "extraction_quality": 1.0,
+    "classification_mode": "hybrid_classification",
+    "stages_completed": [
+      "Ingestion",
+      "OCR",
+      "Preprocessing",
+      "Classification",
+      "Extraction",
+      "Validation & Enrichment",
+      "Output"
+    ],
+    "error_count": 0
+  },
+  "metadata": {
+    "file_hash": "81ed0d8e0b7352e8f7f08a4db807311362eb8a0e477185c9450a8fdf3a947448",
+    "processing_timestamp": "2025-07-16 13:44:57,958",
+    "backend_structure_version": "2.0"
+  }
+}

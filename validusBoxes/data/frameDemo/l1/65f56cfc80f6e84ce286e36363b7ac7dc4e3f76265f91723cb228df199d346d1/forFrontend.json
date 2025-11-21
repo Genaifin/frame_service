@@ -1,0 +1,657 @@
+{
+  "document_details": {
+    "document_name": "EFRONT - BELDORE, CLEARFORK, EATON VANCE_STATEMENTS_BELHURST CAPITAL FUND LLC CLASS I_103534_U9U04DIVYMNFCCXKKHT4IJUIPF55S7BSD9ZJVTZCG=.pdf",
+    "date": "2025-08-17",
+    "status": "EXTRACTION_FAILED",
+    "source": "Dashboard",
+    "processing_method": "Completely Automated",
+    "file_id": "543554e4-9dcd-48fb-b96b-dd1704c326fb",
+    "business_date": "2025-08-17",
+    "file_type": "Statement",
+    "capture_system": " ",
+    "linking_system": " ",
+    "extractor": "Aithon Frame - AI"
+  },
+  "file_metadata_config": [
+    {
+      "key": "status",
+      "label": "Status",
+      "layout": "badge"
+    },
+    {
+      "key": "source",
+      "label": "Source"
+    },
+    {
+      "key": "processing_method",
+      "label": "Processing Method"
+    },
+    {
+      "key": "file_id",
+      "label": "File ID"
+    },
+    {
+      "key": "business_date",
+      "label": "Business Date"
+    },
+    {
+      "key": "file_type",
+      "label": "File Type"
+    },
+    {
+      "key": "capture_system",
+      "label": "Capture System"
+    },
+    {
+      "key": "linking_system",
+      "label": "Linking System"
+    },
+    {
+      "key": "extractor",
+      "label": "Extractor"
+    }
+  ],
+  "event_log_title": "Event Logs",
+  "event_logs": [
+    {
+      "status": "success",
+      "timestamp": "2025-08-17 21:28:40,610",
+      "message": "Successfully ingested 'EFRONT - BELDORE, CLEARFORK, EATON VANCE_STATEMENTS_BELHURST CAPITAL FUND LLC CLASS I_103534_U9U04DIVYMNFCCXKKHT4IJUIPF55S7BSD9ZJVTZCG=.pdf'. Document ID: 543554e4-9dcd-48fb-b96b-dd1704c326fb"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-08-17 21:28:40,633",
+      "message": "Successfully processed through OCR Box: EFRONT - BELDORE, CLEARFORK, EATON VANCE_STATEMENTS_BELHURST CAPITAL FUND LLC CLASS I_103534_U9U04DIVYMNFCCXKKHT4IJUIPF55S7BSD9ZJVTZCG=.pdf"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-08-17 21:28:40,641",
+      "message": "Successfully processed through Enhanced Preprocessing Box: EFRONT - BELDORE, CLEARFORK, EATON VANCE_STATEMENTS_BELHURST CAPITAL FUND LLC CLASS I_103534_U9U04DIVYMNFCCXKKHT4IJUIPF55S7BSD9ZJVTZCG=.pdf"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-08-17 21:28:42,398",
+      "message": "Classified 'EFRONT - BELDORE, CLEARFORK, EATON VANCE_STATEMENTS_BELHURST CAPITAL FUND LLC CLASS I_103534_U9U04DIVYMNFCCXKKHT4IJUIPF55S7BSD9ZJVTZCG=.pdf' as: Statement (confidence: 0.85)"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-08-17 21:28:58,604",
+      "message": "Extraction completed for 'EFRONT - BELDORE, CLEARFORK, EATON VANCE_STATEMENTS_BELHURST CAPITAL FUND LLC CLASS I_103534_U9U04DIVYMNFCCXKKHT4IJUIPF55S7BSD9ZJVTZCG=.pdf'"
+    },
+    {
+      "status": "error",
+      "timestamp": "2025-08-17 21:28:58,608",
+      "message": "Bounding box extraction failed: Bounding box extraction failed: Tesseract is not available for OCR processing"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-08-17 21:28:58,610",
+      "message": "Validation & Enrichment completed for 'EFRONT - BELDORE, CLEARFORK, EATON VANCE_STATEMENTS_BELHURST CAPITAL FUND LLC CLASS I_103534_U9U04DIVYMNFCCXKKHT4IJUIPF55S7BSD9ZJVTZCG=.pdf': no enrichment"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-08-17 21:28:58,611",
+      "message": "Successfully wrote output for 'EFRONT - BELDORE, CLEARFORK, EATON VANCE_STATEMENTS_BELHURST CAPITAL FUND LLC CLASS I_103534_U9U04DIVYMNFCCXKKHT4IJUIPF55S7BSD9ZJVTZCG=.pdf' to output_documents\\EFRONT - BELDORE, CLEARFORK, EATON VANCE_STATEMENTS_BELHURST CAPITAL FUND LLC CLASS I_103534_U9U04DIVYMNFCCXKKHT4IJUIPF55S7BSD9ZJVTZCG=_output.json"
+    }
+  ],
+  "account_details": {
+    "account_sid": "103534",
+    "fund_name": "BELHURST CAPITAL FUND LLC CLASS I",
+    "entity": "WALTER B. S. MCC0RMACK TTEE U/A DTD 11/04/2009 W. SC0TT MCC0RMACK 2009 FAMILY TRUST",
+    "account_reference": "EAT0N VANCE EXCHANGE FUNDS|WALTER B. S. MCC0RMACK TTEE U/A DTD 11/04/2009 W. SC0TT MCC0RMACK 2009 FAMILY TRUST",
+    "market_value": 0,
+    "investor_ref_id": "103534"
+  },
+  "account_details_enhanced": {
+    "created_on": "2025-08-17",
+    "frequency": 0,
+    "delay": 0
+  },
+  "account_fields": [
+    {
+      "key": "fund_name",
+      "label": "Fund Name"
+    },
+    {
+      "key": "entity",
+      "label": "Entity"
+    },
+    {
+      "key": "account_sid",
+      "label": "Account SID"
+    },
+    {
+      "key": "investor_ref_id",
+      "label": "Investor Ref ID"
+    },
+    {
+      "key": "market_value",
+      "label": "Market Value"
+    },
+    {
+      "key": "account_reference",
+      "label": "Account Reference"
+    }
+  ],
+  "file_fields": [
+    {
+      "key": "file_name",
+      "label": "File Name"
+    },
+    {
+      "key": "file_id",
+      "label": "File ID",
+      "isCopyable": true
+    },
+    {
+      "key": "market_value",
+      "label": "Market Value"
+    }
+  ],
+  "doc_id": "543554e4-9dcd-48fb-b96b-dd1704c326fb",
+  "task_id": "0b63ff9d-bf29-4a63-9da3-e77f69c8a664",
+  "original_filename": "EFRONT - BELDORE, CLEARFORK, EATON VANCE_STATEMENTS_BELHURST CAPITAL FUND LLC CLASS I_103534_U9U04DIVYMNFCCXKKHT4IJUIPF55S7BSD9ZJVTZCG=.pdf",
+  "file_hash": "65f56cfc80f6e84ce286e36363b7ac7dc4e3f76265f91723cb228df199d346d1",
+  "pipeline_status": "Completed_With_Error",
+  "document_type": "Statement",
+  "classification_confidence": 0.85,
+  "extracted_data": {
+    "entities": [
+      {
+        "portfolio": [
+          {
+            "Investor": {
+              "Value": "WALTER B. S. MCC0RMACK TTEE U/A DTD 11/04/2009 W. SC0TT MCC0RMACK 2009 FAMILY TRUST",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "WALTER B. S. MCC0RMACK TTEE U/A DTD 11/04/2009 W. SC0TT MCC0RMACK 2009 FAMILY TRUST",
+              "BoundingBox": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "PageNumber": 1
+            },
+            "Account": {
+              "Value": "EAT0N VANCE EXCHANGE FUNDS|WALTER B. S. MCC0RMACK TTEE U/A DTD 11/04/2009 W. SC0TT MCC0RMACK 2009 FAMILY TRUST",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "EAT0N VANCE EXCHANGE FUNDS WALTER B. S. MCC0RMACK TTEE U/A DTD 11/04/2009 W. SC0TT MCC0RMACK 2009 FAMILY TRUST",
+              "BoundingBox": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "PageNumber": 1
+            },
+            "InvestorRefID": {
+              "Value": "103534",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "INVEST0RID#103534",
+              "BoundingBox": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "PageNumber": 1
+            },
+            "AccountRefID": {
+              "Value": "103534",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "Account Number: 103534",
+              "BoundingBox": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "PageNumber": 1
+            },
+            "Fund_ID": {
+              "Value": "5200",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "FUNDID#5200",
+              "BoundingBox": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "PageNumber": 1
+            },
+            "Series_ID": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Series_Description": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Security": {
+              "Value": "BELHURST CAPITAL FUND LLC CLASS I",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "BELHURST CAPITAL FUND LLC CLASS I",
+              "BoundingBox": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "PageNumber": 1
+            },
+            "PeriodBeginningDT": {
+              "Value": "2025-04-01",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "04/01/2025",
+              "BoundingBox": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "PageNumber": 1
+            },
+            "PeriodEndingDT": {
+              "Value": "2025-04-30",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "04/30/2025",
+              "BoundingBox": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "PageNumber": 1
+            },
+            "Currency": {
+              "Value": "USD",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD",
+              "BoundingBox": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "PageNumber": 1
+            },
+            "NetOpeningCapital": {
+              "Value": 1855346.89,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD 1855,346.89",
+              "BoundingBox": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "PageNumber": 1
+            },
+            "Contributions": {
+              "Value": 0.0,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD 0.00",
+              "BoundingBox": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "PageNumber": 1
+            },
+            "ContributionOutsideCommitment": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Withdrawals": {
+              "Value": 0.0,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD 0.00",
+              "BoundingBox": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "PageNumber": 1
+            },
+            "RecallableDistribution": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "ReturnOfCapital": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "NetCapitalActivity": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "TransfersIn": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "TransfersOut": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "NetTransfers": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "IncomeDistribution": {
+              "Value": 2503.08,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD 2503.08",
+              "BoundingBox": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "PageNumber": 1
+            },
+            "RealizedGainLoss": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "UnrealizedGainLoss": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "NetGainLoss": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "InvestmentIncome": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "OtherIncomeLoss": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "ManagementFee": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "OtherExpenses": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "CarriedInterest": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "OtherAdjustments": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "NetClosingCapital": {
+              "Value": 1838875.02,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD 1838,875.02",
+              "BoundingBox": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "PageNumber": 1
+            },
+            "Quantity": {
+              "Value": 16148.898,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "16148.898",
+              "BoundingBox": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "PageNumber": 1
+            },
+            "Price": {
+              "Value": 113.87,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD 113.87",
+              "BoundingBox": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "PageNumber": 1
+            },
+            "MTDPerformance": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "QTDPerformance": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "YTDPerformance": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "IRR": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Commitment": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "ContributionsToDate": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "UnfundedCommitment": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "UnfundedCommitmentAdj": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "DistributionsSubjectToRecall": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "TotalDistributions": {
+              "Value": 1873.27,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD 1873.27",
+              "BoundingBox": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "PageNumber": 1
+            },
+            "CommitmentOnlyStatement": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "validation_errors": [],
+  "events_log": [
+    {
+      "timestamp": "2025-08-17 21:28:40,610",
+      "level": "INFO",
+      "stage": "Ingestion",
+      "message": "Successfully ingested 'EFRONT - BELDORE, CLEARFORK, EATON VANCE_STATEMENTS_BELHURST CAPITAL FUND LLC CLASS I_103534_U9U04DIVYMNFCCXKKHT4IJUIPF55S7BSD9ZJVTZCG=.pdf'. Document ID: 543554e4-9dcd-48fb-b96b-dd1704c326fb",
+      "details": null
+    },
+    {
+      "timestamp": "2025-08-17 21:28:40,633",
+      "level": "INFO",
+      "stage": "OCR",
+      "message": "Successfully processed through OCR Box: EFRONT - BELDORE, CLEARFORK, EATON VANCE_STATEMENTS_BELHURST CAPITAL FUND LLC CLASS I_103534_U9U04DIVYMNFCCXKKHT4IJUIPF55S7BSD9ZJVTZCG=.pdf",
+      "details": null
+    },
+    {
+      "timestamp": "2025-08-17 21:28:40,641",
+      "level": "INFO",
+      "stage": "Preprocessing",
+      "message": "Successfully processed through Enhanced Preprocessing Box: EFRONT - BELDORE, CLEARFORK, EATON VANCE_STATEMENTS_BELHURST CAPITAL FUND LLC CLASS I_103534_U9U04DIVYMNFCCXKKHT4IJUIPF55S7BSD9ZJVTZCG=.pdf",
+      "details": {
+        "quality_score": 1.0
+      }
+    },
+    {
+      "timestamp": "2025-08-17 21:28:42,398",
+      "level": "INFO",
+      "stage": "Classification",
+      "message": "Classified 'EFRONT - BELDORE, CLEARFORK, EATON VANCE_STATEMENTS_BELHURST CAPITAL FUND LLC CLASS I_103534_U9U04DIVYMNFCCXKKHT4IJUIPF55S7BSD9ZJVTZCG=.pdf' as: Statement (confidence: 0.85)",
+      "details": {
+        "document_type": "Statement",
+        "confidence": 0.85,
+        "confidence_level": "MEDIUM"
+      }
+    },
+    {
+      "timestamp": "2025-08-17 21:28:58,604",
+      "level": "INFO",
+      "stage": "Extraction",
+      "message": "Extraction completed for 'EFRONT - BELDORE, CLEARFORK, EATON VANCE_STATEMENTS_BELHURST CAPITAL FUND LLC CLASS I_103534_U9U04DIVYMNFCCXKKHT4IJUIPF55S7BSD9ZJVTZCG=.pdf'",
+      "details": {
+        "extraction_quality": 1.0,
+        "extraction_confidence": null,
+        "processing_time": 16.205207347869873
+      }
+    },
+    {
+      "timestamp": "2025-08-17 21:28:58,608",
+      "level": "WARNING",
+      "stage": "BoundingBox",
+      "message": "Bounding box extraction failed: Bounding box extraction failed: Tesseract is not available for OCR processing",
+      "details": null
+    },
+    {
+      "timestamp": "2025-08-17 21:28:58,610",
+      "level": "INFO",
+      "stage": "Validation & Enrichment",
+      "message": "Validation & Enrichment completed for 'EFRONT - BELDORE, CLEARFORK, EATON VANCE_STATEMENTS_BELHURST CAPITAL FUND LLC CLASS I_103534_U9U04DIVYMNFCCXKKHT4IJUIPF55S7BSD9ZJVTZCG=.pdf': no enrichment",
+      "details": null
+    },
+    {
+      "timestamp": "2025-08-17 21:28:58,611",
+      "level": "INFO",
+      "stage": "Output",
+      "message": "Successfully wrote output for 'EFRONT - BELDORE, CLEARFORK, EATON VANCE_STATEMENTS_BELHURST CAPITAL FUND LLC CLASS I_103534_U9U04DIVYMNFCCXKKHT4IJUIPF55S7BSD9ZJVTZCG=.pdf' to output_documents\\EFRONT - BELDORE, CLEARFORK, EATON VANCE_STATEMENTS_BELHURST CAPITAL FUND LLC CLASS I_103534_U9U04DIVYMNFCCXKKHT4IJUIPF55S7BSD9ZJVTZCG=_output.json",
+      "details": null
+    }
+  ],
+  "processing_summary": {
+    "total_processing_time": 16.205207347869873,
+    "extraction_quality": 1.0,
+    "classification_mode": "hybrid_classification",
+    "stages_completed": [
+      "Ingestion",
+      "OCR",
+      "Preprocessing",
+      "Classification",
+      "Extraction",
+      "Validation & Enrichment",
+      "Output"
+    ],
+    "error_count": 0
+  },
+  "metadata": {
+    "file_hash": "65f56cfc80f6e84ce286e36363b7ac7dc4e3f76265f91723cb228df199d346d1",
+    "processing_timestamp": "2025-08-17 21:28:58,611",
+    "backend_structure_version": "2.0"
+  }
+}

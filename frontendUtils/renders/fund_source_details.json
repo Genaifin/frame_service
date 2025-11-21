@@ -1,0 +1,117 @@
+{
+  "title": "SOURCE DETAILS",
+  "isEditable": true,
+  "onEditClick": {
+    "type": "openDrawer",
+    "key": "editSourceForm",
+    "data": {
+      "dropdownOptions": {
+        "sources": ["S3 Bucket", "Email", "Portal", "API Invoke", "SFTP"],
+        "holidayCalendar": ["US Holiday Calendar", "Europe Holiday Calendar"],
+        "frameDocument": ["Capital Call", "Statement", "F3"],
+        "validusDocument": ["NAV Statement", "Statement", "F3"]
+      },
+      "open": true,
+      "buttonType": "update",
+      "formData": {
+        "frameDocument": ["Capital Call", "F3"],
+        "validusDocument": ["NAV Statement", "F3"],
+        "name": "S3 Setup #1",
+        "source": "S3 Bucket",
+        "holidayCalendar": "US Holiday Calendar",
+        "shareName": "xxx",
+        "connectionString": "sssss",
+        "details": "asdf"
+      },
+        "clickAction": {
+                "type": "putData",
+                "putAPIURL": "funds/data_sources/2",
+                "actionAfterAPICall": {
+                  "type": "refreshModule",
+                  "moduleName": "SourcesDetails"
+                }
+              }
+    }
+  },
+  "sections": [
+    {
+      "fields": [
+        {
+          "label": "Document for Frame",
+          "value": "Capital Call, Statement",
+          "sameLine": true
+        },
+        {
+          "label": "Code",
+          "value": "S3#1",
+          "sameLine": true
+        },
+        {
+          "label": "Name",
+          "value": "S3 Setup #1",
+          "sameLine": true
+        },
+        {
+          "label": "Source",
+          "value": "S3 Bucket",
+          "sameLine": true
+        },
+        {
+          "label": "Holiday Calendar",
+          "value": "US Holiday Calendar",
+          "sameLine": true
+        }
+      ]
+    },
+    {
+      "title": "SETUP DETAILS",
+      "fields": [
+        {
+          "label": "Share Name",
+          "value": "prod-financial-data-bucket",
+          "sameLine": true
+        },
+        {
+          "label": "Connection String",
+          "value": "s3://prod-financial-data-bucket region=useast-1&access_key_id=AKIAIOSFODNN7EXAMPLE&secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY",
+          "sameLine": true
+        }
+      ]
+    },
+    {
+      "title": "ADDITIONAL DETAILS",
+      "fields": [
+        {
+          "label": "Details",
+          "value": "The only S3 bucket for this fund",
+          "sameLine": true
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "fields": [
+      {
+        "type": "button",
+        "buttonText": "Delete source?",
+        "buttonType": "text",
+        "buttonColor": "destructive",
+        "onConfirmation": {
+          "title": "Delete Source",
+          "description": "Are you sure you want to delete S3 Setup #1 source?",
+          "buttonText": "Delete Source",
+          "buttonColor": "destructive",
+          "clickAction": {
+                "type": "deleteData",
+                "deleteAPIURL": "/funds/data_sources/2",
+                "actionAfterAPICall": {
+                    "type": "refreshModule",
+                    "moduleName": "SourcesDetails"
+                }
+            }
+        }
+      }
+    ]
+  }
+}
+

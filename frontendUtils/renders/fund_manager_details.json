@@ -1,0 +1,99 @@
+{
+    "title": "FUND MANAGER DETAILS",
+    "isEditable": true,
+    "onEditClick": {
+      "type": "navigation",
+      "to": "/frame",
+      "parameters": [
+        {
+          "key": "page",
+          "value": "EditFundManager"
+        },
+        {
+          "key": "fund_manager_id",
+          "value": "9"
+        },
+        {
+          "key": "edit_mode",
+          "value": true
+        }
+
+      ]
+    },
+    "sections": [
+      {
+        "fields": [
+          {
+            "label": "Fund Manager Name",
+            "value": "High Fund management (updated 2)",
+            "sameLine": true
+          },
+          {
+            "label": "Fund Manager ID",
+            "value": "9",
+            "sameLine": true
+          },
+          {
+            "label": "Status",
+            "value": "Active",
+            "type": "status-badge",
+            "sameLine": true
+          },
+          {
+            "label": "Created Date",
+            "value": "09/27/2025",
+            "sameLine": true
+          }
+        ]
+      },
+      {
+        "title": "CONTACT DETAILS",
+        "fields": [
+          {
+            "label": "Contact Name",
+            "value": "Mr. Rajesh Khanna",
+            "sameLine": true
+          },
+          {
+            "label": "Email",
+            "value": "rk@example.com",
+            "sameLine": true
+          },
+          {
+            "label": "Contact Number",
+            "value": "any",
+            "sameLine": true
+          }
+        ]
+      }
+    ],
+    "footer": {
+      "fields": [
+        {
+          "type": "button",
+          "buttonText": "Mark as Inactive?",
+          "buttonType": "text",
+          "buttonColor": "destructive",
+          "onConfirmation": {
+            "title": "Make Fund Manager Inactive?",
+            "description": "Are you sure you want to mark High Fund management (updated 2) as inactive?",
+            "buttonText": "Mark as Inactive",
+            "buttonColor": "destructive",
+            "clickAction": {
+              "type": "patchData",
+              "patchAPIURL": "funds/managers/status",
+              "data": {
+                "fundManagerId": 10,
+                "active": false
+              },
+              "actionAfterAPICall": {
+                "type": "refreshModule",
+                "moduleName": "FundManagerTable"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+  

@@ -1,0 +1,14 @@
+{
+  "typeName": "application/pdf",
+  "fileHash": "fdbf2fc4bba06f44286e1b50edef99e5d4836a0ddb6d93afb05a4aa08f46f0b6",
+  "fileOriginalName": "sampleFinancialStatement1.pdf",
+  "fileOriginalPath": "data\\frameDemo\\l0\\sampleFinancialStatement1.pdf",
+  "typeSpecificParams": {
+    "numPages": 40,
+    "EXIF": {
+      "/CreationDate": "2025-03-06T02:08:27.000Z",
+      "/ModDate": "2025-03-07T10:21:16.000Z",
+      "/Producer": "iText\u00ae Core 7.2.4 (production version) \u00a92000-2022 iText Group NV, Donnelley Financial Solutions"
+    }
+  }
+}

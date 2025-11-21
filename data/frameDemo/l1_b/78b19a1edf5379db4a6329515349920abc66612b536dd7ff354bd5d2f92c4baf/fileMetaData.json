@@ -1,0 +1,17 @@
+{
+  "typeName": "application/pdf",
+  "fileHash": "78b19a1edf5379db4a6329515349920abc66612b536dd7ff354bd5d2f92c4baf",
+  "fileOriginalName": "sampleDocument4.pdf",
+  "fileOriginalPath": "data\\frameDemo\\l0\\sampleDocument4.pdf",
+  "typeSpecificParams": {
+    "numPages": 3,
+    "EXIF": {
+      "/Author": "zahmed",
+      "/CreationDate": "2023-02-20T13:03:35.000Z",
+      "/Creator": "PScript5.dll Version 5.2.2",
+      "/ModDate": "2023-02-20T13:04:58.000Z",
+      "/Producer": "Acrobat Distiller 22.0 (Windows)",
+      "/Title": "1099-B Combined"
+    }
+  }
+}

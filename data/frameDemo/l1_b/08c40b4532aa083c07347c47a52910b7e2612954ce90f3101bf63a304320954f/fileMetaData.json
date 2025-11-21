@@ -1,0 +1,16 @@
+{
+  "typeName": "application/pdf",
+  "fileHash": "08c40b4532aa083c07347c47a52910b7e2612954ce90f3101bf63a304320954f",
+  "fileOriginalName": "075-013480.pdf",
+  "fileOriginalPath": "data/frameDemo/l0/075-013480.pdf",
+  "typeSpecificParams": {
+    "numPages": 3,
+    "EXIF": {
+      "/CreationDate": "2025-01-16T09:57:25.000",
+      "/Creator": "PDFium",
+      "/ModDate": "2025-03-27T17:36:32.000Z",
+      "/MSDH34TAG": ".TEZUF76X5TAHATHESADREYAK-00-CLA190+*99190-10=plaistow,MD=20250401162137/-0400,TC=plaistow,ZZ=000I-0550.",
+      "/Producer": "PDFium"
+    }
+  }
+}

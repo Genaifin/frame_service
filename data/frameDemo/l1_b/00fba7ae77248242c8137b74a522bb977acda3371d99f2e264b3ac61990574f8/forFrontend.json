@@ -1,0 +1,631 @@
+{
+  "document_details": {
+    "document_name": "Dover VIII Cayman 2024 12 31 Capital Accounts Statement Notice.pdf",
+    "date": "2025-07-16",
+    "status": "EXTRACTED_IN_REVIEW",
+    "source": "Dashboard",
+    "processing_method": "Completely Automated",
+    "file_id": "006cc7c1-a047-4f9f-8b7e-eab2ef372a65",
+    "business_date": "2025-07-16",
+    "file_type": "Statement",
+    "capture_system": "Aithon Frame",
+    "linking_system": "Automated",
+    "extractor": "Aithon Frame - AI"
+  },
+  "file_metadata_config": [
+    {
+      "key": "status",
+      "label": "Status",
+      "layout": "badge"
+    },
+    {
+      "key": "source",
+      "label": "Source"
+    },
+    {
+      "key": "processing_method",
+      "label": "Processing Method"
+    },
+    {
+      "key": "file_id",
+      "label": "File ID"
+    },
+    {
+      "key": "business_date",
+      "label": "Business Date"
+    },
+    {
+      "key": "file_type",
+      "label": "File Type"
+    },
+    {
+      "key": "capture_system",
+      "label": "Capture System"
+    },
+    {
+      "key": "linking_system",
+      "label": "Linking System"
+    },
+    {
+      "key": "extractor",
+      "label": "Extractor"
+    }
+  ],
+  "event_log_title": "Event Logs",
+  "event_logs": [
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 17:56:41,809",
+      "message": "Successfully ingested 'Dover VIII Cayman 2024 12 31 Capital Accounts Statement Notice.pdf'. Document ID: 006cc7c1-a047-4f9f-8b7e-eab2ef372a65"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 17:56:41,869",
+      "message": "Successfully processed through OCR Box: Dover VIII Cayman 2024 12 31 Capital Accounts Statement Notice.pdf"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 17:56:41,878",
+      "message": "Successfully processed through Enhanced Preprocessing Box: Dover VIII Cayman 2024 12 31 Capital Accounts Statement Notice.pdf"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 17:56:43,154",
+      "message": "Classified 'Dover VIII Cayman 2024 12 31 Capital Accounts Statement Notice.pdf' as: Statement (confidence: 0.85)"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 17:58:01,706",
+      "message": "Extraction completed for 'Dover VIII Cayman 2024 12 31 Capital Accounts Statement Notice.pdf'"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 17:58:59,256",
+      "message": "Bounding box extraction completed for 'Dover VIII Cayman 2024 12 31 Capital Accounts Statement Notice.pdf': 20 entries found"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 17:58:59,267",
+      "message": "Validation & Enrichment completed for 'Dover VIII Cayman 2024 12 31 Capital Accounts Statement Notice.pdf': no enrichment"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 17:58:59,269",
+      "message": "Successfully wrote output for 'Dover VIII Cayman 2024 12 31 Capital Accounts Statement Notice.pdf' to output_documents/Dover VIII Cayman 2024 12 31 Capital Accounts Statement Notice_output.json"
+    }
+  ],
+  "account_details": {
+    "account_sid": "006cc7c1-a047-4f9f-8b7e-eab2ef372a65",
+    "fund_name": "... Fund",
+    "entity": "... Entity",
+    "created_on": "2025-07-16",
+    "frequency": 0,
+    "delay": 0,
+    "market_value": 0
+  },
+  "account_fields": [
+    {
+      "key": "account_sid",
+      "label": "Account SID"
+    },
+    {
+      "key": "frequency",
+      "label": "Frequency"
+    },
+    {
+      "key": "fund_name",
+      "label": "Fund Name"
+    },
+    {
+      "key": "delay",
+      "label": "Delay"
+    },
+    {
+      "key": "created_on",
+      "label": "Created on"
+    },
+    {
+      "key": "market_value",
+      "label": "Market Value"
+    }
+  ],
+  "file_fields": [
+    {
+      "key": "file_name",
+      "label": "File Name"
+    },
+    {
+      "key": "file_id",
+      "label": "File ID",
+      "isCopyable": true
+    },
+    {
+      "key": "market_value",
+      "label": "Market Value"
+    }
+  ],
+  "doc_id": "006cc7c1-a047-4f9f-8b7e-eab2ef372a65",
+  "task_id": "b3dc4104-332b-46a8-8e92-14109c48580d",
+  "original_filename": "Dover VIII Cayman 2024 12 31 Capital Accounts Statement Notice.pdf",
+  "file_hash": "00fba7ae77248242c8137b74a522bb977acda3371d99f2e264b3ac61990574f8",
+  "pipeline_status": "Completed_Successfully",
+  "document_type": "Statement",
+  "classification_confidence": 0.85,
+  "extracted_data": {
+    "entities": [
+      {
+        "portfolio": [
+          {
+            "Investor": {
+              "Value": "The Carl and Roberta Deutsch Foundation",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "The Carl and Roberta Deutsch Foundation",
+              "BoundingBox": [
+                "0.0470588,0.0518182,0.0217647,0.00681818",
+                "0.0985294,0.0518182,0.02,0.00681818",
+                "0.123529,0.0518182,0.0438235,0.00681818",
+                "0.172059,0.0518182,0.0452941,0.00681818",
+                "0.222353,0.0518182,0.0635294,0.00681818"
+              ],
+              "PageNumber": 1
+            },
+            "Account": {
+              "Value": "Dover Street VIII Cayman Fund L.P.|The Carl and Roberta Deutsch Foundation",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "Dover Street VIII Cayman Fund L.P.|The Carl and Roberta Deutsch Foundation",
+              "BoundingBox": [
+                "0.1",
+                "0.2",
+                "0.4",
+                "0.3"
+              ],
+              "PageNumber": 1
+            },
+            "InvestorRefID": {
+              "Value": "LPID00470",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "LPID00470",
+              "BoundingBox": [
+                "0.172647,0.0643182,0.0544118,0.00636364"
+              ],
+              "PageNumber": 1
+            },
+            "AccountRefID": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Fund_ID": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Series_ID": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Series_Description": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Security": {
+              "Value": "Dover Street VIII Cayman Fund L.P.",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "Dover Street VIII Cayman Fund L.P.",
+              "BoundingBox": [
+                "0.0476471,0.0747727,0.0311765,0.00681818",
+                "0.0826471,0.0747727,0.0311765,0.00681818",
+                "0.117353,0.0747727,0.0167647,0.00681818",
+                "0.139118,0.0747727,0.0432353,0.00863636",
+                "0.187353,0.0747727,0.0255882,0.00681818",
+                "0.217941,0.0747727,0.0194118,0.00681818"
+              ],
+              "PageNumber": 1
+            },
+            "PeriodBeginningDT": {
+              "Value": "2024-10-01",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "OCTOBER 1, 2024",
+              "BoundingBox": [
+                "0.0473529,0.0865909,0.0485294,0.00568182",
+                "0.1,0.0865909,0.00647059,0.00659091",
+                "0.110588,0.0865909,0.0214706,0.00568182"
+              ],
+              "PageNumber": 1
+            },
+            "PeriodEndingDT": {
+              "Value": "2024-12-31",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "DECEMBER 31, 2024",
+              "BoundingBox": [
+                "0.142059,0.0865909,0.0555882,0.00568182",
+                "0.201176,0.0865909,0.0126471,0.00659091",
+                "0.217647,0.0865909,0.0214706,0.00568182"
+              ],
+              "PageNumber": 1
+            },
+            "Currency": {
+              "Value": "USD",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD",
+              "BoundingBox": [
+                "0.514706,0.112955,0.02,0.00568182"
+              ],
+              "PageNumber": 1
+            },
+            "NetOpeningCapital": {
+              "Value": 307683,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "307683",
+              "BoundingBox": [
+                "0.394706,0.247273,0.0352941,0.00659091"
+              ],
+              "PageNumber": 1
+            },
+            "Contributions": {
+              "Value": 0,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "-",
+              "BoundingBox": [
+                "0.1373529411764706,0.08977272727272727,0.0008823529411764706,0.0006818181818181819"
+              ],
+              "PageNumber": 1
+            },
+            "ContributionOutsideCommitment": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Withdrawals": {
+              "Value": 53553,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "(53553)",
+              "BoundingBox": [
+                "0.397059,0.290909,0.0364706,0.00954545"
+              ],
+              "PageNumber": 1
+            },
+            "RecallableDistribution": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "ReturnOfCapital": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "NetCapitalActivity": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "TransfersIn": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "TransfersOut": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "NetTransfers": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "IncomeDistribution": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "RealizedGainLoss": {
+              "Value": 6949,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "6949",
+              "BoundingBox": [
+                "0.405882,0.395,0.0241176,0.00681818"
+              ],
+              "PageNumber": 1
+            },
+            "UnrealizedGainLoss": {
+              "Value": -14190,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "(14190)",
+              "BoundingBox": [
+                "0.397059,0.421364,0.0364706,0.00727273"
+              ],
+              "PageNumber": 1
+            },
+            "NetGainLoss": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "InvestmentIncome": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "OtherIncomeLoss": {
+              "Value": -1923,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "(1923)",
+              "BoundingBox": [
+                "0.402647,0.359091,0.0305882,0.0075"
+              ],
+              "PageNumber": 1
+            },
+            "ManagementFee": {
+              "Value": -1246,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "(1246)",
+              "BoundingBox": [
+                "0.402647,0.336818,0.0308824,0.00727273"
+              ],
+              "PageNumber": 1
+            },
+            "OtherExpenses": {
+              "Value": -968,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "(968)",
+              "BoundingBox": [
+                "0.411176,0.347955,0.0223529,0.00727273"
+              ],
+              "PageNumber": 1
+            },
+            "CarriedInterest": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "OtherAdjustments": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "NetClosingCapital": {
+              "Value": 244961,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "244961",
+              "BoundingBox": [
+                "0.394706,0.513409,0.0341176,0.00681818"
+              ],
+              "PageNumber": 1
+            },
+            "Quantity": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Price": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "MTDPerformance": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "QTDPerformance": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "YTDPerformance": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "IRR": {
+              "Value": 18.6,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "18.6 percent",
+              "BoundingBox": [
+                "0.507353,0.191136,0.0273529,0.00590909"
+              ],
+              "PageNumber": 1
+            },
+            "Commitment": {
+              "Value": 5000000,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "5000,000",
+              "BoundingBox": [
+                "0.490882,0.124091,0.0438235,0.00681818"
+              ],
+              "PageNumber": 1
+            },
+            "ContributionsToDate": {
+              "Value": 4600000,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "4600,000",
+              "BoundingBox": [
+                "0.490588,0.135227,0.0441176,0.00681818"
+              ],
+              "PageNumber": 1
+            },
+            "UnfundedCommitment": {
+              "Value": 400000,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "400000",
+              "BoundingBox": [
+                "0.499118,0.146364,0.0355882,0.00681818"
+              ],
+              "PageNumber": 1
+            },
+            "UnfundedCommitmentAdj": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "DistributionsSubjectToRecall": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "TotalDistributions": {
+              "Value": 7381442,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "7381,442",
+              "BoundingBox": [
+                "0.490882,0.168864,0.0438235,0.00681818"
+              ],
+              "PageNumber": 1
+            },
+            "CommitmentOnlyStatement": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "validation_errors": [],
+  "events_log": [
+    {
+      "timestamp": "2025-07-16 17:56:41,809",
+      "level": "INFO",
+      "stage": "Ingestion",
+      "message": "Successfully ingested 'Dover VIII Cayman 2024 12 31 Capital Accounts Statement Notice.pdf'. Document ID: 006cc7c1-a047-4f9f-8b7e-eab2ef372a65",
+      "details": null
+    },
+    {
+      "timestamp": "2025-07-16 17:56:41,869",
+      "level": "INFO",
+      "stage": "OCR",
+      "message": "Successfully processed through OCR Box: Dover VIII Cayman 2024 12 31 Capital Accounts Statement Notice.pdf",
+      "details": null
+    },
+    {
+      "timestamp": "2025-07-16 17:56:41,878",
+      "level": "INFO",
+      "stage": "Preprocessing",
+      "message": "Successfully processed through Enhanced Preprocessing Box: Dover VIII Cayman 2024 12 31 Capital Accounts Statement Notice.pdf",
+      "details": {
+        "quality_score": 1.0
+      }
+    },
+    {
+      "timestamp": "2025-07-16 17:56:43,154",
+      "level": "INFO",
+      "stage": "Classification",
+      "message": "Classified 'Dover VIII Cayman 2024 12 31 Capital Accounts Statement Notice.pdf' as: Statement (confidence: 0.85)",
+      "details": {
+        "document_type": "Statement",
+        "confidence": 0.85,
+        "confidence_level": "MEDIUM"
+      }
+    },
+    {
+      "timestamp": "2025-07-16 17:58:01,706",
+      "level": "INFO",
+      "stage": "Extraction",
+      "message": "Extraction completed for 'Dover VIII Cayman 2024 12 31 Capital Accounts Statement Notice.pdf'",
+      "details": {
+        "extraction_quality": 1.0,
+        "extraction_confidence": null,
+        "processing_time": 78.55127811431885
+      }
+    },
+    {
+      "timestamp": "2025-07-16 17:58:59,256",
+      "level": "INFO",
+      "stage": "BoundingBox",
+      "message": "Bounding box extraction completed for 'Dover VIII Cayman 2024 12 31 Capital Accounts Statement Notice.pdf': 20 entries found",
+      "details": {
+        "entries_processed": 20,
+        "entries_found": 20,
+        "processing_time": 57.54067897796631
+      }
+    },
+    {
+      "timestamp": "2025-07-16 17:58:59,267",
+      "level": "INFO",
+      "stage": "Validation & Enrichment",
+      "message": "Validation & Enrichment completed for 'Dover VIII Cayman 2024 12 31 Capital Accounts Statement Notice.pdf': no enrichment",
+      "details": null
+    },
+    {
+      "timestamp": "2025-07-16 17:58:59,269",
+      "level": "INFO",
+      "stage": "Output",
+      "message": "Successfully wrote output for 'Dover VIII Cayman 2024 12 31 Capital Accounts Statement Notice.pdf' to output_documents/Dover VIII Cayman 2024 12 31 Capital Accounts Statement Notice_output.json",
+      "details": null
+    }
+  ],
+  "processing_summary": {
+    "total_processing_time": 78.55127811431885,
+    "extraction_quality": 1.0,
+    "classification_mode": "hybrid_classification",
+    "stages_completed": [
+      "Ingestion",
+      "OCR",
+      "Preprocessing",
+      "Classification",
+      "Extraction",
+      "BoundingBox",
+      "Validation & Enrichment",
+      "Output"
+    ],
+    "error_count": 0
+  },
+  "metadata": {
+    "file_hash": "00fba7ae77248242c8137b74a522bb977acda3371d99f2e264b3ac61990574f8",
+    "processing_timestamp": "2025-07-16 17:58:59,269",
+    "backend_structure_version": "2.0"
+  }
+}

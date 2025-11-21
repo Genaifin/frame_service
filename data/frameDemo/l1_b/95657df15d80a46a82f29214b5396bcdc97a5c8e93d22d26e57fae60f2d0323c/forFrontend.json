@@ -1,0 +1,622 @@
+{
+  "document_details": {
+    "document_name": "2024 Q2 Champion.pdf",
+    "date": "2025-07-16",
+    "status": "EXTRACTED_IN_REVIEW",
+    "source": "Dashboard",
+    "processing_method": "Completely Automated",
+    "file_id": "e835693d-bdfb-40c3-af3f-f39b65dfc9cc",
+    "business_date": "2025-07-16",
+    "file_type": "Statement",
+    "capture_system": "Aithon Frame",
+    "linking_system": "Automated",
+    "extractor": "Aithon Frame - AI"
+  },
+  "file_metadata_config": [
+    {
+      "key": "status",
+      "label": "Status",
+      "layout": "badge"
+    },
+    {
+      "key": "source",
+      "label": "Source"
+    },
+    {
+      "key": "processing_method",
+      "label": "Processing Method"
+    },
+    {
+      "key": "file_id",
+      "label": "File ID"
+    },
+    {
+      "key": "business_date",
+      "label": "Business Date"
+    },
+    {
+      "key": "file_type",
+      "label": "File Type"
+    },
+    {
+      "key": "capture_system",
+      "label": "Capture System"
+    },
+    {
+      "key": "linking_system",
+      "label": "Linking System"
+    },
+    {
+      "key": "extractor",
+      "label": "Extractor"
+    }
+  ],
+  "event_log_title": "Event Logs",
+  "event_logs": [
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 13:51:51,467",
+      "message": "Successfully ingested '2024 Q2 Champion.pdf'. Document ID: e835693d-bdfb-40c3-af3f-f39b65dfc9cc"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 13:51:51,571",
+      "message": "Successfully processed through OCR Box: 2024 Q2 Champion.pdf"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 13:51:51,584",
+      "message": "Successfully processed through Enhanced Preprocessing Box: 2024 Q2 Champion.pdf"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 13:51:52,633",
+      "message": "Classified '2024 Q2 Champion.pdf' as: Statement (confidence: 0.85)"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 13:53:10,676",
+      "message": "Extraction completed for '2024 Q2 Champion.pdf'"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 13:53:36,206",
+      "message": "Bounding box extraction completed for '2024 Q2 Champion.pdf': 11 entries found"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 13:53:36,222",
+      "message": "Validation & Enrichment completed for '2024 Q2 Champion.pdf': no enrichment"
+    },
+    {
+      "status": "success",
+      "timestamp": "2025-07-16 13:53:36,224",
+      "message": "Successfully wrote output for '2024 Q2 Champion.pdf' to output_documents/2024 Q2 Champion_output.json"
+    }
+  ],
+  "account_details": {
+    "account_sid": "e835693d-bdfb-40c3-af3f-f39b65dfc9cc",
+    "fund_name": "Unknown Fund",
+    "entity": "Unknown Entity",
+    "created_on": "2025-07-16",
+    "frequency": 0,
+    "delay": 0,
+    "market_value": 0.0
+  },
+  "account_fields": [
+    {
+      "key": "account_sid",
+      "label": "Account SID"
+    },
+    {
+      "key": "frequency",
+      "label": "Frequency"
+    },
+    {
+      "key": "fund_name",
+      "label": "Fund Name"
+    },
+    {
+      "key": "delay",
+      "label": "Delay"
+    },
+    {
+      "key": "created_on",
+      "label": "Created on"
+    },
+    {
+      "key": "market_value",
+      "label": "Market Value"
+    }
+  ],
+  "file_fields": [
+    {
+      "key": "file_name",
+      "label": "File Name"
+    },
+    {
+      "key": "file_id",
+      "label": "File ID",
+      "isCopyable": true
+    },
+    {
+      "key": "market_value",
+      "label": "Market Value"
+    }
+  ],
+  "doc_id": "e835693d-bdfb-40c3-af3f-f39b65dfc9cc",
+  "task_id": "699a38d1-50bd-41a6-b16c-e9f0ae25cd87",
+  "original_filename": "2024 Q2 Champion.pdf",
+  "file_hash": "95657df15d80a46a82f29214b5396bcdc97a5c8e93d22d26e57fae60f2d0323c",
+  "pipeline_status": "Completed_Successfully",
+  "document_type": "Statement",
+  "classification_confidence": 0.85,
+  "extracted_data": {
+    "entities": [
+      {
+        "portfolio": [
+          {
+            "Investor": {
+              "Value": "Sports Medicine Associates of Augusta, LLC",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "Sports Medicine Associates 0f Augusta, LLC",
+              "BoundingBox": [
+                "0.164706,0.0559091,0.0741176,0.0190909",
+                "0.247059,0.0552273,0.111176,0.015",
+                "0.366471,0.0556818,0.122647,0.0145455",
+                "0.497647,0.0552273,0.0305882,0.015",
+                "0.535588,0.0559091,0.105,0.0193182",
+                "0.648529,0.0559091,0.0488235,0.0143182"
+              ],
+              "PageNumber": 1
+            },
+            "Account": {
+              "Value": "Sports Medicine Associates of Augusta, LLC|401(k) PSP",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "Sports Medicine Associates 0f Augusta, LLC 401(k) PSP",
+              "BoundingBox": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "PageNumber": 1
+            },
+            "InvestorRefID": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "AccountRefID": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Fund_ID": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Series_ID": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Series_Description": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Security": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "PeriodBeginningDT": {
+              "Value": "2024-06-01",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "June 1, 2024",
+              "BoundingBox": [
+                "0.468529,0.0911364,0.0329412,0.0113636",
+                "0.509706,0.0913636,0.0102941,0.00954545",
+                "0.524706,0.0913636,0.0288235,0.00818182"
+              ],
+              "PageNumber": 1
+            },
+            "PeriodEndingDT": {
+              "Value": "2024-06-30",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "June 30, 2024",
+              "BoundingBox": [
+                "0.607647,0.0913636,0.0176471,0.00954545",
+                "0.630294,0.0911364,0.0332353,0.0111364"
+              ],
+              "PageNumber": 1
+            },
+            "Currency": {
+              "Value": "USD",
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD",
+              "BoundingBox": [
+                "0.696765,0.151364,0.0997059,0.0113636"
+              ],
+              "PageNumber": 1
+            },
+            "NetOpeningCapital": {
+              "Value": 9469837.93,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD 9469,837.93",
+              "BoundingBox": [
+                "0.156471,0.152045,0.0714706,0.0115909",
+                "0.233824,0.152273,0.0558824,0.00863636",
+                "0.295,0.155,0.0144118,0.00590909",
+                "0.314706,0.152045,0.0141176,0.00886364",
+                "0.332059,0.152273,0.0326471,0.0111364"
+              ],
+              "PageNumber": 1
+            },
+            "Contributions": {
+              "Value": 15149.24,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD 15149.24",
+              "BoundingBox": [
+                "0.156471,0.175,0.0638235,0.0115909",
+                "0.225294,0.175,0.0897059,0.00886364"
+              ],
+              "PageNumber": 1
+            },
+            "ContributionOutsideCommitment": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Withdrawals": {
+              "Value": 1172.15,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD 1172.15",
+              "BoundingBox": [
+                "0.155294,0.242045,0.0820588,0.0145455"
+              ],
+              "PageNumber": 1
+            },
+            "RecallableDistribution": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "ReturnOfCapital": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "NetCapitalActivity": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "TransfersIn": {
+              "Value": 1635.54,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD 1635.54",
+              "BoundingBox": [
+                "0.156471,0.198182,0.0626471,0.0113636",
+                "0.223529,0.197955,0.0897059,0.00886364"
+              ],
+              "PageNumber": 1
+            },
+            "TransfersOut": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "NetTransfers": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "IncomeDistribution": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "RealizedGainLoss": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "UnrealizedGainLoss": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "NetGainLoss": {
+              "Value": 190179.16,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD 190179.16",
+              "BoundingBox": [
+                "0.157353,0.269091,0.0288235,0.00886364",
+                "0.190588,0.269091,0.005,0.00977273",
+                "0.200882,0.269091,0.0273529,0.00886364"
+              ],
+              "PageNumber": 1
+            },
+            "InvestmentIncome": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "OtherIncomeLoss": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "ManagementFee": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "OtherExpenses": {
+              "Value": 0.0,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD 0.00",
+              "BoundingBox": [
+                "0.157941,0.291818,0.0594118,0.0115909"
+              ],
+              "PageNumber": 1
+            },
+            "CarriedInterest": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "OtherAdjustments": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "NetClosingCapital": {
+              "Value": 9676801.87,
+              "ConfidenceScore": "HIGH",
+              "VerbatimText": "USD 9676,801.87",
+              "BoundingBox": [
+                "0.157941,0.314545,0.0485294,0.0115909",
+                "0.212353,0.314773,0.0558824,0.00863636",
+                "0.273529,0.3175,0.0144118,0.00590909",
+                "0.293235,0.314545,0.0138235,0.00886364",
+                "0.310588,0.314773,0.0323529,0.0111364",
+                "0.348529,0.314545,0.0208824,0.0106818",
+                "0.375,0.314545,0.0341176,0.00909091"
+              ],
+              "PageNumber": 1
+            },
+            "Quantity": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Price": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "MTDPerformance": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "QTDPerformance": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "YTDPerformance": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "IRR": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "Commitment": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "ContributionsToDate": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "UnfundedCommitment": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "UnfundedCommitmentAdj": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "DistributionsSubjectToRecall": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "TotalDistributions": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            },
+            "CommitmentOnlyStatement": {
+              "Value": null,
+              "ConfidenceScore": null,
+              "VerbatimText": null,
+              "BoundingBox": null,
+              "PageNumber": null
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "validation_errors": [],
+  "events_log": [
+    {
+      "timestamp": "2025-07-16 13:51:51,467",
+      "level": "INFO",
+      "stage": "Ingestion",
+      "message": "Successfully ingested '2024 Q2 Champion.pdf'. Document ID: e835693d-bdfb-40c3-af3f-f39b65dfc9cc",
+      "details": null
+    },
+    {
+      "timestamp": "2025-07-16 13:51:51,571",
+      "level": "INFO",
+      "stage": "OCR",
+      "message": "Successfully processed through OCR Box: 2024 Q2 Champion.pdf",
+      "details": null
+    },
+    {
+      "timestamp": "2025-07-16 13:51:51,584",
+      "level": "INFO",
+      "stage": "Preprocessing",
+      "message": "Successfully processed through Enhanced Preprocessing Box: 2024 Q2 Champion.pdf",
+      "details": {
+        "quality_score": 1.0
+      }
+    },
+    {
+      "timestamp": "2025-07-16 13:51:52,633",
+      "level": "INFO",
+      "stage": "Classification",
+      "message": "Classified '2024 Q2 Champion.pdf' as: Statement (confidence: 0.85)",
+      "details": {
+        "document_type": "Statement",
+        "confidence": 0.85,
+        "confidence_level": "MEDIUM"
+      }
+    },
+    {
+      "timestamp": "2025-07-16 13:53:10,676",
+      "level": "INFO",
+      "stage": "Extraction",
+      "message": "Extraction completed for '2024 Q2 Champion.pdf'",
+      "details": {
+        "extraction_quality": 1.0,
+        "extraction_confidence": null,
+        "processing_time": 78.04222822189331
+      }
+    },
+    {
+      "timestamp": "2025-07-16 13:53:36,206",
+      "level": "INFO",
+      "stage": "BoundingBox",
+      "message": "Bounding box extraction completed for '2024 Q2 Champion.pdf': 11 entries found",
+      "details": {
+        "entries_processed": 11,
+        "entries_found": 11,
+        "processing_time": 25.52854084968567
+      }
+    },
+    {
+      "timestamp": "2025-07-16 13:53:36,222",
+      "level": "INFO",
+      "stage": "Validation & Enrichment",
+      "message": "Validation & Enrichment completed for '2024 Q2 Champion.pdf': no enrichment",
+      "details": null
+    },
+    {
+      "timestamp": "2025-07-16 13:53:36,224",
+      "level": "INFO",
+      "stage": "Output",
+      "message": "Successfully wrote output for '2024 Q2 Champion.pdf' to output_documents/2024 Q2 Champion_output.json",
+      "details": null
+    }
+  ],
+  "processing_summary": {
+    "total_processing_time": 78.04222822189331,
+    "extraction_quality": 1.0,
+    "classification_mode": "hybrid_classification",
+    "stages_completed": [
+      "Ingestion",
+      "OCR",
+      "Preprocessing",
+      "Classification",
+      "Extraction",
+      "BoundingBox",
+      "Validation & Enrichment",
+      "Output"
+    ],
+    "error_count": 0
+  },
+  "metadata": {
+    "file_hash": "95657df15d80a46a82f29214b5396bcdc97a5c8e93d22d26e57fae60f2d0323c",
+    "processing_timestamp": "2025-07-16 13:53:36,224",
+    "backend_structure_version": "2.0"
+  }
+}

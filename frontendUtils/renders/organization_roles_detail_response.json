@@ -1,0 +1,157 @@
+{
+    "title": "ROLE DETAILS",
+    "isEditable": true,
+    "onEditClick": {
+      "type": "navigation",
+      "to": "/frame/role/edit",
+      "parameters": [
+        {
+          "key": "role_id",
+          "value": "ROLE0001"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "fields": [
+          {
+            "label": "Role Name",
+            "value": "Reviewer",
+            "sameLine": false,
+            "width": "50%"
+          },
+          {
+            "label": "Description",
+            "value": "Role for reviewing creational requests",
+            "sameLine": false,
+            "width": "50%"
+          },
+          {
+            "label": "Role ID",
+            "value": "ROLE0003",
+            "sameLine": false,
+            "width": "50%"
+          },
+          {
+            "label": "Status",
+            "value": "Active",
+            "type": "status-badge",
+            "sameLine": false,
+            "width": "50%"
+          },
+          {
+            "label": "Created Date",
+            "value": "02/08/2025",
+            "sameLine": false
+          }
+        ]
+      }
+    ],
+    "makeInActive": true,
+    "footer": {
+      "fields": [
+        {
+          "type": "button",
+          "buttonText": "Mark as Inactive?",
+          "buttonType": "text",
+          "buttonColor": "destructive",
+          "onConfirmation": {
+            "title": "Make Role Inactive?",
+            "description": "Are you sure you want to mark this role as inactive?",
+            "buttonText": "Mark as Inactive",
+            "buttonColor": "destructive",
+            "clickAction": {
+              "type": "patchData",
+              "patchAPIURL": "api/roles/inactivate/reassignment",
+              "data": {
+                "role_id": "{{ROLE_ID}}",
+                "assignSame": true,
+                "role": "{{DEFAULT_ROLE}}"
+              },
+              "actionAfterAPICall": {
+                "type": "refreshModule",
+                "moduleName": "RolesTable"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "users": ["Sam Johnson", "Mike Little", "Stuart Joseph"],
+    "permissions": [
+      {
+        "module": "Frame",
+        "_children": [
+          {
+            "module": "Dashboard",
+            "_children": [
+              {
+                "module": "Statuswise Dashboard",
+                "create": true,
+                "view": true,
+                "update": false,
+                "delete": false
+              },
+              {
+                "module": "Completeness Dashboard",
+                "create": true,
+                "view": true,
+                "update": true,
+                "delete": false
+              }
+            ]
+          },
+          {
+            "module": "File Manager",
+            "_children": [
+              {
+                "module": "File Info",
+                "create": false,
+                "view": true,
+                "update": false,
+                "delete": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "module": "NAV Validus",
+        "_children": [
+          {
+            "module": "Single Fund",
+            "_children": [
+              {
+                "module": "NAV Validations",
+                "create": false,
+                "view": false,
+                "update": false,
+                "delete": false
+              },
+              {
+                "module": "Ratio Validations",
+                "create": false,
+                "view": false,
+                "update": false,
+                "delete": false
+              }
+            ]
+          },
+          {
+            "module": "Multi Fund",
+            "_children": [
+              {
+                "module": "Validations",
+                "create": false,
+                "view": false,
+                "update": false,
+                "delete": false
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  
+  

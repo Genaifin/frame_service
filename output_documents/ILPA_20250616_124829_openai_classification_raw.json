@@ -1,0 +1,15 @@
+{
+  "source": "openai",
+  "response_type": "classification",
+  "original_filename": "ILPA_20250616_124829.pdf",
+  "timestamp": 1762437526.2165215,
+  "raw_response": "CapCall",
+  "raw_text": "CapCall",
+  "response_metadata": {
+    "has_markdown_wrapper": false,
+    "detected_format": "text",
+    "is_valid_json": false,
+    "original_length": 7,
+    "cleaned_length": 7
+  }
+}

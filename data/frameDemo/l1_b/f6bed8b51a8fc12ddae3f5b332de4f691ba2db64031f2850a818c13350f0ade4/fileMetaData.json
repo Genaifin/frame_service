@@ -1,0 +1,14 @@
+{
+  "typeName": "application/pdf",
+  "fileHash": "f6bed8b51a8fc12ddae3f5b332de4f691ba2db64031f2850a818c13350f0ade4",
+  "fileOriginalName": "sampleDocument2.pdf",
+  "fileOriginalPath": "data\\frameDemo\\l0\\sampleDocument2.pdf",
+  "typeSpecificParams": {
+    "numPages": 1,
+    "EXIF": {
+      "/CreationDate": "2024-01-26T03:07:38.000Z",
+      "/Creator": "PDFium",
+      "/Producer": "PDFium"
+    }
+  }
+}
