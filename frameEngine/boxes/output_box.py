@@ -164,6 +164,12 @@ class OutputBox:
 
     def _save_to_backend_structure(self, doc_payload: AithonDocument, final_output: dict):
         """Save output to the backend structure in validusBoxes."""
+        # Double-check environment variable before proceeding
+        enable_backend_output = os.getenv("ENABLE_BACKEND_OUTPUT", "false").lower() == "true"
+        if not enable_backend_output:
+            logging.info("Backend output is disabled - skipping l1 folder creation and JSON storage")
+            return None
+        
         try:
             # Generate hash for the source file
             file_hash = self._generate_file_hash(doc_payload.source_path)
@@ -402,8 +408,12 @@ class OutputBox:
                 doc_payload.events_log[-1].message = f"Failed to write traditional output file: {e}"
 
         # Save to backend structure if enabled
+        # Check environment variable at runtime to allow dynamic control
+        enable_backend_output = os.getenv("ENABLE_BACKEND_OUTPUT", "false").lower() == "true"
         backend_output_path = None
-        if self.enable_backend_output:
+        if enable_backend_output:
             backend_output_path = self._save_to_backend_structure(doc_payload, final_output)
+        else:
+            logging.debug(f"Backend output disabled (ENABLE_BACKEND_OUTPUT={os.getenv('ENABLE_BACKEND_OUTPUT', 'not set')}) - no l1 folders or JSON files will be created")
 
         return doc_payload

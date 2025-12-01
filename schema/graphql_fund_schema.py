@@ -82,7 +82,7 @@ class FundQuery:
               id: Optional[int] = None,
               search: Optional[str] = None,
               status_filter: Optional[str] = None,
-              limit: Optional[int] = 10,
+              limit: Optional[int] = 50,
               offset: Optional[int] = 0) -> List[FundType]:
         """Get funds with filtering and pagination from public.funds table - requires authentication"""
         # Require authentication
@@ -164,7 +164,7 @@ class FundQuery:
                       client_id: int,
                       search: Optional[str] = None,
                       status_filter: Optional[str] = None,
-                      limit: Optional[int] = 10,
+                      limit: Optional[int] = 50,
                       offset: Optional[int] = 0) -> List[FundType]:
         """Get funds associated with a specific client from client_funds table - requires authentication"""
         # Require authentication

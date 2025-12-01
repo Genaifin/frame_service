@@ -94,10 +94,10 @@ def get_sidebar_data(*, __username: str = Depends(authenticate_user)):
                             "label": "Single Fund",
                             "to": "/validus?page=singleFundCompare"
                             },
-                            {
-                            "label": "Multi Fund",
-                            "to": "/validus?page=MultiFund"
-                            }
+                            # {
+                            # "label": "Multi Fund",
+                            # "to": "/validus?page=MultiFund"
+                            # }
                         ]
                         },
                         {
@@ -298,7 +298,7 @@ def get_sidebar_data(*, __username: str = Depends(authenticate_user)):
                                      "label": "NAV",
                                      "children": [
                                          { "label": "Single Fund", "to": "/validus?page=singleFundCompare" },
-                                         { "label": "Multi Fund", "to": "/validus?page=MultiFund" }
+                                        #  { "label": "Multi Fund", "to": "/validus?page=MultiFund" }
                                      ]
                                      },
                                      {

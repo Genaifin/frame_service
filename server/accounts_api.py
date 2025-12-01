@@ -121,7 +121,7 @@ async def get_add_account_form(
 @router.get("/view_all_accounts")
 async def view_all_accounts(
     page: int = 1,
-    page_size: int = 10,
+    page_size: int = 50,
     search: Optional[str] = None,
     status_filter: Optional[str] = None,
     __username: str = Depends(authenticate_user)

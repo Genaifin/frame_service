@@ -10,6 +10,7 @@ from strawberry.types import Info
 from sqlalchemy import desc
 from database_models import DocumentConfiguration, get_database_manager
 import logging
+from datetime import datetime
 
 # Import authentication context
 from .graphql_auth_context import require_authentication, get_current_user
@@ -84,8 +85,10 @@ class DocumentConfigurationQuery:
             session = db_manager.get_session()
             
             try:
-                # Build query
-                query = session.query(DocumentConfiguration)
+                # Build query - exclude soft-deleted records
+                query = session.query(DocumentConfiguration).filter(
+                    DocumentConfiguration.is_deleted == False
+                )
                 
                 # Apply filters if provided
                 if filter:
@@ -143,7 +146,8 @@ class DocumentConfigurationQuery:
             
             try:
                 config = session.query(DocumentConfiguration).filter(
-                    DocumentConfiguration.id == id
+                    DocumentConfiguration.id == id,
+                    DocumentConfiguration.is_deleted == False
                 ).first()
                 
                 if not config:
@@ -195,7 +199,8 @@ class DocumentConfigurationQuery:
             
             try:
                 config = session.query(DocumentConfiguration).filter(
-                    DocumentConfiguration.name == name
+                    DocumentConfiguration.name == name,
+                    DocumentConfiguration.is_deleted == False
                 ).first()
                 
                 if not config:
@@ -250,9 +255,10 @@ class DocumentConfigurationMutation:
             session = db_manager.get_session()
             
             try:
-                # Check if configuration with same name already exists
+                # Check if configuration with same name already exists (excluding soft-deleted)
                 existing = session.query(DocumentConfiguration).filter(
-                    DocumentConfiguration.name == input.name
+                    DocumentConfiguration.name == input.name,
+                    DocumentConfiguration.is_deleted == False
                 ).first()
                 
                 if existing:
@@ -325,7 +331,8 @@ class DocumentConfigurationMutation:
             
             try:
                 config = session.query(DocumentConfiguration).filter(
-                    DocumentConfiguration.id == id
+                    DocumentConfiguration.id == id,
+                    DocumentConfiguration.is_deleted == False
                 ).first()
                 
                 if not config:
@@ -335,11 +342,12 @@ class DocumentConfigurationMutation:
                         documentConfiguration=None
                     )
                 
-                # Check if name is being changed and if new name already exists
+                # Check if name is being changed and if new name already exists (excluding soft-deleted)
                 if input.name is not None and input.name != config.name:
                     existing = session.query(DocumentConfiguration).filter(
                         DocumentConfiguration.name == input.name,
-                        DocumentConfiguration.id != id
+                        DocumentConfiguration.id != id,
+                        DocumentConfiguration.is_deleted == False
                     ).first()
                     
                     if existing:
@@ -401,18 +409,19 @@ class DocumentConfigurationMutation:
         info: Info,
         id: int
     ) -> DocumentConfigurationResponse:
-        """Delete a document configuration - requires authentication"""
+        """Soft delete a document configuration - requires authentication"""
         try:
             # Require authentication
             user = require_authentication(info)
-            logger.info(f"User {user.get('username')} deleting document configuration {id}")
+            logger.info(f"User {user.get('username')} soft deleting document configuration {id}")
             
             db_manager = get_database_manager()
             session = db_manager.get_session()
             
             try:
                 config = session.query(DocumentConfiguration).filter(
-                    DocumentConfiguration.id == id
+                    DocumentConfiguration.id == id,
+                    DocumentConfiguration.is_deleted == False
                 ).first()
                 
                 if not config:
@@ -422,8 +431,9 @@ class DocumentConfigurationMutation:
                         documentConfiguration=None
                     )
                 
-                # Delete the configuration
-                session.delete(config)
+                # Soft delete the configuration
+                config.is_deleted = True
+                config.deleted_at = datetime.utcnow()
                 session.commit()
                 
                 return DocumentConfigurationResponse(

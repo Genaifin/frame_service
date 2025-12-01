@@ -3,7 +3,7 @@ Fund Management API Endpoints
 Contains all CRUD operations for fund management
 """
 
-from fastapi import APIRouter, HTTPException, Query, Body, Depends
+from fastapi import APIRouter, HTTPException, Query, Body, Depends, Request
 from sqlalchemy import text
 from typing import Optional
 import logging
@@ -11,6 +11,11 @@ import logging
 from database_models import DatabaseManager, Calendar
 from rbac.utils.auth import getCurrentUser
 from rbac.utils.frontend import getUserByUsername
+
+import json
+import base64
+from datetime import datetime
+import os
 
 # Import data source management models and service
 from server.APIServerUtils.data_source_models import (
@@ -32,6 +37,54 @@ async def authenticate_user(username: str = Depends(getCurrentUser)):
     """Authenticate user using JWT token"""
     return username
 
+def _log_get_funds_response(data, username: str, page: int, page_size: int, search: str = None, status_filter: str = None, log_type: str = "data"):
+    """
+    Log any data from get_funds_index to a file - logs everything as-is
+    
+    Args:
+        data: Any data to log (headers, response, etc.) - logged exactly as passed
+        username: Username making the request
+        page: Page number
+        page_size: Page size
+        search: Search term
+        status_filter: Status filter
+        log_type: Type of data being logged (e.g., "headers", "response", "x-userinfo")
+    """
+    try:
+        # Create logs directory if it doesn't exist
+        log_dir = "logs"
+        os.makedirs(log_dir, exist_ok=True)
+        
+        # Log file path
+        log_file = os.path.join(log_dir, "get_funds_api.log")
+        
+        # Prepare log entry - log everything as-is
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]  # Include milliseconds
+        log_entry = {
+            "timestamp": timestamp,
+            "log_type": log_type,
+            "username": username,
+            "endpoint": "GET /api/v1/funds",
+            "request_parameters": {
+                "page": page,
+                "page_size": page_size,
+                "search": search,
+                "status_filter": status_filter
+            },
+            "data": data  # ✅ Log the data exactly as passed
+        }
+        
+        # Write to log file
+        with open(log_file, "a", encoding="utf-8") as f:
+            f.write(json.dumps(log_entry, indent=2, default=str, ensure_ascii=False))
+            f.write("\n" + "="*100 + "\n\n")
+        
+        logger.debug(f"Logged {log_type} to {log_file}")
+        
+    except Exception as e:
+        # Don't fail the API if logging fails
+        logger.warning(f"Failed to log {log_type}: {e}")
+
 def get_user_role(username: str) -> str:
     """Get user role from username"""
     user = getUserByUsername(username)
@@ -48,8 +101,9 @@ router = APIRouter(prefix="/funds", tags=["Fund CRUD API"])
 
 @router.get("")
 async def get_funds_index(
+    request: Request,
     page: int = 1,
-    page_size: int = 10,
+    page_size: int = 50,
     search: Optional[str] = None,
     status_filter: Optional[str] = None,
     fund_id: Optional[str] = None,
@@ -95,6 +149,36 @@ async def get_funds_index(
         where_conditions = []
         params = {}
         
+        # ✅ Log request headers
+        _log_get_funds_response(dict(request.headers), __username, page, page_size, search, status_filter, log_type="request_headers")
+        
+        # ✅ Get and decode base64-encoded userinfo from x-userinfo header
+        userinfo = {}
+        roles = []
+        
+        x_userinfo_header = request.headers.get("x-userinfo")
+        if x_userinfo_header:
+            # ✅ Log raw x-userinfo header value
+            _log_get_funds_response(x_userinfo_header, __username, page, page_size, search, status_filter, log_type="x-userinfo_raw")
+            
+            # ✅ Decode base64-encoded JSON (Kong sends it as base64, not JWT)
+            try:
+                decoded_bytes = base64.b64decode(x_userinfo_header)
+                userinfo = json.loads(decoded_bytes.decode('utf-8'))
+                
+                # ✅ Log decoded user info
+                _log_get_funds_response(userinfo, __username, page, page_size, search, status_filter, log_type="decoded_userinfo")
+                
+                # ✅ Extract roles from decoded userinfo
+                realm_roles = userinfo.get("realm_access", {}).get("roles", [])
+                client_roles = userinfo.get("resource_access", {}).get("AithonAISolutions", {}).get("roles", [])
+                roles = realm_roles + client_roles
+                
+                logger.info(f"User {__username} has roles: {roles}")
+                
+            except Exception as e:
+                logger.error(f"Error decoding x-userinfo header: {e}")
+                # Continue without roles if decoding fails
         if search:
             where_conditions.append("(f.name ILIKE :search OR f.code ILIKE :search OR f.fund_manager ILIKE :search OR f.contact_person ILIKE :search)")
             params['search'] = f"%{search}%"
@@ -219,10 +303,15 @@ async def get_funds_index(
                 "current_page": page,
                 "page_size": page_size,
                 "total_pages": total_pages
-            }
+            },
+            "roles": roles
         }
         
         conn.close()
+        
+        # ✅ Log complete response to file
+        _log_get_funds_response(response, __username, page, page_size, search, status_filter, log_type="api_response")
+        
         return response
         
     except HTTPException:
@@ -589,11 +678,27 @@ async def create_fund(
         
         fund_admin_json = None
         if fund_data.get("fund-admins"):
-            fund_admin_json = json.dumps(fund_data["fund-admins"])
+            fund_admins = fund_data["fund-admins"]
+            
+            # Validate active admins count (min 1, max 2)
+            active_admins = [admin for admin in fund_admins if isinstance(admin, dict) and admin.get("isActive") == True]
+            if len(active_admins) < 1:
+                raise HTTPException(status_code=400, detail="At least 1 fund admin must be active")
+            if len(active_admins) > 2:
+                raise HTTPException(status_code=400, detail="Maximum 2 fund admins can be active")
+            
+            fund_admin_json = json.dumps(fund_admins)
         
         shadow_json = None
         if fund_data.get("shadow-admins"):
-            shadow_json = json.dumps(fund_data["shadow-admins"])
+            shadow_admins = fund_data["shadow-admins"]
+            
+            # Validate active shadow admins count (min 0, max 2)
+            active_shadows = [shadow for shadow in shadow_admins if isinstance(shadow, dict) and shadow.get("isActive") == True]
+            if len(active_shadows) > 2:
+                raise HTTPException(status_code=400, detail="Maximum 2 shadow admins can be active")
+            
+            shadow_json = json.dumps(shadow_admins)
         
         strategy_json = None
         if fund_data.get("strategy"):
@@ -771,11 +876,27 @@ async def update_fund(
         
         fund_admin_json = None
         if fund_data.get("fund-admins"):
-            fund_admin_json = json.dumps(fund_data["fund-admins"])
+            fund_admins = fund_data["fund-admins"]
+            
+            # Validate active admins count (min 1, max 2)
+            active_admins = [admin for admin in fund_admins if isinstance(admin, dict) and admin.get("isActive") == True]
+            if len(active_admins) < 1:
+                raise HTTPException(status_code=400, detail="At least 1 fund admin must be active")
+            if len(active_admins) > 2:
+                raise HTTPException(status_code=400, detail="Maximum 2 fund admins can be active")
+            
+            fund_admin_json = json.dumps(fund_admins)
         
         shadow_json = None
         if fund_data.get("shadow-admins"):
-            shadow_json = json.dumps(fund_data["shadow-admins"])
+            shadow_admins = fund_data["shadow-admins"]
+            
+            # Validate active shadow admins count (min 0, max 2)
+            active_shadows = [shadow for shadow in shadow_admins if isinstance(shadow, dict) and shadow.get("isActive") == True]
+            if len(active_shadows) > 2:
+                raise HTTPException(status_code=400, detail="Maximum 2 shadow admins can be active")
+            
+            shadow_json = json.dumps(shadow_admins)
         
         strategy_json = None
         if fund_data.get("strategy"):
@@ -968,22 +1089,28 @@ async def get_fund_edit_form_details(
                 elif field_id == "fund-admins":
                     # Handle fund_admin JSON array
                     fund_admins = fund_data.get("fund_admin") or []
+                    # Type is always multi-active-group regardless of active count
+                    field["type"] = "multi-active-group"
                     if isinstance(fund_admins, list) and fund_admins:
                         for idx, admin in enumerate(fund_admins):
                             if idx < len(field.get("fields", [])):
                                 # Extract value from object if it's a dict, otherwise use the admin directly
                                 value_to_set = admin.get("value") if isinstance(admin, dict) else admin
+                                admin_is_active = admin.get("isActive") if isinstance(admin, dict) else False
                                 field["fields"][idx]["defaultValue"] = value_to_set
-                                field["fields"][idx]["isActive"] = (idx == len(fund_admins) - 1)
+                                field["fields"][idx]["isActive"] = admin_is_active
                 elif field_id == "shadow-admins":
                     # Handle shadow JSON array
                     shadows = fund_data.get("shadow") or []
+                    # Type is always multi-active-group regardless of active count
+                    field["type"] = "multi-active-group"
                     if isinstance(shadows, list) and shadows:
                         for idx, shadow in enumerate(shadows):
                             if idx < len(field.get("fields", [])):
                                 value_to_set = shadow.get("value") if isinstance(shadow, dict) else shadow
+                                shadow_is_active = shadow.get("isActive") if isinstance(shadow, dict) else False
                                 field["fields"][idx]["defaultValue"] = value_to_set
-                                field["fields"][idx]["isActive"] = (idx == len(shadows) - 1)
+                                field["fields"][idx]["isActive"] = shadow_is_active
                 elif field_id == "stage":
                     field["defaultValue"] = fund_data.get("stage") or ""
                 elif field_id == "inception-date":

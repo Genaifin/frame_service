@@ -1,5 +1,4 @@
 from fastapi import HTTPException
-from frontendUtils.moduleRenders import getModuleRender
 from frontendUtils.frameActions import takeFrameAction
 from .athena import athenaResponse
 
@@ -13,10 +12,6 @@ async def getResponse(params:dict):
     if queryType == 'frameAction':
         return await takeFrameAction(params)
     
-    if queryType == 'moduleRender':
-        myResponse = await getModuleRender(params)
-        return JSONResponse(content=myResponse)
-
     if queryType == 'athena':
         return await athenaResponse(params) 
     

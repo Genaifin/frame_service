@@ -51,6 +51,7 @@ import server.APIServerUtils.frontend
 import server.APIServerUtils.user
 import server.APIServerUtils.user_management
 import server.APIServerUtils.client_management
+import server.APIServerUtils.kpi_management
 import server.APIServerUtils.fund_management
 from server.APIServerUtils.athena import athenaResponse
 
@@ -84,8 +85,18 @@ from pydantic import BaseModel, Field
 from typing import List, Optional, Dict, Any
 
 # Import database models for new client API
-from database_models import DatabaseManager, Client, Fund
+from database_models import DatabaseManager, Client, Fund, Document, get_database_manager
 from sqlalchemy import text
+
+# Import KPI management models
+from server.APIServerUtils.kpi_models import (
+    KpiCreateRequest, KpiUpdateRequest, ThresholdCreateRequest, 
+    ThresholdUpdateRequest, KpiSearchRequest, BulkKpiUpdateRequest,
+    KpiBulkUpdateRequest, KpiSubmitRequest, KpiBulkResponse,
+    KpiBulkItem, ThresholdBulkItem
+)
+from server.APIServerUtils.kpi_management import KpiManagementService
+
 
 import subprocess
 import threading
@@ -98,6 +109,11 @@ from utils.file_config_reader import readFileConfigs, getDocumentTypes, getDocum
 
 # Import file processing utilities
 from runner_frame import process_file_with_orchestrator
+
+# Import file queue service
+from server.APIServerUtils.file_queue_service import FileQueueService
+from server.APIServerUtils.rabbitmq_service import RabbitMQService
+from server.APIServerUtils.queue_processor import start_queue_processor, stop_queue_processor
 
 # Import schema middleware
 from server.schema_middleware import SchemaMiddleware
@@ -125,6 +141,14 @@ app.include_router(client_crud_router)
 from server.accounts_api import router as accounts_router
 app.include_router(accounts_router)
 
+# Include rules API router (provides /rules CRUD endpoints)
+from server.rules_api import router as rules_router
+app.include_router(rules_router)
+
+# Include password rules API router (provides /password-rules CRUD endpoints)
+from server.password_rules_api import router as password_rules_router
+app.include_router(password_rules_router)
+
 # Include sidebar API router (provides /sidebar)
 from server.sidebar import router as sidebar_router
 app.include_router(sidebar_router)
@@ -133,6 +157,7 @@ app.include_router(sidebar_router)
 if GRAPHQL_AVAILABLE:
     from strawberry.fastapi import GraphQLRouter
     from schema.graphql_main_schema import schema
+    from schema.graphql_user_meta_schema import user_meta_schema
     
     # Create GraphQL app with authentication context - consistent with REST API
     def get_context(request):
@@ -146,6 +171,11 @@ if GRAPHQL_AVAILABLE:
     
     # Include GraphQL router with same middleware as REST API
     app.include_router(graphql_app, prefix="/v2", tags=["GraphQL v2"])
+    
+    # Create dedicated User Metadata GraphQL router
+    user_meta_graphql_app = GraphQLRouter(user_meta_schema)
+    app.include_router(user_meta_graphql_app, prefix="/v2/userMeta", tags=["User Metadata GraphQL"])
+
 
 # CORS is now handled by nginx, so we allow access from anywhere
 originsAllowed = ["*"]
@@ -610,6 +640,18 @@ async def getFrontEndResponse(request: Request, *, __username: str = Depends(aut
 async def getUserMetaResponse(request: Request, *, __username: str = Depends(authenticate_user)):
     myResponse=await server.APIServerUtils.user.getUserMetaResponse(__username)
     return myResponse
+
+@app.on_event("startup")
+async def startup_event():
+    """Application startup - queue processor is now manual via /start_processing endpoint"""
+    # Queue processor is no longer started automatically
+    # Files are only processed when /start_processing endpoint is called
+    logger.info("Application started - queue processing is manual via /start_processing endpoint")
+
+@app.on_event("shutdown")
+async def shutdown_event():
+    """Application shutdown"""
+    logger.info("Application shutting down")
 
 @app.get("/health", tags=["Health"])
 def health_check():
@@ -1343,6 +1385,23 @@ async def invalidate_validation_cache(
             detail=f"Error invalidating validation cache: {str(e)}"
         )
 
+@app.get("/api/validation/cache/info", description="Get validation cache information", tags=["validation"])
+async def get_validation_cache_info(*, __username: str = Depends(authenticate_user)):
+    """
+    Get information about the current validation cache state
+    Useful for debugging cache-related issues
+    """
+    try:
+        from frontendUtils.renders.validus.singleFundCompare import getCacheInfo
+        result = getCacheInfo()
+        return result
+    except Exception as e:
+        logger.error(f"Error getting validation cache info: {str(e)}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Error getting validation cache info: {str(e)}"
+        )
+
 # Upload file API for dashboard file uploads and details 
 @app.post("/upload_files", description="Upload files to frameDemo/l0 folder", tags=["file-upload"])
 async def upload_files(
@@ -1370,8 +1429,7 @@ async def upload_files(
         
         if file.filename is None:
             raise HTTPException(status_code=400, detail="Filename is required")
-        file_path = os.path.join(target_dir, file.filename)
-      
+        file_path = os.path.join(target_dir, file.filename)      
               
         with open(file_path, "wb") as buffer:
             shutil.copyfileobj(file.file, buffer)
@@ -1504,103 +1562,259 @@ async def upload_files(
         }
         myStorage.doDataOperation(myLdummyOp)
         
-        # Start file processing in background thread     
-        def run_processor():
+        # Create document entry in database
+        document_id = None
+        doc_id = None
+        
+        # Get metadata - it may have been created above, or we need to retrieve it from l1
+        # Try to get metadata from l1 layer (works whether file was just processed or already existed)
+        myMetaData = None
+        try:
+            myMetaData = myStorage.getJSONDump('l1', [myHash], 'fileMetaData')
+        except:
+            # If metadata doesn't exist, we'll create document without it
+            myMetaData = None
+        
+        try:
+            # Get file size if not provided
+            file_size = file.size
+            if file_size is None and os.path.exists(file_path):
+                file_size = os.path.getsize(file_path)
+            
+            # Prepare metadata for document
+            document_metadata = {
+                "fileHash": myHash,
+                "fileOriginalName": file.filename,
+                "fileOriginalPath": file_path,
+                "folder": folder,
+                "storage_type": storage_type,
+                "source": source,
+                "file_classification": file_classification
+            }
+            
+            # Add metadata from myMetaData if it exists
+            if myMetaData:
+                document_metadata.update({
+                    "typeName": myMetaData.get('typeName'),
+                    "typeSpecificParams": myMetaData.get('typeSpecificParams', {})
+                })
+            
+            # Create document entry in database
+            db_manager = get_database_manager()
+            session = db_manager.get_session()
+            
             try:
-                return process_file_with_orchestrator(file_path, file.filename)
-            except Exception as e:
-                print(f"Background processing failed for {file.filename}: {e}")
+                new_document = Document(
+                    name=file.filename,
+                    type=file_type,
+                    path=file_path,
+                    size=file_size,
+                    status='pending',
+                    created_by=__username,
+                    document_metadata=document_metadata
+                )
+                
+                session.add(new_document)
+                session.commit()
+                session.refresh(new_document)
+                
+                document_id = new_document.id
+                doc_id = str(new_document.doc_id)
+                
+                logger.info(f"Created document entry in database: ID={document_id}, doc_id={doc_id}, filename={file.filename}")
+                
+            except Exception as db_error:
+                session.rollback()
+                logger.warning(f"Failed to create document entry in database: {db_error}. File upload will continue.")
+            finally:
+                session.close()
+                
+        except Exception as e:
+            # Log error but don't fail the upload
+            logger.warning(f"Error creating document entry: {e}. File upload will continue.")
         
-        # Submit to background thread without waiting for result
-        executor = ThreadPoolExecutor(max_workers=1)
-        executor.submit(run_processor)
+        # Add file to processing queue instead of processing immediately
+        queue_service = RabbitMQService()
+        try:
+            queue_entry = queue_service.add_file_to_queue(
+                filename=file.filename,
+                file_path=file_path,
+                file_hash=myHash,
+                folder=folder,
+                storage_type=storage_type,
+                source=source,
+                file_classification=file_classification,
+                username=__username
+            )
+        finally:
+            queue_service.close()
         
-        return JSONResponse(content={
+        response_data = {
             "response": True,
             "filename": file.filename,
-            "message": f"Successfully uploaded {file.filename}",
-            "file_size": file.size,
+            "message": f"Successfully uploaded {file.filename} and added to processing queue. Call /start_processing to process queued files.",
+            "file_size": file_size,
             "file_path": file_path,
             "file_hash": myHash,
-            "username": __username
-        })
+            "username": __username,
+            "queue_id": queue_entry.get('id'),
+            "queue_status": queue_entry.get('status'),
+            "note": "File is queued and will be processed when /start_processing endpoint is called"
+        }
+        
+        # Add document ID if created successfully
+        if document_id:
+            response_data["document_id"] = document_id
+            response_data["doc_id"] = doc_id
+        
+        return JSONResponse(content=response_data)
         
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Upload failed: {str(e)}")
 
-@app.post("/start_processing", description="Start automatic file processing session", tags=["processing"])
+@app.get("/queue/status", description="Get file queue status", tags=["file-upload"])
+async def get_queue_status(*, __username: str = Depends(authenticate_user)):
+    """Get current status of the file processing queue"""
+    try:
+        queue_service = RabbitMQService()
+        status = queue_service.get_queue_status()
+        queue_service.close()
+        return JSONResponse(content={
+            "success": True,
+            "queue_status": status
+        })
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to get queue status: {str(e)}")
+
+def _process_queue_background():
+    """
+    Background function to process files from the queue.
+    Runs in a separate thread to avoid blocking the API.
+    """
+    from server.APIServerUtils.rabbitmq_service import RabbitMQService
+    from runner_frame import process_file_with_orchestrator
+    
+    queue_service = RabbitMQService()
+    processed_count = 0
+    failed_count = 0
+    
+    logger.info("Background queue processing started")
+    
+    try:
+        # Process files until queue is empty
+        while True:
+            # Get next file from queue (FIFO)
+            queue_entry = queue_service.get_next_file_from_queue()
+            
+            if not queue_entry:
+                # No more files in queue
+                break
+            
+            delivery_tag = queue_entry.get('_delivery_tag')
+            file_path = queue_entry['file_path']
+            filename = queue_entry['filename']
+            
+            logger.info(f"Processing file from queue: {filename}")
+            
+            try:
+                # Process the file (runs in this thread, no event loop conflicts)
+                result = process_file_with_orchestrator(file_path, filename)
+                
+                # Determine success based on result
+                if isinstance(result, dict):
+                    success = result.get('status') == 'completed'
+                    error_message = result.get('message') if not success else None
+                elif result is True:
+                    success = True
+                    error_message = None
+                elif result is False or result is None:
+                    success = False
+                    error_message = "Processing returned False or None"
+                else:
+                    logger.warning(f"Unexpected return type from process_file_with_orchestrator: {type(result)}")
+                    success = bool(result)
+                    error_message = None if success else "Processing returned unexpected result"
+                
+                # Acknowledge message (remove from queue on success, requeue on failure)
+                if delivery_tag:
+                    queue_service.acknowledge_message(delivery_tag, success=success)
+                
+                if success:
+                    processed_count += 1
+                    logger.info(f"Successfully processed file: {filename}")
+                else:
+                    failed_count += 1
+                    logger.warning(f"Failed to process file: {filename} - {error_message}")
+            
+            except Exception as e:
+                # Requeue message on exception
+                error_message = str(e)
+                if delivery_tag:
+                    queue_service.acknowledge_message(delivery_tag, success=False)
+                failed_count += 1
+                logger.error(f"Error processing file {filename}: {e}")
+        
+        logger.info(f"Background queue processing completed. Processed: {processed_count}, Failed: {failed_count}")
+    
+    except Exception as e:
+        logger.error(f"Error in background queue processing: {e}")
+    finally:
+        # Close RabbitMQ connection
+        queue_service.close()
+
+# Track if processing is already running
+_processing_thread = None
+
+@app.post("/start_processing", description="Start processing files from queue in FIFO order (runs in background)", tags=["processing"])
 async def start_processing(__username: str = Depends(authenticate_user)):
     """
-    Start automatic processing of queued files.
-    Processes until queue is empty.
+    Start processing of queued files in FIFO order.
+    Processing runs in the background - endpoint returns immediately.
+    Use /queue/status to check processing progress.
     """
-    return JSONResponse(content={
+    global _processing_thread
+    
+    # Check if processing is already running
+    if _processing_thread is not None and _processing_thread.is_alive():
+        return JSONResponse(content={
             "success": True,
-            "message": "Processing started successfully",
-            "status": "processing",
+            "message": "Processing is already running in the background",
+            "status": "already_running",
             "username": __username
         })
-
-    # try:
-    #     import sys
-    #     import os
-    #     from pathlib import Path
-        
-    #     # Get the parent directory (validusBoxes)
-    #     current_dir = Path(__file__).parent.parent
-    #     runner_file = current_dir / "runner_frame.py"
-        
-    #     if not runner_file.exists():
-    #         raise HTTPException(status_code=500, detail=f"Runner file not found at: {runner_file}")
-        
-    #     # Add to Python path
-    #     if str(current_dir) not in sys.path:
-    #         sys.path.insert(0, str(current_dir))
-        
-    #     try:
-    #         # Import the module
-    #         import runner_frame
-    #         from importlib import reload
-    #         reload(runner_frame)  # Force reload in case of changes
-            
-    #         # Check if function exists
-    #         if not hasattr(runner_frame, 'run_processing_session'):
-    #             raise HTTPException(status_code=500, detail="run_processing_session function not found in runner_frame")
-            
-    #         # Run the processing session in a background thread
-    #         def run_processing():
-    #             try:
-    #                 # Change to the runner_frame directory to ensure relative paths work
-    #                 original_cwd = os.getcwd()
-    #                 os.chdir(current_dir)
-                    
-    #                 try:
-    #                     result = runner_frame.run_processing_session()
-    #                     return result
-    #                 finally:
-    #                     # Always restore original working directory
-    #                     os.chdir(original_cwd)
-                        
-    #             except Exception as e:
-    #                 print(f"Error in run_processing_session: {e}")
-    #                 return {"status": "error", "message": str(e)}
-            
-    #         # Start processing in background
-    #         executor = ThreadPoolExecutor(max_workers=1)
-    #         future = executor.submit(run_processing)
-            
-    #         return JSONResponse(content={
-    #             "success": True,
-    #             "message": "Processing started successfully",
-    #             "status": "processing",
-    #             "username": __username
-    #         })
-            
-    #     except ImportError as e:
-    #         raise HTTPException(status_code=500, detail=f"Failed to import runner_frame: {e}")
-            
-    # except Exception as e:
-    #     raise HTTPException(status_code=500, detail=f"Processing failed: {str(e)}")
+    
+    # Check queue status first
+    queue_service = RabbitMQService()
+    queue_status = queue_service.get_queue_status()
+    queue_service.close()
+    
+    if queue_status['pending'] == 0:
+        return JSONResponse(content={
+            "success": True,
+            "message": "No files in queue to process",
+            "status": "no_files",
+            "queue_status": queue_status,
+            "username": __username
+        })
+    
+    # Start background processing thread
+    _processing_thread = threading.Thread(
+        target=_process_queue_background,
+        daemon=True,
+        name="QueueProcessor"
+    )
+    _processing_thread.start()
+    
+    logger.info(f"Started background queue processing (thread: {_processing_thread.name})")
+    
+    return JSONResponse(content={
+        "success": True,
+        "message": f"Processing started in background. {queue_status['pending']} file(s) in queue.",
+        "status": "started",
+        "queue_status": queue_status,
+        "username": __username
+    })
+  
 
 
 @app.post("/process_existing_files", description="Process all existing files in l0 directory and add them to ldummy layer", tags=["file-processing"])
@@ -2945,4 +3159,211 @@ async def add_fund_manager(
         logger.error(f"Error adding fund manager: {e}")
         raise HTTPException(status_code=500, detail=f"Error adding fund manager: {str(e)}")
 
+
+# ============================================================================
+# KPI MANAGEMENT API ENDPOINTS
+# ============================================================================
+
+@app.get("/kpis", description="Get all KPIs with pagination and filtering", tags=["kpi-management"])
+async def get_kpis(
+    search: Optional[str] = None,
+    kpi_type: Optional[str] = None,
+    category: Optional[str] = None,
+    is_active: Optional[bool] = True,
+    page: int = 1,
+    page_size: int = 20,
+    *, __username: str = Depends(authenticate_user)
+):
+    """
+    Get all KPIs with pagination, search, and filtering.
+    
+    - **search**: Search term for KPI code, name, or description
+    - **kpi_type**: Filter by KPI type ('NAV_VALIDATION' or 'RATIO_VALIDATION')
+    - **category**: Filter by category
+    - **is_active**: Filter by active status (default: true)
+    - **page**: Page number for pagination (default: 1)
+    - **page_size**: Number of KPIs per page (default: 20, max: 100)
+    """
+    return await server.APIServerUtils.kpi_management.get_kpis_response(
+        search=search,
+        kpi_type=kpi_type,
+        category=category,
+        is_active=is_active,
+        page=page,
+        page_size=page_size
+    )
+
+@app.get("/kpis/{kpi_id}", description="Get a specific KPI by ID", tags=["kpi-management"])
+async def get_kpi(
+    kpi_id: int,
+    *, __username: str = Depends(authenticate_user)
+):
+    """
+    Get detailed information about a specific KPI including thresholds.
+    
+    - **kpi_id**: The ID of the KPI to retrieve
+    """
+    return await server.APIServerUtils.kpi_management.get_kpi_response(kpi_id)
+
+@app.post("/kpis", description="Create a new KPI", tags=["kpi-management"])
+async def create_kpi(
+    kpi_data: KpiCreateRequest,
+    *, __username: str = Depends(authenticate_user)
+):
+    """
+    Create a new KPI with the specified details.
+    
+    Required fields:
+    - **kpi_code**: Unique KPI code (1-100 characters)
+    - **kpi_name**: KPI display name (1-200 characters)
+    - **kpi_type**: KPI type ('NAV_VALIDATION' or 'RATIO_VALIDATION')
+    - **source_type**: Source type ('SINGLE_SOURCE' or 'DUAL_SOURCE')
+    - **precision_type**: Precision type ('PERCENTAGE' or 'ABSOLUTE')
+    
+    Optional fields:
+    - **category**: KPI category
+    - **description**: KPI description
+    - **unit**: Unit symbol ('%', '$', etc.)
+    - **numerator_field**: Numerator field (for ratio validations)
+    - **denominator_field**: Denominator field (for ratio validations)
+    - **numerator_description**: Numerator description
+    - **denominator_description**: Denominator description
+    - **is_active**: Whether KPI is active (default: true)
+    """
+    kpi_dict = kpi_data.dict()
+    
+    return await server.APIServerUtils.kpi_management.create_kpi_response(kpi_dict, __username)
+
+@app.put("/kpis/{kpi_id}", description="Update an existing KPI", tags=["kpi-management"])
+async def update_kpi(
+    kpi_id: int,
+    kpi_data: KpiUpdateRequest,
+    *, __username: str = Depends(authenticate_user)
+):
+    """
+    Update an existing KPI's information.
+    
+    - **kpi_id**: The ID of the KPI to update
+    
+    All fields are optional - only provided fields will be updated.
+    """
+    # Convert Pydantic model to dict, excluding None values
+    update_data = {k: v for k, v in kpi_data.dict().items() if v is not None}
+    
+    return await server.APIServerUtils.kpi_management.update_kpi_response(kpi_id, update_data, __username)
+
+@app.delete("/kpis/{kpi_id}", description="Delete a KPI (soft delete)", tags=["kpi-management"])
+async def delete_kpi(
+    kpi_id: int,
+    *, __username: str = Depends(authenticate_user)
+):
+    """
+    Delete a KPI by setting its status to inactive.
+    
+    - **kpi_id**: The ID of the KPI to delete
+    
+    This is a soft delete - the KPI record remains in the database
+    but is marked as inactive along with its thresholds.
+    """
+    return await server.APIServerUtils.kpi_management.delete_kpi_response(kpi_id, __username)
+
+@app.get("/kpis/{kpi_id}/thresholds", description="Get thresholds for a KPI", tags=["kpi-management"])
+async def get_kpi_thresholds(
+    kpi_id: int,
+    *, __username: str = Depends(authenticate_user)
+):
+    """
+    Get all active thresholds for a specific KPI.
+    
+    - **kpi_id**: The ID of the KPI
+    """
+    return await server.APIServerUtils.kpi_management.get_kpi_thresholds_response(kpi_id)
+
+@app.post("/thresholds", description="Create a new threshold", tags=["kpi-management"])
+async def create_threshold(
+    threshold_data: ThresholdCreateRequest,
+    *, __username: str = Depends(authenticate_user)
+):
+    """
+    Create a new threshold for a KPI.
+    
+    Required fields:
+    - **kpi_id**: KPI ID this threshold belongs to
+    - **threshold_value**: Threshold value (must be non-negative)
+    
+    Optional fields:
+    - **fund_id**: Fund ID (null for global default)
+    - **is_active**: Whether threshold is active (default: true)
+    """
+    threshold_dict = threshold_data.dict()
+    
+    return await server.APIServerUtils.kpi_management.create_threshold_response(threshold_dict, __username)
+
+@app.put("/thresholds/{threshold_id}", description="Update an existing threshold", tags=["kpi-management"])
+async def update_threshold(
+    threshold_id: int,
+    threshold_data: ThresholdUpdateRequest,
+    *, __username: str = Depends(authenticate_user)
+):
+    """
+    Update an existing threshold.
+    
+    - **threshold_id**: The ID of the threshold to update
+    
+    All fields are optional - only provided fields will be updated.
+    """
+    # Convert Pydantic model to dict, excluding None values
+    update_data = {k: v for k, v in threshold_data.dict().items() if v is not None}
+    
+    return await server.APIServerUtils.kpi_management.update_threshold_response(threshold_id, update_data, __username)
+
+@app.delete("/thresholds/{threshold_id}", description="Delete a threshold (soft delete)", tags=["kpi-management"])
+async def delete_threshold(
+    threshold_id: int,
+    *, __username: str = Depends(authenticate_user)
+):
+    """
+    Delete a threshold by setting its status to inactive.
+    
+    - **threshold_id**: The ID of the threshold to delete
+    """
+    return await server.APIServerUtils.kpi_management.delete_threshold_response(threshold_id, __username)
+
+@app.get("/kpis/categories", description="Get all KPI categories", tags=["kpi-management"])
+async def get_kpi_categories(
+    *, __username: str = Depends(authenticate_user)
+):
+    """
+    Get all unique KPI categories.
+    
+    Returns a list of categories that can be used for filtering.
+    """
+    return await server.APIServerUtils.kpi_management.get_categories_response()
+
+# Bulk Management API Endpoints for UI Operations (Requirement #5)
+@app.post("/kpis/bulk-update")
+async def bulk_update_kpis(
+    request: dict,
+    *, __username: str = Depends(authenticate_user)
+):
+    """Bulk update KPIs and thresholds (requirement #5)"""
+    service = KpiManagementService()
+    return await service.bulk_update_kpis_and_thresholds(request, __username)
+
+@app.post("/kpis/submit-configuration")
+async def submit_kpi_configuration(
+    request: dict,
+    *, __username: str = Depends(authenticate_user)
+):
+    """Submit KPI configuration from UI (requirement #5)"""
+    service = KpiManagementService()
+    return await service.submit_kpi_configuration(request, __username)
+
+@app.get("/kpis/for-ui")
+async def get_kpis_for_ui(
+    *, __username: str = Depends(authenticate_user)
+):
+    """Get all KPIs formatted for UI selection"""
+    service = KpiManagementService()
+    return await service.get_kpis_for_ui()
 

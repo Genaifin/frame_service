@@ -895,7 +895,7 @@ class TableSchemaQuery:
                         intclientid: Optional[int] = None,
                         vcmodelname: Optional[str] = None,
                         pageNumber: Optional[int] = 1,
-                        pageSize: Optional[int] = 20) -> PaginatedDataModelResponseType:
+                        pageSize: Optional[int] = 50) -> PaginatedDataModelResponseType:
         """Get all data models with pagination and optional filtering - requires authentication
         
         Args:

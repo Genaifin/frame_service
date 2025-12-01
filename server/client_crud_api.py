@@ -331,7 +331,7 @@ async def get_specific_client_details(conn, client_id: str, user_role: str = "us
 @router.get("/clients", tags=["Client CRUD API"])
 async def get_clients_index(
     page: int = 1,
-    page_size: int = 10,
+    page_size: int = 50,
     search: Optional[str] = None,
     status_filter: Optional[str] = None,
     client_id: Optional[str] = None,

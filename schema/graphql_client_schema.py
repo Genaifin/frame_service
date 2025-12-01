@@ -129,7 +129,7 @@ class ClientQuery:
                 id: Optional[int] = None,
                 search: Optional[str] = None,
                 status_filter: Optional[str] = None,
-                limit: Optional[int] = 10,
+                limit: Optional[int] = 50,
                 offset: Optional[int] = 0) -> List[ClientType]:
         """Get clients with filtering and pagination - requires authentication"""
         # Require authentication

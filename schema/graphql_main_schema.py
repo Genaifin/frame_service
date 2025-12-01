@@ -34,6 +34,7 @@ from .graphql_auth_mutations import AuthMutation
 from .graphql_table_schema import TableSchemaQuery, TableSchemaMutation
 from .graphql_validation_schema import ValidationQuery, ValidationMutation
 from .graphql_report_ingestion_schema import ReportIngestionQuery
+from .graphql_rules_schema import RuleQuery, RuleMutation
 
 # Authentication types for GraphQL
 @strawberry.type
@@ -53,7 +54,7 @@ class AuthStatus:
 
 # Create unified query class with authentication
 @strawberry.type
-class Query(UserQuery, ClientQuery, RoleQuery, FundManagerQuery, FundQuery, InvestorQuery, DocumentQuery, DocumentConfigurationQuery, TableSchemaQuery, ValidationQuery, ReportIngestionQuery):
+class Query(UserQuery, ClientQuery, RoleQuery, FundManagerQuery, FundQuery, InvestorQuery, DocumentQuery, DocumentConfigurationQuery, TableSchemaQuery, ValidationQuery, ReportIngestionQuery, RuleQuery):
     """Unified GraphQL Query root with authentication"""
     
     @strawberry.field
@@ -107,7 +108,7 @@ class Query(UserQuery, ClientQuery, RoleQuery, FundManagerQuery, FundQuery, Inve
 
 # Create unified mutation class with authentication
 @strawberry.type
-class Mutation(UserMutation, ClientMutation, RoleMutation, FundManagerMutation, FundMutation, InvestorMutation, DocumentMutation, DocumentConfigurationMutation, AuthMutation, TableSchemaMutation, ValidationMutation):
+class Mutation(UserMutation, ClientMutation, RoleMutation, FundManagerMutation, FundMutation, InvestorMutation, DocumentMutation, DocumentConfigurationMutation, AuthMutation, TableSchemaMutation, ValidationMutation, RuleMutation):
     """Unified GraphQL Mutation root with authentication"""
     pass
 

@@ -1315,6 +1315,9 @@ class DatabaseValidationService:
                     'vcdescription': v.vcdescription,
                     'intthreshold': float(v.intthreshold) if v.intthreshold is not None else None,
                     'vcthresholdtype': v.vcthresholdtype,
+                    'vcthreshold_abs_range': getattr(v, 'vcthreshold_abs_range', None),
+                    'intthresholdmin': float(v.intthresholdmin) if hasattr(v, 'intthresholdmin') and v.intthresholdmin is not None else None,
+                    'intthresholdmax': float(v.intthresholdmax) if hasattr(v, 'intthresholdmax') and v.intthresholdmax is not None else None,
                     'intprecision': float(v.intprecision) if v.intprecision is not None else None,
                     'isactive': bool(v.isactive) if v.isactive is not None else False,
                     'intcreatedby': v.intcreatedby,
@@ -1326,6 +1329,9 @@ class DatabaseValidationService:
                     'vccondition': config.vccondition if config else None,
                     'config_threshold': float(config.intthreshold) if config and config.intthreshold is not None else None,
                     'config_thresholdtype': config.vcthresholdtype if config else None,
+                    'config_threshold_abs_range': getattr(config, 'vcthreshold_abs_range', None) if config else None,
+                    'config_thresholdmin': float(config.intthresholdmin) if config and hasattr(config, 'intthresholdmin') and config.intthresholdmin is not None else None,
+                    'config_thresholdmax': float(config.intthresholdmax) if config and hasattr(config, 'intthresholdmax') and config.intthresholdmax is not None else None,
                     'config_intprecision': float(config.intprecision) if config and config.intprecision is not None else None,
                     'intvalidationconfigurationid': config.intvalidationconfigurationid if config else None,
                     # Validation details (list of detail dictionaries)
@@ -1536,6 +1542,9 @@ class DatabaseValidationService:
                     'vcdescription': r.vcdescription,
                     'intthreshold': float(r.intthreshold) if r.intthreshold is not None else None,
                     'vcthresholdtype': r.vcthresholdtype,
+                    'vcthreshold_abs_range': getattr(r, 'vcthreshold_abs_range', None),
+                    'intthresholdmin': float(r.intthresholdmin) if hasattr(r, 'intthresholdmin') and r.intthresholdmin is not None else None,
+                    'intthresholdmax': float(r.intthresholdmax) if hasattr(r, 'intthresholdmax') and r.intthresholdmax is not None else None,
                     'intprecision': float(r.intprecision) if r.intprecision is not None else None,
                     'isactive': bool(r.isactive) if r.isactive is not None else False,
                     'intcreatedby': r.intcreatedby,
@@ -1547,6 +1556,9 @@ class DatabaseValidationService:
                     'vccondition': config.vccondition if config else None,
                     'config_threshold': float(config.intthreshold) if config and config.intthreshold is not None else None,
                     'config_thresholdtype': config.vcthresholdtype if config else None,
+                    'config_threshold_abs_range': getattr(config, 'vcthreshold_abs_range', None) if config else None,
+                    'config_thresholdmin': float(config.intthresholdmin) if config and hasattr(config, 'intthresholdmin') and config.intthresholdmin is not None else None,
+                    'config_thresholdmax': float(config.intthresholdmax) if config and hasattr(config, 'intthresholdmax') and config.intthresholdmax is not None else None,
                     'config_intprecision': float(config.intprecision) if config and config.intprecision is not None else None,
                     'intratioconfigurationid': config.intratioconfigurationid if config else None,
                     # Ratio details (list of detail dictionaries)
@@ -2048,8 +2060,6 @@ class DatabaseValidationService:
                             date_b_obj = datetime.strptime(date_b, '%Y-%m-%d').date()
                         else:
                             date_b_obj = date_b
-                    else:
-                        date_b_obj = date_a_obj
                 except (ValueError, TypeError) as e:
                     logger.error(f"Error parsing dates: {e}")
                     return []
@@ -2059,9 +2069,14 @@ class DatabaseValidationService:
                     ProcessInstance.intclientid == client_id,
                     ProcessInstance.intfundid == fund_id,
                     ProcessInstance.dtdate_a == date_a_obj,
-                    ProcessInstance.dtdate_b == date_b_obj,
                     ProcessInstance.vcvalidustype == 'Validation'
                 ]
+                
+                # Handle date_b - if not provided, check for NULL
+                if date_b:
+                    filter_conditions.append(ProcessInstance.dtdate_b == date_b_obj)
+                else:
+                    filter_conditions.append(ProcessInstance.dtdate_b == None)
                 
                 # Handle source_a and source_b - if empty string, check for NULL or empty
                 if source_a:
@@ -2069,10 +2084,11 @@ class DatabaseValidationService:
                 else:
                     filter_conditions.append(or_(ProcessInstance.vcsource_a == None, ProcessInstance.vcsource_a == ''))
                 
+                # Use ilike for lower-case comparison (matching get_latest_process_instance_summary)
                 if source_b:
-                    filter_conditions.append(ProcessInstance.vcsource_b == source_b)
+                    filter_conditions.append(ProcessInstance.vcsource_b.ilike(source_b.lower()))
                 else:
-                    filter_conditions.append(or_(ProcessInstance.vcsource_b == None, ProcessInstance.vcsource_b == ''))
+                    filter_conditions.append(ProcessInstance.vcsource_b.is_(None))
                 
                 # Get latest Validation process instance
                 validation_process = session.query(ProcessInstance).filter(*filter_conditions).order_by(ProcessInstance.dtprocesstime_start.desc()).first()
@@ -2269,31 +2285,35 @@ class DatabaseValidationService:
                             date_b_obj = datetime.strptime(date_b, '%Y-%m-%d').date()
                         else:
                             date_b_obj = date_b
-                    else:
-                        date_b_obj = date_a_obj
                 except (ValueError, TypeError) as e:
                     logger.error(f"Error parsing dates: {e}")
                     return []
                 
-                # Build filter conditions
+                # Build filter conditions - handle empty strings as None
                 filter_conditions = [
                     ProcessInstance.intclientid == client_id,
                     ProcessInstance.intfundid == fund_id,
                     ProcessInstance.dtdate_a == date_a_obj,
-                    ProcessInstance.dtdate_b == date_b_obj,
                     ProcessInstance.vcvalidustype == 'Validation'
                 ]
                 
-                # Handle source_a and source_b
+                # Handle date_b - if not provided, check for NULL
+                if date_b:
+                    filter_conditions.append(ProcessInstance.dtdate_b == date_b_obj)
+                else:
+                    filter_conditions.append(ProcessInstance.dtdate_b == None)
+                
+                # Handle source_a and source_b - if empty string, check for NULL or empty
                 if source_a:
                     filter_conditions.append(ProcessInstance.vcsource_a == source_a)
                 else:
                     filter_conditions.append(or_(ProcessInstance.vcsource_a == None, ProcessInstance.vcsource_a == ''))
                 
+                # Use ilike for lower-case comparison (matching get_latest_process_instance_summary)
                 if source_b:
-                    filter_conditions.append(ProcessInstance.vcsource_b == source_b)
+                    filter_conditions.append(ProcessInstance.vcsource_b.ilike(source_b.lower()))
                 else:
-                    filter_conditions.append(or_(ProcessInstance.vcsource_b == None, ProcessInstance.vcsource_b == ''))
+                    filter_conditions.append(ProcessInstance.vcsource_b.is_(None))
                 
                 # Get latest Validation process instance
                 validation_process = session.query(ProcessInstance).filter(*filter_conditions).order_by(ProcessInstance.dtprocesstime_start.desc()).first()
@@ -2425,12 +2445,12 @@ class DatabaseValidationService:
                     # Quote column names to handle special characters
                     return f'"{col_name}"' if col_name else None
                 
-                # Add coalesce column (description column)
-                side_a_select.append(f'pf.{quote_column(coalesce_column)} AS {quote_column(coalesce_column)}')
+                # Add coalesce column (description column) - rename to security_name
+                side_a_select.append(f'pf.{quote_column(coalesce_column)} AS security_name')
                 
-                # Add assettype column if present
+                # Add assettype column if present - rename to security_type
                 if assettype_column:
-                    side_a_select.append(f'pf.{quote_column(assettype_column)} AS {quote_column(assettype_column)}')
+                    side_a_select.append(f'pf.{quote_column(assettype_column)} AS security_type')
                 
                 # Add formula column (cast to numeric to handle text/varchar columns)
                 # Use safe casting that handles NULL and invalid values
@@ -2483,13 +2503,12 @@ class DatabaseValidationService:
                     "a.threshold_type",
                     "a.precision",
                     "a.intmatchid",
-                    f"COALESCE(a.{coalesce_col_quoted}, b.{coalesce_col_quoted}) AS {coalesce_col_quoted}"
+                    f"COALESCE(a.security_name, b.security_name) AS security_name"
                 ]
                 
-                # Add assettype column with COALESCE if present
+                # Add assettype column with COALESCE if present - rename to security_type
                 if assettype_column:
-                    assettype_col_quoted = quote_column(assettype_column)
-                    final_select.append(f"COALESCE(a.{assettype_col_quoted}, b.{assettype_col_quoted}) AS {assettype_col_quoted}")
+                    final_select.append(f"COALESCE(a.security_type, b.security_type) AS security_type")
                 
                 # Add formula values and other fields (already cast to numeric in subqueries)
                 final_select.extend([
@@ -2542,14 +2561,140 @@ class DatabaseValidationService:
                         }
                     )
                     
+                    # Helper function to determine decimal places from precision value
+                    def get_decimal_places(precision_val):
+                        """Convert precision value to number of decimal places.
+                        If precision is 0.12, returns 2. If precision is 0.123, returns 3.
+                        If precision is an integer like 2, returns 2.
+                        """
+                        if precision_val is None:
+                            return 2  # Default to 2 decimal places
+                        
+                        # Convert to float if it's a Decimal or string
+                        if isinstance(precision_val, Decimal):
+                            precision_val = float(precision_val)
+                        elif isinstance(precision_val, str):
+                            try:
+                                precision_val = float(precision_val)
+                            except (ValueError, TypeError):
+                                return 2  # Default if conversion fails
+                        
+                        # If it's already an integer, use it directly
+                        if isinstance(precision_val, int):
+                            return precision_val
+                        
+                        # If it's a float, count decimal places
+                        if isinstance(precision_val, float):
+                            # Convert to string with high precision, then remove trailing zeros
+                            precision_str = f"{precision_val:.15f}".rstrip('0').rstrip('.')
+                            if '.' in precision_str:
+                                # Count digits after decimal point
+                                decimal_part = precision_str.split('.')[1]
+                                return len(decimal_part) if decimal_part else 0
+                            else:
+                                # No decimal point (e.g., 1.0 became "1"), return 0
+                                return 0
+                        
+                        return 2  # Default fallback
+                    
+                    # Get the number of decimal places from precision
+                    decimal_places = get_decimal_places(intprecision)
+                    
                     for row in result:
                         row_dict = dict(row._mapping)
-                        # Convert Decimal values to float for JSON serialization
+                        
+                        # Format Source_A_value and Source_B_value according to precision and convert to string
+                        # Handle both uppercase and lowercase key variations
+                        source_a_key = None
+                        source_b_key = None
+                        for key in row_dict.keys():
+                            if key.lower() == 'source_a_value':
+                                source_a_key = key
+                            elif key.lower() == 'source_b_value':
+                                source_b_key = key
+                        
+                        if source_a_key:
+                            source_a_val = row_dict[source_a_key]
+                            if source_a_val is not None:
+                                # Convert to float if it's a numeric type
+                                if isinstance(source_a_val, Decimal):
+                                    source_a_val = float(source_a_val)
+                                elif isinstance(source_a_val, (int, float)):
+                                    source_a_val = float(source_a_val)
+                                elif isinstance(source_a_val, str):
+                                    # Try to convert string to float
+                                    try:
+                                        source_a_val = float(source_a_val)
+                                    except (ValueError, TypeError):
+                                        # If conversion fails, keep as string
+                                        pass
+                                
+                                # Format as string with precision if it's numeric
+                                if isinstance(source_a_val, (int, float)):
+                                    row_dict[source_a_key] = f"{source_a_val:.{decimal_places}f}"
+                                else:
+                                    # Keep as string if not numeric
+                                    row_dict[source_a_key] = str(source_a_val)
+                            else:
+                                row_dict[source_a_key] = None
+                        
+                        if source_b_key:
+                            source_b_val = row_dict[source_b_key]
+                            if source_b_val is not None:
+                                # Convert to float if it's a numeric type
+                                if isinstance(source_b_val, Decimal):
+                                    source_b_val = float(source_b_val)
+                                elif isinstance(source_b_val, (int, float)):
+                                    source_b_val = float(source_b_val)
+                                elif isinstance(source_b_val, str):
+                                    # Try to convert string to float
+                                    try:
+                                        source_b_val = float(source_b_val)
+                                    except (ValueError, TypeError):
+                                        # If conversion fails, keep as string
+                                        pass
+                                
+                                # Format as string with precision if it's numeric
+                                if isinstance(source_b_val, (int, float)):
+                                    row_dict[source_b_key] = f"{source_b_val:.{decimal_places}f}"
+                                else:
+                                    # Keep as string if not numeric
+                                    row_dict[source_b_key] = str(source_b_val)
+                            else:
+                                row_dict[source_b_key] = None
+                        
+                        # Format intformulaoutput according to precision and convert to string
+                        if 'intformulaoutput' in row_dict:
+                            intformula_val = row_dict['intformulaoutput']
+                            if intformula_val is not None:
+                                if isinstance(intformula_val, Decimal):
+                                    intformula_val = float(intformula_val)
+                                if isinstance(intformula_val, (float, int)):
+                                    row_dict['intformulaoutput'] = f"{float(intformula_val):.{decimal_places}f}"
+                                else:
+                                    row_dict['intformulaoutput'] = str(intformula_val)
+                            else:
+                                row_dict['intformulaoutput'] = None
+                        
+                        # Convert other Decimal values to float for JSON serialization
+                        # Exclude source_a_value, source_b_value (any case) and intformulaoutput
+                        excluded_keys = ['intformulaoutput']
+                        if source_a_key:
+                            excluded_keys.append(source_a_key)
+                        if source_b_key:
+                            excluded_keys.append(source_b_key)
+                        
                         for key, value in row_dict.items():
-                            if isinstance(value, Decimal):
-                                row_dict[key] = float(value)
-                            elif value is None:
-                                row_dict[key] = None
+                            if key.lower() not in [k.lower() for k in excluded_keys]:
+                                if isinstance(value, Decimal):
+                                    row_dict[key] = float(value)
+                                elif value is None:
+                                    row_dict[key] = None
+                        
+                        # Add validation_name to the data dictionary
+                        if 'validations' in row_dict:
+                            row_dict['validation_name'] = row_dict['validations']
+                        
                         all_results.append(row_dict)
                         
                 except Exception as e:
@@ -2872,8 +3017,8 @@ class DatabaseValidationService:
                             b.intnumeratoroutput AS intnumeratoroutput_b,
                             a.intdenominatoroutput AS intdenominatoroutput_a,
                             b.intdenominatoroutput AS intdenominatoroutput_b,
-                            a.intformulaoutput AS source_a_value,
-                            b.intformulaoutput AS source_b_value,
+                            a.intnumeratoroutput/a.intdenominatoroutput AS source_a_value,
+                            b.intnumeratoroutput/b.intdenominatoroutput AS source_b_value,
                             a.vcformulaoutput AS vcformulaoutput_a,
                             b.vcformulaoutput AS vcformulaoutput_b,
                             COALESCE(a.vcstatus, b.vcstatus) AS vcstatus
@@ -3249,13 +3394,23 @@ class DatabaseValidationService:
     ) -> List[Dict[str, Any]]:
         """
         Get unique combinations of (client, fund, source, date) from tbl_data_load_instance
+        Grouped by fund and source
         
         Args:
             client_id: Optional client ID to filter by
             fund_id: Optional fund ID to filter by
         
         Returns:
-            List of dictionaries with client, fund, source, and date
+            List of dictionaries grouped by fund and source, with dates as a list
+            Format: [
+                {
+                    'client_id': int,
+                    'fund_id': int,
+                    'source': str,
+                    'dates': [str, ...]  # List of ISO format dates
+                },
+                ...
+            ]
         """
         if not self.db_manager:
             return []
@@ -3263,7 +3418,7 @@ class DatabaseValidationService:
         session = self.db_manager.get_session_with_schema('validus')
         try:
             from database_models import DataLoadInstance
-            from sqlalchemy import distinct
+            from collections import defaultdict
             
             # Query all records with the required fields
             base_query = session.query(
@@ -3285,32 +3440,35 @@ class DatabaseValidationService:
             if fund_id is not None:
                 base_query = base_query.filter(DataLoadInstance.intfundid == fund_id)
             
-            # Get all records and create unique combinations
+            # Get all records
             records = base_query.all()
             
-            # Use a set to track unique combinations
-            unique_combinations = set()
-            result = []
+            # Group by (client_id, fund_id, source) and collect unique dates
+            grouped = defaultdict(set)
             
             for record in records:
                 combo_key = (
                     record.intclientid,
                     record.intfundid,
-                    record.vcdatasourcename,
-                    record.dtdataasof
+                    record.vcdatasourcename
                 )
                 
-                if combo_key not in unique_combinations:
-                    unique_combinations.add(combo_key)
-                    result.append({
-                        'client_id': record.intclientid,
-                        'fund_id': record.intfundid,
-                        'source': record.vcdatasourcename,
-                        'date': record.dtdataasof.isoformat() if record.dtdataasof else None
-                    })
+                if record.dtdataasof:
+                    grouped[combo_key].add(record.dtdataasof)
             
-            # Sort by client_id, fund_id, source, date
-            result.sort(key=lambda x: (x['client_id'], x['fund_id'], x['source'] or '', x['date'] or ''))
+            # Convert to result format
+            result = []
+            for (client_id_val, fund_id_val, source), dates_set in grouped.items():
+                dates_list = sorted([date.isoformat() for date in dates_set])
+                result.append({
+                    'client_id': client_id_val,
+                    'fund_id': fund_id_val,
+                    'source': source,
+                    'dates': dates_list
+                })
+            
+            # Sort by client_id, fund_id, source
+            result.sort(key=lambda x: (x['client_id'], x['fund_id'], x['source'] or ''))
             
             return result
             

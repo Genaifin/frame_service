@@ -49,7 +49,7 @@ from models.permission_models import RoleOrClientBasedModuleLevelPermission as P
 RoleOrClientBasedModuleLevelPermission = PermissionModel
 
 # Export Master for convenience
-__all__ = ['Master', 'RoleOrClientBasedModuleLevelPermission']
+__all__ = ['Master', 'RoleOrClientBasedModuleLevelPermission', 'FileQueue', 'DatabaseManager']
 
 # Load environment variables
 load_dotenv()
@@ -419,6 +419,123 @@ class Permission(Base):
             'updated_at': self.updated_at.isoformat() if self.updated_at else None
         }
 
+
+class KpiLibrary(Base):
+    """KPI Library model for validation parameters"""
+    __tablename__ = 'kpi_library'
+    __table_args__ = {'schema': 'nexbridge'}
+    
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    kpi_code = Column(String(100), unique=True, nullable=False, index=True)
+    kpi_name = Column(String(200), nullable=False)
+    kpi_type = Column(String(50), nullable=False, index=True)  # 'NAV_VALIDATION' or 'RATIO_VALIDATION'
+    category = Column(String(100), index=True)  # e.g., 'Financial', 'Liquidity', 'Concentration'
+    description = Column(Text)
+    
+    # Common validation fields
+    source_type = Column(String(50), nullable=False)  # 'SINGLE_SOURCE' or 'DUAL_SOURCE'
+    precision_type = Column(String(50), nullable=False)  # 'PERCENTAGE' or 'ABSOLUTE'
+    
+    # Ratio-specific fields (mandatory for RATIO_VALIDATION)
+    numerator_field = Column(String(200))
+    denominator_field = Column(String(200))
+    numerator_description = Column(Text)
+    denominator_description = Column(Text)
+    
+    # Metadata
+    is_active = Column(Boolean, default=True, index=True)
+    created_at = Column(DateTime, default=func.now())
+    updated_at = Column(DateTime, default=func.now(), onupdate=func.now())
+    created_by = Column(String(100))
+    updated_by = Column(String(100))  # Track who last updated
+    
+    # Relationships
+    thresholds = relationship("KpiThreshold", back_populates="kpi", cascade="all, delete-orphan")
+    
+    # Constraints
+    __table_args__ = (
+        CheckConstraint("kpi_type IN ('NAV_VALIDATION', 'RATIO_VALIDATION')", name='chk_kpi_type'),
+        CheckConstraint("source_type IN ('SINGLE_SOURCE', 'DUAL_SOURCE')", name='chk_source_type'),
+        CheckConstraint("precision_type IN ('PERCENTAGE', 'ABSOLUTE')", name='chk_precision_type'),
+        # Requirement #2: Make numerator/denominator mandatory for ratio validations
+        CheckConstraint(
+            "kpi_type != 'RATIO_VALIDATION' OR (numerator_field IS NOT NULL AND denominator_field IS NOT NULL)",
+            name='chk_ratio_fields_required'
+        ),
+        # NEW: Compound unique constraint for (kpi_code, kpi_name, kpi_type, category, source_type)
+        UniqueConstraint('kpi_code', 'kpi_name', 'kpi_type', 'category', 'source_type', name='uq_kpi_combination'),
+        {'schema': 'nexbridge'}
+    )
+    
+    def __repr__(self):
+        return f"<KpiLibrary(kpi_code='{self.kpi_code}', kpi_name='{self.kpi_name}', kpi_type='{self.kpi_type}')>"
+    
+    def to_dict(self) -> Dict[str, Any]:
+        """Convert KPI to dictionary"""
+        return {
+            'id': self.id,
+            'kpi_code': self.kpi_code,
+            'kpi_name': self.kpi_name,
+            'kpi_type': self.kpi_type,
+            'category': self.category,
+            'description': self.description,
+            'source_type': self.source_type,
+            'precision_type': self.precision_type,
+            'numerator_field': self.numerator_field,
+            'denominator_field': self.denominator_field,
+            'numerator_description': self.numerator_description,
+            'denominator_description': self.denominator_description,
+            'is_active': self.is_active,
+            'created_at': self.created_at.isoformat() if self.created_at else None,
+            'updated_at': self.updated_at.isoformat() if self.updated_at else None,
+            'created_by': self.created_by,
+            'updated_by': self.updated_by  # Added updated_by tracking
+        }
+
+class KpiThreshold(Base):
+    """KPI Threshold values for validation parameters"""
+    __tablename__ = 'kpi_thresholds'
+    
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    kpi_id = Column(Integer, ForeignKey('nexbridge.kpi_library.id', ondelete='CASCADE'), nullable=False, index=True)
+    fund_id = Column(String(100), index=True)  # Optional: fund-specific thresholds
+    threshold_value = Column(Numeric(18, 6), nullable=False)
+    
+    # Metadata
+    is_active = Column(Boolean, default=True, index=True)
+    created_at = Column(DateTime, default=func.now())
+    updated_at = Column(DateTime, default=func.now(), onupdate=func.now())
+    created_by = Column(String(100))
+    updated_by = Column(String(100))  # Track who last updated
+    
+    # Relationships
+    kpi = relationship("KpiLibrary", back_populates="thresholds")
+    
+    # Unique constraint to prevent duplicate thresholds for same KPI/fund combination
+    __table_args__ = (
+        # UniqueConstraint('kpi_id', 'fund_id', 'is_active', name='uq_kpi_fund_active_threshold'),
+        UniqueConstraint('kpi_id', 'fund_id', name='uq_kpi_fund_threshold'),
+        {'schema': 'nexbridge'}
+    )
+    
+    def __repr__(self):
+        return f"<KpiThreshold(kpi_id={self.kpi_id}, fund_id='{self.fund_id}', threshold_value={self.threshold_value})>"
+    
+    def to_dict(self) -> Dict[str, Any]:
+        """Convert threshold to dictionary"""
+        return {
+            'id': self.id,
+            'kpi_id': self.kpi_id,
+            'fund_id': self.fund_id,
+            'threshold_value': float(self.threshold_value) if self.threshold_value else None,
+            'is_active': self.is_active,
+            'created_at': self.created_at.isoformat() if self.created_at else None,
+            'updated_at': self.updated_at.isoformat() if self.updated_at else None,
+            'created_by': self.created_by,
+            'updated_by': self.updated_by,  # Added updated_by tracking
+            'kpi': self.kpi.to_dict() if self.kpi else None
+        }
+
 class Calendar(Base):
     """Calendar model for fund publishing schedules and document frequencies"""
     __tablename__ = 'calendars'
@@ -510,6 +627,205 @@ class DataSource(Base):
             'updated_by': self.updated_by
         }
 
+class Source(Base):
+    """Source model for data sources (nexbridge schema - legacy)"""
+    __tablename__ = 'source'
+    
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    name = Column(String(255), unique=True, nullable=False, index=True)
+    created_at = Column(DateTime, default=func.now())
+    created_by = Column(String(255), nullable=False)
+    
+    # Relationships
+    nav_packs = relationship("NavPack", back_populates="source", cascade="all, delete-orphan")
+    
+    __table_args__ = {'schema': 'nexbridge'}
+    
+    def __repr__(self):
+        return f"<Source(id={self.id}, name='{self.name}')>"
+    
+    def to_dict(self) -> Dict[str, Any]:
+        """Convert source to dictionary"""
+        return {
+            'id': self.id,
+            'name': self.name,
+            'created_at': self.created_at.isoformat() if self.created_at else None,
+            'created_by': self.created_by
+        }
+
+class NavPack(Base):
+    """Nav Pack model for logical grouping of fund/source/date"""
+    __tablename__ = 'nav_pack'
+    
+    navpack_id = Column(Integer, primary_key=True, autoincrement=True)
+    fund_id = Column(Integer, nullable=False, index=True)
+    source_id = Column(Integer, ForeignKey('nexbridge.source.id'), nullable=False, index=True)
+    file_date = Column(Date, nullable=False, index=True)
+    
+    # Relationships
+    source = relationship("Source", back_populates="nav_packs")
+    versions = relationship("NavPackVersion", back_populates="nav_pack", cascade="all, delete-orphan")
+    
+    __table_args__ = (
+        UniqueConstraint('fund_id', 'source_id', 'file_date', name='uq_fund_source_date'),
+        {'schema': 'nexbridge'}
+    )
+    
+    def __repr__(self):
+        return f"<NavPack(navpack_id={self.navpack_id}, fund_id={self.fund_id}, source_id={self.source_id}, file_date={self.file_date})>"
+    
+    def to_dict(self) -> Dict[str, Any]:
+        """Convert nav pack to dictionary"""
+        return {
+            'navpack_id': self.navpack_id,
+            'fund_id': self.fund_id,
+            'source_id': self.source_id,
+            'file_date': self.file_date.isoformat() if self.file_date else None,
+            'source': self.source.to_dict() if self.source else None
+        }
+
+class NavPackVersion(Base):
+    """Nav Pack Version model for file and override management"""
+    __tablename__ = 'navpack_version'
+    
+    navpack_version_id = Column(Integer, primary_key=True, autoincrement=True)
+    navpack_id = Column(Integer, ForeignKey('nexbridge.nav_pack.navpack_id'), nullable=False, index=True)
+    version = Column(Integer, nullable=False, index=True)
+    file_name = Column(String(255), nullable=False)
+    uploaded_by = Column(String(255), nullable=False)
+    uploaded_on = Column(DateTime, default=func.now())
+    override_on = Column(DateTime)
+    override_by = Column(String(255))
+    base_version = Column(Integer, ForeignKey('nexbridge.navpack_version.navpack_version_id'))
+    
+    # Relationships
+    nav_pack = relationship("NavPack", back_populates="versions")
+    trial_balance_entries = relationship("TrialBalance", back_populates="navpack_version", cascade="all, delete-orphan")
+    portfolio_valuations = relationship("PortfolioValuation", back_populates="navpack_version", cascade="all, delete-orphan")
+    dividends = relationship("Dividend", back_populates="navpack_version", cascade="all, delete-orphan")
+    base_version_ref = relationship("NavPackVersion", remote_side="NavPackVersion.navpack_version_id")
+    
+    __table_args__ = (
+        UniqueConstraint('navpack_id', 'version', name='uq_navpack_version'),
+        CheckConstraint('version > 0', name='chk_positive_version'),
+        {'schema': 'nexbridge'}
+    )
+    
+    def __repr__(self):
+        return f"<NavPackVersion(navpack_version_id={self.navpack_version_id}, navpack_id={self.navpack_id}, version={self.version}, file_name='{self.file_name}')>"
+    
+    def to_dict(self) -> Dict[str, Any]:
+        """Convert nav pack version to dictionary"""
+        return {
+            'navpack_version_id': self.navpack_version_id,
+            'navpack_id': self.navpack_id,
+            'version': self.version,
+            'file_name': self.file_name,
+            'uploaded_by': self.uploaded_by,
+            'uploaded_on': self.uploaded_on.isoformat() if self.uploaded_on else None,
+            'override_on': self.override_on.isoformat() if self.override_on else None,
+            'override_by': self.override_by,
+            'base_version': self.base_version,
+            'nav_pack': self.nav_pack.to_dict() if self.nav_pack else None
+        }
+
+class TrialBalance(Base):
+    """Trial Balance model for pure data storage"""
+    __tablename__ = 'trial_balance'
+    
+    row_id = Column(Integer, primary_key=True, autoincrement=True)
+    type = Column(String(255), nullable=False, index=True)
+    category = Column(String(255), nullable=True, index=True)  # Made nullable
+    accounting_head = Column(String(255), nullable=True, index=True)  # Made nullable
+    financial_account = Column(String(255), nullable=False, index=True)
+    ending_balance = Column(Numeric(15, 2), nullable=True)  # Made nullable
+    extra_data = Column(Text, nullable=True)  # JSON data for additional information
+    navpack_version_id = Column(Integer, ForeignKey('nexbridge.navpack_version.navpack_version_id'), nullable=False, index=True)
+    
+    # Relationships
+    navpack_version = relationship("NavPackVersion", back_populates="trial_balance_entries")
+    
+    __table_args__ = {'schema': 'nexbridge'}
+    
+    def __repr__(self):
+        return f"<TrialBalance(row_id={self.row_id}, type='{self.type}', category='{self.category}', accounting_head='{self.accounting_head}', ending_balance={self.ending_balance})>"
+    
+    def to_dict(self) -> Dict[str, Any]:
+        """Convert trial balance to dictionary"""
+        return {
+            'row_id': self.row_id,
+            'type': self.type,
+            'category': self.category,
+            'accounting_head': self.accounting_head,
+            'financial_account': self.financial_account,
+            'ending_balance': float(self.ending_balance) if self.ending_balance else None,
+            'navpack_version_id': self.navpack_version_id
+        }
+
+class PortfolioValuation(Base):
+    """Portfolio Valuation by Instrument model"""
+    __tablename__ = 'portfolio_valuation'
+    
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    inv_type = Column(String(255), nullable=False, index=True)
+    inv_id = Column(String(255), nullable=False, index=True)
+    end_qty = Column(Numeric(18, 6), nullable=False)
+    end_local_market_price = Column(Numeric(18, 6), nullable=True)  # Made nullable
+    end_local_mv = Column(Numeric(18, 2), nullable=True)  # Made nullable
+    end_book_mv = Column(Numeric(18, 2), nullable=True)  # End Book Market Value
+    navpack_version_id = Column(Integer, ForeignKey('nexbridge.navpack_version.navpack_version_id'), nullable=False, index=True)
+    extra_data = Column(Text, nullable=True)  # JSON data for additional information (Inv Desc)
+    
+    # Relationships
+    navpack_version = relationship("NavPackVersion", back_populates="portfolio_valuations")
+    
+    __table_args__ = {'schema': 'nexbridge'}
+    
+    def __repr__(self):
+        return f"<PortfolioValuation(id={self.id}, inv_type='{self.inv_type}', inv_id='{self.inv_id}', end_local_mv={self.end_local_mv})>"
+    
+    def to_dict(self) -> Dict[str, Any]:
+        """Convert portfolio valuation to dictionary"""
+        return {
+            'id': self.id,
+            'inv_type': self.inv_type,
+            'inv_id': self.inv_id,
+            'end_qty': float(self.end_qty) if self.end_qty else None,
+            'end_local_market_price': float(self.end_local_market_price) if self.end_local_market_price else None,
+            'end_local_mv': float(self.end_local_mv) if self.end_local_mv else None,
+            'end_book_mv': float(self.end_book_mv) if self.end_book_mv else None,
+            'navpack_version_id': self.navpack_version_id
+        }
+
+class Dividend(Base):
+    """Dividend model for dividend payments"""
+    __tablename__ = 'dividend'
+    
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    security_id = Column(String(255), nullable=False, index=True)
+    security_name = Column(String(255), nullable=False, index=True)
+    amount = Column(Numeric(18, 2), nullable=False)
+    navpack_version_id = Column(Integer, ForeignKey('nexbridge.navpack_version.navpack_version_id'), nullable=False, index=True)
+    extra_data = Column(Text, nullable=True)  # JSON data for future use
+    
+    # Relationships
+    navpack_version = relationship("NavPackVersion", back_populates="dividends")
+    
+    __table_args__ = {'schema': 'nexbridge'}
+    
+    def __repr__(self):
+        return f"<Dividend(id={self.id}, security_id='{self.security_id}', security_name='{self.security_name}', amount={self.amount})>"
+    
+    def to_dict(self) -> Dict[str, Any]:
+        """Convert dividend to dictionary"""
+        return {
+            'id': self.id,
+            'security_id': self.security_id,
+            'security_name': self.security_name,
+            'amount': float(self.amount) if self.amount else None,
+            'navpack_version_id': self.navpack_version_id
+        }
+
 class FundManager(Base):
     """Fund Manager model for managing fund manager entities"""
     __tablename__ = 'fund_manager'
@@ -539,6 +855,78 @@ class FundManager(Base):
             'status': self.status,
             'created_at': self.created_at.isoformat() if self.created_at else None,
             'updated_at': self.updated_at.isoformat() if self.updated_at else None
+        }
+
+class Benchmark(Base):
+    """Benchmark data model for storing market indices and benchmark values"""
+    __tablename__ = 'benchmarks'
+    __table_args__ = {'schema': 'public'}
+    
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    benchmark = Column(String(100), nullable=False, comment='Name of the benchmark (e.g., S&P 500 Index)')
+    date = Column(Date, nullable=False, comment='Date of the benchmark value')
+    value = Column(Numeric(15, 4), nullable=False, comment='Benchmark value on the given date')
+    extra_data = Column(JSON, nullable=True, comment='Additional metadata about the benchmark')
+    created_at = Column(DateTime, default=func.now(), nullable=False)
+    updated_at = Column(DateTime, default=func.now(), onupdate=func.now(), nullable=False)
+    
+    # Create unique constraint on benchmark name and date
+    __table_args__ = (
+        UniqueConstraint('benchmark', 'date', name='uq_benchmark_date'),
+        {'schema': 'public'}
+    )
+    
+    def to_dict(self) -> Dict[str, Any]:
+        """Convert Benchmark instance to dictionary"""
+        return {
+            'id': self.id,
+            'benchmark': self.benchmark,
+            'date': self.date.isoformat() if self.date else None,
+            'value': float(self.value) if self.value else None,
+            'extra_data': self.extra_data,
+            'created_at': self.created_at.isoformat() if self.created_at else None,
+            'updated_at': self.updated_at.isoformat() if self.updated_at else None
+        }
+
+class FileQueue(Base):
+    """File Queue model for managing file processing queue in FIFO order"""
+    __tablename__ = 'file_queue'
+    __table_args__ = {'schema': 'public'}
+    
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    filename = Column(String(255), nullable=False, index=True, comment='Name of the file')
+    file_path = Column(String(500), nullable=False, comment='Full path to the file')
+    file_hash = Column(String(64), nullable=True, index=True, comment='Hash of the file for deduplication')
+    folder = Column(String(50), nullable=False, server_default='l0', comment='Target folder (e.g., l0, l1)')
+    storage_type = Column(String(50), nullable=False, server_default='local', comment='Storage type (local, s3, etc.)')
+    source = Column(String(50), nullable=False, server_default='api', comment='Source of upload (api, sftp, etc.)')
+    file_classification = Column(String(100), nullable=True, comment='File classification or type')
+    username = Column(String(50), nullable=False, index=True, comment='Username who uploaded the file')
+    status = Column(String(20), nullable=False, server_default='pending', index=True, comment='Status: pending, processing, completed, failed')
+    error_message = Column(Text, nullable=True, comment='Error message if processing failed')
+    created_at = Column(DateTime, nullable=False, server_default=text('now()'), index=True, comment='When the file was added to queue')
+    updated_at = Column(DateTime, nullable=False, server_default=text('now()'), comment='When the record was last updated')
+    started_at = Column(DateTime, nullable=True, comment='When processing started')
+    completed_at = Column(DateTime, nullable=True, comment='When processing completed')
+    
+    def to_dict(self) -> Dict[str, Any]:
+        """Convert FileQueue instance to dictionary"""
+        return {
+            'id': self.id,
+            'filename': self.filename,
+            'file_path': self.file_path,
+            'file_hash': self.file_hash,
+            'folder': self.folder,
+            'storage_type': self.storage_type,
+            'source': self.source,
+            'file_classification': self.file_classification,
+            'username': self.username,
+            'status': self.status,
+            'created_at': self.created_at.isoformat() if self.created_at else None,
+            'updated_at': self.updated_at.isoformat() if self.updated_at else None,
+            'started_at': self.started_at.isoformat() if self.started_at else None,
+            'completed_at': self.completed_at.isoformat() if self.completed_at else None,
+            'error_message': self.error_message
         }
 
 class DatabaseManager:
@@ -779,7 +1167,15 @@ class DatabaseManager:
         # First create the schema
         self.create_schema()
         # Then create all tables
-        Base.metadata.create_all(bind=self.engine)    
+        Base.metadata.create_all(bind=self.engine)
+    
+    def create_nexbridge_tables(self):
+        """Create nexbridge schema and KPI tables"""
+        # First create the nexbridge schema
+        self.create_schema('nexbridge')
+        # Then create KPI tables specifically
+        KpiLibrary.__table__.create(bind=self.engine, checkfirst=True)
+        KpiThreshold.__table__.create(bind=self.engine, checkfirst=True)
     
     def get_session(self):
         """Get database session with proper schema context"""
@@ -1087,7 +1483,213 @@ class DatabaseManager:
             return {}
         finally:
             session.close()
+    
+    # KPI Management Methods (following user/client patterns)
+    def get_kpi_by_code(self, kpi_code: str) -> Optional[KpiLibrary]:
+        """Get KPI by code"""
+        session = self.get_session()
+        try:
+            from sqlalchemy.orm import joinedload
+            return session.query(KpiLibrary).options(joinedload(KpiLibrary.thresholds)).filter(
+                KpiLibrary.kpi_code == kpi_code, 
+                KpiLibrary.is_active == True
+            ).first()
+        finally:
+            session.close()
+    
+    def get_kpi_by_id(self, kpi_id: int) -> Optional[KpiLibrary]:
+        """Get KPI by ID"""
+        session = self.get_session()
+        try:
+            from sqlalchemy.orm import joinedload
+            return session.query(KpiLibrary).options(joinedload(KpiLibrary.thresholds)).filter(
+                KpiLibrary.id == kpi_id, 
+                KpiLibrary.is_active == True
+            ).first()
+        finally:
+            session.close()
+    
+    def get_all_kpis(self, kpi_type: str = None, category: str = None) -> List[KpiLibrary]:
+        """Get all active KPIs with optional filtering"""
+        session = self.get_session()
+        try:
+            from sqlalchemy.orm import joinedload
+            query = session.query(KpiLibrary).options(joinedload(KpiLibrary.thresholds)).filter(
+                KpiLibrary.is_active == True
+            )
             
+            if kpi_type:
+                query = query.filter(KpiLibrary.kpi_type == kpi_type)
+            if category:
+                query = query.filter(KpiLibrary.category == category)
+                
+            return query.all()
+        finally:
+            session.close()
+    
+    def create_kpi(self, kpi_data: Dict[str, Any]) -> Optional[KpiLibrary]:
+        """Create a new KPI"""
+        session = self.get_session()
+        try:
+            kpi = KpiLibrary(**kpi_data)
+            session.add(kpi)
+            session.commit()
+            session.refresh(kpi)
+            return kpi
+        except Exception as e:
+            session.rollback()
+            logger.error(f"Error creating KPI: {e}")
+            return None
+        finally:
+            session.close()
+    
+    def update_kpi(self, kpi_id: int, kpi_data: Dict[str, Any]) -> Optional[KpiLibrary]:
+        """Update an existing KPI"""
+        session = self.get_session()
+        try:
+            kpi = session.query(KpiLibrary).filter(
+                KpiLibrary.id == kpi_id,
+                KpiLibrary.is_active == True
+            ).first()
+            
+            if not kpi:
+                return None
+            
+            for key, value in kpi_data.items():
+                if hasattr(kpi, key):
+                    setattr(kpi, key, value)
+            
+            session.commit()
+            session.refresh(kpi)
+            return kpi
+        except Exception as e:
+            session.rollback()
+            logger.error(f"Error updating KPI: {e}")
+            return None
+        finally:
+            session.close()
+    
+    def delete_kpi(self, kpi_id: int) -> bool:
+        """Soft delete a KPI"""
+        session = self.get_session()
+        try:
+            kpi = session.query(KpiLibrary).filter(
+                KpiLibrary.id == kpi_id,
+                KpiLibrary.is_active == True
+            ).first()
+            
+            if not kpi:
+                return False
+            
+            kpi.is_active = False
+            session.commit()
+            return True
+        except Exception as e:
+            session.rollback()
+            logger.error(f"Error deleting KPI: {e}")
+            return False
+        finally:
+            session.close()
+    
+    def get_kpi_threshold(self, kpi_id: int, fund_id: str = None) -> Optional[KpiThreshold]:
+        """Get threshold for a KPI (fund-specific or default)"""
+        session = self.get_session()
+        try:
+            # First try to find fund-specific threshold
+            if fund_id:
+                threshold = session.query(KpiThreshold).filter(
+                    KpiThreshold.kpi_id == kpi_id,
+                    KpiThreshold.fund_id == fund_id,
+                    KpiThreshold.is_active == True
+                ).first()
+                if threshold:
+                    return threshold
+            
+            # Fall back to default threshold (fund_id is None)
+            return session.query(KpiThreshold).filter(
+                KpiThreshold.kpi_id == kpi_id,
+                KpiThreshold.fund_id.is_(None),
+                KpiThreshold.is_active == True
+            ).first()
+        finally:
+            session.close()
+    
+    def create_kpi_threshold(self, threshold_data: Dict[str, Any]) -> Optional[KpiThreshold]:
+        """Create a new KPI threshold"""
+        session = self.get_session()
+        try:
+            threshold = KpiThreshold(**threshold_data)
+            session.add(threshold)
+            session.commit()
+            session.refresh(threshold)
+            return threshold
+        except Exception as e:
+            session.rollback()
+            logger.error(f"Error creating KPI threshold: {e}")
+            return None
+        finally:
+            session.close()
+    
+    def update_kpi_threshold(self, threshold_id: int, threshold_data: Dict[str, Any]) -> Optional[KpiThreshold]:
+        """Update an existing KPI threshold"""
+        session = self.get_session()
+        try:
+            threshold = session.query(KpiThreshold).filter(
+                KpiThreshold.id == threshold_id,
+                KpiThreshold.is_active == True
+            ).first()
+            
+            if not threshold:
+                return None
+            
+            for key, value in threshold_data.items():
+                if hasattr(threshold, key):
+                    setattr(threshold, key, value)
+            
+            session.commit()
+            session.refresh(threshold)
+            return threshold
+        except Exception as e:
+            session.rollback()
+            logger.error(f"Error updating KPI threshold: {e}")
+            return None
+        finally:
+            session.close()
+    
+    def delete_kpi_threshold(self, threshold_id: int) -> bool:
+        """Delete a KPI threshold"""
+        session = self.get_session()
+        try:
+            threshold = session.query(KpiThreshold).filter(
+                KpiThreshold.id == threshold_id,
+                KpiThreshold.is_active == True
+            ).first()
+            
+            if not threshold:
+                return False
+            
+            threshold.is_active = False
+            session.commit()
+            return True
+        except Exception as e:
+            session.rollback()
+            logger.error(f"Error deleting KPI threshold: {e}")
+            return False
+        finally:
+            session.close()
+    
+    def get_kpi_categories(self) -> List[str]:
+        """Get all unique KPI categories"""
+        session = self.get_session()
+        try:
+            categories = session.query(KpiLibrary.category).filter(
+                KpiLibrary.is_active == True,
+                KpiLibrary.category.isnot(None)
+            ).distinct().all()
+            return [cat[0] for cat in categories if cat[0]]
+        finally:
+            session.close()
+    
     # DataSource Management Methods
     def get_data_source_by_id(self, source_id: int) -> Optional[DataSource]:
         """Get data source by ID"""
@@ -1418,6 +2020,8 @@ class DocumentConfiguration(Base):
     description = Column(Text, nullable=True)
     sla = Column(Integer, nullable=True)  # SLA in days (e.g., 0, 1, 2, etc.)
     fields = Column(JSON, nullable=True)  # JSON schema blob
+    is_deleted = Column(Boolean, default=False, nullable=False, index=True)  # Soft delete flag
+    deleted_at = Column(DateTime, nullable=True)  # When the record was soft deleted
     
     def __repr__(self):
         return f"<DocumentConfiguration(name='{self.name}', sla={self.sla})>"
@@ -1429,7 +2033,9 @@ class DocumentConfiguration(Base):
             'name': self.name,
             'description': self.description,
             'sla': self.sla,
-            'fields': self.fields
+            'fields': self.fields,
+            'is_deleted': self.is_deleted,
+            'deleted_at': self.deleted_at.isoformat() if self.deleted_at else None
         }
 
 class Investor(Base):
@@ -1990,6 +2596,558 @@ class StatementsExtraction(Base):
             'missing': self.missing
         }
 
+class SubproductMaster(Base):
+    """Subproduct Master table for managing subproducts"""
+    __tablename__ = 'tbl_subproduct_master'
+    __table_args__ = {'schema': 'validus'}
+    
+    intsubproductid = Column(Integer, primary_key=True, autoincrement=True)
+    vcsubproductname = Column(String(250), nullable=False)
+    vcdescription = Column(String(500))
+    isactive = Column(BIT(1), default=text("B'1'"), nullable=False)
+    intcreatedby = Column(Integer)
+    dtcreatedat = Column(DateTime, default=func.now(), nullable=False)
+    intupdatedby = Column(Integer)
+    dtupdatedat = Column(DateTime, onupdate=func.now())
+    
+    # Relationships
+    subproduct_details = relationship("SubproductDetails", back_populates="subproduct", cascade="all, delete-orphan")
+    validations = relationship("ValidationMaster", back_populates="subproduct", cascade="all, delete-orphan")
+    ratios = relationship("RatioMaster", back_populates="subproduct", cascade="all, delete-orphan")
+    
+    def to_dict(self):
+        """Convert to dictionary"""
+        return {
+            'intsubproductid': self.intsubproductid,
+            'vcsubproductname': self.vcsubproductname,
+            'vcdescription': self.vcdescription,
+            'isactive': self.isactive,
+            'intcreatedby': self.intcreatedby,
+            'dtcreatedat': self.dtcreatedat.isoformat() if self.dtcreatedat else None,
+            'intupdatedby': self.intupdatedby,
+            'dtupdatedat': self.dtupdatedat.isoformat() if self.dtupdatedat else None
+        }
+
+class SubproductDetails(Base):
+    """Subproduct Details table for managing subproduct type configurations"""
+    __tablename__ = 'tbl_subproduct_details'
+    __table_args__ = {'schema': 'validus'}
+    
+    intsubproductdetailid = Column(Integer, primary_key=True, autoincrement=True)
+    intsubproductid = Column(Integer, ForeignKey(f'validus.tbl_subproduct_master.intsubproductid'), nullable=False, index=True)
+    vcvalidustype = Column(String(250))  # Validation or Ratio
+    vctype = Column(String(250))
+    vcsubtype = Column(String(250))
+    vcdescription = Column(String(500))
+    isactive = Column(BIT(1), default=text("B'1'"), nullable=False)
+    intcreatedby = Column(Integer)
+    dtcreatedat = Column(DateTime, default=func.now(), nullable=False)
+    intupdatedby = Column(Integer)
+    dtupdatedat = Column(DateTime, onupdate=func.now())
+    
+    # Relationships
+    subproduct = relationship("SubproductMaster", back_populates="subproduct_details")
+    
+    def to_dict(self):
+        """Convert to dictionary"""
+        return {
+            'intsubproductdetailid': self.intsubproductdetailid,
+            'intsubproductid': self.intsubproductid,
+            'vcvalidustype': self.vcvalidustype,
+            'vctype': self.vctype,
+            'vcsubtype': self.vcsubtype,
+            'vcdescription': self.vcdescription,
+            'isactive': self.isactive,
+            'intcreatedby': self.intcreatedby,
+            'dtcreatedat': self.dtcreatedat.isoformat() if self.dtcreatedat else None,
+            'intupdatedby': self.intupdatedby,
+            'dtupdatedat': self.dtupdatedat.isoformat() if self.dtupdatedat else None
+        }
+
+class ValidationMaster(Base):
+    """Validation Master table for managing validation rules"""
+    __tablename__ = 'tbl_validation_master'
+    __table_args__ = {'schema': 'validus'}
+    
+    intvalidationmasterid = Column(Integer, primary_key=True, autoincrement=True)
+    intsubproductid = Column(Integer, ForeignKey(f'validus.tbl_subproduct_master.intsubproductid'), nullable=False, index=True)
+    vcsourcetype = Column(String(250))  # Single or Dual
+    vctype = Column(String(250))
+    vcsubtype = Column(String(250))
+    issubtype_subtotal = Column(BIT(1))
+    vcvalidationname = Column(String(250))
+    isvalidation_subtotal = Column(BIT(1))
+    vcdescription = Column(String(500))
+    intthreshold = Column(Numeric(12, 4))
+    vcthresholdtype = Column(String(100))
+    vcthreshold_abs_range = Column(String(20))
+    intthresholdmin = Column(Numeric(30, 6))
+    intthresholdmax = Column(Numeric(30, 6))
+    intprecision = Column(Numeric(12, 10))
+    isactive = Column(BIT(1), default=text("B'1'"), nullable=False)
+    intcreatedby = Column(Integer)
+    dtcreatedat = Column(DateTime, default=func.now(), nullable=False)
+    intupdatedby = Column(Integer)
+    dtupdatedat = Column(DateTime, onupdate=func.now())
+    
+    # Relationships
+    subproduct = relationship("SubproductMaster", back_populates="validations")
+    details = relationship("ValidationDetails", back_populates="master", cascade="all, delete-orphan")
+    configurations = relationship("ValidationConfiguration", back_populates="validation", cascade="all, delete-orphan")
+    
+    def to_dict(self):
+        """Convert to dictionary"""
+        return {
+            'intvalidationmasterid': self.intvalidationmasterid,
+            'intsubproductid': self.intsubproductid,
+            'vcsourcetype': self.vcsourcetype,
+            'vctype': self.vctype,
+            'vcsubtype': self.vcsubtype,
+            'issubtype_subtotal': self.issubtype_subtotal,
+            'vcvalidationname': self.vcvalidationname,
+            'isvalidation_subtotal': self.isvalidation_subtotal,
+            'vcdescription': self.vcdescription,
+            'intthreshold': float(self.intthreshold) if self.intthreshold else None,
+            'vcthresholdtype': self.vcthresholdtype,
+            'vcthreshold_abs_range': self.vcthreshold_abs_range,
+            'intthresholdmin': float(self.intthresholdmin) if self.intthresholdmin else None,
+            'intthresholdmax': float(self.intthresholdmax) if self.intthresholdmax else None,
+            'intprecision': float(self.intprecision) if self.intprecision else None,
+            'isactive': self.isactive,
+            'intcreatedby': self.intcreatedby,
+            'dtcreatedat': self.dtcreatedat.isoformat() if self.dtcreatedat else None,
+            'intupdatedby': self.intupdatedby,
+            'dtupdatedat': self.dtupdatedat.isoformat() if self.dtupdatedat else None
+        }
+
+class ValidationDetails(Base):
+    """Validation Details table for managing validation data model specifications"""
+    __tablename__ = 'tbl_validation_details'
+    __table_args__ = {'schema': 'validus'}
+    
+    intvalidationdetailid = Column(Integer, primary_key=True, autoincrement=True)
+    intvalidationmasterid = Column(Integer, ForeignKey(f'validus.tbl_validation_master.intvalidationmasterid'), nullable=False, index=True)
+    intdatamodelid = Column(Text, nullable=False, index=True)  # Changed from Integer to Text to support ranged validations
+    intgroup_attributeid = Column(Integer, ForeignKey(f'validus.tbl_data_model_details.intdatamodeldetailid'), nullable=True, index=True)
+    intassettypeid = Column(Integer, ForeignKey(f'validus.tbl_data_model_details.intdatamodeldetailid'), nullable=True, index=True)
+    intcalc_attributeid = Column(Integer, ForeignKey(f'validus.tbl_data_model_details.intdatamodeldetailid'), nullable=True, index=True)
+    vcaggregationtype = Column(String(20))  # sum/avg/max/min/etc
+    vcfilter = Column(Text)
+    vcfiltertype = Column(String(1))
+    vcformula = Column(Text)
+    intcreatedby = Column(Integer)
+    dtcreatedat = Column(DateTime, default=func.now(), nullable=False)
+    intupdatedby = Column(Integer)
+    dtupdatedat = Column(DateTime, onupdate=func.now())
+    
+    # Relationships
+    master = relationship("ValidationMaster", back_populates="details")
+    # Note: datamodel relationship removed because intdatamodelid is now Text (can contain comma-separated IDs for ranged validations)
+    # If you need to access data models, parse intdatamodelid and query DataModelMaster separately
+    group_attribute_detail = relationship("DataModelDetails", foreign_keys=[intgroup_attributeid])
+    assettype_detail = relationship("DataModelDetails", foreign_keys=[intassettypeid])
+    calc_attribute_detail = relationship("DataModelDetails", foreign_keys=[intcalc_attributeid])
+    
+    def to_dict(self):
+        """Convert to dictionary"""
+        return {
+            'intvalidationdetailid': self.intvalidationdetailid,
+            'intvalidationmasterid': self.intvalidationmasterid,
+            'intdatamodelid': self.intdatamodelid,
+            'intgroup_attributeid': self.intgroup_attributeid,
+            'intassettypeid': self.intassettypeid,
+            'intcalc_attributeid': self.intcalc_attributeid,
+            'vcaggregationtype': self.vcaggregationtype,
+            'vcfilter': self.vcfilter,
+            'vcfiltertype': self.vcfiltertype,
+            'vcformula': self.vcformula,
+            'intcreatedby': self.intcreatedby,
+            'dtcreatedat': self.dtcreatedat.isoformat() if self.dtcreatedat else None,
+            'intupdatedby': self.intupdatedby,
+            'dtupdatedat': self.dtupdatedat.isoformat() if self.dtupdatedat else None
+        }
+
+class RatioMaster(Base):
+    """Ratio Master table for managing ratio rules"""
+    __tablename__ = 'tbl_ratio_master'
+    __table_args__ = {'schema': 'validus'}
+    
+    intratiomasterid = Column(Integer, primary_key=True, autoincrement=True)
+    intsubproductid = Column(Integer, ForeignKey(f'validus.tbl_subproduct_master.intsubproductid'), nullable=False, index=True)
+    vcsourcetype = Column(String(250))  # Single or Dual
+    vctype = Column(String(250))
+    vcrationame = Column(String(250))
+    isratio_subtotal = Column(BIT(1))
+    vcdescription = Column(String(500))
+    intthreshold = Column(Numeric(12, 4))
+    vcthresholdtype = Column(String(100))
+    vcthreshold_abs_range = Column(String(20))
+    intthresholdmin = Column(Numeric(30, 6))
+    intthresholdmax = Column(Numeric(30, 6))
+    intprecision = Column(Numeric(12, 10))
+    isactive = Column(BIT(1), default=text("B'1'"), nullable=False)
+    intcreatedby = Column(Integer)
+    dtcreatedat = Column(DateTime, default=func.now(), nullable=False)
+    intupdatedby = Column(Integer)
+    dtupdatedat = Column(DateTime, onupdate=func.now())
+    
+    # Relationships
+    subproduct = relationship("SubproductMaster", back_populates="ratios")
+    details = relationship("RatioDetails", back_populates="master", cascade="all, delete-orphan")
+    configurations = relationship("RatioConfiguration", back_populates="ratio", cascade="all, delete-orphan")
+    
+    def to_dict(self):
+        """Convert to dictionary"""
+        return {
+            'intratiomasterid': self.intratiomasterid,
+            'intsubproductid': self.intsubproductid,
+            'vcsourcetype': self.vcsourcetype,
+            'vctype': self.vctype,
+            'vcrationame': self.vcrationame,
+            'isratio_subtotal': self.isratio_subtotal,
+            'vcdescription': self.vcdescription,
+            'intthreshold': float(self.intthreshold) if self.intthreshold else None,
+            'vcthresholdtype': self.vcthresholdtype,
+            'vcthreshold_abs_range': self.vcthreshold_abs_range,
+            'intthresholdmin': float(self.intthresholdmin) if self.intthresholdmin else None,
+            'intthresholdmax': float(self.intthresholdmax) if self.intthresholdmax else None,
+            'intprecision': float(self.intprecision) if self.intprecision else None,
+            'isactive': self.isactive,
+            'intcreatedby': self.intcreatedby,
+            'dtcreatedat': self.dtcreatedat.isoformat() if self.dtcreatedat else None,
+            'intupdatedby': self.intupdatedby,
+            'dtupdatedat': self.dtupdatedat.isoformat() if self.dtupdatedat else None
+        }
+
+class RatioDetails(Base):
+    """Ratio Details table for managing ratio data model specifications"""
+    __tablename__ = 'tbl_ratio_details'
+    __table_args__ = {'schema': 'validus'}
+    
+    intratiodetailid = Column(Integer, primary_key=True, autoincrement=True)
+    intratiomasterid = Column(Integer, ForeignKey(f'validus.tbl_ratio_master.intratiomasterid'), nullable=False, index=True)
+    intdatamodelid = Column(Text, nullable=False, index=True)  # Changed from Integer to Text to support ranged ratios
+    vcfilter = Column(Text)
+    vcfiltertype = Column(String(1))
+    vcnumerator = Column(Text)
+    vcdenominator = Column(Text)
+    vcformula = Column(Text)
+    intcreatedby = Column(Integer)
+    dtcreatedat = Column(DateTime, default=func.now(), nullable=False)
+    intupdatedby = Column(Integer)
+    dtupdatedat = Column(DateTime, onupdate=func.now())
+    
+    # Relationships
+    master = relationship("RatioMaster", back_populates="details")
+    # Note: datamodel relationship removed because intdatamodelid is now Text (can contain comma-separated IDs for ranged ratios)
+    # If you need to access data models, parse intdatamodelid and query DataModelMaster separately
+    
+    def to_dict(self):
+        """Convert to dictionary"""
+        return {
+            'intratiodetailid': self.intratiodetailid,
+            'intratiomasterid': self.intratiomasterid,
+            'intdatamodelid': self.intdatamodelid,
+            'vcfilter': self.vcfilter,
+            'vcfiltertype': self.vcfiltertype,
+            'vcnumerator': self.vcnumerator,
+            'vcdenominator': self.vcdenominator,
+            'vcformula': self.vcformula,
+            'intcreatedby': self.intcreatedby,
+            'dtcreatedat': self.dtcreatedat.isoformat() if self.dtcreatedat else None,
+            'intupdatedby': self.intupdatedby,
+            'dtupdatedat': self.dtupdatedat.isoformat() if self.dtupdatedat else None
+        }
+
+
+class DataModelMaster(Base):
+    """Data Model Master table for managing data model definitions"""
+    __tablename__ = 'tbl_data_model_master'
+    __table_args__ = {'schema': 'validus'}
+    
+    intdatamodelid = Column(Integer, primary_key=True, autoincrement=True)
+    vcmodelname = Column(String(250))
+    vcdescription = Column(String(500))
+    vcmodelid = Column(String(100))
+    vccategory = Column(String(100))
+    vcsource = Column(String(100))
+    vctablename = Column(String(250))
+    isactive = Column(Boolean, default=True, nullable=False)
+    intcreatedby = Column(Integer)
+    dtcreatedat = Column(DateTime, default=func.now(), nullable=False)
+    intupdatedby = Column(Integer)
+    dtupdatedat = Column(DateTime, onupdate=func.now())
+    
+    # Relationships
+    details = relationship("DataModelDetails", back_populates="master", cascade="all, delete-orphan")
+    
+    def to_dict(self):
+        """Convert to dictionary"""
+        return {
+            'intdatamodelid': self.intdatamodelid,
+            'vcmodelname': self.vcmodelname,
+            'vcdescription': self.vcdescription,
+            'vcmodelid': self.vcmodelid,
+            'vccategory': self.vccategory,
+            'vcsource': self.vcsource,
+            'vctablename': self.vctablename,
+            'isactive': self.isactive if self.isactive is not None else True,
+            'intcreatedby': self.intcreatedby,
+            'dtcreatedat': self.dtcreatedat.isoformat() if self.dtcreatedat else None,
+            'intupdatedby': self.intupdatedby,
+            'dtupdatedat': self.dtupdatedat.isoformat() if self.dtupdatedat else None
+        }
+
+class DataModelDetails(Base):
+    """Data Model Details table for managing column definitions"""
+    __tablename__ = 'tbl_data_model_details'
+    __table_args__ = {'schema': 'validus'}
+    
+    intdatamodeldetailid = Column(Integer, primary_key=True, autoincrement=True)
+    intdatamodelid = Column(Integer, ForeignKey(f'validus.tbl_data_model_master.intdatamodelid'), nullable=False, index=True)
+    vcfieldname = Column(String(250))
+    vcfielddescription = Column(String(500))
+    vcdatatype = Column(String(100))
+    intlength = Column(Integer)
+    intprecision = Column(Integer)
+    intscale = Column(Integer)
+    vcdateformat = Column(String(100))
+    vcdmcolumnname = Column(String(250))
+    vcdefaultvalue = Column(String(255))
+    ismandatory = Column(Boolean)
+    intdisplayorder = Column(Integer)
+    intcreatedby = Column(Integer)
+    dtcreatedat = Column(DateTime, default=func.now(), nullable=False)
+    intupdatedby = Column(Integer)
+    dtupdatedat = Column(DateTime, onupdate=func.now())
+    
+    # Relationships
+    master = relationship("DataModelMaster", back_populates="details")
+    
+    def to_dict(self):
+        """Convert to dictionary"""
+        return {
+            'intdatamodeldetailid': self.intdatamodeldetailid,
+            'intdatamodelid': self.intdatamodelid,
+            'vcfieldname': self.vcfieldname,
+            'vcfielddescription': self.vcfielddescription,
+            'vcdatatype': self.vcdatatype,
+            'intlength': self.intlength,
+            'intprecision': self.intprecision,
+            'intscale': self.intscale,
+            'vcdateformat': self.vcdateformat,
+            'vcdmcolumnname': self.vcdmcolumnname,
+            'vcdefaultvalue': self.vcdefaultvalue,
+            'ismandatory': self.ismandatory,
+            'intdisplayorder': self.intdisplayorder,
+            'intcreatedby': self.intcreatedby,
+            'dtcreatedat': self.dtcreatedat.isoformat() if self.dtcreatedat else None,
+            'intupdatedby': self.intupdatedby,
+            'dtupdatedat': self.dtupdatedat.isoformat() if self.dtupdatedat else None
+        }
+
+class DataLoadInstance(Base):
+    """Data Load Instance table for tracking data loads"""
+    __tablename__ = 'tbl_data_load_instance'
+    __table_args__ = {'schema': 'validus'}
+    
+    intdataloadinstanceid = Column(Integer, primary_key=True, autoincrement=True)
+    intclientid = Column(Integer, nullable=True, index=True)
+    intfundid = Column(Integer, nullable=True, index=True)
+    vccurrency = Column(String(10), nullable=True)
+    intdatamodelid = Column(Integer, ForeignKey(f'validus.tbl_data_model_master.intdatamodelid'), nullable=True, index=True)
+    dtdataasof = Column(Date, nullable=True)
+    vcdatadate = Column(String(250), nullable=True)
+    vcdatasourcetype = Column(String(100), nullable=True)
+    vcdatasourcename = Column(String(100), nullable=True)
+    vcloadtype = Column(String(100), default='Manual', nullable=True)
+    vcloadstatus = Column(String(100), nullable=True)
+    vcdataloaddescription = Column(String(500), nullable=True)
+    intloadedby = Column(Integer, nullable=True)
+    dtloadedat = Column(DateTime, default=func.now(), nullable=True)
+    
+    # Relationships
+    data_model = relationship("DataModelMaster", foreign_keys=[intdatamodelid])
+    
+    def to_dict(self):
+        """Convert to dictionary"""
+        return {
+            'intdataloadinstanceid': self.intdataloadinstanceid,
+            'intclientid': self.intclientid,
+            'intfundid': self.intfundid,
+            'vccurrency': self.vccurrency,
+            'intdatamodelid': self.intdatamodelid,
+            'dtdataasof': self.dtdataasof.isoformat() if self.dtdataasof else None,
+            'vcdatadate': self.vcdatadate,
+            'vcdatasourcetype': self.vcdatasourcetype,
+            'vcdatasourcename': self.vcdatasourcename,
+            'vcloadtype': self.vcloadtype,
+            'vcloadstatus': self.vcloadstatus,
+            'vcdataloaddescription': self.vcdataloaddescription,
+            'intloadedby': self.intloadedby,
+            'dtloadedat': self.dtloadedat.isoformat() if self.dtloadedat else None
+        }
+
+class ValidationConfiguration(Base):
+    """Validation Configuration table for managing validation configuration"""
+    __tablename__ = 'tbl_validation_configuration'
+    __table_args__ = {'schema': 'validus'}
+    
+    intvalidationconfigurationid = Column(Integer, primary_key=True, autoincrement=True)
+    intclientid = Column(Integer, nullable=True, index=True)
+    intfundid = Column(Integer, nullable=True, index=True)
+    intvalidationmasterid = Column(Integer, ForeignKey(f'validus.tbl_validation_master.intvalidationmasterid'), nullable=False, index=True)
+    isactive = Column(Boolean, default=False, nullable=False)
+    vccondition = Column(String(100))
+    intthreshold = Column(Numeric(12, 4))
+    vcthresholdtype = Column(String(100))
+    vcthreshold_abs_range = Column(String(20))  # 'Absolute' or 'Range'
+    intthresholdmin = Column(Numeric(30, 6))  # Minimum threshold for range
+    intthresholdmax = Column(Numeric(30, 6))  # Maximum threshold for range
+    intprecision = Column(Numeric(12, 10))
+    intcreatedby = Column(Integer)
+    dtcreatedat = Column(DateTime, default=func.now(), nullable=False)
+    intupdatedby = Column(Integer)
+    dtupdatedat = Column(DateTime, onupdate=func.now())
+    
+    # Relationships
+    validation = relationship("ValidationMaster", back_populates="configurations")
+    
+    def to_dict(self):
+        """Convert to dictionary"""
+        return {
+            'intvalidationconfigurationid': self.intvalidationconfigurationid,
+            'intclientid': self.intclientid,
+            'intfundid': self.intfundid,
+            'intvalidationmasterid': self.intvalidationmasterid,
+            'isactive': self.isactive,
+            'vccondition': self.vccondition,
+            'intthreshold': float(self.intthreshold) if self.intthreshold else None,
+            'vcthresholdtype': self.vcthresholdtype,
+            'vcthreshold_abs_range': self.vcthreshold_abs_range,
+            'intthresholdmin': float(self.intthresholdmin) if self.intthresholdmin else None,
+            'intthresholdmax': float(self.intthresholdmax) if self.intthresholdmax else None,
+            'intprecision': float(self.intprecision) if self.intprecision else None,
+            'intcreatedby': self.intcreatedby,
+            'dtcreatedat': self.dtcreatedat.isoformat() if self.dtcreatedat else None,
+            'intupdatedby': self.intupdatedby,
+            'dtupdatedat': self.dtupdatedat.isoformat() if self.dtupdatedat else None
+        }
+
+
+class RatioConfiguration(Base):
+    """Ratio Configuration table for managing ratio configuration"""
+    __tablename__ = 'tbl_ratio_configuration'
+    __table_args__ = {'schema': 'validus'}
+    
+    intratioconfigurationid = Column(Integer, primary_key=True, autoincrement=True)
+    intclientid = Column(Integer, nullable=True, index=True)
+    intfundid = Column(Integer, nullable=True, index=True)
+    intratiomasterid = Column(Integer, ForeignKey(f'validus.tbl_ratio_master.intratiomasterid'), nullable=False, index=True)
+    isactive = Column(Boolean, default=False, nullable=False)
+    vccondition = Column(String(100))
+    intthreshold = Column(Numeric(12, 4))
+    vcthresholdtype = Column(String(100))
+    vcthreshold_abs_range = Column(String(20))  # 'Absolute' or 'Range'
+    intthresholdmin = Column(Numeric(30, 6))  # Minimum threshold for range
+    intthresholdmax = Column(Numeric(30, 6))  # Maximum threshold for range
+    intprecision = Column(Numeric(12, 10))
+    intcreatedby = Column(Integer)
+    dtcreatedat = Column(DateTime, default=func.now(), nullable=False)
+    intupdatedby = Column(Integer)
+    dtupdatedat = Column(DateTime, onupdate=func.now())
+    
+    # Relationships
+    ratio = relationship("RatioMaster", back_populates="configurations")
+    
+    def to_dict(self):
+        """Convert to dictionary"""
+        return {
+            'intratioconfigurationid': self.intratioconfigurationid,
+            'intclientid': self.intclientid,
+            'intfundid': self.intfundid,
+            'intratiomasterid': self.intratiomasterid,
+            'isactive': self.isactive,
+            'vccondition': self.vccondition,
+            'intthreshold': float(self.intthreshold) if self.intthreshold else None,
+            'vcthresholdtype': self.vcthresholdtype,
+            'vcthreshold_abs_range': self.vcthreshold_abs_range,
+            'intthresholdmin': float(self.intthresholdmin) if self.intthresholdmin else None,
+            'intthresholdmax': float(self.intthresholdmax) if self.intthresholdmax else None,
+            'intprecision': float(self.intprecision) if self.intprecision else None,
+            'intcreatedby': self.intcreatedby,
+            'dtcreatedat': self.dtcreatedat.isoformat() if self.dtcreatedat else None,
+            'intupdatedby': self.intupdatedby,
+            'dtupdatedat': self.dtupdatedat.isoformat() if self.dtupdatedat else None
+        }
+    
+class ProcessInstance(Base):
+    """Process Instance table for tracking validation/ratio process runs"""
+    __tablename__ = 'tbl_process_instance'
+    __table_args__ = {'schema': 'validus'}
+    
+    intprocessinstanceid = Column(BigInteger, primary_key=True, autoincrement=True)
+    intclientid = Column(Integer, nullable=True, index=True)
+    intfundid = Column(Integer, nullable=True, index=True)
+    vccurrency = Column(String(10), nullable=True)
+    vcvalidustype = Column(String(100), nullable=True)
+    vcsourcetype = Column(String(50), nullable=True)
+    vcsource_a = Column(String(250), nullable=True)
+    vcsource_b = Column(String(250), nullable=True)
+    dtdate_a = Column(Date, nullable=True)
+    dtdate_b = Column(Date, nullable=True)
+    dtprocesstime_start = Column(DateTime, default=func.now(), nullable=True)
+    dtprocesstime_end = Column(DateTime, nullable=True)
+    vcprocessstats = Column(String(50), nullable=True)
+    vcstatusdescription = Column(String(250), nullable=True)
+    intuserid = Column(Integer, nullable=True)
+    
+    # Relationships
+    details = relationship("ProcessInstanceDetails", back_populates="process_instance")
+    
+    def to_dict(self):
+        """Convert to dictionary"""
+        return {
+            'intprocessinstanceid': self.intprocessinstanceid,
+            'intclientid': self.intclientid,
+            'intfundid': self.intfundid,
+            'vccurrency': self.vccurrency,
+            'vcvalidustype': self.vcvalidustype,
+            'vcsourcetype': self.vcsourcetype,
+            'vcsource_a': self.vcsource_a,
+            'vcsource_b': self.vcsource_b,
+            'dtdate_a': self.dtdate_a.isoformat() if self.dtdate_a else None,
+            'dtdate_b': self.dtdate_b.isoformat() if self.dtdate_b else None,
+            'dtprocesstime_start': self.dtprocesstime_start.isoformat() if self.dtprocesstime_start else None,
+            'dtprocesstime_end': self.dtprocesstime_end.isoformat() if self.dtprocesstime_end else None,
+            'vcprocessstats': self.vcprocessstats,
+            'vcstatusdescription': self.vcstatusdescription,
+            'intuserid': self.intuserid
+        }
+    
+class ProcessInstanceDetails(Base):
+    """Process Instance Details table for tracking individual data load instances in a process"""
+    __tablename__ = 'tbl_process_instance_details'
+    __table_args__ = {'schema': 'validus'}
+    
+    intprocessinstancedetailid = Column(BigInteger, primary_key=True, autoincrement=True)
+    intprocessinstanceid = Column(BigInteger, ForeignKey(f'validus.tbl_process_instance.intprocessinstanceid'), nullable=True, index=True)
+    intdataloadinstanceid = Column(BigInteger, nullable=True, index=True)
+    dtprocesstime = Column(DateTime, default=func.now(), nullable=True)
+    
+    # Relationships
+    process_instance = relationship("ProcessInstance", back_populates="details")
+    
+    def to_dict(self):
+        """Convert to dictionary"""
+        return {
+            'intprocessinstancedetailid': self.intprocessinstancedetailid,
+            'intprocessinstanceid': self.intprocessinstanceid,
+            'intdataloadinstanceid': self.intdataloadinstanceid,
+            'dtprocesstime': self.dtprocesstime.isoformat() if self.dtprocesstime else None
+        }
+
+
 # Factory functions for dynamic schema models
 # Cache for created models to avoid recreating them
 _validation_result_model_cache = {}
@@ -2076,6 +3234,7 @@ def create_validation_result_model(schema_name: str = 'validus'):
     _validation_result_model_cache[schema_name] = ValidationResult
     return ValidationResult
 
+
 def create_ratio_result_model(schema_name: str = 'validus'):
     """
     Factory function to create RatioResult model with specified schema.
@@ -2152,6 +3311,7 @@ def create_ratio_result_model(schema_name: str = 'validus'):
     # Cache the model for reuse
     _ratio_result_model_cache[schema_name] = RatioResult
     return RatioResult
+
 
 # Note: Do not create default instances here to avoid SQLAlchemy warnings
 # Always use the factory functions create_validation_result_model() and create_ratio_result_model()

@@ -156,7 +156,7 @@ class InvestorQuery:
                   status_filter: Optional[str] = None,
                   investor_type: Optional[str] = None,
                   kyc_status: Optional[str] = None,
-                  limit: Optional[int] = 10,
+                  limit: Optional[int] = 50,
                   offset: Optional[int] = 0) -> List[InvestorType]:
         """Get investors with filtering and pagination - requires authentication"""
         # Require authentication
@@ -295,7 +295,7 @@ class InvestorQuery:
     def fund_investors(self, info: Info,
                        fund_id: Optional[int] = None,
                        investor_id: Optional[int] = None,
-                       limit: Optional[int] = 10,
+                       limit: Optional[int] = 50,
                        offset: Optional[int] = 0) -> List[FundInvestorType]:
         """Get fund-investor mappings - requires authentication"""
         # Require authentication

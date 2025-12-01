@@ -70,12 +70,13 @@ class ReportIngestedType:
     version_section: List[VersionGroupType]  # Grouped by source/date first, then by category
 
 @strawberry.type
+@strawberry.type
 class DataLoadCombinationType:
-    """Type for unique data load combination"""
+    """Type for unique data load combination grouped by fund and source"""
     client_id: int
     fund_id: int
     source: str
-    date: str  # ISO format date string
+    dates: List[str]  # List of ISO format date strings
 
 @strawberry.type
 class ReportIngestionQuery:
@@ -209,7 +210,7 @@ class ReportIngestionQuery:
                     client_id=combo['client_id'],
                     fund_id=combo['fund_id'],
                     source=combo['source'],
-                    date=combo['date']
+                    dates=combo['dates']
                 )
                 for combo in result
             ]

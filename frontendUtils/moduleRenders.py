@@ -1,3 +1,5 @@
+import frontendUtils.renders.validus.singleFundCompare as singleFundCompareRenders
+import frontendUtils.renders.validus.paramSelector as paramSelectorRenders
 from frontendUtils.renders.utils.pageConfig import getPageConfig
 from frontendUtils.renders.utils.pageParameters import getParameters
 import  frontendUtils.renders.frame.fileExtractionViewer as frameRenders
