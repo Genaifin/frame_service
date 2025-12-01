@@ -90,15 +90,13 @@ COPY database_seeder.py .
 COPY alembic.ini .
 COPY runner_frame.py .
 COPY storage.py .
-COPY ingestor.py .
 COPY processor.py .
 COPY file.py .
 COPY validations.py .
 COPY uvicornLogConfig.yaml .
 COPY start_server.sh .
 COPY start_server.py .
-COPY setup_nginx.sh .
-COPY schema/ .
+COPY schema/ ./schema/
 
 # Create temp directory inside the image
 RUN mkdir -p /app/temp
@@ -133,4 +131,4 @@ EXPOSE 8000
 #            -v /usr/bin/pdftotext:/usr/bin/pdftotext:ro \
 #            your-image-name
 
-CMD ["uvicorn", "server.APIServer:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "server.APIServer:app", "--host", "0.0.0.0", "--port", "8040"]
